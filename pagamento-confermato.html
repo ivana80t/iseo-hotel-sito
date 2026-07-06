@@ -60,15 +60,6 @@
   </div>
 
 <script>
-  // ============================================================
-  // Questa pagina NON attiva la struttura da sola: l'attivazione vera
-  // avviene lato server tramite il webhook Stripe (api/stripe-webhook.js),
-  // che può richiedere qualche secondo in più rispetto al redirect
-  // dell'utente. Qui ci limitiamo a controllare, in lettura, se lo stato
-  // è già diventato "attiva" — con qualche tentativo, dando tempo al webhook.
-  //
-  // Sostituire con le stesse credenziali usate in pubblica-struttura.html.
-  // ============================================================
   const SUPABASE_URL = 'https://yhteaymjtswcswdydmej.supabase.co';
   const SUPABASE_ANON_KEY = 'sb_publishable_4gCaQ8n9RCEJ9Wjq5AxX6Q_HHs5nLee';
 
@@ -90,10 +81,6 @@
     }
 
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    // NOTA: grazie alla policy RLS "Lettura pubblica solo strutture attive",
-    // questa query restituirà un risultato SOLO quando il webhook avrà
-    // davvero portato lo stato ad "attiva" — prima di allora la riga
-    // risulterà "non trovata", il che è corretto e atteso.
     const { data, error } = await sb
       .from('strutture')
       .select('nome_struttura, stato')
@@ -113,7 +100,7 @@
     }
   }
 
-  controllaStato(6); // riprova fino a 6 volte ogni 2 secondi (~12 secondi totali)
+  controllaStato(6);
 </script>
 
 </body>

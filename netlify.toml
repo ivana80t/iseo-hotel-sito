@@ -1,0 +1,22 @@
+# ============================================================
+# CONFIGURAZIONE NETLIFY — Iseo Sapori e Soggiorni
+# ============================================================
+
+[build]
+  # I file .html restano nella root del progetto (come su Vercel).
+  publish = "."
+  # Le funzioni vanno cercate in netlify/functions (percorso di default,
+  # esplicitato qui per chiarezza).
+  functions = "netlify/functions"
+
+# ------------------------------------------------------------
+# Redirect: mantiene gli endpoint /api/... usati dal frontend
+# (hotel-dettaglio.html, pubblica-struttura.html, ecc.) SENZA doverli
+# modificare — Netlify inoltra internamente la richiesta alla funzione
+# corrispondente in /.netlify/functions/...
+# ------------------------------------------------------------
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true

@@ -1,0 +1,11 @@
+{
+  "name": "iseo-sapori-e-soggiorni",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portale strutture e ristoranti di Iseo — frontend statico + funzioni serverless Netlify",
+  "dependencies": {
+    "stripe": "^16.0.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "@netlify/functions": "^2.8.0"
+  }
+}

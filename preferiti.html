@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I tuoi preferiti — Iseo Sapori e Soggiorni</title>
+<meta name="description" content="Le strutture che hai salvato tra i preferiti su Iseo Sapori e Soggiorni.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --navy:#12294f;
+    --navy-2:#0d1f3d;
+    --navy-soft:#1d3a63;
+    --gold:#e0a940;
+    --sand:#f6f4ef;
+    --paper:#fbfaf7;
+    --ink:#152238;
+    --ink-soft:#5b6779;
+    --line:#e7e3d9;
+    --coral:#d1503c;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow-soft:0 18px 40px -18px rgba(18,41,79,0.25);
+    --shadow-card:0 10px 30px -12px rgba(18,41,79,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.logo-word{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+
+  /* ---------- Header (identico alle altre pagine) ---------- */
+  header.site-header{position:sticky;top:0;z-index:100;background:rgba(251,250,247,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .25s ease;}
+  header.site-header.scrolled{box-shadow:0 6px 24px -14px rgba(18,41,79,0.35);}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1240px;margin:0 auto;gap:24px;}
+  .logo{display:flex;flex-direction:column;line-height:1;}
+  .logo-img{height:52px;width:auto;display:block;}
+  .logo-word{font-size:22px;font-weight:600;color:var(--navy);letter-spacing:.5px;}
+  .logo-sub{font-size:11px;color:var(--ink-soft);margin-top:2px;letter-spacing:.3px;}
+  nav.main-nav{display:flex;gap:30px;}
+  nav.main-nav a{font-size:14.5px;font-weight:500;color:var(--ink);position:relative;padding:6px 0;}
+  nav.main-nav a:hover{color:var(--navy);}
+  .header-actions{display:flex;align-items:center;gap:22px;}
+  .icon-link{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;position:relative;}
+  .icon-link.active{color:var(--navy);font-weight:700;}
+  .icon-link svg{width:19px;height:19px;stroke:var(--ink);flex-shrink:0;}
+  .icon-link.active svg{stroke:var(--navy);}
+  .icon-link:hover{color:var(--navy);}
+  .icon-link:hover svg{stroke:var(--navy);}
+  .fav-count-badge{position:absolute;top:-2px;left:13px;display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 3px;border-radius:999px;background:var(--coral);color:#fff;font-size:9.5px;font-weight:700;line-height:1;box-shadow:0 0 0 2px var(--paper);}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:999px;border:none;font-weight:600;font-size:14.5px;background:var(--navy);color:#fff;transition:background .2s ease,transform .15s ease;}
+  .btn:hover{background:var(--navy-soft);transform:translateY(-1px);}
+  .burger{display:none;background:none;border:none;padding:4px;}
+  .burger svg{width:26px;height:26px;stroke:var(--navy);}
+
+  /* ---------- Page banner ---------- */
+  .page-banner{background:linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);color:#fff;padding:52px 32px 44px;}
+  .page-banner h1{font-size:34px;font-weight:600;margin:0 0 10px;}
+  .page-banner p{font-size:15.5px;color:#dde3ee;margin:0;max-width:560px;line-height:1.6;}
+
+  .section{padding:44px 32px 56px;}
+  .fav-count-text{font-size:14px;color:var(--ink-soft);margin-bottom:24px;}
+  .fav-count-text b{color:var(--navy);}
+
+  /* ---------- Lista preferiti (stessa struttura di hotel.html) ---------- */
+  .hotel-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  .hotel-row{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);display:flex;align-items:stretch;transition:transform .18s ease,box-shadow .18s ease;}
+  .hotel-row:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft);}
+  .row-thumb{position:relative;flex:0 0 168px;aspect-ratio:1/1;overflow:hidden;}
+  .row-thumb img{width:100%;height:100%;object-fit:cover;}
+  .row-thumb .tag-badge{position:absolute;bottom:7px;left:7px;background:rgba(255,255,255,.94);color:var(--navy);font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:999px;line-height:1.2;}
+  .row-body{flex:1;min-width:0;padding:12px 16px;display:flex;flex-direction:column;gap:5px;}
+  .row-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+  .row-top h3{font-size:15px;font-weight:600;color:var(--ink);margin:0;line-height:1.25;}
+  .fav-btn{flex-shrink:0;background:none;border:none;padding:2px;display:flex;align-items:center;justify-content:center;}
+  .fav-btn svg{width:18px;height:18px;stroke:var(--ink-soft);fill:none;}
+  .fav-btn.saved svg{fill:var(--coral);stroke:var(--coral);}
+  .rating-row{display:flex;align-items:center;gap:7px;font-size:12px;}
+  .rating-row .stars-inline{color:var(--gold);letter-spacing:1px;font-size:12px;}
+  .rating-row .score{background:var(--navy);color:#fff;font-weight:700;padding:1px 7px;border-radius:6px;font-size:11px;}
+  .loc{font-size:12px;color:var(--ink-soft);}
+  .desc{font-size:12.5px;color:var(--ink-soft);line-height:1.4;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .row-footer{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:7px;border-top:1px dashed var(--line);}
+  .price-tag{font-size:11px;color:var(--ink-soft);}
+  .price-tag b{font-size:15.5px;color:var(--navy);font-weight:700;}
+  .row-footer .btn{padding:7px 14px;font-size:12px;white-space:nowrap;}
+
+  /* ---------- Stato vuoto ---------- */
+  .empty-state{
+    text-align:center;padding:64px 24px;background:#fff;border:1px dashed var(--line);
+    border-radius:var(--radius-lg);
+  }
+  .empty-state svg{width:52px;height:52px;stroke:var(--line);margin-bottom:18px;}
+  .empty-state h2{font-size:20px;margin:0 0 10px;}
+  .empty-state p{font-size:14.5px;color:var(--ink-soft);margin:0 0 24px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.6;}
+
+  /* ---------- Footer (identico alle altre pagine) ---------- */
+  footer{background:var(--navy-2);color:#cfd7e4;margin-top:20px;}
+  .footer-top{padding:56px 32px 36px;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1.3fr 0.9fr 1.3fr;gap:32px;}
+  .footer-logo .logo-word{color:#fff;}
+  .footer-logo .logo-sub{color:#98a3b8;}
+  .footer-desc{font-size:13px;line-height:1.6;color:#a9b2c4;margin:14px 0 18px;max-width:260px;}
+  .social-row{display:flex;gap:10px;}
+  .social-row a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;}
+  .social-row a svg{width:15px;height:15px;stroke:#fff;}
+  .social-row a:hover{background:rgba(255,255,255,.1);}
+  footer h4{font-size:14px;color:#fff;margin:0 0 16px;font-weight:700;}
+  .newsletter-form{display:flex;gap:0;margin:14px 0 12px;border-radius:8px;overflow:hidden;max-width:340px;}
+  .newsletter-form input{flex:1;border:none;padding:12px 14px;font-size:13px;font-family:inherit;outline:none;}
+  .newsletter-form button{border:none;background:var(--gold);color:var(--navy-2);font-weight:700;padding:0 18px;font-size:13px;}
+  .privacy-check{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#98a3b8;}
+  footer ul li{margin-bottom:11px;}
+  footer ul li a{font-size:13.5px;color:#c3cbdb;}
+  footer ul li a:hover{color:#fff;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1240px;margin:0 auto;font-size:12px;color:#8b96ab;}
+  .footer-bottom .heart{color:var(--coral);}
+
+  .footer-contact-box{
+    display:inline-flex;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;margin-bottom:22px;
+    transition:background .2s ease,border-color .2s ease;
+  }
+  .footer-contact-box:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+  .footer-contact-box .icon-circle{
+    width:32px;height:32px;border-radius:50%;background:var(--gold);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .footer-contact-box .icon-circle svg{width:15px;height:15px;stroke:var(--navy-2);}
+  .footer-contact-box strong{display:block;font-size:13px;color:#fff;font-weight:700;}
+  .footer-contact-box span{font-size:11.5px;color:#a9b2c4;}
+  .footer-trust-list{display:flex;flex-direction:column;gap:12px;}
+  .footer-trust-item{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#c3cbdb;}
+  .footer-trust-item svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}}
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+    .header-actions .icon-link span{display:none;}
+    .burger{display:block;}
+    .page-banner h1{font-size:28px;}
+  }
+  @media (max-width:640px){
+    .wrap,.header-inner,.page-banner,.section,.footer-top,.footer-bottom{padding-left:18px;padding-right:18px;}
+    .row-thumb{flex-basis:96px;}
+    .row-footer{flex-direction:column;align-items:flex-start;gap:8px;}
+    .row-footer .btn{width:100%;text-align:center;}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none !important;}}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+      <img src="logo.png" alt="Iseo Sapori e Soggiorni" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Menu principale">
+      <a href="index.html">Home</a>
+      <a href="hotel.html">Hotel</a>
+      <a href="itinerari.html">Itinerari</a>
+      <a href="ristoranti.html">Ristoranti</a>
+      <a href="guida-iseo.html">Guida Iseo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="header-actions">
+      <a href="preferiti.html" class="icon-link active">
+        <svg viewBox="0 0 24 24" fill="var(--coral)" stroke="var(--coral)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+        <span>Preferiti</span>
+        <span class="fav-count-badge" id="favCountBadge" style="display:none;">0</span>
+      </a>
+      <a href="pubblica-struttura.html" class="btn">Pubblica la tua struttura</a>
+    </div>
+    <button class="burger" aria-label="Apri menu" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ PAGE BANNER ============ -->
+<section class="page-banner">
+  <div class="wrap">
+    <h1>I tuoi preferiti</h1>
+    <p>Le strutture che hai salvato mentre navighi sul sito. Restano qui anche se torni più tardi, salvate in questo browser.</p>
+  </div>
+</section>
+
+<!-- ============ CONTENUTO ============ -->
+<section class="section wrap">
+  <p class="fav-count-text" id="favCountText"></p>
+  <div class="hotel-grid" id="favGrid"></div>
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+    <h2>Non hai ancora preferiti</h2>
+    <p>Tocca il cuore su un hotel, B&amp;B o residence per salvarlo qui e ritrovarlo facilmente più avanti.</p>
+    <a href="hotel.html" class="btn">Sfoglia gli hotel</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+        <span class="logo-word"><span style="font-weight:800;font-size:1.5em;color:var(--gold);letter-spacing:.5px;">ISEO</span> <span style="font-weight:400;">SAPORI E SOGGIORNI</span></span>
+      </a>
+      <p class="footer-desc">Il portale ufficiale per scoprire hotel, ristoranti e itinerari sul Lago d'Iseo, tra Montisola e la Franciacorta.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="#" aria-label="TripAdvisor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="8" cy="13" r="3.2"/><circle cx="16" cy="13" r="3.2"/><path d="M12 8c-2.5 0-5.5.5-8 2M12 8c2.5 0 5.5.5 8 2M9 3h6"/></svg></a>
+        <a href="#" aria-label="Cerca"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Iscriviti alla newsletter</h4>
+      <p class="footer-desc" style="margin-top:0;">Ricevi consigli e novità su hotel e ristoranti di Iseo.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="La tua email" required aria-label="Indirizzo email">
+        <button type="submit">Iscriviti</button>
+      </form>
+      <label class="privacy-check">
+        <input type="checkbox" required style="margin:0;">
+        Accetto la <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a>
+      </label>
+    </div>
+
+    <div>
+      <h4>Link utili</h4>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="termini.html">Termini e condizioni</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Assistenza e fiducia</h4>
+      <a href="contatti.html" class="footer-contact-box">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        </div>
+        <div>
+          <strong>Assistenza clienti</strong>
+          <span>Rispondiamo entro 24/48 ore</span>
+        </div>
+      </a>
+      <div class="footer-trust-list">
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Portale verificato
+        </div>
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M8 6v-2M16 6v-2"/></svg>
+          Pagamenti sicuri
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Iseo Sapori e Soggiorni - Tutti i diritti riservati</span>
+    <span>Sito realizzato con <span class="heart">♥</span> per Iseo</span>
+  </div>
+</footer>
+
+<script src="favorites.js"></script>
+<script>
+  // Sticky header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+  // Mobile burger toggle
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mainNav = document.querySelector('.main-nav');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mainNav.style.display === 'flex';
+    mainNav.style.display = isOpen ? 'none' : 'flex';
+    mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+  });
+
+  // Newsletter form (front-end only placeholder)
+  document.getElementById('newsletterForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Fatto!';
+    setTimeout(() => { btn.textContent = original; this.reset(); }, 1800);
+  });
+
+  // ---------- Render dei preferiti salvati in localStorage ----------
+  const favGrid = document.getElementById('favGrid');
+  const emptyState = document.getElementById('emptyState');
+  const favCountText = document.getElementById('favCountText');
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str || '';
+    return div.innerHTML;
+  }
+
+  function renderFavorites(){
+    const favs = IseoFavorites.getFavorites();
+    const slugs = Object.keys(favs);
+
+    favGrid.innerHTML = '';
+
+    if(slugs.length === 0){
+      favGrid.style.display = 'none';
+      emptyState.style.display = 'block';
+      favCountText.textContent = '';
+      return;
+    }
+
+    favGrid.style.display = 'grid';
+    emptyState.style.display = 'none';
+    favCountText.innerHTML = 'Hai <b>' + slugs.length + '</b> struttur' + (slugs.length === 1 ? 'a' : 'e') + ' nei preferiti.';
+
+    slugs.forEach(slug => {
+      const d = favs[slug];
+      const article = document.createElement('article');
+      article.className = 'hotel-row';
+      article.dataset.favSlug = slug; // permette al fav-btn di ritrovare questo stesso preferito
+      article.innerHTML = `
+        <div class="row-thumb">
+          <img src="${escapeHtml(d.image)}" alt="${escapeHtml(d.imageAlt)}" loading="lazy">
+          ${d.badge ? `<span class="tag-badge">${escapeHtml(d.badge)}</span>` : ''}
+        </div>
+        <div class="row-body">
+          <div class="row-top">
+            <h3>${escapeHtml(d.name)}</h3>
+            <button class="fav-btn saved" aria-label="Rimuovi dai preferiti" aria-pressed="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+            </button>
+          </div>
+          <div class="rating-row">
+            ${d.stars ? `<span class="stars-inline">${escapeHtml(d.stars)}</span>` : ''}
+            ${d.scoreLabel ? `<span class="score">${escapeHtml(d.scoreLabel)}</span>` : ''}
+          </div>
+          ${d.loc ? `<div class="loc">${d.loc}</div>` : ''}
+          ${d.desc ? `<p class="desc">${escapeHtml(d.desc)}</p>` : ''}
+          <div class="row-footer">
+            <div class="price-tag">${d.priceHtml || ''}</div>
+            <a href="${escapeHtml(d.detailHref) || '#'}" class="btn">Scopri l'hotel</a>
+          </div>
+        </div>
+      `;
+      favGrid.appendChild(article);
+    });
+
+    // Il click sul cuore rimuove subito la struttura dall'elenco (già "saved" per definizione, qui)
+    favGrid.querySelectorAll('.fav-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = btn.closest('[data-fav-slug]');
+        IseoFavorites.removeFavorite(card.dataset.favSlug);
+        renderFavorites();
+      });
+    });
+  }
+
+  renderFavorites();
+  window.addEventListener('iseo-favorites-changed', renderFavorites);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itinerari sul Lago d'Iseo — Iseo Sapori e Soggiorni</title>
+<meta name="description" content="Quattro itinerari reali per scoprire il Lago d'Iseo: Monte Isola, Franciacorta, la Riserva delle Torbiere e il giro del lago tra Sarnico, Lovere e Pisogne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12294f;
+    --navy-2:#0d1f3d;
+    --navy-soft:#1d3a63;
+    --gold:#e0a940;
+    --sand:#f6f4ef;
+    --paper:#fbfaf7;
+    --ink:#152238;
+    --ink-soft:#5b6779;
+    --line:#e7e3d9;
+    --coral:#d1503c;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow-soft:0 18px 40px -18px rgba(18,41,79,0.25);
+    --shadow-card:0 10px 30px -12px rgba(18,41,79,0.18);
+  }
+  *{box-sizing:border-box;}
+  p{text-align:justify;}
+  footer p{text-align:left;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.logo-word{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+
+  /* ---------- Header ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,250,247,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .25s ease;
+  }
+  header.site-header.scrolled{box-shadow:0 6px 24px -14px rgba(18,41,79,0.35);}
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 32px;max-width:1240px;margin:0 auto;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;line-height:1;}
+  .logo-img{height:52px;width:auto;display:block;}
+  .logo-word{font-size:22px;font-weight:600;color:var(--navy);letter-spacing:.5px;}
+  .logo-sub{font-size:11px;color:var(--ink-soft);margin-top:2px;letter-spacing:.3px;}
+  nav.main-nav{display:flex;gap:30px;}
+  nav.main-nav a{
+    font-size:14.5px;font-weight:500;color:var(--ink);position:relative;padding:6px 0;
+  }
+  nav.main-nav a.active{color:var(--navy);font-weight:700;}
+  nav.main-nav a.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);border-radius:2px;
+  }
+  nav.main-nav a:hover{color:var(--navy);}
+  .header-actions{display:flex;align-items:center;gap:22px;}
+  .icon-link{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;position:relative;}
+  .icon-link svg{width:19px;height:19px;stroke:var(--ink);flex-shrink:0;}
+  .icon-link:hover{color:var(--navy);}
+  .icon-link:hover svg{stroke:var(--navy);}
+  .fav-count-badge{
+    position:absolute;top:-2px;left:13px;
+    display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 3px;
+    border-radius:999px;background:var(--coral);color:#fff;font-size:9.5px;font-weight:700;line-height:1;
+    box-shadow:0 0 0 2px var(--paper);
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 22px;border-radius:999px;border:none;font-weight:600;font-size:14.5px;
+    background:var(--navy);color:#fff;transition:background .2s ease,transform .15s ease;
+  }
+  .btn:hover{background:var(--navy-soft);transform:translateY(-1px);}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .burger{display:none;background:none;border:none;padding:4px;}
+  .burger svg{width:26px;height:26px;stroke:var(--navy);}
+
+  /* ---------- Page hero ---------- */
+  .page-hero{position:relative;color:#fff;overflow:hidden;}
+  .page-hero-media{position:absolute;inset:0;overflow:hidden;}
+  .page-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(1.1) brightness(1.02);}
+  .page-hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(18,20,16,.28) 0%, rgba(20,16,8,.08) 38%, rgba(13,31,61,.72) 100%);
+  }
+  .page-hero-content{position:relative;padding:72px 32px 64px;max-width:1240px;margin:0 auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.6px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+  }
+  .page-hero h1{font-size:42px;line-height:1.14;font-weight:600;margin:0 0 16px;max-width:640px;text-shadow:0 2px 20px rgba(0,0,0,.25);}
+  .page-hero p{font-size:16.5px;line-height:1.65;color:#eef1f6;margin:0;max-width:560px;}
+
+  /* ---------- Intro / how it works ---------- */
+  .section{padding:56px 32px;}
+  .section-head{margin-bottom:34px;}
+  .section-head h2{font-size:28px;font-weight:600;color:var(--navy);margin:0 0 10px;}
+  .section-head p{font-size:14.5px;color:var(--ink-soft);margin:0;line-height:1.6;}
+
+  .filter-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:38px;}
+  .filter-pill{
+    padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;
+    font-size:13px;font-weight:600;color:var(--ink);transition:all .18s ease;
+  }
+  .filter-pill:hover{border-color:var(--navy);transform:translateY(-1px);}
+  .filter-pill.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+
+  /* ---------- Itinerary cards ---------- */
+  .itin-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+  .itin-card{
+    background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);
+    display:flex;flex-direction:column;
+  }
+  .itin-media{position:relative;aspect-ratio:16/9;overflow:hidden;}
+  .itin-media img{width:100%;height:100%;object-fit:cover;}
+  .itin-badge{
+    position:absolute;top:14px;left:14px;background:rgba(255,255,255,.94);color:var(--navy);
+    font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;
+  }
+  .itin-duration{
+    position:absolute;top:14px;right:14px;background:var(--navy);color:#fff;
+    font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;
+  }
+  .itin-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:12px;flex:1;}
+  .itin-card--match .itin-body{min-height:352px;}
+  .itin-body h3{font-size:20px;font-weight:600;color:var(--ink);margin:0;}
+  .itin-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-soft);}
+  .itin-meta span{display:flex;align-items:center;gap:6px;}
+  .itin-meta svg{width:15px;height:15px;stroke:var(--ink-soft);flex-shrink:0;}
+  .itin-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  .itin-steps{margin-top:4px;border-top:1px dashed var(--line);}
+  .itin-steps summary{
+    list-style:none;cursor:pointer;padding:14px 0 6px;font-size:13.5px;font-weight:700;color:var(--navy);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .itin-steps summary::-webkit-details-marker{display:none;}
+  .itin-steps summary .chev{width:16px;height:16px;stroke:var(--navy);transition:transform .2s ease;}
+  .itin-steps[open] summary .chev{transform:rotate(180deg);}
+  .step-list{padding:4px 0 4px;display:flex;flex-direction:column;gap:14px;}
+  .step-item{display:flex;gap:14px;}
+  .step-num{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--sand);border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--navy);
+  }
+  .step-text{font-size:13px;color:var(--ink);line-height:1.55;padding-top:2px;}
+  .step-text b{color:var(--navy);}
+
+  .itin-footer{margin-top:auto;display:flex;gap:10px;padding-top:14px;}
+  .itin-footer .btn{padding:9px 16px;font-size:13px;flex:1;}
+
+  /* ---------- Tips band ---------- */
+  .tips-band{background:var(--sand);}
+  .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .tip-item{background:#fff;border-radius:var(--radius-md);padding:22px 22px 24px;box-shadow:var(--shadow-card);}
+  .tip-item .ic-wrap{
+    width:44px;height:44px;border-radius:50%;border:1.5px solid var(--navy);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .tip-item .ic-wrap svg{width:19px;height:19px;stroke:var(--navy);}
+  .tip-item h3{font-size:15.5px;font-weight:700;color:var(--ink);margin:0 0 8px;}
+  .tip-item p{font-size:13px;color:var(--ink-soft);margin:0;line-height:1.55;}
+
+  /* ---------- CTA ---------- */
+  .cta-band{
+    margin:0 32px 56px;padding:48px 44px;border-radius:var(--radius-lg);
+    background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  }
+  .cta-band h2{font-size:24px;font-weight:600;margin:0 0 8px;}
+  .cta-band p{font-size:14px;color:#cfd7e4;margin:0;max-width:440px;}
+  .cta-band .btn-gold{background:var(--gold);color:var(--navy-2);}
+  .cta-band .btn-gold:hover{background:#c99527;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-2);color:#cfd7e4;margin-top:20px;}
+  .footer-top{
+    padding:56px 32px 36px;max-width:1240px;margin:0 auto;
+    display:grid;grid-template-columns:1.3fr 1.3fr 0.9fr 1.3fr;gap:32px;
+  }
+  .footer-logo .logo-word{color:#fff;}
+  .footer-logo .logo-sub{color:#98a3b8;}
+  .footer-desc{font-size:13px;line-height:1.6;color:#a9b2c4;margin:14px 0 18px;max-width:260px;}
+  .social-row{display:flex;gap:10px;}
+  .social-row a{
+    width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .social-row a svg{width:15px;height:15px;stroke:#fff;}
+  .social-row a:hover{background:rgba(255,255,255,.1);}
+  footer h4{font-size:14px;color:#fff;margin:0 0 16px;font-weight:700;}
+  .newsletter-form{display:flex;gap:0;margin:14px 0 12px;border-radius:8px;overflow:hidden;max-width:340px;}
+  .newsletter-form input{
+    flex:1;border:none;padding:12px 14px;font-size:13px;font-family:inherit;outline:none;
+  }
+  .newsletter-form button{border:none;background:var(--gold);color:var(--navy-2);font-weight:700;padding:0 18px;font-size:13px;}
+  .privacy-check{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#98a3b8;}
+  footer ul li{margin-bottom:11px;}
+  footer ul li a{font-size:13.5px;color:#c3cbdb;}
+  footer ul li a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding:20px 32px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1240px;margin:0 auto;
+    font-size:12px;color:#8b96ab;
+  }
+  .footer-bottom .heart{color:var(--coral);}
+
+  .footer-contact-box{
+    display:inline-flex;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;margin-bottom:22px;
+    transition:background .2s ease,border-color .2s ease;
+  }
+  .footer-contact-box:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+  .footer-contact-box .icon-circle{
+    width:32px;height:32px;border-radius:50%;background:var(--gold);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .footer-contact-box .icon-circle svg{width:15px;height:15px;stroke:var(--navy-2);}
+  .footer-contact-box strong{display:block;font-size:13px;color:#fff;font-weight:700;}
+  .footer-contact-box span{font-size:11.5px;color:#a9b2c4;}
+  .footer-trust-list{display:flex;flex-direction:column;gap:12px;}
+  .footer-trust-item{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#c3cbdb;}
+  .footer-trust-item svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1080px){
+    .itin-grid{grid-template-columns:1fr;}
+    .tips-grid{grid-template-columns:1fr 1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+    .header-actions .icon-link span{display:none;}
+    .burger{display:block;}
+    .page-hero h1{font-size:32px;}
+    .cta-band{flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:640px){
+    .wrap,.header-inner,.page-hero-content,.section,.footer-top,.footer-bottom{padding-left:18px;padding-right:18px;}
+    .tips-grid{grid-template-columns:1fr;}
+    .cta-band{margin-left:18px;margin-right:18px;padding:32px 26px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+      <img src="logo.png" alt="Iseo Sapori e Soggiorni" class="logo-img">
+    </a>
+
+    <nav class="main-nav" aria-label="Menu principale">
+      <a href="index.html">Home</a>
+      <a href="hotel.html">Hotel</a>
+      <a href="itinerari.html" class="active">Itinerari</a>
+      <a href="ristoranti.html">Ristoranti</a>
+      <a href="guida-iseo.html">Guida Iseo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="preferiti.html" class="icon-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+        <span>Preferiti</span>
+        <span class="fav-count-badge" id="favCountBadge" style="display:none;">0</span>
+      </a>
+      <a href="pubblica-struttura.html" class="btn">Pubblica la tua struttura</a>
+    </div>
+
+    <button class="burger" aria-label="Apri menu" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-media">
+    <img id="heroImg" src="https://images.unsplash.com/photo-1592663527359-cf6642f54cff?q=80&w=1740&auto=format&fit=crop" alt="Vista panoramica del Lago d'Iseo con Monte Isola, immagine di esempio" loading="eager">
+  </div>
+  <div class="page-hero-content">
+    <span class="eyebrow">Itinerari</span>
+    <h1>Quattro modi diversi di vivere il Lago d'Iseo</h1>
+    <p>Percorsi reali, pensati per una giornata o poco più: isole, vigneti, riserve naturali e borghi lungo la sponda. Scegli quello più adatto al tuo soggiorno e segui le tappe.</p>
+  </div>
+</section>
+
+<!-- ============ ITINERARI ============ -->
+<section class="section" id="itinerari">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>I nostri itinerari</h2>
+      <p style="text-align:justify;">Ogni itinerario è pensato per essere vissuto in una giornata, partendo comodamente da Iseo: bastano un paio d'ore o l'intera giornata, a seconda di quanto vuoi approfondire ogni tappa. Le indicazioni che trovi qui sono un punto di partenza pratico, non un programma rigido da seguire alla lettera: puoi accorciare un percorso se hai poco tempo, fermarti più a lungo in un borgo che ti colpisce, oppure unire due tappe di itinerari diversi se ti trovi a passare nella stessa zona. L'obiettivo è darti uno spunto concreto, con luoghi verificati e un ordine di visita che funziona nella pratica, lasciando a te la libertà di adattarlo al ritmo del tuo soggiorno.</p>
+    </div>
+
+    <div class="filter-row" role="group" aria-label="Filtra per tipo di itinerario">
+      <button class="filter-pill active" data-filter="tutti">Tutti</button>
+      <button class="filter-pill" data-filter="famiglia">Famiglia</button>
+      <button class="filter-pill" data-filter="natura">Natura</button>
+      <button class="filter-pill" data-filter="gusto">Gusto</button>
+      <button class="filter-pill" data-filter="borghi">Borghi</button>
+    </div>
+
+    <div class="itin-grid" id="itinGrid">
+
+      <!-- Itinerario 1 -->
+      <article class="itin-card" data-tags="famiglia natura">
+        <div class="itin-media">
+          <img src="https://images.unsplash.com/photo-1587730556726-816708bc8ac8?q=80&w=900&auto=format&fit=crop" alt="Monte Isola vista dal lago, immagine di esempio" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/monte-isola-iseo/700/450';">
+          <span class="itin-badge">Famiglia · Natura</span>
+          <span class="itin-duration">Giornata intera</span>
+        </div>
+        <div class="itin-body">
+          <h3>Monte Isola in un giorno</h3>
+          <div class="itin-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>6-7 ore</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 15l4-8 4 8M4 15h8M14 15l3-6 3 6M14 15h6"/></svg>Facile</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Partenza da Iseo</span>
+          </div>
+          <p class="itin-desc">La più grande isola lacustre abitata d'Europa, senza auto private: si gira a piedi, in bici o con il bus navetta locale, tra borghi di pescatori e un santuario panoramico.</p>
+          <details class="itin-steps">
+            <summary>Scopri le tappe<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <div class="step-list">
+              <div class="step-item"><span class="step-num">1</span><p class="step-text">Imbarco a <b>Sulzano</b> o <b>Iseo</b> sul battello di linea per Monte Isola (traversata di 10-15 minuti).</p></div>
+              <div class="step-item"><span class="step-num">2</span><p class="step-text">Sbarco a <b>Peschiera Maraglio</b>, borgo di pescatori con le reti stese ad asciugare lungo le calli.</p></div>
+              <div class="step-item"><span class="step-num">3</span><p class="step-text">Salita (a piedi o con il bus navetta dell'isola) al <b>Santuario della Madonna della Ceriola</b>, il punto più alto con vista a 360° sul lago.</p></div>
+              <div class="step-item"><span class="step-num">4</span><p class="step-text">Discesa verso <b>Siviano</b> o <b>Carzano</b> per il pranzo: da provare le sardine essiccate, specialità locale.</p></div>
+              <div class="step-item"><span class="step-num">5</span><p class="step-text">Nel pomeriggio, giro dell'isola in bicicletta a noleggio lungo la strada costiera, quasi del tutto pianeggiante.</p></div>
+              <div class="step-item"><span class="step-num">6</span><p class="step-text">Rientro in battello verso la terraferma nel tardo pomeriggio.</p></div>
+            </div>
+          </details>
+          <div class="itin-footer">
+            <a href="hotel.html" class="btn btn-outline">Dove dormire vicino</a>
+            <a href="ristoranti.html" class="btn">Dove mangiare</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Itinerario 2 -->
+      <article class="itin-card" data-tags="gusto borghi">
+        <div class="itin-media">
+          <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=900&auto=format&fit=crop" alt="Vigneti in collina in Franciacorta, immagine di esempio" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/franciacorta-vigne/700/450';">
+          <span class="itin-badge">Gusto · Borghi</span>
+          <span class="itin-duration">Mezza/giornata intera</span>
+        </div>
+        <div class="itin-body">
+          <h3>Franciacorta tra vigne e cantine</h3>
+          <div class="itin-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>4-6 ore</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 15l4-8 4 8M4 15h8M14 15l3-6 3 6M14 15h6"/></svg>Facile, in auto</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>A sud del lago</span>
+          </div>
+          <p class="itin-desc">Le colline di vigneti a sud di Iseo, terra del Franciacorta DOCG metodo classico: cantine storiche, borghi silenziosi e un monastero affacciato sulle Torbiere.</p>
+          <details class="itin-steps">
+            <summary>Scopri le tappe<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <div class="step-list">
+              <div class="step-item"><span class="step-num">1</span><p class="step-text">Da Iseo, breve tragitto verso <b>Provaglio d'Iseo</b>, alle porte della Franciacorta.</p></div>
+              <div class="step-item"><span class="step-num">2</span><p class="step-text">Visita al <b>Monastero di San Pietro in Lamosa</b>, affacciato direttamente sulla Riserva delle Torbiere del Sebino.</p></div>
+              <div class="step-item"><span class="step-num">3</span><p class="step-text">Tappa in una cantina di Franciacorta (zona <b>Erbusco</b> o <b>Borgonato</b>) per una degustazione guidata di metodo classico.</p></div>
+              <div class="step-item"><span class="step-num">4</span><p class="step-text">Pranzo in una trattoria di campagna tra i filari, con i piatti tipici della cucina bresciana.</p></div>
+              <div class="step-item"><span class="step-num">5</span><p class="step-text">Passeggiata o giro in bici tra le colline di <b>Bornato</b> o <b>Adro</b>, tra borghi e vigneti.</p></div>
+              <div class="step-item"><span class="step-num">6</span><p class="step-text">Rientro a Iseo nel tardo pomeriggio.</p></div>
+            </div>
+          </details>
+          <div class="itin-footer">
+            <a href="hotel.html" class="btn btn-outline">Dove dormire vicino</a>
+            <a href="ristoranti.html" class="btn">Dove mangiare</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Itinerario 3 -->
+      <article class="itin-card itin-card--match" data-tags="natura famiglia">
+        <div class="itin-media">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=900&auto=format&fit=crop" alt="Zona umida e canneti della riserva naturale, immagine di esempio" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/torbiere-sebino/700/450';">
+          <span class="itin-badge">Natura · Famiglia</span>
+          <span class="itin-duration">Mezza giornata</span>
+        </div>
+        <div class="itin-body">
+          <h3>Iseo e le Torbiere, a piedi tra borgo e natura</h3>
+          <div class="itin-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>3-4 ore</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 15l4-8 4 8M4 15h8M14 15l3-6 3 6M14 15h6"/></svg>Molto facile</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Da fare a piedi</span>
+          </div>
+          <p class="itin-desc">Un percorso breve e comodo, adatto anche con bambini o passeggino: il centro storico di Iseo e, a due passi, la riserva naturale delle Torbiere del Sebino su passerelle in legno.</p>
+          <details class="itin-steps">
+            <summary>Scopri le tappe<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <div class="step-list">
+              <div class="step-item"><span class="step-num">1</span><p class="step-text">Centro storico di Iseo: <b>Pieve di Sant'Andrea</b> e <b>Castello degli Oldofredi</b>.</p></div>
+              <div class="step-item"><span class="step-num">2</span><p class="step-text">Lungolago e <b>Piazza Garibaldi</b>, con la statua dedicata a Garibaldi, tra le prime in Italia.</p></div>
+              <div class="step-item"><span class="step-num">3</span><p class="step-text">Passeggiata verso la <b>Riserva Naturale delle Torbiere del Sebino</b>, a pochi minuti dal centro.</p></div>
+              <div class="step-item"><span class="step-num">4</span><p class="step-text">Percorso su passerelle in legno tra stagni e canneti: buon punto per il birdwatching.</p></div>
+              <div class="step-item"><span class="step-num">5</span><p class="step-text">Punto panoramico con vista su Monte Isola in lontananza.</p></div>
+              <div class="step-item"><span class="step-num">6</span><p class="step-text">Rientro a Iseo per un aperitivo sul lungolago.</p></div>
+            </div>
+          </details>
+          <div class="itin-footer">
+            <a href="hotel.html" class="btn btn-outline">Dove dormire vicino</a>
+            <a href="ristoranti.html" class="btn">Dove mangiare</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Itinerario 4 -->
+      <article class="itin-card itin-card--match" data-tags="borghi natura">
+        <div class="itin-media">
+          <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=900&auto=format&fit=crop" alt="Borgo lacustre con lungolago, immagine di esempio" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/giro-lago-iseo/700/450';">
+          <span class="itin-badge">Borghi · Natura</span>
+          <span class="itin-duration">Giornata intera</span>
+        </div>
+        <div class="itin-body">
+          <h3>Il giro del lago: Sarnico, Lovere e Pisogne</h3>
+          <div class="itin-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>7-8 ore</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 15l4-8 4 8M4 15h8M14 15l3-6 3 6M14 15h6"/></svg>Facile, in auto o bici</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Tutto intorno al lago</span>
+          </div>
+          <p class="itin-desc">Un giro completo del lago tra le due sponde: il borgo Liberty di Sarnico, Lovere tra i Borghi più belli d'Italia e Pisogne con i suoi affreschi cinquecenteschi.</p>
+          <details class="itin-steps">
+            <summary>Scopri le tappe<svg class="chev" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <div class="step-list">
+              <div class="step-item"><span class="step-num">1</span><p class="step-text">Partenza da Iseo verso <b>Sarnico</b>, borgo Liberty con ville d'epoca sul lungolago.</p></div>
+              <div class="step-item"><span class="step-num">2</span><p class="step-text">Si prosegue lungo la sponda bergamasca fino a <b>Lovere</b>, uno dei Borghi più belli d'Italia.</p></div>
+              <div class="step-item"><span class="step-num">3</span><p class="step-text">Passeggiata sul lungolago di Lovere e visita all'<b>Accademia Tadini</b>, pinacoteca storica.</p></div>
+              <div class="step-item"><span class="step-num">4</span><p class="step-text">Traversata verso <b>Pisogne</b>, sponda bresciana, per vedere gli affreschi del Romanino nella <b>Chiesa di Santa Maria della Neve</b>.</p></div>
+              <div class="step-item"><span class="step-num">5</span><p class="step-text">Rientro lungo la sponda bresciana con tappa panoramica a <b>Marone</b> o <b>Sale Marasino</b>.</p></div>
+              <div class="step-item"><span class="step-num">6</span><p class="step-text">Cena serale sul lungolago di Iseo.</p></div>
+            </div>
+          </details>
+          <div class="itin-footer">
+            <a href="hotel.html" class="btn btn-outline">Dove dormire vicino</a>
+            <a href="ristoranti.html" class="btn">Dove mangiare</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIPS ============ -->
+<section class="section tips-band">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Prima di partire</h2>
+      <p>Qualche consiglio pratico, valido in ogni stagione, per organizzare al meglio la giornata.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-item">
+        <span class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+        <h3>Orari dei battelli</h3>
+        <p>Le corse per Monte Isola e verso Sarnico/Lovere variano tra stagione estiva e invernale: verifica sempre gli orari aggiornati prima di partire.</p>
+      </div>
+      <div class="tip-item">
+        <span class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M5.5 17.5L10 8h4l4.5 9.5M10 8l3 5"/></svg></span>
+        <h3>A piedi o in bici</h3>
+        <p>Monte Isola non ammette auto private dei turisti: meglio arrivare a piedi al molo e noleggiare una bici direttamente sull'isola.</p>
+      </div>
+      <div class="tip-item">
+        <span class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v10M6 21h12M8 21c0-4 1.8-6 4-8 2.2 2 4 4 4 8"/></svg></span>
+        <h3>Prenota in anticipo</h3>
+        <p>Nei weekend di alta stagione cantine e ristoranti tipici si riempiono in fretta: una telefonata il giorno prima evita brutte sorprese.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="cta-band">
+  <div>
+    <h2>Hai già scelto l'itinerario?</h2>
+    <p>Trova l'hotel o il B&B più comodo come base per la tua giornata, con contatto diretto alla struttura.</p>
+  </div>
+  <a href="hotel.html" class="btn btn-gold">Cerca dove dormire</a>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+        <span class="logo-word"><span style="font-weight:800;font-size:1.5em;color:var(--gold);letter-spacing:.5px;">ISEO</span> <span style="font-weight:400;">SAPORI E SOGGIORNI</span></span>
+      </a>
+      <p class="footer-desc">Il portale ufficiale per scoprire hotel, ristoranti e itinerari sul Lago d'Iseo, tra Montisola e la Franciacorta.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="#" aria-label="TripAdvisor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="8" cy="13" r="3.2"/><circle cx="16" cy="13" r="3.2"/><path d="M12 8c-2.5 0-5.5.5-8 2M12 8c2.5 0 5.5.5 8 2M9 3h6"/></svg></a>
+        <a href="#" aria-label="Cerca"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Iscriviti alla newsletter</h4>
+      <p class="footer-desc" style="margin-top:0;">Ricevi consigli e novità su hotel e ristoranti di Iseo.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="La tua email" required aria-label="Indirizzo email">
+        <button type="submit">Iscriviti</button>
+      </form>
+      <label class="privacy-check">
+        <input type="checkbox" required style="margin:0;">
+        Accetto la <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a>
+      </label>
+    </div>
+
+    <div>
+      <h4>Link utili</h4>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="termini.html">Termini e condizioni</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Assistenza e fiducia</h4>
+      <a href="contatti.html" class="footer-contact-box">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        </div>
+        <div>
+          <strong>Assistenza clienti</strong>
+          <span>Rispondiamo entro 24/48 ore</span>
+        </div>
+      </a>
+      <div class="footer-trust-list">
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Portale verificato
+        </div>
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M8 6v-2M16 6v-2"/></svg>
+          Pagamenti sicuri
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Iseo Sapori e Soggiorni - Tutti i diritti riservati</span>
+    <span>Sito realizzato con <span class="heart">♥</span> per Iseo</span>
+  </div>
+</footer>
+
+<script src="favorites.js"></script>
+<script>
+  // Hero image: try a short list of warm, bright lakeside photos before falling back
+  (function(){
+    const heroImg = document.getElementById('heroImg');
+    if(!heroImg) return;
+    const candidates = [
+      'https://images.unsplash.com/photo-1592663527359-cf6642f54cff?q=80&w=1740&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1541417904950-b855846fe074?q=80&w=1740&auto=format&fit=crop',
+      'https://picsum.photos/seed/itinerari-iseo/1600/900'
+    ];
+    let idx = 0;
+    heroImg.addEventListener('error', function(){
+      if(idx < candidates.length){
+        heroImg.src = candidates[idx];
+        idx++;
+      }
+    });
+  })();
+
+  // Sticky header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+  // Mobile burger menu
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mainNav = document.querySelector('.main-nav');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mainNav.style.display === 'flex';
+    mainNav.style.display = isOpen ? 'none' : 'flex';
+    mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+  });
+
+  // Favorite badge count (nessun cuore preferiti in questa pagina, ma teniamo il badge aggiornato)
+  if (window.IseoFavorites) {
+    IseoFavorites.updateFavCountBadge();
+  }
+
+  // Newsletter form (front-end only placeholder)
+  document.getElementById('newsletterForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Fatto!';
+    setTimeout(() => { btn.textContent = original; this.reset(); }, 1800);
+  });
+
+  // Filter pills: show/hide itinerary cards by tag
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const itinCards = document.querySelectorAll('#itinGrid .itin-card');
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', function(){
+      filterPills.forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      itinCards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const show = filter === 'tutti' || tags.split(' ').includes(filter);
+        card.style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

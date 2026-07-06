@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagamento confermato — Iseo Sapori e Soggiorni</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<style>
+  :root{
+    --navy:#12294f; --navy-2:#0d1f3d; --gold:#e0a940; --sand:#f6f4ef; --paper:#fbfaf7;
+    --ink:#152238; --ink-soft:#5b6779; --line:#e7e3d9;
+    --radius-lg:20px; --radius-md:14px;
+    --shadow-card:0 10px 30px -12px rgba(18,41,79,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .card{
+    background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);
+    padding:44px 40px;max-width:480px;width:100%;text-align:center;
+  }
+  .check-icon{
+    width:64px;height:64px;border-radius:50%;background:var(--sand);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 20px;
+  }
+  .check-icon svg{width:28px;height:28px;stroke:var(--navy);}
+  h1{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--navy);margin:0 0 12px;}
+  p{font-size:14.5px;line-height:1.65;color:var(--ink-soft);margin:0 0 8px;}
+  .attesa-nota{
+    background:var(--sand);border-radius:var(--radius-md);padding:14px 16px;margin:18px 0 4px;
+    font-size:13px;color:var(--ink-soft);
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:22px;
+    padding:12px 22px;border-radius:999px;border:none;font-weight:600;font-size:14.5px;
+    background:var(--navy);color:#fff;text-decoration:none;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="check-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h1>Pagamento ricevuto, grazie!</h1>
+    <p>Stiamo confermando l'attivazione della tua scheda struttura. Di norma richiede pochi secondi.</p>
+
+    <p id="messaggioStato" class="attesa-nota">Verifica in corso...</p>
+
+    <a href="hotel.html" class="btn" id="btnVaiAlSito" style="display:none;">Vai al portale</a>
+  </div>
+
+<script>
+  // ============================================================
+  // Questa pagina NON attiva la struttura da sola: l'attivazione vera
+  // avviene lato server tramite il webhook Stripe (api/stripe-webhook.js),
+  // che può richiedere qualche secondo in più rispetto al redirect
+  // dell'utente. Qui ci limitiamo a controllare, in lettura, se lo stato
+  // è già diventato "attiva" — con qualche tentativo, dando tempo al webhook.
+  //
+  // Sostituire con le stesse credenziali usate in pubblica-struttura.html.
+  // ============================================================
+  const SUPABASE_URL = 'INSERISCI_QUI_LA_TUA_SUPABASE_URL';
+  const SUPABASE_ANON_KEY = 'INSERISCI_QUI_LA_TUA_ANON_KEY';
+
+  const params = new URLSearchParams(window.location.search);
+  const strutturaId = params.get('struttura_id');
+  const elMessaggio = document.getElementById('messaggioStato');
+  const elBottone = document.getElementById('btnVaiAlSito');
+
+  const supabaseConfigurato = !SUPABASE_URL.startsWith('INSERISCI_QUI') && !SUPABASE_ANON_KEY.startsWith('INSERISCI_QUI');
+
+  async function controllaStato(tentativiRimasti){
+    if (!supabaseConfigurato) {
+      elMessaggio.textContent = 'Configurazione mancante: inserisci SUPABASE_URL e SUPABASE_ANON_KEY nel codice della pagina.';
+      return;
+    }
+    if (!strutturaId) {
+      elMessaggio.textContent = 'Riferimento struttura mancante nel link.';
+      return;
+    }
+
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    // NOTA: grazie alla policy RLS "Lettura pubblica solo strutture attive",
+    // questa query restituirà un risultato SOLO quando il webhook avrà
+    // davvero portato lo stato ad "attiva" — prima di allora la riga
+    // risulterà "non trovata", il che è corretto e atteso.
+    const { data, error } = await sb
+      .from('strutture')
+      .select('nome_struttura, stato')
+      .eq('id', strutturaId)
+      .maybeSingle();
+
+    if (!error && data && data.stato === 'attiva') {
+      elMessaggio.textContent = `La struttura "${data.nome_struttura}" è ora pubblicata sul portale.`;
+      elBottone.style.display = 'inline-flex';
+      return;
+    }
+
+    if (tentativiRimasti > 0) {
+      setTimeout(() => controllaStato(tentativiRimasti - 1), 2000);
+    } else {
+      elMessaggio.textContent = 'La conferma sta richiedendo più tempo del previsto. Riceverai comunque una email non appena la scheda sarà online.';
+    }
+  }
+
+  controllaStato(6); // riprova fino a 6 volte ogni 2 secondi (~12 secondi totali)
+</script>
+
+</body>
+</html>

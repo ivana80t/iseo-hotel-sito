@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rinnovo pubblicazione — Iseo Sapori e Soggiorni</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12294f; --navy-2:#0d1f3d; --navy-soft:#1d3a63; --gold:#e0a940;
+    --sand:#f6f4ef; --paper:#fbfaf7; --ink:#152238; --ink-soft:#5b6779;
+    --line:#e7e3d9; --coral:#d1503c; --radius-lg:20px; --radius-md:14px;
+    --shadow-card:0 10px 30px -12px rgba(18,41,79,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .card{
+    background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);
+    padding:44px 40px;max-width:460px;width:100%;text-align:center;
+  }
+  h1{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--navy);margin:0 0 12px;}
+  p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin:0 0 8px;}
+  .spinner{
+    width:40px;height:40px;border-radius:50%;margin:0 auto 22px;
+    border:3.5px solid var(--line);border-top-color:var(--gold);
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .stato-blocco{display:none;}
+  .stato-blocco.visible{display:block;}
+  .stato-caricamento.hidden{display:none;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;
+    padding:12px 22px;border-radius:999px;border:none;font-weight:600;font-size:14.5px;
+    background:var(--navy);color:#fff;text-decoration:none;cursor:pointer;
+  }
+  .pricing-recap{
+    background:var(--sand);border-radius:var(--radius-md);padding:16px 18px;margin:18px 0 4px;
+    display:flex;justify-content:space-between;align-items:center;font-size:14px;
+  }
+  .pricing-recap b{color:var(--navy);font-size:20px;font-family:'Fraunces',serif;}
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div id="statoCaricamento" class="stato-caricamento">
+      <div class="spinner" aria-hidden="true"></div>
+      <h1>Stiamo preparando il rinnovo</h1>
+      <p>Un attimo di pazienza, ti reindirizziamo alla pagina sicura per completare il rinnovo della pubblicazione.</p>
+      <div class="pricing-recap">
+        <span>Rinnovo quota annuale</span>
+        <b>59,00 €</b>
+      </div>
+    </div>
+
+    <div id="statoErrore" class="stato-blocco">
+      <h1>Non siamo riusciti ad avviare il pagamento</h1>
+      <p id="testoErrore">Si è verificato un problema. Riprova tra qualche istante.</p>
+      <button type="button" id="btnRiprovaErrore" class="btn">Riprova</button>
+    </div>
+
+    <div id="statoAnnullato" class="stato-blocco">
+      <h1>Rinnovo annullato</h1>
+      <p>Hai interrotto il pagamento prima del completamento: nessun importo è stato addebitato. Puoi riprovare quando vuoi — la scheda resta nello stato attuale nel frattempo.</p>
+      <div class="pricing-recap">
+        <span>Rinnovo quota annuale</span>
+        <b>59,00 €</b>
+      </div>
+      <button type="button" id="btnRiprovaAnnullato" class="btn">Riprova il pagamento</button>
+    </div>
+  </div>
+
+<script>
+  // ============================================================
+  // Questa pagina non parla direttamente con Stripe: chiama la funzione
+  // serverless /api/create-renewal-checkout-session, che crea la sessione
+  // di pagamento lato server (con metadata "tipo: rinnovo", diverso dalla
+  // prima iscrizione) e restituisce solo l'URL sicuro a cui reindirizzare.
+  // ============================================================
+
+  const params = new URLSearchParams(window.location.search);
+  const strutturaId = params.get('struttura_id');
+  const pagamentoAnnullato = params.get('errore') === 'annullato';
+
+  const elCaricamento = document.getElementById('statoCaricamento');
+  const elErrore = document.getElementById('statoErrore');
+  const elTestoErrore = document.getElementById('testoErrore');
+  const elAnnullato = document.getElementById('statoAnnullato');
+
+  function mostraErrore(messaggio){
+    elCaricamento.classList.add('hidden');
+    elAnnullato.classList.remove('visible');
+    elErrore.classList.add('visible');
+    elTestoErrore.textContent = messaggio;
+  }
+
+  function mostraAnnullato(){
+    elCaricamento.classList.add('hidden');
+    elErrore.classList.remove('visible');
+    elAnnullato.classList.add('visible');
+  }
+
+  function avviaRinnovo(){
+    if (!strutturaId) {
+      mostraErrore('Manca il riferimento alla struttura da rinnovare. Controlla il link ricevuto via email.');
+      return;
+    }
+
+    elCaricamento.classList.remove('hidden');
+    elErrore.classList.remove('visible');
+    elAnnullato.classList.remove('visible');
+
+    fetch('/api/create-renewal-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ struttura_id: strutturaId })
+    })
+    .then(async (res) => {
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.errore || `Errore del server (${res.status})`);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      if (!data.url) throw new Error('Risposta del server incompleta: URL di pagamento mancante.');
+      window.location.href = data.url;
+    })
+    .catch((err) => {
+      console.error(err);
+      mostraErrore(err.message || 'Si è verificato un problema imprevisto. Riprova tra qualche istante.');
+    });
+  }
+
+  document.getElementById('btnRiprovaErrore').addEventListener('click', avviaRinnovo);
+  document.getElementById('btnRiprovaAnnullato').addEventListener('click', avviaRinnovo);
+
+  if (!strutturaId) {
+    mostraErrore('Manca il riferimento alla struttura da rinnovare. Controlla il link ricevuto via email.');
+  } else if (pagamentoAnnullato) {
+    mostraAnnullato();
+  } else {
+    avviaRinnovo();
+  }
+</script>
+
+</body>
+</html>

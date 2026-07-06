@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B&amp;B Corte Antica — Iseo Sapori e Soggiorni</title>
+<meta name="description" content="B&B Corte Antica: un cortile in pietra nel centro storico di Iseo, colazione con prodotti locali e camere in stile rustico a due passi dal lago.">
+
+<!-- Dati strutturati Schema.org (Hotel) per la SEO.
+     NOTA: tutti i valori sono di esempio (placeholder), inclusi indirizzo, coordinate,
+     telefono, immagini e numero di recensioni: andranno generati dinamicamente insieme
+     al resto dei dati reali di ogni struttura, con il dominio reale del portale al posto
+     di "www.iseosaporiesoggiorni.it". Questa pagina è il template comune a tutte le
+     schede struttura (hotel, B&B, residence, ristoranti): cambiano solo i dati, non il layout. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Hotel",
+  "name": "B&B Corte Antica",
+  "description": "Bed & Breakfast in un edificio in pietra nel centro storico di Iseo, con cortile interno e camere in stile rustico.",
+  "url": "https://www.iseosaporiesoggiorni.it/corte-antica.html",
+  "telephone": "+39 030 555 0123",
+  "image": [
+    "https://picsum.photos/seed/bb-corte-antica/1200/700",
+    "https://picsum.photos/seed/bb-corte-antica-2/400/300",
+    "https://picsum.photos/seed/bb-corte-antica-3/400/300"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Iseo",
+    "addressRegion": "BS",
+    "addressCountry": "IT"
+  },
+  "priceRange": "€65",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 8.6,
+    "bestRating": 10,
+    "ratingCount": 58
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --navy:#12294f;
+    --navy-2:#0d1f3d;
+    --navy-soft:#1d3a63;
+    --gold:#e0a940;
+    --sand:#f6f4ef;
+    --paper:#fbfaf7;
+    --ink:#152238;
+    --ink-soft:#5b6779;
+    --line:#e7e3d9;
+    --coral:#d1503c;
+    --whatsapp:#2fae60;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow-soft:0 18px 40px -18px rgba(18,41,79,0.25);
+    --shadow-card:0 10px 30px -12px rgba(18,41,79,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.logo-word{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  input,textarea{font-family:inherit;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+
+  /* ---------- Header (identico alle altre pagine) ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,250,247,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .25s ease;
+  }
+  header.site-header.scrolled{box-shadow:0 6px 24px -14px rgba(18,41,79,0.35);}
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 32px;max-width:1240px;margin:0 auto;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;line-height:1;}
+  .logo-img{height:52px;width:auto;display:block;}
+  .logo-word{font-size:22px;font-weight:600;color:var(--navy);letter-spacing:.5px;}
+  .logo-sub{font-size:11px;color:var(--ink-soft);margin-top:2px;letter-spacing:.3px;}
+  nav.main-nav{display:flex;gap:30px;}
+  nav.main-nav a{font-size:14.5px;font-weight:500;color:var(--ink);position:relative;padding:6px 0;}
+  nav.main-nav a.active{color:var(--navy);font-weight:700;}
+  nav.main-nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);border-radius:2px;}
+  nav.main-nav a:hover{color:var(--navy);}
+  .header-actions{display:flex;align-items:center;gap:22px;}
+  .icon-link{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;position:relative;}
+  .icon-link svg{width:19px;height:19px;stroke:var(--ink);flex-shrink:0;}
+  .icon-link:hover{color:var(--navy);}
+  .icon-link:hover svg{stroke:var(--navy);}
+  .fav-count-badge{
+    position:absolute;top:-2px;left:13px;
+    display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 3px;
+    border-radius:999px;background:var(--coral);color:#fff;font-size:9.5px;font-weight:700;line-height:1;
+    box-shadow:0 0 0 2px var(--paper);
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 22px;border-radius:999px;border:none;font-weight:600;font-size:14.5px;
+    background:var(--navy);color:#fff;transition:background .2s ease,transform .15s ease;
+  }
+  .btn:hover{background:var(--navy-soft);transform:translateY(-1px);}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .burger{display:none;background:none;border:none;padding:4px;}
+  .burger svg{width:26px;height:26px;stroke:var(--navy);}
+
+  /* ---------- Breadcrumb ---------- */
+  .breadcrumb-bar{padding:18px 32px 0;}
+  .breadcrumb{font-size:13px;color:var(--ink-soft);margin:0;}
+  .breadcrumb a:hover{color:var(--navy);text-decoration:underline;}
+  .breadcrumb .sep{margin:0 6px;color:var(--line);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;margin-top:16px;border-radius:var(--radius-lg);overflow:hidden;
+    height:360px;
+  }
+  .hero img{width:100%;height:100%;object-fit:cover;}
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(13,31,61,.05) 0%, rgba(13,31,61,.15) 40%, rgba(13,31,61,.88) 100%);
+  }
+  .hero-fav{
+    position:absolute;top:20px;right:20px;z-index:3;
+    width:44px;height:44px;border-radius:50%;background:rgba(13,31,61,.45);
+    display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,.5);
+  }
+  .hero-fav svg{width:21px;height:21px;stroke:#fff;fill:none;}
+  .hero-fav.saved svg{fill:var(--coral);stroke:var(--coral);}
+  .hero-content{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;
+    display:flex;align-items:flex-end;gap:22px;padding:0 28px 26px;
+  }
+  .hero-mark{
+    flex-shrink:0;width:96px;height:96px;background:#fff;border-radius:14px;box-shadow:0 10px 24px -8px rgba(0,0,0,.35);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    transform:translateY(30px);
+  }
+  .hero-mark .mono{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--navy);letter-spacing:1px;}
+  .hero-mark .mono-sub{font-size:8px;letter-spacing:1.5px;color:var(--gold);font-weight:700;text-transform:uppercase;}
+  .hero-text{color:#fff;padding-bottom:6px;}
+  .hero-text h1{font-size:30px;font-weight:600;margin:0 0 8px;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.25);}
+  .hero-loc{display:flex;align-items:center;gap:6px;font-size:13.5px;color:#e4e8f0;margin-bottom:8px;}
+  .hero-loc svg{width:14px;height:14px;stroke:#e4e8f0;flex-shrink:0;}
+  .hero-rating{display:flex;align-items:center;gap:8px;font-size:13.5px;margin-bottom:14px;}
+  .hero-rating .stars-inline{color:var(--gold);letter-spacing:1px;font-size:14px;}
+  .hero-rating .review-count{color:#c7d0e0;}
+  .hero-badge{
+    display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy-2);
+    font-size:11.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+    padding:8px 16px;border-radius:6px;
+  }
+
+  /* ---------- Striscia foto ---------- */
+  .photo-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:14px;}
+  .photo-strip a{position:relative;aspect-ratio:1/1;border-radius:var(--radius-sm);overflow:hidden;display:block;}
+  .photo-strip img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
+  .photo-strip a:hover img{transform:scale(1.05);}
+  .photo-strip .more-overlay{
+    position:absolute;inset:0;background:rgba(13,31,61,.72);color:#fff;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:12.5px;font-weight:700;line-height:1.3;padding:6px;
+  }
+
+  /* ---------- Griglia informativa a 3 colonne ---------- */
+  .info-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;margin-top:44px;align-items:start;}
+  .eyebrow{
+    font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy);
+    margin:0 0 14px;
+  }
+  .info-block{margin-bottom:34px;}
+  .info-block:last-child{margin-bottom:0;}
+  .info-block p{font-size:14px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px;}
+  .info-block p:last-child{margin-bottom:0;}
+  .desc-text{text-align:justify;}
+
+  .icon-list{display:grid;grid-template-columns:1fr 1fr;gap:11px 18px;}
+  .icon-list li{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink);}
+  .icon-list li svg{width:17px;height:17px;stroke:var(--navy);flex-shrink:0;}
+
+  .util-list li{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:7px 0;border-bottom:1px dashed var(--line);}
+  .util-list li:last-child{border-bottom:none;}
+  .util-list .util-label{display:flex;align-items:center;gap:8px;color:var(--ink-soft);}
+  .util-list .util-label svg{width:16px;height:16px;stroke:var(--ink-soft);flex-shrink:0;}
+  .util-list .util-value{font-weight:600;color:var(--ink);text-align:right;}
+
+  .contact-list{margin-bottom:22px;}
+  .contact-list li{display:flex;align-items:center;gap:10px;font-size:14px;padding:8px 0;}
+  .contact-list li svg{width:17px;height:17px;stroke:var(--navy);flex-shrink:0;}
+  .contact-list a:hover{text-decoration:underline;color:var(--navy);}
+
+  .action-stack{display:flex;flex-direction:column;gap:10px;}
+  .action-btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
+    padding:13px 18px;border-radius:10px;font-size:13.5px;font-weight:700;letter-spacing:.3px;
+    text-transform:uppercase;border:1.5px solid transparent;transition:transform .15s ease,opacity .15s ease;
+  }
+  .action-btn svg{width:17px;height:17px;flex-shrink:0;}
+  .action-btn:hover{transform:translateY(-1px);opacity:.94;}
+  .action-btn.whatsapp{background:var(--whatsapp);color:#fff;}
+  .action-btn.email{background:var(--navy-soft);color:#fff;}
+  .action-btn.call{background:var(--navy-2);color:#fff;}
+  .action-btn.site{background:#fff;color:var(--navy);border-color:var(--navy);}
+  .action-btn.directions{background:#fff;color:var(--navy);border-color:var(--navy);}
+
+  .map-box{
+    position:relative;height:170px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:18px;
+    background:linear-gradient(135deg,#dce7dd 0%,#cfe0d4 55%,#bcdcea 100%);
+    border:1px solid var(--line);
+  }
+  .map-box svg.pin{
+    position:absolute;top:50%;left:52%;width:30px;height:30px;transform:translate(-50%,-100%);
+    stroke:var(--coral);fill:var(--coral);filter:drop-shadow(0 3px 4px rgba(0,0,0,.25));
+  }
+  .map-box .lake-label{
+    position:absolute;bottom:10px;right:12px;font-size:11px;font-weight:700;color:var(--navy);
+    background:rgba(255,255,255,.75);padding:2px 8px;border-radius:6px;
+  }
+  .nearby-list li{display:flex;align-items:center;gap:9px;font-size:13.5px;padding:7px 0;color:var(--ink);}
+  .nearby-list li svg{width:17px;height:17px;stroke:var(--navy);flex-shrink:0;}
+  .discover-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--navy);margin-top:6px;}
+  .discover-link:hover{text-decoration:underline;}
+
+  /* ---------- Sezioni piene ---------- */
+  .full-section{margin-top:52px;padding-top:40px;border-top:1px solid var(--line);}
+  .full-section h2{font-size:20px;font-weight:600;margin:0 0 18px;}
+
+  /* ---------- Form richiesta + condividi ---------- */
+  .bottom-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;margin-top:52px;padding-top:40px;border-top:1px solid var(--line);}
+  .request-form{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .request-form input,.request-form textarea{
+    border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--ink);outline:none;
+  }
+  .request-form input:focus,.request-form textarea:focus{border-color:var(--navy);}
+  .request-form .f-name,.request-form .f-email{flex:1;min-width:160px;}
+  .request-form .f-message{flex:1 1 100%;min-height:46px;resize:vertical;font-family:inherit;}
+  .request-form button{flex-shrink:0;}
+
+  .share-row{display:flex;gap:12px;margin-top:16px;}
+  .share-row a{
+    width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;transition:border-color .15s ease,transform .15s ease;
+  }
+  .share-row a svg{width:18px;height:18px;stroke:var(--navy);}
+  .share-row a:hover{border-color:var(--navy);transform:translateY(-2px);}
+
+  .placeholder-note{
+    margin-top:40px;font-size:12px;color:var(--ink-soft);background:var(--sand);
+    border:1px dashed var(--line);border-radius:var(--radius-sm);padding:12px 16px;
+  }
+
+  /* ---------- Altre strutture (stesse card della index, più piccole) ---------- */
+  .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .hotel-card{
+    background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);
+    display:flex;flex-direction:column;transition:transform .2s ease;
+  }
+  .hotel-card:hover{transform:translateY(-4px);}
+  .card-media{position:relative;aspect-ratio:4/3;overflow:hidden;}
+  .card-media img{width:100%;height:100%;object-fit:cover;}
+  .tag-badge{
+    position:absolute;top:12px;left:12px;background:rgba(255,255,255,.94);color:var(--navy);
+    font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:999px;
+  }
+  .fav-btn{
+    position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;
+    background:rgba(18,41,79,.55);border:none;display:flex;align-items:center;justify-content:center;
+  }
+  .fav-btn svg{width:16px;height:16px;stroke:#fff;fill:none;}
+  .fav-btn.saved svg{fill:var(--coral);stroke:var(--coral);}
+  .card-body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .card-body h3{font-size:17px;font-weight:600;color:var(--ink);margin:0;font-family:'Inter',sans-serif;}
+  .rating-row{display:flex;align-items:center;gap:8px;font-size:12.5px;}
+  .rating-row .stars-inline{color:var(--gold);letter-spacing:1px;font-size:13px;}
+  .rating-row .score{background:var(--navy);color:#fff;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11.5px;}
+  .loc{font-size:12.5px;color:var(--ink-soft);}
+  .desc{font-size:13px;color:var(--ink-soft);line-height:1.5;margin:2px 0 6px;}
+  .amenities{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink-soft);}
+  .amenities svg{width:15px;height:15px;stroke:var(--ink-soft);}
+  .card-footer{
+    margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px dashed var(--line);
+  }
+  .price-tag{font-size:11.5px;color:var(--ink-soft);}
+  .price-tag b{font-size:17px;color:var(--navy);font-weight:700;}
+  .card-footer .btn{padding:9px 16px;font-size:13px;}
+
+  /* ---------- Footer (identico alle altre pagine) ---------- */
+  footer{background:var(--navy-2);color:#cfd7e4;margin-top:20px;}
+  .footer-top{padding:56px 32px 36px;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1.3fr 0.9fr 1.3fr;gap:32px;}
+  .footer-logo .logo-word{color:#fff;}
+  .footer-logo .logo-sub{color:#98a3b8;}
+  .footer-desc{font-size:13px;line-height:1.6;color:#a9b2c4;margin:14px 0 18px;max-width:260px;}
+  .social-row{display:flex;gap:10px;}
+  .social-row a{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;}
+  .social-row a svg{width:15px;height:15px;stroke:#fff;}
+  .social-row a:hover{background:rgba(255,255,255,.1);}
+  footer h4{font-size:14px;color:#fff;margin:0 0 16px;font-weight:700;}
+  .newsletter-form{display:flex;gap:0;margin:14px 0 12px;border-radius:8px;overflow:hidden;max-width:340px;}
+  .newsletter-form input{flex:1;border:none;padding:12px 14px;font-size:13px;font-family:inherit;outline:none;}
+  .newsletter-form button{border:none;background:var(--gold);color:var(--navy-2);font-weight:700;padding:0 18px;font-size:13px;}
+  .privacy-check{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#98a3b8;}
+  footer ul li{margin-bottom:11px;}
+  footer ul li a{font-size:13.5px;color:#c3cbdb;}
+  footer ul li a:hover{color:#fff;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1240px;margin:0 auto;font-size:12px;color:#8b96ab;}
+  .footer-bottom .heart{color:var(--coral);}
+
+  .footer-contact-box{display:inline-flex;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;margin-bottom:22px;transition:background .2s ease,border-color .2s ease;}
+  .footer-contact-box:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+  .footer-contact-box .icon-circle{width:32px;height:32px;border-radius:50%;background:var(--gold);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .footer-contact-box .icon-circle svg{width:15px;height:15px;stroke:var(--navy-2);}
+  .footer-contact-box strong{display:block;font-size:13px;color:#fff;font-weight:700;}
+  .footer-contact-box span{font-size:11.5px;color:#a9b2c4;}
+  .footer-trust-list{display:flex;flex-direction:column;gap:12px;}
+  .footer-trust-item{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#c3cbdb;}
+  .footer-trust-item svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1000px){
+    .info-grid{grid-template-columns:1fr 1fr;}
+    .info-grid > :nth-child(1){grid-column:1 / 3;}
+    .bottom-grid{grid-template-columns:1fr;}
+    .related-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:900px){
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+    .header-actions .icon-link span{display:none;}
+    .burger{display:block;}
+    .hero{height:auto;min-height:300px;}
+    .hero-content{flex-direction:column;align-items:flex-start;padding-bottom:20px;}
+    .hero-mark{transform:none;margin-bottom:12px;}
+    .hero-text h1{font-size:24px;}
+    .photo-strip{grid-template-columns:repeat(3,1fr);}
+    .photo-strip a:nth-child(5),.photo-strip a:nth-child(6){display:none;}
+    .info-grid{grid-template-columns:1fr;}
+    .info-grid > :nth-child(1){grid-column:auto;}
+  }
+  @media (max-width:640px){
+    .wrap,.header-inner,.breadcrumb-bar,.footer-top,.footer-bottom{padding-left:18px;padding-right:18px;}
+    .related-grid{grid-template-columns:1fr;}
+    .icon-list{grid-template-columns:1fr;}
+    .photo-strip{grid-template-columns:repeat(2,1fr);}
+    .photo-strip a:nth-child(3){display:none;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+      <img src="logo.png" alt="Iseo Sapori e Soggiorni" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Menu principale">
+      <a href="index.html">Home</a>
+      <a href="hotel.html" class="active">Hotel</a>
+      <a href="itinerari.html">Itinerari</a>
+      <a href="ristoranti.html">Ristoranti</a>
+      <a href="guida-iseo.html">Guida Iseo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+    <div class="header-actions">
+      <a href="preferiti.html" class="icon-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+        <span>Preferiti</span>
+        <span class="fav-count-badge" id="favCountBadge" style="display:none;">0</span>
+      </a>
+      <a href="pubblica-struttura.html" class="btn">Pubblica la tua struttura</a>
+    </div>
+    <button class="burger" aria-label="Apri menu" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ BREADCRUMB ============ -->
+<div class="breadcrumb-bar wrap">
+  <p class="breadcrumb">
+    <a href="index.html">Home</a><span class="sep">/</span><a href="hotel.html">Hotel</a><span class="sep">/</span>B&amp;B Corte Antica
+  </p>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ HERO ============ -->
+  <div class="hero"
+       data-fav-slug="bb-corte-antica"
+       data-fav-name="B&amp;B Corte Antica"
+       data-fav-image="https://picsum.photos/seed/bb-corte-antica/300/300"
+       data-fav-image-alt="Cortile interno del B&amp;B, immagine di esempio"
+       data-fav-badge="Bed &amp; Breakfast"
+       data-fav-stars="★★★★☆"
+       data-fav-score="Ottimo 8.6"
+       data-fav-loc="Iseo (BS) &middot; 200 m dal lago"
+       data-fav-desc="Camere in stile rustico attorno a un cortile in pietra, nel centro storico di Iseo."
+       data-fav-price="da &lt;b&gt;€ 65&lt;/b&gt; / notte"
+       data-fav-href="corte-antica.html">
+    <img src="https://picsum.photos/seed/bb-corte-antica/1200/700" alt="Cortile interno illuminato del B&amp;B Corte Antica, immagine di esempio" loading="lazy">
+    <button class="hero-fav fav-btn" aria-label="Aggiungi ai preferiti" aria-pressed="false">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+    </button>
+    <div class="hero-content">
+      <div class="hero-mark" aria-hidden="true">
+        <span class="mono">CA</span>
+        <span class="mono-sub">B&amp;B</span>
+      </div>
+      <div class="hero-text">
+        <h1>B&amp;B Corte Antica</h1>
+        <div class="hero-loc">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.33-8.9C.86 8.1 2.45 3.9 6.5 3.05c2.1-.44 4.2.4 5.5 2.1 1.3-1.7 3.4-2.54 5.5-2.1 4.05.85 5.64 5.05 3.83 9.05C19 16.65 12 21 12 21z"/></svg>
+          Iseo (BS), centro storico
+        </div>
+        <div class="hero-rating">
+          <span class="stars-inline">★★★★☆</span>
+          <span>8.6 <span class="review-count">(58 recensioni)</span></span>
+        </div>
+        <span class="hero-badge">Struttura verificata</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STRISCIA FOTO ============ -->
+  <div class="photo-strip">
+    <a href="#" aria-label="Foto 1"><img src="https://picsum.photos/seed/bb-corte-antica-p1/300/300" alt="Colazione servita nel cortile, immagine di esempio" loading="lazy"></a>
+    <a href="#" aria-label="Foto 2"><img src="https://picsum.photos/seed/bb-corte-antica-p2/300/300" alt="Camera con travi a vista, immagine di esempio" loading="lazy"></a>
+    <a href="#" aria-label="Foto 3"><img src="https://picsum.photos/seed/bb-corte-antica-p3/300/300" alt="Facciata in pietra dell'edificio, immagine di esempio" loading="lazy"></a>
+    <a href="#" aria-label="Foto 4"><img src="https://picsum.photos/seed/bb-corte-antica-p4/300/300" alt="Bagno privato della camera, immagine di esempio" loading="lazy"></a>
+    <a href="#" aria-label="Foto 5"><img src="https://picsum.photos/seed/bb-corte-antica-p5/300/300" alt="Dettaglio del cortile interno, immagine di esempio" loading="lazy"></a>
+    <a href="#" aria-label="Guarda tutte le foto">
+      <img src="https://picsum.photos/seed/bb-corte-antica-p6/300/300" alt="Vicolo del centro storico, immagine di esempio" loading="lazy">
+      <span class="more-overlay">+6<br>Guarda tutte<br>le foto</span>
+    </a>
+  </div>
+
+  <!-- ============ GRIGLIA INFORMATIVA A 3 COLONNE ============ -->
+  <div class="info-grid">
+
+    <!-- Colonna 1: descrizione, servizi, info utili -->
+    <div>
+      <div class="info-block">
+        <h2 class="eyebrow">Descrizione</h2>
+        <p class="desc-text">B&amp;B Corte Antica occupa un edificio in pietra nel cuore del centro storico di Iseo, organizzato attorno a un cortile interno che fa da spazio comune per gli ospiti. La colazione, servita ogni mattina nel cortile o nella saletta interna nei mesi più freddi, propone prodotti locali e dolci fatti in casa.</p>
+        <p class="desc-text">Le camere, arredate in stile rustico con travi a vista, offrono un ambiente silenzioso nonostante la posizione centrale, a pochi minuti a piedi dal lungolago e dalla piazza principale.</p>
+      </div>
+
+      <div class="info-block">
+        <h2 class="eyebrow">Servizi</h2>
+        <ul class="icon-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5a11 11 0 0 1 14 0M8 15.5a6.5 6.5 0 0 1 8 0M12 19h.01"/></svg>Wi-Fi gratuito</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>Colazione inclusa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Cortile privato</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 4v16M4 9h5"/></svg>Aria condizionata</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Check-in autonomo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3-6 6-8 9-8s6 2 9 8"/><circle cx="7" cy="8" r="2"/><circle cx="17" cy="8" r="2"/></svg>Animali ammessi</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="8" rx="1"/><path d="M5 11V8a4 4 0 0 1 8 0v3"/><circle cx="9" cy="15" r="1"/></svg>Parcheggio nelle vicinanze</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M4 20L20 4"/></svg>Ambienti non fumatori</li>
+        </ul>
+      </div>
+
+      <div class="info-block">
+        <h2 class="eyebrow">Informazioni utili</h2>
+        <ul class="util-list">
+          <li>
+            <span class="util-label"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Check-in / check-out</span>
+            <span class="util-value">Dalle 15:00 / entro le 10:30</span>
+          </li>
+          <li>
+            <span class="util-label"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M8 6v-2M16 6v-2"/></svg>Carte accettate</span>
+            <span class="util-value">Visa, Mastercard, contanti</span>
+          </li>
+          <li>
+            <span class="util-label"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="8" rx="1"/><path d="M5 11V8a4 4 0 0 1 8 0v3"/><circle cx="9" cy="15" r="1"/></svg>Parcheggio</span>
+            <span class="util-value">Pubblico, a pagamento</span>
+          </li>
+          <li>
+            <span class="util-label"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l3.5 7.5L23 12l-7.5 1.5L12 21l-3.5-7.5L1 12l7.5-1.5z"/></svg>Lingue parlate</span>
+            <span class="util-value">Italiano, Inglese</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Colonna 2: contatti + azioni -->
+    <div>
+      <div class="info-block">
+        <h2 class="eyebrow">Contatti</h2>
+        <ul class="contact-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+390305550123">+39 030 555 0123</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:info@bbcorteantica-esempio.it">info@bbcorteantica-esempio.it</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg><a href="#">www.bbcorteantica-esempio.it</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.33-8.9C.86 8.1 2.45 3.9 6.5 3.05c2.1-.44 4.2.4 5.5 2.1 1.3-1.7 3.4-2.54 5.5-2.1 4.05.85 5.64 5.05 3.83 9.05C19 16.65 12 21 12 21z"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=B%26B%20Corte%20Antica%20Iseo" target="_blank" rel="noopener">Apri in Google Maps</a></li>
+        </ul>
+
+        <div class="action-stack">
+          <a href="https://wa.me/390305550123" class="action-btn whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.6 16.9L2 22l5.3-1.5A10.6 10.6 0 0 0 20.5 3.5z"/><path d="M8.5 8.7c0 4 3.3 7.3 7.3 7.3.4 0 .8-.5.6-.9l-.6-1.4c-.1-.3-.5-.5-.8-.4l-1.2.4c-1-.6-1.9-1.5-2.5-2.5l.4-1.2c.1-.3-.1-.7-.4-.8L10 8.2c-.4-.2-.9.1-.9.6"/></svg>
+            Invia WhatsApp
+          </a>
+          <a href="mailto:info@bbcorteantica-esempio.it" class="action-btn email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            Invia email
+          </a>
+          <a href="tel:+390305550123" class="action-btn call">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Chiama ora
+          </a>
+          <a href="#" class="action-btn site">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
+            Visita il sito
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=B%26B%20Corte%20Antica%20Iseo" class="action-btn directions" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>
+            Come arrivare
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colonna 3: mappa + dintorni -->
+    <div>
+      <div class="info-block">
+        <h2 class="eyebrow">Dove si trova</h2>
+        <div class="map-box">
+          <svg class="pin" viewBox="0 0 24 24" stroke-width="1"><path d="M12 21s-7-4.35-9.33-8.9C.86 8.1 2.45 3.9 6.5 3.05c2.1-.44 4.2.4 5.5 2.1 1.3-1.7 3.4-2.54 5.5-2.1 4.05.85 5.64 5.05 3.83 9.05C19 16.65 12 21 12 21z"/></svg>
+          <span class="lake-label">Lago d'Iseo</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h2 class="eyebrow">Nei dintorni</h2>
+        <ul class="nearby-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Altre strutture nelle vicinanze</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Il lungolago di Iseo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 3h10v6a5 5 0 0 1-10 0z"/></svg>Cantine e degustazioni in Franciacorta</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Eventi e manifestazioni locali</li>
+        </ul>
+        <a href="guida-iseo.html" class="discover-link">Scopri di più →</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- ============ RICHIEDI INFORMAZIONI + CONDIVIDI ============ -->
+  <div class="bottom-grid" id="richiedi">
+    <div>
+      <h2 class="eyebrow">Richiedi informazioni</h2>
+      <p style="font-size:14px;color:var(--ink-soft);margin:0;">Compila il modulo e la struttura ti risponderà al più presto.</p>
+      <form class="request-form" id="requestForm">
+        <input class="f-name" type="text" placeholder="Nome" required aria-label="Nome">
+        <input class="f-email" type="email" placeholder="Email" required aria-label="Email">
+        <textarea class="f-message" rows="1" placeholder="Messaggio" required aria-label="Messaggio"></textarea>
+        <button type="submit" class="btn">Invia richiesta</button>
+      </form>
+    </div>
+    <div>
+      <h2 class="eyebrow">Condividi</h2>
+      <p style="font-size:14px;color:var(--ink-soft);margin:0;">Condividi questa struttura con i tuoi amici.</p>
+      <div class="share-row">
+        <a href="#" aria-label="Condividi su Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Condividi su Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Condividi su WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.6 16.9L2 22l5.3-1.5A10.6 10.6 0 0 0 20.5 3.5z"/></svg></a>
+        <a href="#" aria-label="Copia link"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M10 14a4 4 0 0 0 6 0l3-3a4 4 0 0 0-6-6l-1 1"/><path d="M14 10a4 4 0 0 0-6 0l-3 3a4 4 0 0 0 6 6l1-1"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <p class="placeholder-note">
+    ⚠️ Nome della struttura, descrizione, contatti, camere, prezzi e recensioni mostrati in questa pagina sono di esempio (placeholder), a scopo di template. Andranno sostituiti dal richiamo dinamico dei dati reali di ogni struttura (es. tramite CMS o API interna), incluse le mappe (qui una versione stilizzata al posto di una mappa interattiva vera). Questo stesso layout sarà condiviso da tutte le schede struttura del portale — hotel, B&amp;B, residence e ristoranti.
+  </p>
+
+  <!-- ============ ALTRE STRUTTURE A ISEO ============ -->
+  <div class="full-section">
+    <h2>Altre strutture a Iseo</h2>
+    <div class="related-grid">
+      <article class="hotel-card"
+           data-fav-slug="hotel-ambra"
+           data-fav-name="Hotel Ambra"
+           data-fav-image="https://picsum.photos/seed/hotel-ambra/600/450"
+           data-fav-image-alt="Hotel Ambra, immagine di esempio"
+           data-fav-badge="Hotel"
+           data-fav-stars="★★★☆☆"
+           data-fav-score="Buono 7.9"
+           data-fav-loc="Iseo (BS) &middot; 400 m dal lago"
+           data-fav-desc="Hotel a conduzione familiare a due passi dal lungolago, ideale per soggiorni brevi."
+           data-fav-price="da &lt;b&gt;€ 110&lt;/b&gt; / notte"
+           data-fav-href="hotel-dettaglio.html?slug=hotel-ambra">
+        <div class="card-media">
+          <img src="https://picsum.photos/seed/hotel-ambra/600/450" alt="Hotel Ambra, immagine di esempio" loading="lazy">
+          <span class="tag-badge">Hotel</span>
+          <button class="fav-btn" aria-label="Aggiungi ai preferiti">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>Hotel Ambra</h3>
+          <div class="rating-row"><span class="stars-inline">★★★☆☆</span><span class="score">Buono 7.9</span></div>
+          <div class="loc">Iseo (BS) &middot; 400 m dal lago</div>
+          <p class="desc">Hotel a conduzione familiare a due passi dal lungolago, ideale per soggiorni brevi.</p>
+          <div class="amenities">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
+            <span>Colazione inclusa</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">da <b>€ 110</b> / notte</div>
+            <a href="hotel-dettaglio.html?slug=hotel-ambra" class="btn">Scopri l'hotel</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hotel-card"
+           data-fav-slug="locanda-del-sole"
+           data-fav-name="Locanda del Sole"
+           data-fav-image="https://picsum.photos/seed/locanda-del-sole/600/450"
+           data-fav-image-alt="Locanda del Sole, immagine di esempio"
+           data-fav-badge="Locanda"
+           data-fav-stars="★★★☆☆"
+           data-fav-score="Buono 7.5"
+           data-fav-loc="Iseo (BS) &middot; 900 m dal lago"
+           data-fav-desc="Ambiente informale e accogliente, a breve distanza dal centro storico di Iseo."
+           data-fav-price="da &lt;b&gt;€ 85&lt;/b&gt; / notte"
+           data-fav-href="hotel-dettaglio.html?slug=locanda-del-sole">
+        <div class="card-media">
+          <img src="https://picsum.photos/seed/locanda-del-sole/600/450" alt="Locanda del Sole, immagine di esempio" loading="lazy">
+          <span class="tag-badge">Locanda</span>
+          <button class="fav-btn" aria-label="Aggiungi ai preferiti">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>Locanda del Sole</h3>
+          <div class="rating-row"><span class="stars-inline">★★★☆☆</span><span class="score">Buono 7.5</span></div>
+          <div class="loc">Iseo (BS) &middot; 900 m dal lago</div>
+          <p class="desc">Ambiente informale e accogliente, a breve distanza dal centro storico di Iseo.</p>
+          <div class="amenities">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+            <span>Parcheggio privato</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">da <b>€ 85</b> / notte</div>
+            <a href="hotel-dettaglio.html?slug=locanda-del-sole" class="btn">Scopri l'hotel</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hotel-card"
+           data-fav-slug="bb-le-querce"
+           data-fav-name="B&amp;B Le Querce"
+           data-fav-image="https://picsum.photos/seed/bb-le-querce/600/450"
+           data-fav-image-alt="B&amp;B Le Querce, immagine di esempio"
+           data-fav-badge="Bed &amp; Breakfast"
+           data-fav-stars="★★★★☆"
+           data-fav-score="Ottimo 8.3"
+           data-fav-loc="Iseo (BS) &middot; 350 m dal lago"
+           data-fav-desc="Camere luminose immerse nel verde, a pochi passi dal centro storico e dal lago."
+           data-fav-price="da &lt;b&gt;€ 75&lt;/b&gt; / notte"
+           data-fav-href="hotel-dettaglio.html?slug=bb-le-querce">
+        <div class="card-media">
+          <img src="https://picsum.photos/seed/bb-le-querce/600/450" alt="B&amp;B Le Querce, immagine di esempio" loading="lazy">
+          <span class="tag-badge">Bed &amp; Breakfast</span>
+          <button class="fav-btn" aria-label="Aggiungi ai preferiti">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>B&amp;B Le Querce</h3>
+          <div class="rating-row"><span class="stars-inline">★★★★☆</span><span class="score">Ottimo 8.3</span></div>
+          <div class="loc">Iseo (BS) &middot; 350 m dal lago</div>
+          <p class="desc">Camere luminose immerse nel verde, a pochi passi dal centro storico e dal lago.</p>
+          <div class="amenities">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M5 12.5a11 11 0 0 1 14 0M8 15.5a6.5 6.5 0 0 1 8 0M12 19h.01"/></svg>
+            <span>Wi-Fi gratuito</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">da <b>€ 75</b> / notte</div>
+            <a href="hotel-dettaglio.html?slug=bb-le-querce" class="btn">Scopri il B&amp;B</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hotel-card"
+           data-fav-slug="residence-la-darsena"
+           data-fav-name="Residence La Darsena"
+           data-fav-image="https://picsum.photos/seed/residence-la-darsena/600/450"
+           data-fav-image-alt="Residence La Darsena, immagine di esempio"
+           data-fav-badge="Residence"
+           data-fav-stars="★★★★☆"
+           data-fav-score="Ottimo 8.1"
+           data-fav-loc="Iseo (BS) &middot; 150 m dal lago"
+           data-fav-desc="Appartamenti con angolo cottura, perfetti per soggiorni più lunghi in riva al lago."
+           data-fav-price="da &lt;b&gt;€ 98&lt;/b&gt; / notte"
+           data-fav-href="hotel-dettaglio.html?slug=residence-la-darsena">
+        <div class="card-media">
+          <img src="https://picsum.photos/seed/residence-la-darsena/600/450" alt="Residence La Darsena, immagine di esempio" loading="lazy">
+          <span class="tag-badge">Residence</span>
+          <button class="fav-btn" aria-label="Aggiungi ai preferiti">
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>Residence La Darsena</h3>
+          <div class="rating-row"><span class="stars-inline">★★★★☆</span><span class="score">Ottimo 8.1</span></div>
+          <div class="loc">Iseo (BS) &middot; 150 m dal lago</div>
+          <p class="desc">Appartamenti con angolo cottura, perfetti per soggiorni più lunghi in riva al lago.</p>
+          <div class="amenities">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="11" width="18" height="8" rx="1"/><path d="M5 11V8a4 4 0 0 1 8 0v3"/><circle cx="9" cy="15" r="1"/></svg>
+            <span>Parcheggio privato</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">da <b>€ 98</b> / notte</div>
+            <a href="hotel-dettaglio.html?slug=residence-la-darsena" class="btn">Scopri il residence</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+        <span class="logo-word"><span style="font-weight:800;font-size:1.5em;color:var(--gold);letter-spacing:.5px;">ISEO</span> <span style="font-weight:400;">SAPORI E SOGGIORNI</span></span>
+      </a>
+      <p class="footer-desc">Il portale ufficiale per scoprire gli hotel e i ristoranti di Iseo e del suo lago.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="#" aria-label="TripAdvisor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="8" cy="13" r="3.2"/><circle cx="16" cy="13" r="3.2"/><path d="M12 8c-2.5 0-5.5.5-8 2M12 8c2.5 0 5.5.5 8 2M9 3h6"/></svg></a>
+        <a href="#" aria-label="Cerca"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Iscriviti alla newsletter</h4>
+      <p class="footer-desc" style="margin-top:0;">Ricevi consigli e novità su hotel e ristoranti di Iseo.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="La tua email" required aria-label="Indirizzo email">
+        <button type="submit">Iscriviti</button>
+      </form>
+      <label class="privacy-check">
+        <input type="checkbox" required style="margin:0;">
+        Accetto la <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a>
+      </label>
+    </div>
+    <div>
+      <h4>Link utili</h4>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="termini.html">Termini e condizioni</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Assistenza e fiducia</h4>
+      <a href="contatti.html" class="footer-contact-box">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        </div>
+        <div>
+          <strong>Assistenza clienti</strong>
+          <span>Rispondiamo entro 24/48 ore</span>
+        </div>
+      </a>
+      <div class="footer-trust-list">
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Portale verificato
+        </div>
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M8 6v-2M16 6v-2"/></svg>
+          Pagamenti sicuri
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Iseo Sapori e Soggiorni - Tutti i diritti riservati</span>
+    <span>Sito realizzato con <span class="heart">♥</span> per Iseo</span>
+  </div>
+</footer>
+
+<script src="favorites.js"></script>
+<script>
+  // Sticky header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+  // Mobile burger toggle
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mainNav = document.querySelector('.main-nav');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mainNav.style.display === 'flex';
+    mainNav.style.display = isOpen ? 'none' : 'flex';
+    mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+  });
+
+  // Preferiti: il cuore nella hero legge/scrive lo stesso slug della card,
+  // e resta sincronizzato con hotel.html / preferiti.html tramite localStorage.
+  if (window.IseoFavorites) {
+    IseoFavorites.wireFavButtons();
+    window.addEventListener('iseo-favorites-changed', () => IseoFavorites.wireFavButtons());
+  } else {
+    console.warn('favorites.js non è stato caricato: verifica che il file sia nella stessa cartella di questa pagina. I cuori dei preferiti non saranno sincronizzati.');
+  }
+
+  // Form "Richiedi informazioni" (front-end only, placeholder)
+  document.getElementById('requestForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Richiesta inviata!';
+    setTimeout(() => { btn.textContent = original; this.reset(); }, 2200);
+  });
+
+  // Newsletter form (front-end only placeholder)
+  document.getElementById('newsletterForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Fatto!';
+    setTimeout(() => { btn.textContent = original; this.reset(); }, 1800);
+  });
+</script>
+
+</body>
+</html>

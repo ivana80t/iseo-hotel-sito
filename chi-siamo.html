@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi Siamo | Iseo Sapori e Soggiorni – Hotel, Ristoranti e Itinerari sul Lago d'Iseo</title>
+<meta name="description" content="Iseo Sapori e Soggiorni è la guida di fiducia per il Lago d'Iseo: hotel selezionati, ristoranti tipici, itinerari ed esperienze autentiche tra Iseo, Montisola e la Franciacorta. Scopri la nostra storia.">
+<meta name="keywords" content="Iseo, Lago d'Iseo, hotel Iseo, ristoranti Iseo, itinerari Lago d'Iseo, cosa vedere Lago d'Iseo, vacanze Lago d'Iseo, Montisola, Franciacorta, soggiorno Iseo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.iseosaporiesoggiorni.it/chi-siamo.html">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Chi Siamo | Iseo Sapori e Soggiorni">
+<meta property="og:description" content="La guida di fiducia per hotel, ristoranti ed esperienze autentiche sul Lago d'Iseo. Scopri chi siamo e la nostra missione.">
+<meta property="og:url" content="https://www.iseosaporiesoggiorni.it/chi-siamo.html">
+<meta property="og:site_name" content="Iseo Sapori e Soggiorni">
+<meta property="og:image" content="https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1740&auto=format&fit=crop">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chi Siamo | Iseo Sapori e Soggiorni">
+<meta name="twitter:description" content="La guida di fiducia per hotel, ristoranti ed esperienze autentiche sul Lago d'Iseo.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Iseo Sapori e Soggiorni",
+  "description": "Portale ufficiale per scoprire hotel, ristoranti e itinerari sul Lago d'Iseo.",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Lago d'Iseo, Lombardia, Italia"
+  },
+  "sameAs": []
+}
+</script>
+
+<style>
+  :root{
+    --navy:#12294f;
+    --navy-2:#0d1f3d;
+    --navy-soft:#1d3a63;
+    --gold:#e0a940;
+    --sand:#f6f4ef;
+    --paper:#fbfaf7;
+    --ink:#152238;
+    --ink-soft:#5b6779;
+    --line:#e7e3d9;
+    --coral:#d1503c;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow-soft:0 18px 40px -18px rgba(18,41,79,0.25);
+    --shadow-card:0 10px 30px -12px rgba(18,41,79,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.logo-word{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+
+  /* ---------- Header (invariato) ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,250,247,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .25s ease;
+  }
+  header.site-header.scrolled{box-shadow:0 6px 24px -14px rgba(18,41,79,0.35);}
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 32px;max-width:1240px;margin:0 auto;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;line-height:1;}
+  .logo-img{height:52px;width:auto;display:block;}
+  .logo-word{font-size:22px;font-weight:600;color:var(--navy);letter-spacing:.5px;}
+  .logo-sub{font-size:11px;color:var(--ink-soft);margin-top:2px;letter-spacing:.3px;}
+  nav.main-nav{display:flex;gap:30px;}
+  nav.main-nav a{
+    font-size:14.5px;font-weight:500;color:var(--ink);position:relative;padding:6px 0;
+  }
+  nav.main-nav a.active{color:var(--navy);font-weight:700;}
+  nav.main-nav a.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);border-radius:2px;
+  }
+  nav.main-nav a:hover{color:var(--navy);}
+  .header-actions{display:flex;align-items:center;gap:22px;}
+  .icon-link{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;position:relative;}
+  .fav-count-badge{
+    position:absolute;top:-2px;left:13px;
+    display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 3px;
+    border-radius:999px;background:var(--coral);color:#fff;font-size:9.5px;font-weight:700;line-height:1;
+    box-shadow:0 0 0 2px var(--paper);
+  }
+  .icon-link svg{width:19px;height:19px;stroke:var(--ink);flex-shrink:0;}
+  .icon-link:hover{color:var(--navy);}
+  .icon-link:hover svg{stroke:var(--navy);}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 22px;border-radius:999px;border:none;font-weight:600;font-size:14.5px;
+    background:var(--navy);color:#fff;transition:background .2s ease,transform .15s ease;
+  }
+  .btn:hover{background:var(--navy-soft);transform:translateY(-1px);}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-gold{background:var(--gold);color:var(--navy-2);}
+  .btn-gold:hover{background:#c99527;}
+  .burger{display:none;background:none;border:none;padding:4px;}
+  .burger svg{width:26px;height:26px;stroke:var(--navy);}
+
+  /* ---------- Page hero ---------- */
+  .page-hero{position:relative;color:#fff;overflow:hidden;}
+  .page-hero-media{position:absolute;inset:0;overflow:hidden;}
+  .page-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(1.1) brightness(1.02);}
+  .page-hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(18,20,16,.28) 0%, rgba(20,16,8,.08) 38%, rgba(13,31,61,.72) 100%);
+  }
+  .page-hero-content{position:relative;padding:88px 32px 76px;max-width:1240px;margin:0 auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.6px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+  }
+  .eyebrow-rule{position:relative;padding-bottom:10px;}
+  .eyebrow-rule::after{
+    content:"";position:absolute;left:0;bottom:0;width:36px;height:2px;background:var(--gold);border-radius:2px;
+  }
+  .page-hero h1{font-size:46px;line-height:1.1;font-weight:600;margin:0 0 18px;max-width:640px;text-shadow:0 2px 20px rgba(0,0,0,.25);}
+  .page-hero .hero-lead{font-size:21px;line-height:1.4;font-weight:700;color:#fff;margin:0 0 16px;max-width:560px;}
+  .page-hero p{font-size:15.5px;line-height:1.65;color:#e3e8f1;margin:0;max-width:520px;}
+
+  /* ---------- Sezione "La nostra storia" ---------- */
+  .story-section{padding:72px 32px 60px;}
+  .story-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .story-img{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);aspect-ratio:4/3;}
+  .story-img img{width:100%;height:100%;object-fit:cover;}
+  .story-content h2{font-size:30px;color:var(--navy);font-weight:600;margin:14px 0 18px;line-height:1.25;}
+  .story-content p{font-size:15px;line-height:1.75;color:var(--ink-soft);margin:0 0 14px;text-align:justify;}
+
+  /* ---------- Box con 4 (o 3) punti di forza, sfondo sand ---------- */
+  .icon-feature-box{
+    max-width:1240px;margin:0 32px 0;margin-left:auto;margin-right:auto;
+    background:var(--sand);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:40px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;
+  }
+  .icon-feature-box.cols-3{grid-template-columns:repeat(3,1fr);}
+  .icon-feature-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;}
+  .icon-feature-item .icon-circle{
+    width:56px;height:56px;border-radius:50%;border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;background:#fff;flex-shrink:0;
+  }
+  .icon-feature-item .icon-circle svg{width:23px;height:23px;stroke:var(--gold);}
+  .icon-feature-item h4{font-size:14.5px;color:var(--navy);font-weight:700;margin:0;}
+  .icon-feature-item p{font-size:12.5px;color:var(--ink-soft);line-height:1.55;margin:0;max-width:190px;}
+
+  /* ---------- Intestazioni di sezione centrate ---------- */
+  .section-heading{max-width:620px;margin:0 auto 42px;text-align:center;}
+  .section-heading .eyebrow{justify-content:center;}
+  .section-heading h2{font-size:30px;color:var(--navy);margin:10px 0 12px;}
+  .section-heading p{font-size:15px;color:var(--ink-soft);margin:0;}
+
+  /* ---------- Sezione "Cosa facciamo" (card servizi) ---------- */
+  .services-section{padding:64px 32px;}
+  .services-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .service-card{background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .22s ease,box-shadow .22s ease;cursor:pointer;}
+  .service-card:hover,.service-card:focus-visible{transform:translateY(-6px);box-shadow:0 20px 46px -16px rgba(18,41,79,0.32);}
+  .service-card-img{position:relative;aspect-ratio:4/3;}
+  .service-card-img-inner{width:100%;height:100%;overflow:hidden;}
+  .service-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
+  .service-card:hover .service-card-img img{transform:scale(1.05);}
+  .service-icon-badge{
+    position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);
+    width:52px;height:52px;border-radius:50%;background:#fff;box-shadow:var(--shadow-card);
+    display:flex;align-items:center;justify-content:center;z-index:2;overflow:visible;
+  }
+  .service-icon-badge svg{width:20px;height:20px;stroke:var(--navy);overflow:visible;flex-shrink:0;}
+  .service-card-body{padding:32px 18px 24px;text-align:center;display:flex;flex-direction:column;gap:8px;}
+  .service-card-body h4{font-size:15px;color:var(--navy);font-weight:700;margin:0;}
+  .service-card-body p{font-size:12.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
+
+  /* ---------- Sezione testo SEO "Perché scegliere Iseo Sapori e Soggiorni" ---------- */
+  .seo-text-section{padding:8px 32px 56px;}
+  .seo-text-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .seo-text-grid .seo-block-title{font-size:19px;color:var(--navy);font-weight:700;margin:0 0 16px;line-height:1.35;font-family:'Fraunces',serif;}
+  .seo-text-grid p{font-size:14.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 14px;text-align:justify;}
+
+  /* ---------- Sezione "Il nostro impegno" ---------- */
+  .commitment-section{padding:16px 32px 64px;}
+  .commitment-grid{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .commitment-content .eyebrow{color:var(--gold);}
+  .commitment-content h2{font-size:30px;color:var(--navy);font-weight:600;margin:14px 0 18px;line-height:1.25;}
+  .commitment-content p{font-size:15px;line-height:1.75;color:var(--ink-soft);margin:0 0 14px;text-align:justify;}
+  .commitment-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);}
+  .commitment-media img{width:100%;display:block;object-fit:cover;aspect-ratio:4/3.1;}
+  .quote-card{
+    position:absolute;left:24px;right:24px;bottom:24px;background:var(--navy-2);color:#fff;
+    border-radius:var(--radius-md);padding:26px 26px 22px;box-shadow:var(--shadow-soft);
+  }
+  .quote-card .quote-mark{font-family:'Fraunces',serif;font-size:42px;color:var(--gold);line-height:1;display:block;margin-bottom:2px;}
+  .quote-card p{font-style:italic;font-size:15px;line-height:1.6;margin:0 0 12px;color:#eef1f6;}
+  .quote-card span{font-size:12.5px;color:#a9b2c4;}
+
+  /* ---------- Banner di contatto finale ---------- */
+  .contact-banner{
+    max-width:1240px;margin:0 auto 64px;background:var(--sand);border:1px solid var(--line);
+    border-radius:var(--radius-lg);padding:26px 32px;display:flex;align-items:center;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;
+  }
+  .contact-banner-left{display:flex;align-items:center;gap:16px;}
+  .contact-banner-left .icon-circle{
+    width:46px;height:46px;border-radius:50%;background:#fff;border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-banner-left .icon-circle svg{width:20px;height:20px;stroke:var(--gold);}
+  .contact-banner p{margin:0;font-size:14.5px;font-weight:600;color:var(--ink);}
+  .contact-banner p.small{font-size:12.5px;font-weight:400;color:var(--ink-soft);margin-top:2px;}
+
+  /* ---------- Footer (invariato) ---------- */
+  footer{background:var(--navy-2);color:#cfd7e4;margin-top:20px;}
+  .footer-top{
+    padding:56px 32px 36px;max-width:1240px;margin:0 auto;
+    display:grid;grid-template-columns:1.3fr 1.3fr 0.9fr 1.3fr;gap:32px;
+  }
+  .footer-logo .logo-word{color:#fff;}
+  .footer-logo .logo-sub{color:#98a3b8;}
+  .footer-desc{font-size:13px;line-height:1.6;color:#a9b2c4;margin:14px 0 18px;max-width:260px;}
+  .social-row{display:flex;gap:10px;}
+  .social-row a{
+    width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .social-row a svg{width:15px;height:15px;stroke:#fff;}
+  .social-row a:hover{background:rgba(255,255,255,.1);}
+  footer h4{font-size:14px;color:#fff;margin:0 0 16px;font-weight:700;}
+  .newsletter-form{display:flex;gap:0;margin:14px 0 12px;border-radius:8px;overflow:hidden;max-width:340px;}
+  .newsletter-form input{
+    flex:1;border:none;padding:12px 14px;font-size:13px;font-family:inherit;outline:none;
+  }
+  .newsletter-form button{border:none;background:var(--gold);color:var(--navy-2);font-weight:700;padding:0 18px;font-size:13px;}
+  .privacy-check{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#98a3b8;}
+  footer ul li{margin-bottom:11px;}
+  footer ul li a{font-size:13.5px;color:#c3cbdb;}
+  footer ul li a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding:20px 32px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1240px;margin:0 auto;
+    font-size:12px;color:#8b96ab;
+  }
+  .footer-bottom .heart{color:var(--coral);}
+
+  .footer-contact-box{
+    display:inline-flex;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;margin-bottom:22px;
+    transition:background .2s ease,border-color .2s ease;
+  }
+  .footer-contact-box:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+  .footer-contact-box .icon-circle{
+    width:32px;height:32px;border-radius:50%;background:var(--gold);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .footer-contact-box .icon-circle svg{width:15px;height:15px;stroke:var(--navy-2);}
+  .footer-contact-box strong{display:block;font-size:13px;color:#fff;font-weight:700;}
+  .footer-contact-box span{font-size:11.5px;color:#a9b2c4;}
+  .footer-trust-list{display:flex;flex-direction:column;gap:12px;}
+  .footer-trust-item{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#c3cbdb;}
+  .footer-trust-item svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .story-grid, .commitment-grid, .seo-text-grid{grid-template-columns:1fr;gap:32px;}
+    .icon-feature-box{grid-template-columns:repeat(2,1fr);}
+    .icon-feature-box.cols-3{grid-template-columns:repeat(2,1fr);}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+    .header-actions .icon-link span{display:none;}
+    .burger{display:block;}
+    .page-hero h1{font-size:32px;}
+    .page-hero .hero-lead{font-size:18px;}
+    .filter-bar{flex-direction:column;align-items:flex-start;}
+  }
+  @media (max-width:640px){
+    .wrap,.header-inner,.page-hero-content,.section,.footer-top,.footer-bottom{padding-left:18px;padding-right:18px;}
+    .story-section,.services-section,.commitment-section{padding-left:18px;padding-right:18px;}
+    .icon-feature-box{grid-template-columns:1fr;margin-left:18px;margin-right:18px;}
+    .icon-feature-box.cols-3{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .quote-card{left:14px;right:14px;bottom:14px;padding:20px 20px 18px;}
+    .contact-banner{margin-left:18px;margin-right:18px;flex-direction:column;align-items:flex-start;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER (invariato) ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+      <img src="logo.png" alt="Iseo Sapori e Soggiorni" class="logo-img">
+    </a>
+
+    <nav class="main-nav" aria-label="Menu principale">
+      <a href="index.html">Home</a>
+      <a href="hotel.html">Hotel</a>
+      <a href="itinerari.html">Itinerari</a>
+      <a href="ristoranti.html">Ristoranti</a>
+      <a href="guida-iseo.html">Guida Iseo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="preferiti.html" class="icon-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+        <span>Preferiti</span>
+        <span class="fav-count-badge" id="favCountBadge" style="display:none;">0</span>
+      </a>
+      <a href="pubblica-struttura.html" class="btn">Pubblica la tua struttura</a>
+    </div>
+
+    <button class="burger" aria-label="Apri menu" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-media">
+    <img id="heroImg" src="https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1740&auto=format&fit=crop" alt="Il borgo di Iseo sul lago al tramonto, immagine di esempio" loading="eager">
+  </div>
+  <div class="page-hero-content">
+    <h1>Chi siamo: la storia dietro Iseo Sapori e Soggiorni</h1>
+    <p class="hero-lead">La tua guida di fiducia per scoprire il Lago d'Iseo, tra hotel, ristoranti e itinerari autentici.</p>
+    <p>Iseo Sapori e Soggiorni nasce per valorizzare le migliori strutture ricettive del territorio e accompagnare ogni viaggiatore alla scoperta di Iseo, Montisola e della vicina Franciacorta, con una selezione curata di hotel, ristoranti tipici ed esperienze autentiche tra natura, gusto e ospitalità.</p>
+  </div>
+</section>
+
+<!-- ============ LA NOSTRA STORIA ============ -->
+<section class="story-section wrap">
+  <div class="story-grid">
+    <div class="story-img">
+      <img src="https://picsum.photos/seed/iseo-terrazza-lago/800/600" alt="Terrazza di un locale con vista sul Lago d'Iseo, immagine di esempio" loading="lazy">
+    </div>
+    <div class="story-content">
+      <span class="eyebrow eyebrow-rule">La nostra storia</span>
+      <h2>Nati per raccontare l'autenticità del Lago d'Iseo</h2>
+      <p>Siamo un team di professionisti del turismo e della comunicazione con una missione chiara: promuovere il territorio del Lago d'Iseo attraverso una selezione accurata di hotel, ristoranti tipici ed esperienze uniche, da Iseo a Montisola, fino alle colline della Franciacorta.</p>
+      <p>Ogni struttura che presentiamo viene scelta con cura, visitata e verificata, perché crediamo che un buon soggiorno nasca da dettagli autentici: l'accoglienza delle persone, la qualità della cucina locale e la bellezza dei paesaggi che si affacciano sul lago.</p>
+      <p>Crediamo in un turismo sostenibile, che rispetta l'ambiente, le persone e le tradizioni locali, e lavoriamo ogni giorno per far conoscere le eccellenze di questo angolo di Lombardia a chi sceglie di viverlo, anche solo per un weekend.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 PUNTI DI FORZA ============ -->
+<div class="icon-feature-box">
+  <div class="icon-feature-item">
+    <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.5c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V5.5L12 2z"/><path d="M9 12l2 2 4-4"/></svg></span>
+    <h4>Selezione accurata</h4>
+    <p>Hotel e strutture verificate personalmente, per garantirti qualità e affidabilità sul Lago d'Iseo.</p>
+  </div>
+  <div class="icon-feature-item">
+    <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+    <h4>Conoscenza del territorio</h4>
+    <p>Viviamo Iseo, Montisola e la Franciacorta ogni giorno e conosciamo il meglio da consigliarti.</p>
+  </div>
+  <div class="icon-feature-item">
+    <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg></span>
+    <h4>Passione e accoglienza</h4>
+    <p>Mettiamo cura e passione in ogni consiglio, per farti vivere Iseo come un vero local.</p>
+  </div>
+  <div class="icon-feature-item">
+    <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c9 0 14-5 14-14v-2h-2C8 5 5 10 5 19z"/><path d="M5 21c3-6 8-11 14-14"/></svg></span>
+    <h4>Turismo sostenibile</h4>
+    <p>Promuoviamo un turismo responsabile, che valorizza il lago e le comunità che lo abitano.</p>
+  </div>
+</div>
+
+<!-- ============ COSA FACCIAMO ============ -->
+<section class="services-section wrap">
+  <div class="section-heading">
+    <span class="eyebrow">Cosa facciamo</span>
+    <h2>I servizi che offriamo</h2>
+    <p>Dagli hotel ai ristoranti, dagli itinerari alle strutture da pubblicare: tutto ciò che ti serve per vivere il Lago d'Iseo al meglio.</p>
+  </div>
+
+  <div class="services-grid">
+    <a href="hotel.html" class="service-card" aria-label="Scopri gli hotel selezionati">
+      <div class="service-card-img">
+        <div class="service-card-img-inner">
+          <img src="https://picsum.photos/seed/iseo-camera-hotel/500/375" alt="Camera d'hotel elegante, immagine di esempio" loading="lazy">
+        </div>
+        <span class="service-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19V6"/><path d="M3 10h17a2 2 0 0 1 2 2v7"/><path d="M3 15h19"/><path d="M7 10V7a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg></span>
+      </div>
+      <div class="service-card-body">
+        <h4>Hotel selezionati</h4>
+        <p>Le migliori strutture ricettive a Iseo e dintorni: hotel, B&amp;B e residence scelti con cura per ogni tipo di soggiorno sul lago.</p>
+      </div>
+    </a>
+
+    <a href="ristoranti.html" class="service-card" aria-label="Scopri i ristoranti tipici">
+      <div class="service-card-img">
+        <div class="service-card-img-inner">
+          <img src="https://picsum.photos/seed/iseo-piatto-lago/500/375" alt="Piatto tipico a base di pesce di lago, immagine di esempio" loading="lazy">
+        </div>
+        <span class="service-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v7a2 2 0 0 0 4 0V2"/><path d="M9 2v20"/><path d="M17 2c0 4.5-2 5.5-2 8.5s2 3 2 3v8.5"/></svg></span>
+      </div>
+      <div class="service-card-body">
+        <h4>Ristoranti tipici</h4>
+        <p>I sapori autentici del pesce di lago e della cucina lombarda, nei ristoranti e nelle trattorie consigliati da noi.</p>
+      </div>
+    </a>
+
+    <a href="itinerari.html" class="service-card" aria-label="Scopri le esperienze e gli itinerari">
+      <div class="service-card-img">
+        <div class="service-card-img-inner">
+          <img src="https://picsum.photos/seed/iseo-escursionisti/500/375" alt="Escursionisti su un punto panoramico del lago, immagine di esempio" loading="lazy">
+        </div>
+        <span class="service-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l1.5-3h5L16 7"/><circle cx="12" cy="13.5" r="3.4"/></svg></span>
+      </div>
+      <div class="service-card-body">
+        <h4>Esperienze uniche</h4>
+        <p>Itinerari, escursioni e attività per scoprire Montisola e i borghi più belli del Lago d'Iseo.</p>
+      </div>
+    </a>
+
+    <a href="pubblica-struttura.html" class="service-card" aria-label="Pubblica la tua struttura">
+      <div class="service-card-img">
+        <div class="service-card-img-inner">
+          <img src="https://picsum.photos/seed/iseo-dashboard-laptop/500/375" alt="Laptop con la dashboard di gestione della struttura, immagine di esempio" loading="lazy">
+        </div>
+        <span class="service-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7 21l5-3 5 3-2-7.5"/></svg></span>
+      </div>
+      <div class="service-card-body">
+        <h4>Per le strutture</h4>
+        <p>Offriamo visibilità online e strumenti semplici per far crescere hotel, ristoranti e attività ricettive sul lago.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============ TESTO SEO: PERCHÉ SCEGLIERCI ============ -->
+<section class="seo-text-section wrap">
+  <div class="seo-text-grid">
+    <div>
+      <h2 class="seo-block-title">Perché scegliere Iseo Sapori e Soggiorni</h2>
+      <p>Il Lago d'Iseo, conosciuto anche come Sebino, è una delle mete più affascinanti della Lombardia: acque limpide, borghi storici e paesaggi che uniscono la dolcezza delle Prealpi alla vivacità della Franciacorta. Iseo Sapori e Soggiorni nasce per aiutarti a scoprire questo territorio senza stress, offrendoti una selezione di hotel a Iseo, ristoranti tipici e itinerari pensati per ogni tipo di viaggiatore: famiglie, coppie, gruppi di amici o chi cerca semplicemente relax vista lago.</p>
+      <p>Che tu stia cercando un hotel a Iseo con vista sul lago, un ristorante dove assaggiare il pesce di lago e i piatti della tradizione, oppure un itinerario per raggiungere Montisola, la più grande isola lacustre d'Europa, il nostro obiettivo è semplificarti la scelta con informazioni chiare, aggiornate e verificate.</p>
+    </div>
+    <div>
+      <h3 class="seo-block-title">Cosa puoi trovare sul nostro portale</h3>
+      <p>Oltre alla selezione di hotel e ristoranti, il nostro sito raccoglie guide e itinerari su cosa vedere sul Lago d'Iseo: dal borgo di Iseo con la sua piazza storica, all'isola di Montisola, fino alle colline della Franciacorta con le sue cantine e i suoi vigneti. Se possiedi una struttura ricettiva, puoi anche pubblicarla sul nostro portale e raggiungere nuovi ospiti interessati a vivere il territorio insieme a noi.</p>
+      <p>Aggiorniamo costantemente i nostri contenuti per offrire consigli affidabili su dove dormire, dove mangiare e cosa fare sul Lago d'Iseo, così da rendere ogni soggiorno un'esperienza autentica e senza sorprese per chi ci sceglie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IL NOSTRO IMPEGNO ============ -->
+<section class="commitment-section wrap">
+  <div class="commitment-grid">
+    <div class="commitment-content">
+      <span class="eyebrow eyebrow-rule">Il nostro impegno</span>
+      <h2>Valorizziamo il territorio, sosteniamo l'ospitalità.</h2>
+      <p>Lavoriamo ogni giorno per creare un ponte tra chi viaggia e chi accoglie, promuovendo relazioni autentiche e durature tra ospiti e strutture del Lago d'Iseo.</p>
+      <p>Collaboriamo con hotel, ristoranti e guide del territorio per garantire proposte affidabili e in linea con i valori della comunità locale, dal borgo di Iseo alle rive di Montisola.</p>
+      <p>Il nostro obiettivo è far conoscere le eccellenze di Iseo e offrire a ogni viaggiatore un soggiorno indimenticabile, che rispetti il ritmo lento e autentico di questo angolo di Lombardia.</p>
+    </div>
+    <div class="commitment-media">
+      <img src="https://picsum.photos/seed/iseo-vista-aerea-lago/900/700" alt="Vista aerea del Lago d'Iseo e del borgo, immagine di esempio" loading="lazy">
+      <div class="quote-card">
+        <span class="quote-mark">&ldquo;</span>
+        <p>Ogni luogo ha una storia. Noi raccontiamo quella di Iseo, con passione e autenticità.</p>
+        <span>— Team Iseo Sapori e Soggiorni</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 IMPEGNI (box sand) ============ -->
+<div class="icon-feature-box cols-3">
+  <div class="icon-feature-item">
+    <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="8" height="8" rx="4"/><rect x="13" y="8" width="8" height="8" rx="4"/></svg></span>
+    <h4>Collaboriamo con il territorio</h4>
+    <p>Lavoriamo insieme a strutture locali, produttori e guide per valorizzare il meglio di Iseo.</p>
+  </div>
+  <div class="icon-feature-item">
+    <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21c9 0 14-5 14-14v-2h-2C8 5 5 10 5 19z"/><path d="M5 21c3-6 8-11 14-14"/></svg></span>
+    <h4>Rispettiamo l'ambiente</h4>
+    <p>Sosteniamo pratiche responsabili per proteggere il nostro lago e il suo paesaggio.</p>
+  </div>
+  <div class="icon-feature-item">
+    <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 21c0-4 3-6 6-6s6 2 6 6"/><path d="M15.5 21c0-3 2-5 4.7-5"/></svg></span>
+    <h4>Al tuo fianco</h4>
+    <p>Siamo sempre disponibili per aiutarti a trovare l'esperienza perfetta per te.</p>
+  </div>
+</div>
+
+<!-- ============ BANNER DI CONTATTO ============ -->
+<section class="wrap" style="padding:44px 32px 0;">
+  <div class="contact-banner">
+    <div class="contact-banner-left">
+      <span class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+      <div>
+        <p>Hai domande o vuoi collaborare con noi?</p>
+        <p class="small">Siamo a disposizione per aiutarti.</p>
+      </div>
+    </div>
+    <a href="contatti.html" class="btn">Contattaci</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER (invariato) ============ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+        <span class="logo-word"><span style="font-weight:800;font-size:1.5em;color:var(--gold);letter-spacing:.5px;">ISEO</span> <span style="font-weight:400;">SAPORI E SOGGIORNI</span></span>
+      </a>
+      <p class="footer-desc">Il portale ufficiale per scoprire hotel, ristoranti e itinerari sul Lago d'Iseo, tra Montisola e la Franciacorta.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="#" aria-label="TripAdvisor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="8" cy="13" r="3.2"/><circle cx="16" cy="13" r="3.2"/><path d="M12 8c-2.5 0-5.5.5-8 2M12 8c2.5 0 5.5.5 8 2M9 3h6"/></svg></a>
+        <a href="#" aria-label="Cerca"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Iscriviti alla newsletter</h4>
+      <p class="footer-desc" style="margin-top:0;">Ricevi consigli e novità su hotel e ristoranti di Iseo.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="La tua email" required aria-label="Indirizzo email">
+        <button type="submit">Iscriviti</button>
+      </form>
+      <label class="privacy-check">
+        <input type="checkbox" required style="margin:0;">
+        Accetto la <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a>
+      </label>
+    </div>
+
+    <div>
+      <h4>Link utili</h4>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="termini.html">Termini e condizioni</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Assistenza e fiducia</h4>
+      <a href="contatti.html" class="footer-contact-box">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        </div>
+        <div>
+          <strong>Assistenza clienti</strong>
+          <span>Rispondiamo entro 24/48 ore</span>
+        </div>
+      </a>
+      <div class="footer-trust-list">
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Portale verificato
+        </div>
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M8 6v-2M16 6v-2"/></svg>
+          Pagamenti sicuri
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Iseo Sapori e Soggiorni - Tutti i diritti riservati</span>
+    <span>Sito realizzato con <span class="heart">♥</span> per Iseo</span>
+  </div>
+</footer>
+
+<script src="favorites.js"></script>
+<script>
+  // Hero image: try a short list of warm, bright lakeside photos before falling back
+  (function(){
+    const heroImg = document.getElementById('heroImg');
+    if(!heroImg) return;
+    const candidates = [
+      'https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1740&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1541417904950-b855846fe074?q=80&w=1740&auto=format&fit=crop',
+      'https://picsum.photos/seed/chi-siamo-iseo/1600/900'
+    ];
+    let idx = 0;
+    heroImg.addEventListener('error', function(){
+      if(idx < candidates.length){
+        heroImg.src = candidates[idx];
+        idx++;
+      }
+    });
+  })();
+
+  // Sticky header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+  // Mobile burger toggle
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mainNav = document.querySelector('.main-nav');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mainNav.style.display === 'flex';
+    mainNav.style.display = isOpen ? 'none' : 'flex';
+    mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+  });
+
+  // Preferiti: persistenti su localStorage, condivisi con hotel.html, ristoranti.html e preferiti.html
+  // (in questa pagina non ci sono cuori da attivare, ma includiamo lo script per coerenza col resto del sito)
+  if (!window.IseoFavorites) {
+    console.warn('favorites.js non è stato caricato: verifica che il file sia nella stessa cartella di questa pagina.');
+  }
+
+  // Newsletter form (front-end only placeholder)
+  document.getElementById('newsletterForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Fatto!';
+    setTimeout(() => { btn.textContent = original; this.reset(); }, 1800);
+  });
+</script>
+
+</body>
+</html>

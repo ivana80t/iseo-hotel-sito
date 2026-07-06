@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pubblica la tua struttura — Iseo Sapori e Soggiorni</title>
+<meta name="description" content="Pubblica il tuo hotel, B&B o ristorante su Iseo Sapori e Soggiorni: fatti trovare da migliaia di viaggiatori, zero commissioni sulle prenotazioni, solo una quota annuale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Libreria client Supabase: permette di parlare con il database/storage direttamente dal browser -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js" crossorigin="anonymous"></script>
+<style>
+  :root{
+    --navy:#12294f;
+    --navy-2:#0d1f3d;
+    --navy-soft:#1d3a63;
+    --gold:#e0a940;
+    --sand:#f6f4ef;
+    --paper:#fbfaf7;
+    --ink:#152238;
+    --ink-soft:#5b6779;
+    --line:#e7e3d9;
+    --coral:#d1503c;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --shadow-soft:0 18px 40px -18px rgba(18,41,79,0.25);
+    --shadow-card:0 10px 30px -12px rgba(18,41,79,0.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.logo-word{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px;}
+  :focus-visible{outline:3px solid var(--gold);outline-offset:2px;}
+
+  /* ---------- Header ---------- */
+  header.site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(251,250,247,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .25s ease;
+  }
+  header.site-header.scrolled{box-shadow:0 6px 24px -14px rgba(18,41,79,0.35);}
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 32px;max-width:1240px;margin:0 auto;gap:24px;
+  }
+  .logo{display:flex;flex-direction:column;line-height:1;}
+  .logo-img{height:52px;width:auto;display:block;}
+  .logo-word{font-size:22px;font-weight:600;color:var(--navy);letter-spacing:.5px;}
+  .logo-sub{font-size:11px;color:var(--ink-soft);margin-top:2px;letter-spacing:.3px;}
+  nav.main-nav{display:flex;gap:30px;}
+  nav.main-nav a{
+    font-size:14.5px;font-weight:500;color:var(--ink);position:relative;padding:6px 0;white-space:nowrap;
+  }
+  nav.main-nav a.active{color:var(--navy);font-weight:700;}
+  nav.main-nav a.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);border-radius:2px;
+  }
+  nav.main-nav a:hover{color:var(--navy);}
+  .header-actions{display:flex;align-items:center;gap:22px;}
+  .icon-link{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;position:relative;}
+  .icon-link svg{width:19px;height:19px;stroke:var(--ink);flex-shrink:0;}
+  .icon-link:hover{color:var(--navy);}
+  .icon-link:hover svg{stroke:var(--navy);}
+  .fav-count-badge{
+    position:absolute;top:-2px;left:13px;
+    display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 3px;
+    border-radius:999px;background:var(--coral);color:#fff;font-size:9.5px;font-weight:700;line-height:1;
+    box-shadow:0 0 0 2px var(--paper);
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 22px;border-radius:999px;border:none;font-weight:600;font-size:14.5px;
+    background:var(--navy);color:#fff;transition:background .2s ease,transform .15s ease;
+  }
+  .btn:hover{background:var(--navy-soft);transform:translateY(-1px);}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-gold{background:var(--gold);color:var(--navy-2);}
+  .btn-gold:hover{background:#c99527;}
+  .burger{display:none;background:none;border:none;padding:4px;}
+  .burger svg{width:26px;height:26px;stroke:var(--navy);}
+
+  /* ---------- Page hero ---------- */
+  .page-hero{position:relative;color:#fff;overflow:hidden;}
+  .page-hero-media{position:absolute;inset:0;overflow:hidden;}
+  .page-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(1.1) brightness(1.02);}
+  .page-hero-media::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(18,20,16,.28) 0%, rgba(20,16,8,.08) 38%, rgba(13,31,61,.72) 100%);
+  }
+  .page-hero-content{position:relative;padding:72px 32px 64px;max-width:1240px;margin:0 auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.6px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+  }
+  .page-hero h1{font-size:42px;line-height:1.14;font-weight:600;margin:0 0 16px;max-width:640px;text-shadow:0 2px 20px rgba(0,0,0,.25);}
+  .page-hero p{font-size:16.5px;line-height:1.65;color:#eef1f6;margin:0;max-width:560px;}
+
+  /* ---------- Sezione vantaggi (da area-proprietari) ---------- */
+  .section-title{text-align:center;font-size:26px;font-weight:600;margin:0 0 8px;}
+  .section-title-wrap{text-align:center;}
+  .title-underline{width:56px;height:3px;background:var(--gold);border-radius:2px;margin:14px auto 0;}
+
+  .advantages-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:28px;margin-top:44px;
+  }
+  .advantage{text-align:center;padding:0 8px;}
+  .advantage-icon{
+    width:64px;height:64px;border-radius:50%;background:var(--sand);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+    border:1px solid var(--line);
+  }
+  .advantage-icon svg{width:26px;height:26px;stroke:var(--gold);}
+  .advantage h3{font-size:15px;font-weight:700;margin:0 0 8px;color:var(--navy);font-family:'Inter',sans-serif;}
+  .advantage p{font-size:13px;line-height:1.6;color:var(--ink-soft);margin:0;}
+
+  /* ---------- Come funziona (da area-proprietari) ---------- */
+  .steps-row{
+    display:grid;grid-template-columns:repeat(7,1fr);align-items:center;margin-top:44px;gap:6px;
+  }
+  .step{text-align:center;}
+  .step-icon-wrap{position:relative;width:72px;height:72px;margin:0 auto 16px;}
+  .step-icon{
+    width:72px;height:72px;border-radius:50%;background:var(--sand);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step-icon svg{width:28px;height:28px;stroke:var(--navy);}
+  .step-num{
+    position:absolute;top:-6px;right:-6px;width:24px;height:24px;border-radius:50%;background:var(--gold);
+    color:var(--navy-2);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;
+  }
+  .step h3{font-size:14.5px;font-weight:700;margin:0 0 8px;color:var(--navy);font-family:'Inter',sans-serif;}
+  .step p{font-size:12.5px;line-height:1.6;color:var(--ink-soft);margin:0 auto;max-width:190px;}
+  .step-arrow{display:flex;align-items:center;justify-content:center;}
+  .step-arrow svg{width:22px;height:22px;stroke:var(--ink-soft);}
+  .vantaggi-come-funziona{padding:56px 32px 8px;}
+
+  /* ---------- Sezione principale: pubblica struttura ---------- */
+  .section{padding:56px 32px;}
+  .pub-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:28px;align-items:stretch;}
+
+  /* -- colonna sinistra: form -- */
+  .pub-form-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:36px 36px 34px;}
+  .pub-icon{width:48px;height:48px;stroke:var(--gold);margin-bottom:18px;}
+  .pub-form-card h1{font-size:27px;font-weight:600;color:var(--navy);margin:0 0 10px;line-height:1.2;}
+  .pub-sub{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 24px;max-width:420px;}
+  .pub-divider{border:none;border-top:1px solid var(--line);margin:0 0 26px;}
+
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-group{margin-bottom:18px;display:flex;flex-direction:column;gap:6px;}
+  .form-group label{font-size:13px;font-weight:600;color:var(--ink);}
+  .form-group .req{color:var(--coral);}
+  .form-group input,
+  .form-group select,
+  .form-group textarea{
+    font-family:inherit;font-size:14px;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:var(--radius-sm);
+    padding:11px 14px;background:var(--paper);width:100%;transition:border-color .18s ease;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{border-color:var(--navy);outline:none;}
+  .form-group textarea{resize:vertical;min-height:110px;}
+
+  .form-fieldset{border:none;padding:0;margin:0 0 22px;}
+  .form-fieldset legend{font-size:13px;font-weight:600;color:var(--ink);padding:0 0 10px;width:100%;}
+  .checkbox-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;
+    border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;background:var(--paper);
+  }
+  .checkbox-item{display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--ink);}
+  .checkbox-item input{width:auto;margin:0;flex-shrink:0;}
+
+  .file-upload{
+    border:1.5px dashed var(--line);border-radius:var(--radius-sm);padding:18px 16px;
+    background:var(--paper);text-align:center;
+  }
+  .file-upload input[type="file"]{
+    font-size:13px;width:100%;padding:0;border:none;background:none;
+  }
+  .file-upload-hint{font-size:12px;color:var(--ink-soft);margin:8px 0 0;}
+
+  .form-privacy{
+    display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:var(--ink-soft);
+    margin:6px 0 26px;line-height:1.6;
+  }
+  .form-privacy input{margin-top:3px;flex-shrink:0;}
+  .form-privacy a{color:var(--navy);text-decoration:underline;}
+
+  .form-submit-center{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .form-submit-center .btn{padding:14px 30px;}
+  .form-submit-note{font-size:12.5px;color:var(--ink-soft);text-align:center;}
+  .form-status{font-size:13px;font-weight:600;color:var(--navy);display:none;margin-top:4px;}
+  .form-status.visible{display:inline-flex;align-items:center;gap:6px;}
+
+  /* -- colonna destra: promo -- */
+  .pub-info-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);overflow:hidden;display:flex;flex-direction:column;}
+  .pub-info-inner{padding:36px 36px 30px;flex:1;display:flex;flex-direction:column;}
+  .pub-info-inner h2{font-size:25px;font-weight:600;color:var(--navy);margin:0 0 14px;line-height:1.28;}
+  .pub-accent{width:44px;height:3px;background:var(--gold);border-radius:2px;margin:0 0 18px;}
+  .pub-lead{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 26px;}
+
+  .pricing-box{
+    display:flex;flex-wrap:wrap;align-items:center;gap:22px;
+    background:var(--sand);border-radius:var(--radius-md);padding:20px 24px;margin-bottom:30px;
+  }
+  .pricing-left{display:flex;align-items:center;gap:14px;padding-right:22px;border-right:1px solid var(--line);}
+  .pricing-icon{
+    width:44px;height:44px;border-radius:50%;background:var(--gold);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pricing-icon svg{width:20px;height:20px;stroke:#fff;}
+  .pricing-label{font-size:12px;color:var(--ink-soft);margin:0 0 2px;}
+  .pricing-amount{font-size:25px;font-weight:700;color:var(--navy);white-space:nowrap;}
+  .pricing-amount .per{font-size:13px;font-weight:500;color:var(--ink-soft);}
+  .pricing-checks{display:flex;flex-direction:column;gap:10px;}
+  .pricing-checks div{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--ink);}
+  .pricing-checks svg{width:16px;height:16px;stroke:var(--gold);flex-shrink:0;}
+
+  .coffee-equivalent{
+    display:flex;align-items:center;gap:10px;width:100%;
+    margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);
+    font-size:13px;color:var(--ink-soft);
+  }
+  .coffee-equivalent svg{width:22px;height:22px;stroke:var(--navy);flex-shrink:0;}
+  .coffee-equivalent strong{color:var(--navy);font-weight:700;}
+
+  .pub-subhead{font-size:15px;font-weight:700;color:var(--navy);margin:0 0 8px;font-family:'Fraunces',serif;}
+  .pub-accent-sm{width:34px;height:2px;background:var(--gold);margin:0 0 18px;}
+
+  .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px;margin-bottom:28px;}
+  .feature-item{display:flex;gap:12px;align-items:flex-start;}
+  .feature-item svg{width:20px;height:20px;stroke:var(--navy);flex-shrink:0;margin-top:2px;}
+  .feature-item h4{font-size:14px;font-weight:700;color:var(--ink);margin:0 0 4px;}
+  .feature-item p{font-size:12.5px;color:var(--ink-soft);line-height:1.55;margin:0;}
+
+  .pub-banner{
+    background:var(--navy-2);color:#fff;padding:20px 36px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .pub-banner svg{width:24px;height:24px;stroke:#fff;flex-shrink:0;}
+  .pub-banner strong{display:block;font-size:14.5px;font-weight:700;}
+  .pub-banner span{font-size:13px;color:#c9d2e2;}
+
+  .pub-seo{
+    padding-top:22px;border-top:1px dashed var(--line);
+    display:flex;flex-direction:column;flex:1;
+  }
+  .pub-seo p{font-size:13px;color:var(--ink-soft);line-height:1.65;margin:0 0 16px;text-align:justify;}
+  .pub-seo-tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;}
+  .pub-seo-tag{
+    display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:var(--navy);
+    background:var(--sand);border:1px solid var(--line);border-radius:999px;padding:6px 12px;
+  }
+  .pub-seo-tag svg{width:12px;height:12px;stroke:var(--gold);flex-shrink:0;}
+  .pub-stats-row{display:flex;gap:14px;margin-bottom:20px;}
+  .pub-stat{
+    flex:1;text-align:center;background:var(--sand);border-radius:var(--radius-sm);
+    padding:14px 8px;border:1px solid var(--line);
+  }
+  .pub-stat-num{display:block;font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--navy);}
+  .pub-stat-label{display:block;font-size:10.5px;color:var(--ink-soft);margin-top:4px;line-height:1.3;}
+
+  .pub-seo-cta{
+    margin-top:auto;background:linear-gradient(120deg,var(--sand) 0%,#fff 100%);
+    border:1px solid var(--line);border-radius:var(--radius-md);padding:18px 20px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .pub-seo-cta svg{width:26px;height:26px;stroke:var(--gold);flex-shrink:0;margin-top:2px;}
+  .pub-seo-cta h4{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 6px;font-family:'Fraunces',serif;}
+  .pub-seo-cta p{font-size:12.5px;color:var(--ink-soft);line-height:1.6;margin:0;text-align:justify;}
+
+  .pub-zero-commissioni{
+    border:1px solid var(--line);border-radius:var(--radius-md);padding:20px 22px;margin-bottom:20px;
+    background:#fff;
+  }
+  .pub-zero-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .pub-zero-badge{
+    width:46px;height:46px;border-radius:50%;background:var(--navy);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .pub-zero-badge svg{width:22px;height:22px;stroke:#fff;}
+  .pub-zero-head h4{font-size:15px;font-weight:700;color:var(--navy);margin:0;font-family:'Fraunces',serif;}
+  .pub-zero-commissioni p{font-size:13px;color:var(--ink-soft);line-height:1.65;margin:0 0 14px;text-align:justify;}
+  .pub-zero-points{display:flex;flex-direction:column;gap:9px;}
+  .pub-zero-points div{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--ink);}
+  .pub-zero-points svg{width:17px;height:17px;stroke:var(--gold);flex-shrink:0;}
+
+  /* ---------- CTA ---------- */
+  .cta-band{
+    margin:0 32px 56px;padding:48px 44px;border-radius:var(--radius-lg);
+    background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;
+    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  }
+  .cta-band h2{font-size:24px;font-weight:600;margin:0 0 8px;}
+  .cta-band p{font-size:14px;color:#cfd7e4;margin:0;max-width:440px;}
+  .cta-band .btn-gold{background:var(--gold);color:var(--navy-2);}
+  .cta-band .btn-gold:hover{background:#c99527;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-2);color:#cfd7e4;margin-top:20px;}
+  .footer-top{
+    padding:56px 32px 36px;max-width:1240px;margin:0 auto;
+    display:grid;grid-template-columns:1.3fr 1.3fr 0.9fr 1.3fr;gap:32px;
+  }
+  .footer-logo .logo-word{color:#fff;}
+  .footer-logo .logo-sub{color:#98a3b8;}
+  .footer-desc{font-size:13px;line-height:1.6;color:#a9b2c4;margin:14px 0 18px;max-width:260px;}
+  .social-row{display:flex;gap:10px;}
+  .social-row a{
+    width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.25);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .social-row a svg{width:15px;height:15px;stroke:#fff;}
+  .social-row a:hover{background:rgba(255,255,255,.1);}
+  footer h4{font-size:14px;color:#fff;margin:0 0 16px;font-weight:700;}
+  .newsletter-form{display:flex;gap:0;margin:14px 0 12px;border-radius:8px;overflow:hidden;max-width:340px;}
+  .newsletter-form input{
+    flex:1;border:none;padding:12px 14px;font-size:13px;font-family:inherit;outline:none;
+  }
+  .newsletter-form button{border:none;background:var(--gold);color:var(--navy-2);font-weight:700;padding:0 18px;font-size:13px;}
+  .privacy-check{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#98a3b8;}
+  footer ul li{margin-bottom:11px;}
+  footer ul li a{font-size:13.5px;color:#c3cbdb;}
+  footer ul li a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding:20px 32px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;max-width:1240px;margin:0 auto;
+    font-size:12px;color:#8b96ab;
+  }
+  .footer-bottom .heart{color:var(--coral);}
+
+  .footer-contact-box{
+    display:inline-flex;width:fit-content;align-items:center;gap:10px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 14px;margin-bottom:22px;
+    transition:background .2s ease,border-color .2s ease;
+  }
+  .footer-contact-box:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);}
+  .footer-contact-box .icon-circle{
+    width:32px;height:32px;border-radius:50%;background:var(--gold);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .footer-contact-box .icon-circle svg{width:15px;height:15px;stroke:var(--navy-2);}
+  .footer-contact-box strong{display:block;font-size:13px;color:#fff;font-weight:700;}
+  .footer-contact-box span{font-size:11.5px;color:#a9b2c4;}
+  .footer-trust-list{display:flex;flex-direction:column;gap:12px;}
+  .footer-trust-item{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#c3cbdb;}
+  .footer-trust-item svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:960px){
+    .pub-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .advantages-grid{grid-template-columns:repeat(3,1fr);}
+    .steps-row{grid-template-columns:1fr;}
+    .step-arrow{transform:rotate(90deg);margin:4px 0;}
+  }
+  @media (max-width:860px){
+    nav.main-nav{display:none;}
+    .header-actions .icon-link span{display:none;}
+    .burger{display:block;}
+    .cta-band{flex-direction:column;align-items:flex-start;}
+    .advantages-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .wrap,.header-inner,.section,.footer-top,.footer-bottom{padding-left:18px;padding-right:18px;}
+    .pub-form-card{padding:26px 22px 28px;}
+    .pub-info-inner{padding:26px 22px 6px;}
+    .pub-banner{padding:18px 22px;}
+    .form-row{grid-template-columns:1fr;}
+    .checkbox-grid{grid-template-columns:1fr;}
+    .feature-grid{grid-template-columns:1fr;}
+    .pricing-left{border-right:none;padding-right:0;}
+    .cta-band{margin-left:18px;margin-right:18px;padding:32px 26px;}
+    .advantages-grid{grid-template-columns:1fr;}
+    .vantaggi-come-funziona{padding:40px 18px 8px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+      <img src="logo.png" alt="Iseo Sapori e Soggiorni" class="logo-img">
+    </a>
+
+    <nav class="main-nav" aria-label="Menu principale">
+      <a href="index.html">Home</a>
+      <a href="hotel.html">Hotel</a>
+      <a href="itinerari.html">Itinerari</a>
+      <a href="ristoranti.html">Ristoranti</a>
+      <a href="guida-iseo.html">Guida Iseo</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="preferiti.html" class="icon-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+        <span>Preferiti</span>
+        <span class="fav-count-badge" id="favCountBadge" style="display:none;">0</span>
+      </a>
+      <a href="pubblica-struttura.html" class="btn">Pubblica la tua struttura</a>
+    </div>
+
+    <button class="burger" aria-label="Apri menu" id="burgerBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-media">
+    <img id="heroImg" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1740&auto=format&fit=crop" alt="Hotel e ristoranti sul lungolago di Iseo, immagine di esempio" loading="eager">
+  </div>
+  <div class="page-hero-content">
+    <span class="eyebrow">Pubblica la tua struttura</span>
+    <h1>Fai conoscere il tuo hotel o ristorante a Iseo</h1>
+    <p>Unisciti al portale di riferimento per il turismo sul Lago d'Iseo: una scheda dedicata, contatto diretto con gli ospiti e zero commissioni sulle prenotazioni.</p>
+  </div>
+</section>
+
+<!-- ============ VANTAGGI + COME FUNZIONA ============ -->
+<section class="vantaggi-come-funziona">
+  <div class="wrap">
+
+    <!-- ============ VANTAGGI ============ -->
+    <div class="section-title-wrap">
+      <h2 class="section-title">I vantaggi di far parte di Iseo Sapori e Soggiorni</h2>
+      <div class="title-underline"></div>
+    </div>
+    <div class="advantages-grid">
+      <div class="advantage">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg></div>
+        <h3>Visibilità qualificata</h3>
+        <p>La tua struttura sarà visibile a migliaia di viaggiatori interessati a Iseo e al Lago d'Iseo.</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Presenza professionale</h3>
+        <p>Una scheda curata e completa che racconta al meglio la tua struttura e i tuoi servizi.</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg></div>
+        <h3>Posizionamento SEO</h3>
+        <p>Il nostro portale è ottimizzato per i motori di ricerca per portarti più visite mirate.</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.33-8.9C.86 8.1 2.45 3.9 6.5 3.05c2.1-.44 4.2.4 5.5 2.1 1.3-1.7 3.4-2.54 5.5-2.1 4.05.85 5.64 5.05 3.83 9.05C19 16.65 12 21 12 21z"/></svg></div>
+        <h3>Territorio in evidenza</h3>
+        <p>Sarai parte di un network che promuove Iseo, il suo territorio e le sue eccellenze.</p>
+      </div>
+      <div class="advantage">
+        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg></div>
+        <h3>Affidabilità e qualità</h3>
+        <p>Selezioniamo con attenzione le strutture per garantire un'offerta di qualità.</p>
+      </div>
+    </div>
+
+    <!-- ============ COME FUNZIONA ============ -->
+    <div class="section-title-wrap" style="margin-top:64px;">
+      <h2 class="section-title">Come funziona</h2>
+      <div class="title-underline"></div>
+    </div>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-icon-wrap">
+          <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+          <span class="step-num">1</span>
+        </div>
+        <h3>Invia i dati della tua struttura</h3>
+        <p>Compila il form con le informazioni della tua struttura in modo semplice e veloce.</p>
+      </div>
+      <div class="step-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="step">
+        <div class="step-icon-wrap">
+          <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <span class="step-num">2</span>
+        </div>
+        <h3>Verifica, pagamento e pubblicazione</h3>
+        <p>Il nostro team verifica i dati, si effettua il pagamento della quota annuale e la tua scheda viene pubblicata nel portale.</p>
+      </div>
+      <div class="step-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="step">
+        <div class="step-icon-wrap">
+          <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg></div>
+          <span class="step-num">3</span>
+        </div>
+        <h3>Sei online su Iseo Sapori e Soggiorni</h3>
+        <p>La tua struttura sarà visibile sul nostro portale e potrai ricevere nuovi ospiti.</p>
+      </div>
+      <div class="step-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="step">
+        <div class="step-icon-wrap">
+          <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 6 0l3-3a4 4 0 0 0-6-6l-1 1"/><path d="M14 10a4 4 0 0 0-6 0l-3 3a4 4 0 0 0 6 6l1-1"/></svg></div>
+          <span class="step-num">4</span>
+        </div>
+        <h3>Rimandiamo al tuo sito</h3>
+        <p>Ogni scheda rimanda al tuo sito ufficiale, dove gli ospiti possono trovare tutte le informazioni e prenotare.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PUBBLICA LA TUA STRUTTURA ============ -->
+<section class="section" id="pubblica-struttura">
+  <div class="wrap">
+    <div class="pub-grid">
+
+      <!-- Colonna sinistra: form -->
+      <div class="pub-form-card">
+        <svg class="pub-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 21V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15"/><path d="M14 21V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11"/><path d="M2 21h20"/><path d="M7 8h1M7 11h1M7 14h1M7 17h1M11 8h1M11 11h1M11 14h1M11 17h1M17 13h1M17 16h1"/></svg>
+        <h1>Pubblica la tua struttura</h1>
+        <p class="pub-sub">Compila il modulo e un nostro operatore ti contatterà al più presto per attivare la tua scheda sul portale.</p>
+        <hr class="pub-divider">
+
+        <form id="pubForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-tipologia">Tipologia di struttura <span class="req">*</span></label>
+              <select id="ps-tipologia" name="tipologia" required>
+                <option value="" disabled selected>Seleziona la tipologia</option>
+                <option value="boutique">Boutique Hotel</option>
+                <option value="spa">Hotel con Spa</option>
+                <option value="famiglie">Hotel per famiglie</option>
+                <option value="romantici">Hotel romantici</option>
+                <option value="economici">Hotel economici</option>
+                <option value="bed-breakfast">Bed &amp; Breakfast</option>
+                <option value="residence">Residence</option>
+                <option value="ristorante">Ristorante</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ps-nome-struttura">Nome della struttura <span class="req">*</span></label>
+              <input type="text" id="ps-nome-struttura" name="nome_struttura" placeholder="Es. Hotel Belvedere" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-nome">Nome e Cognome <span class="req">*</span></label>
+              <input type="text" id="ps-nome" name="nome" autocomplete="name" placeholder="Il tuo nome e cognome" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-email">Email <span class="req">*</span></label>
+              <input type="email" id="ps-email" name="email" autocomplete="email" placeholder="La tua email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-telefono">Telefono <span class="req">*</span></label>
+              <input type="tel" id="ps-telefono" name="telefono" autocomplete="tel" placeholder="Es. +39 123 456 7890" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-citta">Città <span class="req">*</span></label>
+              <input type="text" id="ps-citta" name="citta" placeholder="Es. Iseo" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-indirizzo">Indirizzo <span class="req">*</span></label>
+              <input type="text" id="ps-indirizzo" name="indirizzo" placeholder="Via, numero civico, CAP" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-prezzo">Prezzo indicativo a partire da (per notte) <span class="req">*</span></label>
+              <input type="number" id="ps-prezzo" name="prezzo_da" min="1" step="1" placeholder="Es. 75" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ps-sito-web">Sito web</label>
+            <input type="url" id="ps-sito-web" name="sito_web" autocomplete="url" placeholder="Es. www.tuastruttura.it">
+          </div>
+
+          <div class="form-group">
+            <label for="ps-descrizione">Breve descrizione della struttura <span class="req">*</span></label>
+            <textarea id="ps-descrizione" name="descrizione" required placeholder="Descrivi in poche righe la tua struttura, i servizi principali e cosa vi rende speciali..."></textarea>
+          </div>
+
+          <fieldset class="form-fieldset">
+            <legend>Servizi</legend>
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="wifi-gratuito">Wi-Fi gratuito</label>
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="colazione-inclusa">Colazione inclusa</label>
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="cortile-privato">Cortile privato</label>
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="aria-condizionata">Aria condizionata</label>
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="reception-24-ore">Reception 24 ore</label>
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="animali-ammessi">Animali ammessi</label>
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="noleggio-biciclette">Noleggio biciclette</label>
+              <label class="checkbox-item"><input type="checkbox" name="servizi" value="ambienti-non-fumatori">Ambienti non fumatori</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-fieldset">
+            <legend>Informazioni utili</legend>
+
+            <div class="form-row" style="margin-bottom:16px;">
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="ps-checkin">Orario check-in</label>
+                <input type="time" id="ps-checkin" name="orario_checkin">
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="ps-checkout">Orario check-out</label>
+                <input type="time" id="ps-checkout" name="orario_checkout">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:16px;">
+              <label>Carte accettate</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item"><input type="checkbox" name="carte" value="visa">Visa</label>
+                <label class="checkbox-item"><input type="checkbox" name="carte" value="mastercard">Mastercard</label>
+                <label class="checkbox-item"><input type="checkbox" name="carte" value="amex">American Express</label>
+                <label class="checkbox-item"><input type="checkbox" name="carte" value="maestro">Maestro/Bancomat</label>
+                <label class="checkbox-item"><input type="checkbox" name="carte" value="contanti">Contanti</label>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:16px;">
+              <label for="ps-parcheggio">Parcheggio</label>
+              <select id="ps-parcheggio" name="parcheggio">
+                <option value="" selected>Seleziona un'opzione</option>
+                <option value="privato-gratuito">Privato gratuito</option>
+                <option value="privato-pagamento">Privato a pagamento</option>
+                <option value="pubblico-vicinanze">Pubblico nelle vicinanze</option>
+                <option value="non-disponibile">Non disponibile</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:0;">
+              <label>Lingue parlate</label>
+              <div class="checkbox-grid">
+                <label class="checkbox-item"><input type="checkbox" name="lingue" value="italiano">Italiano</label>
+                <label class="checkbox-item"><input type="checkbox" name="lingue" value="inglese">Inglese</label>
+                <label class="checkbox-item"><input type="checkbox" name="lingue" value="tedesco">Tedesco</label>
+                <label class="checkbox-item"><input type="checkbox" name="lingue" value="francese">Francese</label>
+                <label class="checkbox-item"><input type="checkbox" name="lingue" value="spagnolo">Spagnolo</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="ps-immagini">Immagini della struttura</label>
+            <div class="file-upload">
+              <input type="file" id="ps-immagini" name="immagini" accept="image/*" multiple>
+              <p class="file-upload-hint">Puoi selezionare fino a 12 immagini (JPG, PNG).</p>
+            </div>
+          </div>
+
+          <label class="form-privacy">
+            <input type="checkbox" required>
+            <span>Acconsento al trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR).<br><a href="privacy.html">Informativa privacy.</a></span>
+          </label>
+
+          <div class="form-submit-center">
+            <button type="submit" class="btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#fff;"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Invia richiesta di pubblicazione
+            </button>
+            <span class="form-submit-note">Ti ricontatteremo entro 24/48 ore.</span>
+            <span class="form-status" id="formStatus">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:var(--navy);"><path d="M20 6L9 17l-5-5"/></svg>
+              Richiesta inviata, grazie! Verrai reindirizzato al pagamento...
+            </span>
+            <span class="form-status" id="formError" style="color:var(--coral);">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:var(--coral);"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+              <span id="formErrorText">Si è verificato un errore. Riprova.</span>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <!-- Colonna destra: promo -->
+      <div class="pub-info-card">
+        <div class="pub-info-inner">
+          <h2>Fatti trovare.<br>Fai crescere la tua struttura.</h2>
+          <div class="pub-accent"></div>
+          <p class="pub-lead">Unisciti al portale di riferimento per il turismo a Iseo. Raggiungi nuovi ospiti e aumenta le tue prenotazioni.</p>
+
+          <div class="pricing-box">
+            <div class="pricing-left">
+              <div class="pricing-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 12.6L12.6 20.6a2 2 0 0 1-2.8 0l-7.4-7.4a2 2 0 0 1 0-2.8L10.4 2.4a2 2 0 0 1 1.4-.6H19a2 2 0 0 1 2 2v6.4a2 2 0 0 1-.4 1.4z"/><circle cx="14.5" cy="7.5" r="1.5"/></svg>
+              </div>
+              <div>
+                <p class="pricing-label">Quota annuale</p>
+                <p class="pricing-amount">59,00 € <span class="per">/ anno</span></p>
+              </div>
+            </div>
+            <div class="pricing-checks">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Rinnovo automatico a fine anno</div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Disdici quando vuoi</div>
+            </div>
+            <div class="coffee-equivalent">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13a1 1 0 0 1 1 1v3a5 5 0 0 1-5 5H8a4 4 0 0 1-4-4z"/><path d="M17 10h2a2.5 2.5 0 0 1 0 5h-1.5"/><path d="M7 3.5c-.6.6-.6 1 0 1.6M10.5 3.5c-.6.6-.6 1 0 1.6M14 3.5c-.6.6-.6 1 0 1.6"/><path d="M3 21h15"/></svg>
+              <span>Equivalente a soli <strong>4 caffè al mese</strong></span>
+            </div>
+          </div>
+
+          <h3 class="pub-subhead">Cosa include</h3>
+          <div class="pub-accent-sm"></div>
+
+          <div class="feature-grid">
+            <div class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c0-1.7 1.3-3 3-3s3 1.3 3 3M14 9h4M14 13h4"/></svg>
+              <div><h4>Scheda dedicata</h4><p>Presenta la tua struttura con foto, descrizione, servizi e contatti.</p></div>
+            </div>
+            <div class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3.2"/></svg>
+              <div><h4>Massima visibilità</h4><p>La tua struttura sarà visibile a migliaia di viaggiatori interessati al territorio.</p></div>
+            </div>
+            <div class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+              <div><h4>Contatti diretti</h4><p>Ricevi richieste e prenotazioni direttamente dalla tua scheda.</p></div>
+            </div>
+            <div class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3.2"/></svg>
+              <div><h4>Vetrina sempre online</h4><p>Il sito è una vetrina digitale: la tua scheda resta pubblicata e consultabile tutto l'anno.</p></div>
+            </div>
+            <div class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 18v-2a4 4 0 0 1 4-4h1"/><path d="M17 18v-2a4 4 0 0 0-4-4h-1"/><circle cx="8" cy="8" r="3"/><path d="M19 8a3 3 0 1 1-3-3"/><path d="M19 18v-3"/></svg>
+              <div><h4>Supporto dedicato</h4><p>Il nostro team è sempre disponibile per aiutarti.</p></div>
+            </div>
+            <div class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+              <div><h4>Zero commissioni</h4><p>Nessuna commissione sulle prenotazioni: paghi solo la quota annuale.</p></div>
+            </div>
+          </div>
+
+          <div class="pub-seo">
+            <h3 class="pub-subhead">Il portale di riferimento per Iseo e il Lago d'Iseo</h3>
+            <div class="pub-accent-sm"></div>
+            <p>Iseo Sapori e Soggiorni è il punto di riferimento per chi cerca hotel, B&amp;B, residence e ristoranti a Iseo e sul Lago d'Iseo. Ogni mese migliaia di viaggiatori consultano il portale per scegliere dove dormire e dove mangiare: pubblicare qui la tua struttura significa farti trovare da chi sta già pianificando la propria vacanza sul lago.</p>
+            <p>Grazie a una scheda ottimizzata per i motori di ricerca, la tua struttura compare tra i risultati di chi cerca specificamente hotel e ristoranti a Iseo, aumentando le probabilità di contatti diretti e prenotazioni senza intermediari.</p>
+            <div class="pub-seo-tags">
+              <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.33-8.9C.86 8.1 2.45 3.9 6.5 3.05c2.1-.44 4.2.4 5.5 2.1 1.3-1.7 3.4-2.54 5.5-2.1 4.05.85 5.64 5.05 3.83 9.05C19 16.65 12 21 12 21z"/></svg>Hotel Iseo</span>
+              <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>B&amp;B Lago d'Iseo</span>
+              <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Residence Iseo</span>
+              <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>Ristoranti Iseo</span>
+              <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Turismo Lago d'Iseo</span>
+            </div>
+            <div class="pub-stats-row">
+              <div class="pub-stat">
+                <span class="pub-stat-num">15.000+</span>
+                <span class="pub-stat-label">Visitatori al mese</span>
+              </div>
+              <div class="pub-stat">
+                <span class="pub-stat-num">120+</span>
+                <span class="pub-stat-label">Strutture online</span>
+              </div>
+              <div class="pub-stat">
+                <span class="pub-stat-num">98%</span>
+                <span class="pub-stat-label">Rinnova l'iscrizione</span>
+              </div>
+            </div>
+
+            <div class="pub-zero-commissioni">
+              <div class="pub-zero-head">
+                <div class="pub-zero-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+                </div>
+                <h4>Zero commissioni sulle prenotazioni</h4>
+              </div>
+              <p>A differenza delle principali piattaforme di prenotazione online, su Iseo Sapori e Soggiorni non paghi nessuna commissione sulle prenotazioni: ogni contatto e ogni ospite che arriva grazie alla tua scheda resta un guadagno pieno per la tua struttura, senza percentuali trattenute ad ogni soggiorno.</p>
+              <div class="pub-zero-points">
+                <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>0% di commissione su ogni prenotazione</div>
+                <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Solo una quota annuale fissa, nessuna sorpresa</div>
+                <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Guadagni il 100% di ogni prenotazione ricevuta</div>
+              </div>
+            </div>
+
+            <div class="pub-seo-cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+              <div>
+                <h4>Non lasciare che i tuoi ospiti prenotino altrove</h4>
+                <p>Se hai un hotel, un B&amp;B o un ristorante a Iseo, ogni giorno che passa senza una scheda online è un'occasione persa: i viaggiatori cercano già oggi "dove dormire a Iseo" e "dove mangiare sul Lago d'Iseo". Iscriviti ora e porta la tua struttura davanti a chi sta scegliendo proprio in questo momento dove soggiornare.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pub-banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div>
+            <strong>Sicuro, semplice e trasparente.</strong>
+            <span>Nessun costo nascosto. Solo risultati.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<div class="cta-band">
+  <div>
+    <h2>Hai dubbi prima di iscriverti?</h2>
+    <p>Scrivici per capire come funziona il portale, quali informazioni servono e in quanto tempo la tua scheda sarà online.</p>
+  </div>
+  <a href="contatti.html" class="btn btn-gold">Contattaci</a>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
+        <span class="logo-word"><span style="font-weight:800;font-size:1.5em;color:var(--gold);letter-spacing:.5px;">ISEO</span> <span style="font-weight:400;">SAPORI E SOGGIORNI</span></span>
+      </a>
+      <p class="footer-desc">Il portale ufficiale per scoprire hotel, ristoranti e itinerari sul Lago d'Iseo, tra Montisola e la Franciacorta.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="#" aria-label="TripAdvisor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="8" cy="13" r="3.2"/><circle cx="16" cy="13" r="3.2"/><path d="M12 8c-2.5 0-5.5.5-8 2M12 8c2.5 0 5.5.5 8 2M9 3h6"/></svg></a>
+        <a href="#" aria-label="Cerca"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+      </div>
+    </div>
+
+    <div>
+      <h4>Iscriviti alla newsletter</h4>
+      <p class="footer-desc" style="margin-top:0;">Ricevi consigli e novità su hotel e ristoranti di Iseo.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="La tua email" required aria-label="Indirizzo email">
+        <button type="submit">Iscriviti</button>
+      </form>
+      <label class="privacy-check">
+        <input type="checkbox" required style="margin:0;">
+        Accetto la <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a>
+      </label>
+    </div>
+
+    <div>
+      <h4>Link utili</h4>
+      <ul>
+        <li><a href="chi-siamo.html">Chi siamo</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="termini.html">Termini e condizioni</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Assistenza e fiducia</h4>
+      <a href="contatti.html" class="footer-contact-box">
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        </div>
+        <div>
+          <strong>Assistenza clienti</strong>
+          <span>Rispondiamo entro 24/48 ore</span>
+        </div>
+      </a>
+      <div class="footer-trust-list">
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Portale verificato
+        </div>
+        <div class="footer-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M8 6v-2M16 6v-2"/></svg>
+          Pagamenti sicuri
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Iseo Sapori e Soggiorni - Tutti i diritti riservati</span>
+    <span>Sito realizzato con <span class="heart">♥</span> per Iseo</span>
+  </div>
+</footer>
+
+<script src="favorites.js"></script>
+<script>
+  // Hero image: try a short list of warm, bright lakeside photos before falling back
+  (function(){
+    const heroImg = document.getElementById('heroImg');
+    if(!heroImg) return;
+    const candidates = [
+      'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1740&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1541417904950-b855846fe074?q=80&w=1740&auto=format&fit=crop',
+      'https://picsum.photos/seed/pubblica-struttura-iseo/1600/900'
+    ];
+    let idx = 0;
+    heroImg.addEventListener('error', function(){
+      if(idx < candidates.length){
+        heroImg.src = candidates[idx];
+        idx++;
+      }
+    });
+  })();
+
+  // Sticky header shadow on scroll
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  });
+
+  // Mobile burger menu
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mainNav = document.querySelector('.main-nav');
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = mainNav.style.display === 'flex';
+    mainNav.style.display = isOpen ? 'none' : 'flex';
+    mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+  });
+
+  // Badge conteggio preferiti (nessun cuore preferiti in questa pagina, ma teniamo il badge aggiornato)
+  if (window.IseoFavorites) {
+    IseoFavorites.updateFavCountBadge();
+  }
+
+  // Newsletter form (front-end only placeholder)
+  document.getElementById('newsletterForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const btn = this.querySelector('button');
+    const original = btn.textContent;
+    btn.textContent = 'Fatto!';
+    setTimeout(() => { btn.textContent = original; this.reset(); }, 1800);
+  });
+
+  // ============================================================
+  // CONFIGURAZIONE SUPABASE
+  // Sostituire questi due valori con quelli del proprio progetto Supabase
+  // (Project Settings > API > Project URL / anon public key).
+  // La "anon key" è pubblica per design: la sicurezza è garantita dalle
+  // policy di Row Level Security impostate sul database (vedi schema.sql).
+  // ============================================================
+  const SUPABASE_URL = 'https://yhteaymjtswcswdydmej.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_4gCaQ8n9RCEJ9Wjq5AxX6Q_HHs5nLee';
+
+  // Se i placeholder non sono ancora stati sostituiti con le credenziali reali
+  // del progetto Supabase, evitiamo di inizializzare il client (altrimenti
+  // createClient() lancia un errore poco chiaro appena la pagina si carica)
+  // e mostriamo invece un avviso ben visibile.
+  const supabaseConfigurato = !SUPABASE_URL.startsWith('INSERISCI_QUI') && !SUPABASE_ANON_KEY.startsWith('INSERISCI_QUI');
+  let sb = null;
+
+  if (supabaseConfigurato) {
+    sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  } else {
+    console.warn('Supabase non è ancora configurato: sostituisci SUPABASE_URL e SUPABASE_ANON_KEY in questo file con le credenziali del tuo progetto (Project Settings > API).');
+    document.addEventListener('DOMContentLoaded', () => {
+      const banner = document.createElement('div');
+      banner.textContent = '⚠️ Configurazione mancante: inserisci SUPABASE_URL e SUPABASE_ANON_KEY nel codice della pagina prima di testare il form.';
+      banner.style.cssText = 'background:#fdecea;color:#8a1f11;border:1px solid #f3b9b0;padding:14px 20px;border-radius:10px;margin:16px 32px;font-size:14px;font-weight:600;max-width:1176px;';
+      document.body.insertBefore(banner, document.body.firstChild);
+    });
+  }
+
+  // Nome del bucket di Supabase Storage dove salvare le immagini caricate
+  // (da creare in Project > Storage > New bucket, impostato come "Public").
+  const STORAGE_BUCKET = 'strutture-immagini';
+
+  // Id casuale per la cartella di upload delle immagini, indipendente dallo
+  // slug della struttura: lo slug definitivo (usato nell'URL pubblico) viene
+  // generato e garantito univoco lato server dalla funzione serverless
+  // /api/pubblica-struttura, non più qui nel browser.
+  function generaIdCaricamento(){
+    if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID();
+    return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+  }
+
+  // Raccoglie i valori di un gruppo di checkbox (servizi, carte, lingue) in un array
+  function valoriCheckbox(form, nomeCampo){
+    return Array.from(form.querySelectorAll(`input[name="${nomeCampo}"]:checked`)).map(el => el.value);
+  }
+
+  // Form pubblica struttura: al submit, carica le immagini, crea il record
+  // con stato "in_attesa_pagamento" e reindirizza al checkout di pagamento.
+  const pubForm = document.getElementById('pubForm');
+  const formStatus = document.getElementById('formStatus');
+  const formError = document.getElementById('formError');
+  const formErrorText = document.getElementById('formErrorText');
+  const submitBtn = pubForm.querySelector('button[type="submit"]');
+  const submitBtnOriginalHTML = submitBtn.innerHTML;
+
+  function mostraErrore(messaggio){
+    formErrorText.textContent = messaggio;
+    formError.classList.add('visible');
+    setTimeout(() => formError.classList.remove('visible'), 6000);
+  }
+
+  function impostaCaricamento(inCorso){
+    submitBtn.disabled = inCorso;
+    submitBtn.innerHTML = inCorso ? 'Invio in corso...' : submitBtnOriginalHTML;
+  }
+
+  pubForm.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if(!pubForm.checkValidity()){
+      pubForm.reportValidity();
+      return;
+    }
+
+    impostaCaricamento(true);
+    formError.classList.remove('visible');
+
+    if (!supabaseConfigurato) {
+      mostraErrore('Configurazione mancante: inserisci SUPABASE_URL e SUPABASE_ANON_KEY nel codice della pagina.');
+      impostaCaricamento(false);
+      return;
+    }
+
+    try {
+      const idCaricamento = generaIdCaricamento();
+
+      // --- 1. Caricamento immagini su Supabase Storage ---
+      // Questo passaggio resta diretto dal browser (l'unico modo pratico di
+      // caricare file binari): il bucket ha una policy di Storage dedicata
+      // che permette solo l'upload (mai la lettura dell'elenco file o la
+      // cancellazione) da parte di visitatori anonimi. La cartella usa un
+      // id casuale, non lo slug: lo slug pubblico verrà deciso dal server.
+      const fileInput = document.getElementById('ps-immagini');
+      const file_list = fileInput.files ? Array.from(fileInput.files) : [];
+      const urlImmagini = [];
+
+      for (let i = 0; i < file_list.length; i++){
+        const file = file_list[i];
+        const percorso = `${idCaricamento}/img-${i}-${file.name}`;
+        const { error: uploadError } = await sb.storage
+          .from(STORAGE_BUCKET)
+          .upload(percorso, file, { cacheControl: '3600', upsert: false });
+
+        if (uploadError) throw new Error(`Errore caricamento immagine "${file.name}": ${uploadError.message}`);
+
+        const { data: pubUrlData } = sb.storage.from(STORAGE_BUCKET).getPublicUrl(percorso);
+        urlImmagini.push(pubUrlData.publicUrl);
+      }
+
+      // --- 2. Creazione del record struttura tramite funzione serverless ---
+      // L'inserimento nella tabella "strutture" NON avviene più direttamente
+      // dal browser: passa da /api/pubblica-struttura, che usa la
+      // service_role key lato server, valida davvero i dati (non fidandosi
+      // di ciò che arriva dal browser) e genera uno slug pubblico univoco.
+      const datiForm = {
+        tipologia: pubForm.tipologia.value,
+        nome_struttura: pubForm.nome_struttura.value,
+        nome_referente: pubForm.nome.value,
+        email: pubForm.email.value,
+        telefono: pubForm.telefono.value,
+        citta: pubForm.citta.value,
+        indirizzo: pubForm.indirizzo.value,
+        sito_web: pubForm.sito_web.value || null,
+        prezzo_da: pubForm.prezzo_da.value,
+        descrizione: pubForm.descrizione.value,
+        servizi: valoriCheckbox(pubForm, 'servizi'),
+        carte_accettate: valoriCheckbox(pubForm, 'carte'),
+        lingue: valoriCheckbox(pubForm, 'lingue'),
+        orario_checkin: pubForm.orario_checkin.value || null,
+        orario_checkout: pubForm.orario_checkout.value || null,
+        parcheggio: pubForm.parcheggio.value || null,
+        immagini: urlImmagini
+      };
+
+      const rispostaApi = await fetch('/api/pubblica-struttura', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datiForm)
+      });
+
+      const risultato = await rispostaApi.json();
+      if (!rispostaApi.ok) throw new Error(risultato.errore || 'Errore salvataggio dati.');
+
+      // --- 3. Redirect alla pagina di pagamento ---
+      // "crea-sessione-pagamento.html" chiama a sua volta create-checkout-session.js,
+      // che crea la sessione Stripe Checkout (carta + PayPal) collegata a
+      // struttura.id, e reindirizza l'utente lì.
+      formStatus.classList.add('visible');
+      window.location.href = `crea-sessione-pagamento.html?struttura_id=${risultato.id}`;
+
+    } catch (err) {
+      console.error(err);
+      mostraErrore(err.message || 'Si è verificato un errore imprevisto. Riprova.');
+      impostaCaricamento(false);
+    }
+  });
+</script>
+
+</body>
+</html>

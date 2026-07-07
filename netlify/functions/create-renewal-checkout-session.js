@@ -69,7 +69,7 @@ exports.handler = async function (event) {
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
-      payment_method_types: ['card', 'paypal'],
+      payment_method_types: ['card'],
       customer_email: struttura.email,
       line_items: [
         {

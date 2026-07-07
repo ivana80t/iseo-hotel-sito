@@ -1141,9 +1141,11 @@
   // ============================================================
   // CONFIGURAZIONE SUPABASE — stesse credenziali usate nelle altre pagine
   // ============================================================
-  const SUPABASE_URL = 'INSERISCI_QUI_LA_TUA_SUPABASE_URL';
-  const SUPABASE_ANON_KEY = 'INSERISCI_QUI_LA_TUA_ANON_KEY';
+  const SUPABASE_URL = 'https://yhteaymjtswcswdydmej.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_4gCaQ8n9RCEJ9Wjq5AxX6Q_HHs5nLee';
   const supabaseConfigurato = !SUPABASE_URL.startsWith('INSERISCI_QUI') && !SUPABASE_ANON_KEY.startsWith('INSERISCI_QUI');
+  // Client Supabase unico e condiviso, per evitare il warning "Multiple GoTrueClient instances"
+  const sb = supabaseConfigurato ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
   // Etichetta del badge mostrato sulla card, in base alla tipologia scelta
   // dalla struttura nel form di iscrizione (vedi schema.sql / pubblica-struttura.html)
@@ -1224,7 +1226,6 @@
       return;
     }
 
-    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     const { data, error } = await sb.from('strutture_scoperte').select('*');
 
     if (error) {
@@ -1374,8 +1375,6 @@
       gridStato.textContent = '⚠️ Configurazione mancante: inserisci SUPABASE_URL e SUPABASE_ANON_KEY nel codice della pagina.';
       return;
     }
-
-    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     // La policy RLS "Lettura pubblica solo strutture attive" garantisce che
     // qui arrivino SOLO le strutture con pagamento confermato (stato = 'attiva').

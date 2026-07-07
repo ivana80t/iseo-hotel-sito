@@ -879,18 +879,60 @@
     setTimeout(() => { btn.textContent = original; this.reset(); }, 1800);
   });
 
-  // Contact form (front-end only placeholder: nessun backend collegato)
+  // Contact form: invio reale tramite la function invia-contatto-generico
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
-  contactForm.addEventListener('submit', function(e){
+  const formStatusText = formStatus.querySelector('span') || formStatus;
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const submitBtnTestoOriginale = submitBtn.textContent;
+
+  contactForm.addEventListener('submit', async function(e){
     e.preventDefault();
     if(!contactForm.checkValidity()){
       contactForm.reportValidity();
       return;
     }
-    formStatus.classList.add('visible');
-    contactForm.reset();
-    setTimeout(() => { formStatus.classList.remove('visible'); }, 4000);
+
+    const datiForm = {
+      nome: document.getElementById('cf-nome').value.trim(),
+      telefono: document.getElementById('cf-telefono').value.trim(),
+      email: document.getElementById('cf-email').value.trim(),
+      oggetto: document.getElementById('cf-oggetto').value,
+      messaggio: document.getElementById('cf-messaggio').value.trim()
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Invio in corso...';
+    formStatus.classList.remove('visible');
+
+    try {
+      const risposta = await fetch('/api/invia-contatto-generico', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datiForm)
+      });
+
+      const risultato = await risposta.json().catch(() => ({}));
+
+      if (!risposta.ok) {
+        throw new Error(risultato.errore || 'Errore durante l\'invio.');
+      }
+
+      formStatus.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:var(--navy);"><path d="M20 6L9 17l-5-5"/></svg> Messaggio inviato, grazie!';
+      formStatus.classList.add('visible');
+      contactForm.reset();
+      setTimeout(() => { formStatus.classList.remove('visible'); }, 5000);
+
+    } catch (err) {
+      console.error('Errore invio form contatti:', err);
+      formStatus.innerHTML = 'Si è verificato un errore. Riprova o scrivici direttamente via email.';
+      formStatus.style.color = '#d1503c';
+      formStatus.classList.add('visible');
+
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitBtnTestoOriginale;
+    }
   });
 
   // FAQ: apertura esclusiva, chiude la risposta precedente quando se ne apre una nuova

@@ -728,7 +728,7 @@
   .row-footer .btn{padding:7px 14px;font-size:12px;white-space:nowrap;}
 
   /* ---------- Carica più risultati ---------- */
-  .load-more-wrap{display:flex;justify-content:center;margin-top:36px;}
+  .load-more-wrap{display:none;justify-content:center;margin-top:36px;}
   .load-more-btn{
     min-width:220px;padding:13px 30px;border-radius:999px;border:1.5px solid var(--navy);
     background:#fff;color:var(--navy);font-size:14.5px;font-weight:700;letter-spacing:.2px;
@@ -906,20 +906,7 @@
   </div>
 </div>
 
-<!-- ============ STRUTTURE DA RIVENDICARE (dati reali da Supabase, tabella strutture_scoperte) ============ -->
-<section class="claim-section wrap">
-  <div class="claim-grid" id="claimGrid">
-    <p id="claimGridStato" style="grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:20px 0;">
-      Caricamento strutture in corso...
-    </p>
-  </div>
-    Queste strutture sono state individuate automaticamente e non risultano ancora pubblicate su Iseo Sapori e Soggiorni. Sei il gestore di una di queste attività? Attiva la scheda per pubblicarla gratuitamente.
-  </p>
-
-  <div class="claim-divider"></div>
-</section>
-
-<!-- ============ LISTA HOTEL (STRUTTURE ATTIVE, GIA' PAGANTI) ============ -->
+<!-- ============ LISTA HOTEL (STRUTTURE ATTIVE + DA RIVENDICARE, ELENCO UNICO) ============ -->
 <section class="section wrap" id="hotel-list">
 
   <!-- Mostrata solo quando si arriva da un link categoria (es. hotel.html?categoria=famiglie) -->
@@ -958,11 +945,7 @@
     </p>
   </div>
 
-  <div class="filter-count" style="margin:18px 0;">
-    Hotel trovati <b id="resultCountBottom">0</b>
-  </div>
-
-  <!-- Carica più risultati: mostrato solo se ci sono altre strutture oltre al batch corrente -->
+  <!-- Carica più risultati: mostrato solo se ci sono altre strutture oltre al batch corrente (>30) -->
   <div class="load-more-wrap" id="loadMoreWrap">
     <button type="button" class="load-more-btn" id="loadMoreBtn">
       <span id="loadMoreLabel">Carica più risultati</span>
@@ -1175,11 +1158,14 @@
 
   const CLAIM_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg>';
 
-  // Costruisce il markup di una card "claim-row" a partire da un record di strutture_scoperte
+  // Costruisce il markup di una card "claim-row" (struttura scoperta, non ancora attiva)
+  // Stessi attributi data-* delle card attive, così può stare nello stesso elenco ordinabile.
   function creaCardDaRivendicare(s){
     const article = document.createElement('article');
     article.className = 'claim-row';
     article.dataset.name = s.nome || '';
+    article.dataset.price = 'Infinity'; // nessun prezzo: va sempre in fondo se si ordina per prezzo
+    article.dataset.distance = 'Infinity'; // nessuna distanza nota: va sempre in fondo se si ordina per vicinanza
 
     const badge = ETICHETTE_TIPO_OSM[s.tipo] || 'Struttura';
     // L'indirizzo potrebbe non essere presente in tutti i record: mostriamo solo ciò che c'è
@@ -1204,47 +1190,6 @@
       </div>
     `;
     return article;
-  }
-
-  function shuffleArraySemplice(arr){
-    const a = arr.slice();
-    for(let i = a.length - 1; i > 0; i--){
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
-
-  // Carica le strutture "da rivendicare" (non ancora attive) dalla tabella strutture_scoperte
-  async function caricaStruttureDaRivendicare(){
-    const claimGrid = document.getElementById('claimGrid');
-    const claimGridStato = document.getElementById('claimGridStato');
-    if(!claimGrid) return;
-
-    if (!supabaseConfigurato) {
-      if (claimGridStato) claimGridStato.textContent = '⚠️ Configurazione mancante: inserisci SUPABASE_URL e SUPABASE_ANON_KEY nel codice della pagina.';
-      return;
-    }
-
-    const { data, error } = await sb.from('strutture_scoperte').select('*');
-
-    if (error) {
-      console.error(error);
-      if (claimGridStato) claimGridStato.textContent = 'Si è verificato un problema nel caricamento delle strutture da rivendicare.';
-      return;
-    }
-
-    if (!data || data.length === 0) {
-      if (claimGridStato) claimGridStato.textContent = 'Nessuna struttura da rivendicare al momento.';
-      return;
-    }
-
-    if (claimGridStato) claimGridStato.remove();
-    shuffleArraySemplice(data).forEach(s => claimGrid.appendChild(creaCardDaRivendicare(s)));
-
-    if (window.IseoFavorites) {
-      IseoFavorites.wireFavButtons();
-    }
   }
 
   function testoDistanza(metri){
@@ -1330,8 +1275,6 @@
       card.style.display = i < visibleCount ? '' : 'none';
     });
     resultCount.textContent = allCards.length;
-    const resultCountBottom = document.getElementById('resultCountBottom');
-    if (resultCountBottom) resultCountBottom.textContent = allCards.length;
     updateLoadMoreButton();
   }
 
@@ -1360,10 +1303,10 @@
     renderVisible();
   });
 
-  // ---------- Caricamento reale delle strutture da Supabase ----------
+  // ---------- Caricamento reale delle strutture da Supabase (attive + da rivendicare, elenco unico) ----------
   async function caricaStrutture(){
     const params = new URLSearchParams(window.location.search);
-    const categoria = params.get('categoria'); // es. "famiglie" -> filtra per tipologia
+    const categoria = params.get('categoria'); // es. "famiglie" -> filtra per tipologia (solo strutture attive)
 
     // Mostra l'intestazione del filtro categoria, se presente nell'URL
     if (categoria) {
@@ -1378,18 +1321,27 @@
 
     // La policy RLS "Lettura pubblica solo strutture attive" garantisce che
     // qui arrivino SOLO le strutture con pagamento confermato (stato = 'attiva').
-    let query = sb.from('strutture').select('*').eq('stato', 'attiva');
-    if (categoria) query = query.eq('tipologia', categoria);
+    let queryAttive = sb.from('strutture').select('*').eq('stato', 'attiva');
+    if (categoria) queryAttive = queryAttive.eq('tipologia', categoria);
 
-    const { data, error } = await query;
+    // Le strutture "da rivendicare" (non ancora attive) non vengono filtrate per categoria,
+    // dato che usano una tassonomia diversa (tipo OSM) rispetto a "tipologia".
+    const queryScoperte = sb.from('strutture_scoperte').select('*');
 
-    if (error) {
-      console.error(error);
+    const [rispAttive, rispScoperte] = await Promise.all([queryAttive, queryScoperte]);
+
+    if (rispAttive.error) console.error(rispAttive.error);
+    if (rispScoperte.error) console.error(rispScoperte.error);
+
+    if (rispAttive.error && rispScoperte.error) {
       gridStato.textContent = 'Si è verificato un problema nel caricamento delle strutture. Riprova più tardi.';
       return;
     }
 
-    if (!data || data.length === 0) {
+    const attive = rispAttive.data || [];
+    const scoperte = rispScoperte.data || [];
+
+    if (attive.length === 0 && scoperte.length === 0) {
       gridStato.textContent = categoria
         ? 'Nessuna struttura trovata per questa categoria al momento.'
         : 'Nessuna struttura pubblicata al momento.';
@@ -1397,19 +1349,19 @@
     }
 
     gridStato.remove();
-    data.forEach(s => grid.appendChild(creaCardStruttura(s)));
+    attive.forEach(s => grid.appendChild(creaCardStruttura(s)));
+    scoperte.forEach(s => grid.appendChild(creaCardDaRivendicare(s)));
 
     // Ricollega i preferiti anche alle card appena create
     if (window.IseoFavorites) {
       IseoFavorites.wireFavButtons();
     }
 
-    allCards = Array.from(grid.querySelectorAll('.hotel-row'));
+    allCards = Array.from(grid.querySelectorAll('.hotel-row, .claim-row'));
     applyOrder('random'); // ordine iniziale casuale, come richiesto
   }
 
   caricaStrutture();
-  caricaStruttureDaRivendicare();
 </script>
 
 </body>

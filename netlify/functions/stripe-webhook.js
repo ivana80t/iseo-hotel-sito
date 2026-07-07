@@ -117,7 +117,7 @@ exports.handler = async function (event) {
     if (tipoSessione === 'rinnovo') {
       const { data: struttura, error: fetchError } = await supabaseAdmin
         .from('strutture')
-        .select('id, data_scadenza, stato, nome')
+        .select('id, data_scadenza, stato, nome_struttura')
         .eq('id', strutturaId)
         .single();
 
@@ -157,7 +157,7 @@ exports.handler = async function (event) {
         await inviaEmail({
           to: emailCliente,
           subject: 'Rinnovo confermato',
-          html: `<p>Ciao,</p><p>il rinnovo della tua struttura <strong>${struttura.nome || strutturaId}</strong> è stato confermato.</p><p>Nuova scadenza: <strong>${nuovaScadenzaStr}</strong>.</p><p>Grazie!</p>`
+          html: `<p>Ciao,</p><p>il rinnovo della tua struttura <strong>${struttura.nome_struttura || strutturaId}</strong> è stato confermato.</p><p>Nuova scadenza: <strong>${nuovaScadenzaStr}</strong>.</p><p>Grazie!</p>`
         });
       } else {
         console.error('Nessuna email cliente trovata nella sessione, notifica cliente non inviata.');
@@ -167,7 +167,7 @@ exports.handler = async function (event) {
         await inviaEmail({
           to: process.env.ADMIN_EMAIL,
           subject: `Rinnovo ricevuto — struttura ${strutturaId}`,
-          html: `<p>Rinnovo pagamento ricevuto per la struttura <strong>${struttura.nome || strutturaId}</strong>.</p><p>Nuova scadenza: ${nuovaScadenzaStr}.</p><p>Email cliente: ${emailCliente || 'non disponibile'}.</p>`
+          html: `<p>Rinnovo pagamento ricevuto per la struttura <strong>${struttura.nome_struttura || strutturaId}</strong>.</p><p>Nuova scadenza: ${nuovaScadenzaStr}.</p><p>Email cliente: ${emailCliente || 'non disponibile'}.</p>`
         });
       }
 
@@ -188,7 +188,7 @@ exports.handler = async function (event) {
         })
         .eq('id', strutturaId)
         .eq('stato', 'in_attesa_pagamento')
-        .select('id, nome')
+        .select('id, nome_struttura')
         .single();
 
       if (updateError) {
@@ -196,7 +196,7 @@ exports.handler = async function (event) {
         return { statusCode: 500, body: 'Errore aggiornamento database.' };
       }
 
-      const nomeStruttura = (strutturaAggiornata && strutturaAggiornata.nome) || strutturaId;
+      const nomeStruttura = (strutturaAggiornata && strutturaAggiornata.nome_struttura) || strutturaId;
 
       console.log(`Struttura ${strutturaId} attivata con successo dopo pagamento.`);
 

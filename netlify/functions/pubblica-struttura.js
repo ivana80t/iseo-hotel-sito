@@ -144,6 +144,24 @@ exports.handler = async function (event) {
       return { statusCode: 500, body: JSON.stringify({ errore: 'Errore durante il salvataggio. Riprova.' }) };
     }
 
+    // --- Collegamento con la scheda "scoperta" (se si arriva da hotel.html,
+    // bottone "Attiva la scheda" -> pubblica-struttura.html?scoperta_id=...) ---
+    // Colleghiamo struttura_scoperte.struttura_id alla struttura appena creata
+    // e la segnamo come "promossa" così non ricompare più tra quelle da attivare.
+    // Se questo update fallisce non blocchiamo la risposta: la struttura e il
+    // pagamento devono comunque andare avanti, il collegamento si può sistemare
+    // anche a mano dal database in caso di problemi.
+    if (testoValido(body.scoperta_id, 100)) {
+      const { error: erroreCollegamento } = await supabaseAdmin
+        .from('strutture_scoperte')
+        .update({ struttura_id: struttura.id, promossa: true })
+        .eq('id', body.scoperta_id);
+
+      if (erroreCollegamento) {
+        console.error('Errore collegamento scoperta_id -> struttura:', erroreCollegamento);
+      }
+    }
+
     return { statusCode: 200, body: JSON.stringify({ id: struttura.id, slug: struttura.slug }) };
 
   } catch (err) {

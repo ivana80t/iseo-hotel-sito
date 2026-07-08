@@ -992,6 +992,76 @@
     return Array.from(form.querySelectorAll(`input[name="${nomeCampo}"]:checked`)).map(el => el.value);
   }
 
+  // ============================================================
+  // PRECOMPILAZIONE DA "strutture_scoperte" (arrivo da hotel.html,
+  // bottone "Attiva la scheda" -> pubblica-struttura.html?scoperta_id=...)
+  //
+  // Se in URL c'è scoperta_id, andiamo a leggere il record scoperto
+  // (nome, tipo OSM, indirizzo, comune) e precompiliamo il form, così
+  // il gestore deve solo controllare/completare i dati mancanti
+  // (email, telefono, prezzo, descrizione, ecc.) e pagare.
+  //
+  // Il collegamento vero e proprio tra strutture_scoperte e la nuova
+  // riga di "strutture" (campo struttura_id + promossa = true) va fatto
+  // lato server in /api/pubblica-struttura quando riceve scoperta_id:
+  // dopo aver creato la struttura, fare
+  //   UPDATE strutture_scoperte SET struttura_id = <nuovo id>, promossa = true
+  //   WHERE id = scoperta_id
+  // (quella funzione non è tra i file che ho, va aggiornata a parte).
+  // ============================================================
+  const paramsUrl = new URLSearchParams(window.location.search);
+  const scopertaId = paramsUrl.get('scoperta_id');
+
+  // Mappa (best-effort) tra il campo "tipo" di OpenStreetMap e le opzioni
+  // del select "tipologia" di questo form, che segue una logica diversa
+  // (stile/target invece di categoria OSM). Dove non c'è una corrispondenza
+  // chiara si lascia "altro": il gestore può correggerla lui stesso.
+  const MAPPA_TIPO_OSM_A_TIPOLOGIA = {
+    guest_house: 'bed-breakfast',
+    apartment: 'residence',
+    hostel: 'altro',
+    camp_site: 'altro',
+    chalet: 'altro',
+    motel: 'economici',
+    hotel: 'altro'
+  };
+
+  async function precompilaDaScopertaId(){
+    if (!scopertaId || !supabaseConfigurato) return;
+
+    try {
+      const { data, error } = await sb
+        .from('strutture_scoperte')
+        .select('nome, tipo, indirizzo, comune')
+        .eq('id', scopertaId)
+        .single();
+
+      if (error || !data) {
+        console.warn('Impossibile precompilare dai dati scoperti:', error);
+        return;
+      }
+
+      if (data.nome) pubForm.nome_struttura.value = data.nome;
+      if (data.indirizzo) pubForm.indirizzo.value = data.indirizzo;
+      pubForm.citta.value = data.comune || 'Iseo';
+
+      const tipologiaSuggerita = MAPPA_TIPO_OSM_A_TIPOLOGIA[data.tipo];
+      if (tipologiaSuggerita) pubForm.tipologia.value = tipologiaSuggerita;
+
+      // Avviso in cima al form: il gestore sa che sta completando una
+      // scheda già trovata, non creandone una da zero.
+      const titolo = document.querySelector('.pub-form-card h1');
+      const sottotitolo = document.querySelector('.pub-sub');
+      if (titolo) titolo.textContent = 'Completa l\'attivazione della tua struttura';
+      if (sottotitolo) sottotitolo.textContent = 'Abbiamo già trovato la tua struttura e precompilato alcuni dati: controllali, completa il resto e procedi con il pagamento per attivare la scheda.';
+
+    } catch (err) {
+      console.warn('Errore durante la precompilazione:', err);
+    }
+  }
+
+  precompilaDaScopertaId();
+
   // Form pubblica struttura: al submit, carica le immagini, crea il record
   // con stato "in_attesa_pagamento" e reindirizza al checkout di pagamento.
   const pubForm = document.getElementById('pubForm');
@@ -1076,7 +1146,11 @@
         orario_checkin: pubForm.orario_checkin.value || null,
         orario_checkout: pubForm.orario_checkout.value || null,
         parcheggio: pubForm.parcheggio.value || null,
-        immagini: urlImmagini
+        immagini: urlImmagini,
+        // Presente solo se si arriva da "Attiva la scheda" in hotel.html.
+        // Il server la userà per collegare strutture_scoperte.struttura_id
+        // alla struttura appena creata e impostare promossa = true.
+        scoperta_id: scopertaId || null
       };
 
       const rispostaApi = await fetch('/api/pubblica-struttura', {

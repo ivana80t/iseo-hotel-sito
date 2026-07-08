@@ -55,10 +55,15 @@ async function main() {
 
   console.log(`Cerco strutture con cache più vecchia di ${GIORNI_SOGLIA} giorni (prima di ${sogliaData.toISOString()})...`);
 
-  const { data: strutture, error } = await supabase
+  // Prendiamo TUTTE le strutture con place_id valorizzato (escludendo quelle
+  // manuali, che hanno place_id null e non vanno mai passate a Google) e non
+  // ancora segnate come chiuse. Il filtro sulla data lo facciamo dopo in JS,
+  // perché il confronto ".lt()" di Supabase su una colonna con valori NULL
+  // esclude quelle righe invece di trattarle come "mai sincronizzate".
+  const { data: candidate, error } = await supabase
     .from('strutture')
-    .select('id, place_id, nome')
-    .lt('last_synced_at', sogliaData.toISOString())
+    .select('id, place_id, nome, last_synced_at')
+    .not('place_id', 'is', null)
     .neq('stato', 'chiusa'); // non serve ricontrollare quelle già segnate chiuse
 
   if (error) {
@@ -66,12 +71,19 @@ async function main() {
     process.exit(1);
   }
 
+  // "Da aggiornare" = mai sincronizzata (last_synced_at null) OPPURE
+  // sincronizzata più di GIORNI_SOGLIA giorni fa.
+  const strutture = (candidate || []).filter((s) => {
+    if (!s.last_synced_at) return true;
+    return new Date(s.last_synced_at) < sogliaData;
+  });
+
   if (!strutture || strutture.length === 0) {
     console.log('Nessuna struttura da aggiornare. Tutto già sincronizzato di recente.');
     return;
   }
 
-  console.log(`Trovate ${strutture.length} strutture da aggiornare.\n`);
+  console.log(`Trovate ${strutture.length} strutture da aggiornare (su ${candidate.length} con place_id valido).\n`);
 
   let aggiornate = 0;
   let chiuse = 0;

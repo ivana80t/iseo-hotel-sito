@@ -1,0 +1,44 @@
+# Questo file va messo in: .github/workflows/discover.yml
+# (sostituisce il vecchio refresh.yml, che va eliminato)
+#
+# Cosa fa: lancia discover.js e discover-ristoranti.js ogni 25 giorni, per
+# tenere aggiornata la griglia di strutture_scoperte / ristoranti_scoperte
+# (i dati "grezzi" da OpenStreetMap mostrati su hotel.html e ristoranti.html).
+#
+# NOTA: queste strutture NON sono quelle già attivate/pagate (quelle nella
+# tabella "strutture") — quelle non vanno mai refreshate via Google, per
+# scelta esplicita. Questo workflow lavora solo sui dati OSM.
+
+name: Aggiorna strutture e ristoranti scoperti (OSM)
+
+on:
+  schedule:
+    - cron: '0 3 */25 * *'   # ogni 25 giorni, alle 03:00 UTC
+  workflow_dispatch:          # permette anche l'avvio manuale da GitHub
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installa dipendenze
+        run: npm install
+
+      - name: Esegui discover.js (strutture ricettive)
+        run: node discover.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+
+      - name: Esegui discover-ristoranti.js (ristoranti)
+        run: node discover-ristoranti.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

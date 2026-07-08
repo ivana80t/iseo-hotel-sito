@@ -1,0 +1,16 @@
+{
+  "name": "iseo-strutture-sync",
+  "version": "1.0.0",
+  "description": "Scoperta e sincronizzazione strutture ricettive e ristoranti di Iseo via OpenStreetMap e Google Places API",
+  "type": "module",
+  "scripts": {
+    "discover": "node discover.js",
+    "refresh": "node refresh.js",
+    "discover-ristoranti": "node discover-ristoranti.js",
+    "refresh-ristoranti": "node refresh-ristoranti.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.110.1",
+    "dotenv": "^16.6.1"
+  }
+}

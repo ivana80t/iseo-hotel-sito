@@ -476,10 +476,32 @@
       width:100%;
     }
 
+    /* L'indicatore ::after pensato per il menu desktop (riga sotto la voce attiva) va
+       disattivato su mobile: qui le voci sono a tutta larghezza e quella riga risultava
+       fissa e piena sotto "Destinazioni", scambiabile per la riga in fondo al pannello. */
+    nav.main-nav a.active::after{content:none;}
+    nav.main-nav a.active{color:var(--ink);font-weight:500;background:none;}
+
+    /* Al suo posto: un indicatore ocra che segue la voce aperta/toccata dall'utente,
+       non la pagina corrente — un bordo a sinistra + testo in ocra sulla voce in uso. */
+    nav.main-nav a:active,
+    .nav-dropdown-toggle:active{
+      background:rgba(197,152,39,0.08);
+    }
+    .nav-item.open > .nav-dropdown-toggle{
+      color:var(--gold);font-weight:700;
+      border-left:3px solid var(--gold);
+      padding-left:29px !important;
+      background:rgba(197,152,39,0.06);
+    }
+    .nav-item.open > .nav-dropdown-toggle .nav-caret{stroke:var(--gold);}
+
     /* Riga della voce con sottomenu: testo a sinistra, freccina sempre alla stessa distanza dal bordo destro */
     .nav-dropdown-toggle{
       display:flex;align-items:center;justify-content:space-between;
       width:100%;padding:14px 32px !important;gap:10px;
+      border-left:3px solid transparent;
+      transition:background .15s ease,border-color .15s ease,color .15s ease;
     }
 
     /* Il sottomenu si apre come pannello a tutta larghezza, senza riquadro/ombra/padding residui */

@@ -1,0 +1,38 @@
+GESTIONE FILES in collegamento con GITHUB
+https://app.netlify.com/
+
+User:
+Password:
+
+_______________________________
+
+GESTIONE FILES
+https://github.com/
+
+User:
+Password:
+
+_______________________________
+
+GESTIONE EMAIL
+https://resend.com/
+
+User:
+Password:
+
+_______________________________
+
+GESTIONE PAGAMENTI
+https://dashboard.stripe.com/
+
+User:
+Password:
+
+_______________________________
+
+GESTIONE DATABASE
+https://supabase.com/
+User:
+Password:
+
+_______________________________

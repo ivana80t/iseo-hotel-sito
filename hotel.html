@@ -988,7 +988,14 @@
     .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
   }
   @media (max-width:560px){
-    .footer-top{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;gap:28px 18px;text-align:center;}
+    .footer-logo,.footer-col-assistenza{grid-column:1/-1;}
+    .footer-logo .footer-icon-row{justify-content:center;}
+    .footer-logo .footer-desc{max-width:none;margin-left:auto;margin-right:auto;}
+    .footer-logo .footer-search-form{margin-left:auto;margin-right:auto;}
+    .footer-col ul{padding:0;}
+    .footer-col-assistenza .footer-contact-box{margin-left:auto;margin-right:auto;}
+    .footer-col-assistenza .footer-trust-list{align-items:center;}
   }
   @media (max-width:860px){
     nav.main-nav{display:none;max-height:calc(100vh - 76px);overflow-y:auto;-webkit-overflow-scrolling:touch;padding-left:0 !important;padding-right:0 !important;}

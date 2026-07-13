@@ -580,7 +580,7 @@
   .dest-cosa-fare .btn-gold{display:inline-flex;margin-top:36px;}
   .dest-itin-cta{
     position:relative;max-width:1240px;margin:44px auto 0;border-radius:var(--radius-lg);overflow:hidden;
-    min-height:220px;display:flex;align-items:center;text-align:left;
+    height:300px;display:flex;align-items:center;text-align:left;
   }
   .dest-itin-cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .dest-itin-cta-overlay{
@@ -589,10 +589,13 @@
     width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;
   }
   .dest-itin-cta-overlay h3{font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:#fff;margin:0 0 10px;}
-  .dest-itin-cta-overlay p{font-size:14px;line-height:1.6;color:#e9edf5;margin:0 0 20px;text-align:justify;}
+  .dest-itin-cta-overlay p{
+    font-size:14px;line-height:1.6;color:#e9edf5;margin:0 0 20px;text-align:justify;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;
+  }
   .dest-itin-cta-overlay .btn-gold{margin-top:0;align-self:flex-start;}
   @media (max-width:640px){
-    .dest-itin-cta{min-height:0;}
+    .dest-itin-cta{height:auto;min-height:0;}
     .dest-itin-cta-overlay{max-width:100%;padding:26px 22px;background:linear-gradient(180deg,rgba(13,23,45,.55) 0%,rgba(13,23,45,.9) 55%,rgba(13,23,45,.96) 100%);}
   }
   @media (max-width:900px){
@@ -683,6 +686,41 @@
       margin:0 auto;
     }
   }
+
+  /* ============ MONTE ISOLA: GUIDE HUB (card ricche con foto + icone) ============ */
+  .dest-guide-hub{padding:16px 32px 64px;text-align:center;}
+  .guide-hub-lead{font-size:14.5px;color:var(--ink-soft);margin:10px 0 34px;}
+  .guide-rich-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1240px;margin:0 auto;}
+  .guide-rich-card{
+    background:#fff;border-radius:16px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;
+    text-align:center;padding-bottom:18px;transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .guide-rich-card:hover{transform:translateY(-5px);box-shadow:0 22px 40px -16px rgba(18,41,79,.28);}
+  .guide-rich-photo{border-radius:16px 16px 0 0;overflow:hidden;aspect-ratio:4/3;}
+  .guide-rich-photo img{width:100%;height:100%;object-fit:cover;}
+  .guide-rich-badge{
+    width:42px;height:42px;border-radius:50%;background:#fff;box-shadow:0 6px 16px -6px rgba(18,41,79,.35);
+    display:flex;align-items:center;justify-content:center;margin:-21px auto 10px;position:relative;z-index:2;
+  }
+  .guide-rich-badge svg{width:18px;height:18px;stroke:var(--navy);}
+  .guide-rich-body{padding:0 12px;}
+  .guide-rich-body h3{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;color:var(--navy);margin:0 0 6px;}
+  .guide-rich-body > p{font-size:10.5px;color:var(--ink-soft);line-height:1.4;margin:0 0 12px;}
+  .guide-rich-chips{display:flex;justify-content:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+  .guide-rich-chip{display:flex;flex-direction:column;align-items:center;gap:4px;width:52px;}
+  .chip-icon{width:28px;height:28px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .chip-icon svg{width:13px;height:13px;stroke:var(--navy);}
+  .chip-icon--num{font-family:'Fraunces',serif;font-weight:700;font-size:13px;color:var(--navy);}
+  .guide-rich-chip span:last-child{font-size:8.5px;line-height:1.2;color:var(--ink-soft);font-weight:600;}
+  .guide-rich-link{font-size:11px;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:4px;}
+  .guide-rich-link svg{width:12px;height:12px;stroke:var(--navy);}
+  @media (max-width:1000px){.guide-rich-grid{grid-template-columns:repeat(3,1fr);gap:20px;}
+    .guide-rich-body h3{font-size:18px;} .guide-rich-body > p{font-size:12.5px;}
+    .guide-rich-badge{width:52px;height:52px;margin:-26px auto 12px;} .guide-rich-badge svg{width:22px;height:22px;}
+    .chip-icon{width:34px;height:34px;} .chip-icon svg{width:15px;height:15px;}
+    .guide-rich-chip{width:auto;} .guide-rich-chip span:last-child{font-size:10.5px;}
+  }
+  @media (max-width:640px){.guide-rich-grid{grid-template-columns:1fr;}}
 
   /* ============ MARONE: LOCALITA' VICINE (carosello) ============ */
   .dest-localita{padding:8px 0 64px;text-align:center;}
@@ -1216,11 +1254,11 @@
   </div>
 
   <div class="dest-itin-cta">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monte%20Isola%20Banner.jpg?width=1600" alt="Panorama di Monte Isola sul Lago d'Iseo" loading="lazy">
+    <img id="destItinCtaImg" src="https://commons.wikimedia.org/wiki/Special:FilePath/25050%20Monte%20Isola%2C%20Province%20of%20Brescia%2C%20Italy%20-%20panoramio%20(1).jpg?width=1400" alt="Panorama di Monte Isola sul Lago d'Iseo" loading="lazy">
     <div class="dest-itin-cta-overlay">
-      <h3>Vivi Monte Isola in ogni stagione</h3>
-      <p>Dal giro dell'isola in bici alla salita al Santuario della Ceriola: scopri tutti gli itinerari, le esperienze e i punti di interesse di Monte Isola.</p>
-      <a href="itinerari.html?localita=monte-isola" class="btn btn-gold">Scopri tutti gli itinerari
+      <h3 id="destItinCtaTitle">Vivi Monte Isola in ogni stagione</h3>
+      <p id="destItinCtaText">Dal giro dell'isola in bici alla salita al Santuario della Ceriola: scopri tutti gli itinerari, le esperienze e i punti di interesse di Monte Isola.</p>
+      <a id="destItinCtaLink" href="itinerari.html?localita=monte-isola" class="btn btn-gold"><span id="destItinCtaBtnLabel">Scopri tutti gli itinerari</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
     </div>
@@ -1239,6 +1277,100 @@
          data-full-width-responsive="true"></ins>
   </div>
 </div>
+
+<!-- ============ MONTE ISOLA: GUIDE (card ricche con foto + icone) ============ -->
+<section class="dest-guide-hub" aria-label="Guide utili su Monte Isola">
+  <div class="section-divider"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+  <h2 class="section-title">Guide di Monte Isola</h2>
+  <p class="guide-hub-lead">Tutto quello che ti serve per organizzare la visita, in un unico posto.</p>
+  <div class="guide-rich-grid">
+
+    <a class="guide-rich-card" href="come-arrivare-monte-isola.html">
+      <div class="guide-rich-photo">
+        <img src="images/guide-come-arrivare-iseo.jpg" alt="Come arrivare a Monte Isola in traghetto" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Come arrivare</h3>
+        <p>Raggiungibile solo via lago: nessuna auto privata sull'isola.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18s2 2 4 2 3-1.5 5-1.5 3 1.5 5 1.5 4-2 4-2"/><path d="M5 18V9l7-3 7 3v9"/></svg></span><span>Da Sulzano</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18s2 2 4 2 3-1.5 5-1.5 3 1.5 5 1.5 4-2 4-2"/><path d="M5 18V9l7-3 7 3v9"/></svg></span><span>Da Sale Marasino</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18s2 2 4 2 3-1.5 5-1.5 3 1.5 5 1.5 4-2 4-2"/><path d="M5 18V9l7-3 7 3v9"/></svg></span><span>Da Iseo</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri tutte le opzioni <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="guide-rich-card" href="weekend-monte-isola.html">
+      <div class="guide-rich-photo">
+        <img src="images/guide-weekend-iseo.jpg" alt="Weekend a Monte Isola, vista sul borgo e sul lago" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Weekend a Monte Isola</h3>
+        <p>Idee e itinerari per vivere il meglio del lago a Monte Isola in ogni stagione.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">1</span><span>1 giorno</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">2</span><span>2 giorni</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">3</span><span>3 giorni</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri gli itinerari <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="guide-rich-card" href="monte-isola-con-bambini.html">
+      <div class="guide-rich-photo">
+        <img src="images/guide-con-bambini-iseo.jpg" alt="Monte Isola con i bambini: spiagge e parchi giochi" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2"/><circle cx="18" cy="9" r="2"/><path d="M15 21v-1a3 3 0 0 1 3-3h1a3 3 0 0 1 3 3v1"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Con bambini</h3>
+        <p>Spiagge attrezzate, aree gioco e parchi dove divertirsi insieme.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11M12 3c-3 1-5 3-5 6h10c0-3-2-5-5-6z"/><path d="M4 21c2-3 4-4 8-4s6 1 8 4"/></svg></span><span>Spiagge</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l4 6h-3l4 6h-3l3 5H6l3-5H6l4-6H7z"/><path d="M12 19v3"/></svg></span><span>Parchi</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="guide-rich-card" href="panorami-monte-isola.html">
+      <div class="guide-rich-photo">
+        <img src="images/guide-panorami-iseo.jpg" alt="Tramonto sul lago a Monte Isola visto da un belvedere" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7l1.5-2.5h3L15 7"/><circle cx="12" cy="13.5" r="3.5"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Panorami e foto</h3>
+        <p>I punti più belli per ammirare il lago a Monte Isola e scattare foto indimenticabili.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="13" r="3.4"/><circle cx="16" cy="13" r="3.4"/><path d="M8 9.6V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2.6"/></svg></span><span>Belvedere</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="4"/><path d="M12 4v2M4.9 8.9l1.4 1.4M19.1 8.9l-1.4 1.4"/><path d="M2 19h20"/></svg></span><span>Alba</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="4"/><path d="M12 4v2M4.9 8.9l1.4 1.4M19.1 8.9l-1.4 1.4"/><path d="M2 19h20"/></svg></span><span>Tramonto</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri i migliori spot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+
+    <a class="guide-rich-card" href="faq-monte-isola.html">
+      <div class="guide-rich-photo">
+        <img src="images/guide-faq-iseo.jpg" alt="Pontile con bacheca informativa sul lago a Monte Isola" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V17H4a1.5 1.5 0 0 1-1.5-1.5v-9A1.5 1.5 0 0 1 4 5z"/><path d="M9.7 9.6a2.3 2.3 0 0 1 4.4.9c0 1.4-2.1 1.7-2.1 3.2"/><path d="M12 16.3h.01"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>FAQ e consigli</h3>
+        <p>Tutto quello che ti chiedi prima di partire.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M2 11h20"/></svg></span><span>Consigli utili</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Quando andare</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span>Orari traghetti</span></div>
+        </div>
+        <span class="guide-rich-link">Leggi tutte le FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+
+  </div>
+</section>
 
 <!-- ============ MONTE ISOLA: DOVE DORMIRE / DOVE MANGIARE ============ -->
 <section class="dest-dormire-mangiare">
@@ -1564,6 +1696,67 @@
     track.addEventListener('mouseleave', () => { if (track === cosaFareActiveTrack) avviaAutoScrollCosaFare(track); });
   });
 
+  // ============================================================
+  // BANNER CTA DINAMICO — cambia immagine, testo e link in base al tab attivo
+  // ============================================================
+  const COSA_FARE_CTA = {
+    'itinerari-panel': {
+      img: 'https://commons.wikimedia.org/wiki/Special:FilePath/25050%20Monte%20Isola%2C%20Province%20of%20Brescia%2C%20Italy%20-%20panoramio%20(1).jpg?width=1400',
+      alt: 'Panorama di Monte Isola sul Lago d\'Iseo',
+      title: 'Vivi Monte Isola in ogni stagione',
+      text: 'Dal giro dell\'isola in bici alla salita al Santuario della Ceriola: scopri tutti gli itinerari, le esperienze e i punti di interesse di Monte Isola.',
+      btn: 'Scopri tutti gli itinerari',
+      link: 'itinerari.html?localita=monte-isola'
+    },
+    'cosa-vedere-panel': {
+      img: 'https://commons.wikimedia.org/wiki/Special:FilePath/MonteIsola%20Siviano%20torre.jpg?width=1400',
+      alt: 'Torre medievale di Siviano, capoluogo di Monte Isola',
+      title: 'Scopri le meraviglie di Monte Isola',
+      text: 'Dalla torre medievale di Siviano alla Rocca Oldofredi-Martinengo, dal Santuario della Ceriola in vetta all\'isola al borgo di Carzano: undici borghi tutti da scoprire.',
+      btn: 'Scopri cosa vedere',
+      link: 'cosa-vedere.html?localita=monte-isola'
+    },
+    'spiagge-panel': {
+      img: 'https://images.unsplash.com/photo-1695634929711-1e37053f262a?w=1400&q=72&auto=format&fit=crop&fm=jpg',
+      alt: 'Prato delle Ere a Peschiera Maraglio, Monte Isola',
+      title: 'Vivi il lago a Monte Isola',
+      text: 'Dal Prato delle Ere al Lido di Carzano, dalla spiaggia di Sensole alla Baia del Silenzio: scopri tutte le spiagge di Monte Isola.',
+      btn: 'Scopri le migliori spiagge',
+      link: 'spiagge.html?localita=monte-isola'
+    },
+    'esperienze-panel': {
+      img: 'https://images.unsplash.com/photo-1745748763509-9055e6ce61c2?w=1400&q=72&auto=format&fit=crop&fm=jpg',
+      alt: 'Pedalare intorno a Monte Isola in bicicletta',
+      title: 'Vivi le esperienze di Monte Isola',
+      text: 'Pedala intorno all\'isola senza incontrare un\'auto, scopri il pesce di lago essiccato al sole e goditi l\'aperitivo al tramonto sul lungolago.',
+      btn: 'Scopri le esperienze',
+      link: 'esperienze.html?localita=monte-isola'
+    },
+    'tradizioni-panel': {
+      img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Wv%20Peschiera%20Maraglio%20banner.jpg?width=1400',
+      alt: 'Antica tradizione delle reti da pesca a Peschiera Maraglio',
+      title: 'Scopri le tradizioni di Monte Isola',
+      text: 'Dalla quinquennale Festa di Santa Croce di Carzano al ricordo dei Floating Piers, fino all\'antica tradizione delle reti da pesca di Peschiera Maraglio.',
+      btn: 'Scopri le tradizioni',
+      link: 'tradizioni.html?localita=monte-isola'
+    }
+  };
+
+  function aggiornaBannerCtaCosaFare(panelId){
+    const dati = COSA_FARE_CTA[panelId];
+    if (!dati) return;
+    const img = document.getElementById('destItinCtaImg');
+    const title = document.getElementById('destItinCtaTitle');
+    const text = document.getElementById('destItinCtaText');
+    const btnLabel = document.getElementById('destItinCtaBtnLabel');
+    const link = document.getElementById('destItinCtaLink');
+    if (img) { img.src = dati.img; img.alt = dati.alt; }
+    if (title) title.textContent = dati.title;
+    if (text) text.textContent = dati.text;
+    if (btnLabel) btnLabel.textContent = dati.btn;
+    if (link) link.href = dati.link;
+  }
+
   function attivaSchedaCosaFare(tab){
     cosaFareTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
     cosaFarePanels.forEach(p => { p.hidden = true; });
@@ -1575,6 +1768,7 @@
       const track = panel.querySelector('.itin-track');
       if (track) { track.scrollTo({ left: 0 }); avviaAutoScrollCosaFare(track); }
     }
+    aggiornaBannerCtaCosaFare(tab.dataset.panel);
   }
   cosaFareTabs.forEach(tab => {
     tab.addEventListener('click', () => attivaSchedaCosaFare(tab));

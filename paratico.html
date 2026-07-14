@@ -843,8 +843,8 @@
   }
   .dest-why-tag svg{flex:0 0 auto;color:var(--gold-dark,var(--gold));width:14px;height:14px;}
   @media (max-width:640px){
-    .dest-why-row{gap:8px;}
-    .dest-why-tag{font-size:12.5px;padding:7px 12px;white-space:normal;}
+    .dest-why-row{flex-direction:column;align-items:stretch;gap:8px;}
+    .dest-why-tag{font-size:12.5px;padding:9px 12px;white-space:normal;width:100%;box-sizing:border-box;}
   }
 
   /* ============ PARATICO: FAQ ============ */
@@ -855,6 +855,14 @@
   .dest-faq-item[open] .dest-faq-q svg{transform:rotate(180deg);}
   .dest-faq-a{font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin:12px 0 0;}
   @media (max-width:640px){.dest-faq{padding:0 18px 48px;}}
+
+  /* ============ ANIMAZIONE "A COMPARSA" LATERALE (solo mobile) ============ */
+  @media (max-width:900px){
+    .reveal-l, .reveal-r{opacity:0;transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
+    .reveal-l{transform:translateX(-36px);}
+    .reveal-r{transform:translateX(36px);}
+    .reveal-l.in-view, .reveal-r.in-view{opacity:1;transform:translateX(0);}
+  }
 
   /* ============ SPAZI PUBBLICITARI ADSENSE ============ */
   .ad-slot{max-width:1240px;margin:0 auto;padding:0 32px;}
@@ -1084,7 +1092,7 @@
         <p>Ogni viaggio ha il suo motivo. Scopri cosa rende speciale Paratico in base a ciò che ami davvero.</p>
       </div>
       <div class="dest-type-cards">
-        <div class="dest-type-card theme-green">
+        <div class="dest-type-card theme-green reveal-l">
           <div class="dest-type-photo">
             <img src="images/paratico-natura-taxodi.jpg" alt="Passerella di legno tra alberi immersi nell'acqua, il Bosco dei Taxodi" loading="lazy">
             <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4 20 2c1 3.5-1.5 8-3 9-2 1.5-2 6-6 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
@@ -1099,7 +1107,7 @@
             </div>
           </div>
         </div>
-        <div class="dest-type-card theme-purple">
+        <div class="dest-type-card theme-purple reveal-r">
           <div class="dest-type-photo">
             <img src="images/paratico-vacanza-attiva.jpg" alt="Ciclabile panoramica lungo il lago con vista sulle montagne" loading="lazy">
             <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2zM12 17.5V14l-3-3 4-3 2 3h2"/></svg></span>
@@ -1114,7 +1122,7 @@
             </div>
           </div>
         </div>
-        <div class="dest-type-card theme-gold">
+        <div class="dest-type-card theme-gold reveal-l">
           <div class="dest-type-photo">
             <img src="images/paratico-relax-vigneti.jpg" alt="Aperitivo al tramonto in riva al lago, con vista sul Lago d'Iseo" loading="lazy">
             <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M8 22h8M7 10h10M12 15v7M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5z"/></svg></span>
@@ -1520,7 +1528,7 @@
   <p class="guide-hub-lead">Tutto quello che ti serve per organizzare la visita, in un unico posto.</p>
   <div class="guide-rich-grid">
 
-    <a class="guide-rich-card" href="come-arrivare-paratico.html">
+    <a class="guide-rich-card reveal-l" href="come-arrivare-paratico.html">
       <div class="guide-rich-photo">
         <!-- SOSTITUISCI con la tua immagine generata (auto/treno/traghetto) -->
         <img src="images/guide-come-arrivare-iseo.jpg" alt="Come arrivare a Paratico: auto, treno e battello" loading="lazy">
@@ -1538,7 +1546,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="weekend-paratico.html">
+    <a class="guide-rich-card reveal-r" href="weekend-paratico.html">
       <div class="guide-rich-photo">
         <!-- SOSTITUISCI con la tua immagine generata (borgo/lago) -->
         <img src="images/guide-weekend-iseo.jpg" alt="Weekend a Paratico, tra Bosco dei Taxodi e Franciacorta" loading="lazy">
@@ -1556,7 +1564,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="paratico-con-bambini.html">
+    <a class="guide-rich-card reveal-l" href="paratico-con-bambini.html">
       <div class="guide-rich-photo">
         <!-- SOSTITUISCI con la tua immagine generata (bambini in spiaggia) -->
         <img src="images/guide-con-bambini-iseo.jpg" alt="Paratico con i bambini: Bosco dei Taxodi e Parco Le Chiatte" loading="lazy">
@@ -1573,7 +1581,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="panorami-paratico.html">
+    <a class="guide-rich-card reveal-r" href="panorami-paratico.html">
       <div class="guide-rich-photo">
         <!-- SOSTITUISCI con la tua immagine generata (tramonto dal belvedere) -->
         <img src="images/guide-panorami-iseo.jpg" alt="Tramonto sul Lago d'Iseo visto dal lungolago di Paratico" loading="lazy">
@@ -1591,7 +1599,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="faq-paratico.html">
+    <a class="guide-rich-card reveal-l" href="faq-paratico.html">
       <div class="guide-rich-photo">
         <!-- SOSTITUISCI con la tua immagine generata (pontile con bacheca mappa) -->
         <img src="images/guide-faq-iseo.jpg" alt="Pontile con bacheca informativa sul lungolago di Paratico" loading="lazy">
@@ -1912,6 +1920,25 @@
   // Una volta selezionata una categoria, il relativo elenco scorre in automatico;
   // si ferma se l'utente passa il mouse sopra le card e riprende quando lo toglie.
   // ============================================================
+  // ============================================================
+  // ANIMAZIONE "A COMPARSA" LATERALE (solo mobile, via CSS @media)
+  // Le card "reveal-l"/"reveal-r" ricevono .in-view quando entrano nello schermo
+  // ============================================================
+  const revealEls = document.querySelectorAll('.reveal-l, .reveal-r');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
   // ============================================================
   // FAQ ACCORDION — quando si apre una domanda, chiude tutte le altre
   // ============================================================

@@ -74,6 +74,44 @@
   };
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dove parcheggiare a Marone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ci sono parcheggi lungo il lungolago e vicino al porticciolo; in alta stagione conviene arrivare presto o lasciare l'auto nelle vie del centro storico." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Vello da Marone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pochi minuti in auto o una pedalata sulla ciclopedonale Vello-Toline: la frazione di Vello, con l'antico porto e l'Eremo, è tra le mete più amate nei dintorni." }
+    },
+    {
+      "@type": "Question",
+      "name": "Si può fare il bagno a Marone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì, tra La Spiaggetta, il Lido Mad Hops e la Baia del Sol a Vello ci sono diverse opzioni per un bagno nelle acque limpide del Sebino." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dura la salita al Monte Guglielmo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dai vari sentieri di accesso servono in genere 3-4 ore di cammino fino alla vetta (1.949 m), tra i trekking più panoramici del Lago d'Iseo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Dove parte l'Antica Strada Valeriana a Marone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Il tratto che attraversa Marone si percorre nella parte alta del paese, tra uliveti e boschi, collegando Sale Marasino a Pisogne." }
+    },
+    {
+      "@type": "Question",
+      "name": "Dove si prende il battello a Marone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dal porticciolo sul lungolago di Marone, con corse verso le altre località della sponda orientale del lago." }
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://commons.wikimedia.org">
 <link rel="preconnect" href="https://upload.wikimedia.org">
@@ -591,25 +629,21 @@
 
   /* ============ MARONE: BORGO INTRO ============ */
   .marone-intro{padding:64px 32px 60px;}
-  .marone-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center;}
+  .marone-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
+  .marone-intro-inner > *{min-width:0;}
+  .marone-intro-text{display:flex;flex-direction:column;}
+  .marone-intro-text > .btn-outline{margin-top:auto;align-self:flex-start;}
   .marone-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
   }
-  .marone-intro-text h2{font-family:'Fraunces',serif;font-weight:600;font-size:32px;line-height:1.22;color:var(--navy);margin:0 0 18px;}
-  .marone-intro-text p{font-size:15px;line-height:1.7;color:var(--ink-soft);margin:0 0 26px;max-width:440px;text-align:justify;}
-  .marone-intro-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .marone-intro-card{overflow:hidden;border-radius:var(--radius-md);}
-  .marone-intro-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-md);margin-bottom:14px;}
-  .marone-intro-card h3{font-size:15.5px;font-weight:700;color:var(--navy);margin:0 0 6px;}
-  .marone-intro-card p{font-size:13px;line-height:1.55;color:var(--ink-soft);margin:0;text-align:justify;}
+  .marone-intro-text h2{font-family:'Fraunces',serif;font-weight:600;font-size:32px;line-height:1.22;color:var(--navy);margin:0 0 18px;overflow-wrap:break-word;}
+  .marone-intro-text p{font-size:15px;line-height:1.7;color:var(--ink-soft);margin:0 0 26px;max-width:none;text-align:justify;overflow-wrap:break-word;}
 
   @media (max-width:900px){
     .marone-intro-inner{grid-template-columns:1fr;}
-    .marone-intro-gallery{grid-template-columns:repeat(3,1fr);}
   }
   @media (max-width:640px){
-    .marone-intro-gallery{grid-template-columns:1fr;max-width:320px;}
   }
 
   @media (max-width:640px){
@@ -822,6 +856,91 @@
     .localita-arrow{display:none;}
     .localita-card{flex-basis:150px;}
   }
+  /* ============ NUOVE "TYPE CARD" (sostituiscono le 3 foto statiche di Scopri Marone) ============ */
+  .dest-type-head{text-align:center;margin:0 0 28px;}
+  .dest-type-head h2{margin:0 0 10px;}
+  .dest-type-squiggle{display:block;margin:0 auto 14px;color:var(--navy);opacity:.55;}
+  .dest-type-head p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:480px;margin:0 auto;}
+  .dest-type-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .dest-type-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--line);display:flex;flex-direction:column;}
+  .dest-type-photo{position:relative;aspect-ratio:4/2.7;}
+  .dest-type-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .dest-type-badge{
+    position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 14px -4px rgba(18,41,79,.22);border:2px solid #fff;
+  }
+  .dest-type-body{padding:32px 20px 18px;text-align:center;flex:1;display:flex;flex-direction:column;}
+  .dest-type-body h3{font-family:'Fraunces',serif;font-size:18px;line-height:1.25;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .dest-type-underline{width:30px;height:2px;margin:0 auto 10px;display:block;}
+  .dest-type-body p{font-size:13px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;flex:1;}
+  .dest-type-footer{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:9px;font-size:12.5px;font-weight:600;text-align:left;line-height:1.3;}
+  .dest-type-footer svg{flex:0 0 auto;}
+  .theme-green .dest-type-badge{background:#e7f4ec;color:#2f8f52;}
+  .theme-green .dest-type-body h3{color:#2f8f52;}
+  .theme-green .dest-type-underline{background:#2f8f52;}
+  .theme-green .dest-type-footer{background:#eef8f1;color:#2f6b45;}
+  .theme-purple .dest-type-badge{background:#eef0fb;color:#5468c9;}
+  .theme-purple .dest-type-body h3{color:#5468c9;}
+  .theme-purple .dest-type-underline{background:#5468c9;}
+  .theme-purple .dest-type-footer{background:#f1f3fb;color:#44559e;}
+  .theme-gold .dest-type-badge{background:#fbf1e2;color:#a9761c;}
+  .theme-gold .dest-type-body h3{color:#a9761c;}
+  .theme-gold .dest-type-underline{background:#a9761c;}
+  .theme-gold .dest-type-footer{background:#fcf5e8;color:#8a5f14;}
+  @media (max-width:900px){.dest-type-cards{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+
+  /* ============ MARONE: "DOVE SI TROVA" mini-card sotto il testo intro ============ */
+  .dest-mini-map-card{
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:24px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .dest-mini-map-head{display:flex;align-items:center;gap:10px;}
+  .dest-mini-map-icon{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .dest-mini-map-head h4{font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--navy);margin:0;text-transform:uppercase;}
+  .dest-mini-map-card p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0;}
+  .dest-mini-map-card a{font-size:13px;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:4px;}
+
+  /* ============ FASCE "PERCHÉ VISITARE" / "DA NON PERDERE" ============ */
+  .dest-highlights{padding:0 32px 40px;max-width:1240px;margin:0 auto;}
+  .dest-highlights-label{font-size:12.5px;font-weight:700;letter-spacing:.4px;color:var(--ink-soft);margin:0 0 12px;text-transform:uppercase;}
+  .dest-highlights-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .dest-highlight-chip{
+    display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;
+    border:1.5px solid var(--gold);color:var(--navy);font-size:13px;font-weight:600;background:#fff;
+    transition:background .2s ease,color .2s ease;
+  }
+  .dest-highlight-chip:hover{background:var(--gold);color:var(--navy-2);}
+  .dest-why-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .dest-why-tag{
+    display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;
+    background:var(--sand);color:var(--ink-soft);font-size:13px;font-weight:600;
+    border:none;cursor:default;white-space:nowrap;
+  }
+  .dest-why-tag svg{flex:0 0 auto;color:var(--gold);width:14px;height:14px;}
+  @media (max-width:640px){
+    .dest-highlights{padding:0 18px 32px;}
+    .dest-why-row{flex-direction:column;align-items:stretch;gap:8px;}
+    .dest-why-tag{font-size:12.5px;padding:9px 12px;white-space:normal;width:100%;box-sizing:border-box;}
+  }
+
+  /* ============ FAQ ============ */
+  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
+  .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
+  .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
+  .dest-faq-item[open] .dest-faq-q svg{transform:rotate(180deg);}
+  .dest-faq-a{font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin:12px 0 0;}
+  @media (max-width:640px){.dest-faq{padding:0 18px 48px;}}
+
+  /* ============ ANIMAZIONE "A COMPARSA" LATERALE (solo mobile) ============ */
+  @media (max-width:900px){
+    .reveal-l, .reveal-r{opacity:0;transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
+    .reveal-l{transform:translateX(-36px);}
+    .reveal-r{transform:translateX(36px);}
+    .reveal-l.in-view, .reveal-r.in-view{opacity:1;transform:translateX(0);}
+  }
+
   /* ============ SPAZI PUBBLICITARI ADSENSE ============ */
   .ad-slot{max-width:1240px;margin:0 auto;padding:0 32px;}
   .ad-slot-inner{
@@ -1042,24 +1161,97 @@
       <a href="scopri-marone.html" class="btn btn-outline">Leggi di più su Marone
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
       </a>
-    </div>
-    <div class="marone-intro-gallery">
-      <div class="marone-intro-card">
-        <img src="https://images.unsplash.com/photo-1745748763683-574d8986f984?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Lungolago di Marone, passeggiata panoramica sul Lago d'Iseo" loading="lazy">
-        <h3>Lungolago</h3>
-        <p>Una passeggiata panoramica tra colori e profumi mediterranei.</p>
-      </div>
-      <div class="marone-intro-card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ripe%20olive%20lurking%20in%20the%20leaves.jpg?width=700" alt="Ulivi e olio extravergine DOP di Marone" loading="lazy">
-        <h3>Terra d'olio</h3>
-        <p>Famosa per il suo olio extravergine d'oliva DOP di altissima qualità.</p>
-      </div>
-      <div class="marone-intro-card">
-        <img src="https://images.unsplash.com/photo-1745748763545-ad809623ff61?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Chiesa storica e centro storico di Marone" loading="lazy">
-        <h3>Storia e cultura</h3>
-        <p>Chiese, santuari e borghi ricchi di fascino e tradizione.</p>
+      <div class="dest-mini-map-card">
+        <div class="dest-mini-map-head">
+          <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+          <h4>Dove si trova</h4>
+        </div>
+        <p>Sulla sponda orientale del Lago d'Iseo, tra Sale Marasino e Pisogne, ai piedi del Monte Guglielmo.<br>Un borgo affacciato sul lago e circondato dalla natura.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Marone+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </div>
     </div>
+    <div class="dest-type-wrap">
+      <div class="dest-type-head">
+        <h2>Marone fa per te se&hellip;</h2>
+        <svg class="dest-type-squiggle" width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M2 7c4-8 8 8 12 0s8-8 12 0 8 8 12 0 8-8 12 0 8 8 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <p>Ogni viaggio ha il suo motivo. Scopri cosa rende speciale Marone in base a ciò che ami davvero.</p>
+      </div>
+      <div class="dest-type-cards">
+        <div class="dest-type-card theme-green reveal-l">
+          <div class="dest-type-photo">
+            <img src="images/marone-natura-escursioni.jpg" alt="Lungolago fiorito di Marone tra sentieri e panorami" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4 20 2c1 3.5-1.5 8-3 9-2 1.5-2 6-6 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+          </div>
+          <div class="dest-type-body">
+            <h3>Ami la natura e le escursioni</h3>
+            <span class="dest-type-underline"></span>
+            <p>Esplora i sentieri del Monte Guglielmo, passeggia tra uliveti secolari e boschi profumati, e lasciati sorprendere da panorami mozzafiato sul lago.</p>
+            <div class="dest-type-footer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M3 20l6-10 4 6 3-4 5 8H3z"/></svg>
+              <span>Tra trek panoramici, natura incontaminata e borghi in quota.</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-type-card theme-purple reveal-r">
+          <div class="dest-type-photo">
+            <img src="images/marone-lago-autentico.jpg" alt="Battello sul Lago d'Iseo davanti a Marone" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M3 18s2 2 4 2 3-1.5 5-1.5 3 1.5 5 1.5 4-2 4-2"/><path d="M5 18V9l7-3 7 3v9"/></svg></span>
+          </div>
+          <div class="dest-type-body">
+            <h3>Vuoi vivere il lago in modo autentico</h3>
+            <span class="dest-type-underline"></span>
+            <p>Goditi le acque limpide del Sebino, prendi il battello, fai un bagno nelle piccole spiagge o parti in canoa per scoprire il lago da un'altra prospettiva.</p>
+            <div class="dest-type-footer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M2 12c2-4 4-6 5-6s2 3 5 3 4-6 5-6 3 2 5 6M2 17c2-4 4-6 5-6s2 3 5 3 4-6 5-6 3 2 5 6"/></svg>
+              <span>Relax, sport acquatici e tramonti indimenticabili a due passi da te.</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-type-card theme-gold reveal-l">
+          <div class="dest-type-photo">
+            <img src="images/marone-gusto-tradizioni.jpg" alt="Aperitivo al tramonto con vista lago a Marone" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 3c2 3 3 5 3 7a3 3 0 1 1-6 0c0-2 1-4 3-7z"/><path d="M6 3c1.3 2 2 3.3 2 4.7A2 2 0 1 1 4 7.7C4 6.3 4.7 5 6 3zM18 3c1.3 2 2 3.3 2 4.7a2 2 0 1 1-4 0C16 6.3 16.7 5 18 3z"/></svg></span>
+          </div>
+          <div class="dest-type-body">
+            <h3>Vuoi gusto, tradizioni e ospitalità sincera</h3>
+            <span class="dest-type-underline"></span>
+            <p>Scopri i sapori della cucina locale, l'olio extravergine, i vini della Franciacorta e le feste tradizionali che raccontano l'anima autentica del territorio.</p>
+            <div class="dest-type-footer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M7 3v7a3 3 0 0 0 3 3v8M7 3v18M11 3v7M17 3v18M17 3a4 4 0 0 1 0 8"/></svg>
+              <span>Sapori genuini, prodotti locali e un'accoglienza che ti farà sentire a casa.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARONE: PERCHÉ VISITARE ============ -->
+<section class="dest-highlights" aria-label="Perché visitare Marone" style="padding-top:0;">
+  <p class="dest-highlights-label">Perché visitare Marone</p>
+  <div class="dest-why-row">
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Natura e Monte Guglielmo</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Olio extravergine DOP</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Spiagge e sport acquatici</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Antica Strada Valeriana</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tradizioni e sagre</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vicinanza a Vello e Pisogne</span>
+  </div>
+</section>
+
+<!-- ============ MARONE: DA NON PERDERE ============ -->
+<section class="dest-highlights" aria-label="Da non perdere a Marone">
+  <p class="dest-highlights-label">Da non perdere a Marone</p>
+  <div class="dest-highlights-row">
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Chiesa di San Martino</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Eremo di Vello</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Lungolago e porticciolo</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Chiesa del Carmine</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Piramidi di Erosione</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Stazione di Vello</a>
   </div>
 </section>
 
@@ -1405,13 +1597,53 @@
 </div>
 
 <!-- ============ MARONE: GUIDE (card ricche con foto + icone) ============ -->
+<section class="dest-faq" aria-label="Domande frequenti su Marone">
+  <h2 class="section-title">Domande frequenti su Marone</h2>
+  <details class="dest-faq-item" open>
+    <summary class="dest-faq-q">Dove parcheggiare a Marone?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Ci sono parcheggi lungo il lungolago e vicino al porticciolo; in alta stagione, soprattutto nei weekend estivi, conviene arrivare presto o lasciare l'auto nelle vie del centro storico.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Vello da Marone?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pochi minuti in auto o una piacevole pedalata sulla ciclopedonale Vello-Toline: la frazione di Vello, con il suo antico porto e l'Eremo, è una delle mete più amate nei dintorni di Marone.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Si può fare il bagno a Marone?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì, tra La Spiaggetta ("Piccola Tahiti"), il Lido Mad Hops e la Baia del Sol a Vello ci sono diverse opzioni per un bagno nelle acque limpide del Sebino.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dura la salita al Monte Guglielmo?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Dai vari sentieri di accesso servono in genere 3-4 ore di cammino fino alla vetta (1.949 m): un trekking impegnativo ma tra i più panoramici di tutto il Lago d'Iseo.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Dove parte l'Antica Strada Valeriana?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Il tratto che attraversa Marone si percorre nella parte alta del paese, tra uliveti e boschi, collegando idealmente Sale Marasino a Pisogne lungo l'antico cammino medievale.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Dove si prende il battello a Marone?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Dal porticciolo sul lungolago di Marone, con corse verso le altre località della sponda orientale del lago.</p>
+  </details>
+</section>
+
 <section class="dest-guide-hub" aria-label="Guide utili su Marone">
   <div class="section-divider"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
   <h2 class="section-title">Guide di Marone</h2>
   <p class="guide-hub-lead">Tutto quello che ti serve per organizzare la visita, in un unico posto.</p>
   <div class="guide-rich-grid">
 
-    <a class="guide-rich-card" href="come-arrivare-marone.html">
+    <a class="guide-rich-card reveal-l" href="come-arrivare-marone.html">
       <div class="guide-rich-photo">
         <img src="images/guide-come-arrivare-iseo.jpg" alt="Come arrivare a Marone: auto, treno e battello" loading="lazy">
       </div>
@@ -1428,7 +1660,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="weekend-marone.html">
+    <a class="guide-rich-card reveal-r" href="weekend-marone.html">
       <div class="guide-rich-photo">
         <img src="images/guide-weekend-iseo.jpg" alt="Weekend a Marone, vista sul borgo e sul lago" loading="lazy">
       </div>
@@ -1445,7 +1677,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="marone-con-bambini.html">
+    <a class="guide-rich-card reveal-l" href="marone-con-bambini.html">
       <div class="guide-rich-photo">
         <img src="images/guide-con-bambini-iseo.jpg" alt="Marone con i bambini: spiagge e parchi giochi" loading="lazy">
       </div>
@@ -1461,7 +1693,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="panorami-marone.html">
+    <a class="guide-rich-card reveal-r" href="panorami-marone.html">
       <div class="guide-rich-photo">
         <img src="images/guide-panorami-iseo.jpg" alt="Tramonto sul lago a Marone visto da un belvedere" loading="lazy">
       </div>
@@ -1478,7 +1710,7 @@
       </div>
     </a>
 
-    <a class="guide-rich-card" href="faq-marone.html">
+    <a class="guide-rich-card reveal-l" href="faq-marone.html">
       <div class="guide-rich-photo">
         <img src="images/guide-faq-iseo.jpg" alt="Pontile con bacheca informativa sul lago a Marone" loading="lazy">
       </div>
@@ -1828,6 +2060,36 @@
   // Una volta selezionata una categoria, il relativo elenco scorre in automatico;
   // si ferma se l'utente passa il mouse sopra le card e riprende quando lo toglie.
   // ============================================================
+  // ============================================================
+  // ANIMAZIONE "A COMPARSA" LATERALE (solo mobile, via CSS @media)
+  // ============================================================
+  const revealEls = document.querySelectorAll('.reveal-l, .reveal-r');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
+  // ============================================================
+  // FAQ ACCORDION — quando si apre una domanda, chiude tutte le altre
+  // ============================================================
+  const faqItems = document.querySelectorAll('.dest-faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        faqItems.forEach(other => { if (other !== item) other.open = false; });
+      }
+    });
+  });
+
   const cosaFareTabs = document.querySelectorAll('.cosa-fare-tab');
   const cosaFarePanels = document.querySelectorAll('.cosa-fare-panel');
   let cosaFareAutoInterval = null;

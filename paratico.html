@@ -553,13 +553,16 @@
 
   /* ============ MARONE: BORGO INTRO ============ */
   .dest-intro{padding:64px 32px 60px;}
-  .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:center;}
+  .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
+  .dest-intro-inner > *{min-width:0;}
+  .dest-intro-text{display:flex;flex-direction:column;}
+  .dest-intro-text > .btn-outline{margin-top:auto;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
   }
-  .dest-intro-text h2{font-family:'Fraunces',serif;font-weight:600;font-size:32px;line-height:1.22;color:var(--navy);margin:0 0 18px;}
-  .dest-intro-text p{font-size:15px;line-height:1.7;color:var(--ink-soft);margin:0 0 26px;max-width:440px;text-align:justify;}
+  .dest-intro-text h2{font-family:'Fraunces',serif;font-weight:600;font-size:32px;line-height:1.22;color:var(--navy);margin:0 0 18px;overflow-wrap:break-word;}
+  .dest-intro-text p{font-size:15px;line-height:1.7;color:var(--ink-soft);margin:0 0 26px;max-width:none;text-align:justify;overflow-wrap:break-word;word-break:normal;hyphens:none;}
   .dest-intro-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
   .dest-intro-card{overflow:hidden;border-radius:var(--radius-md);}
   .dest-intro-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-md);margin-bottom:14px;}
@@ -784,6 +787,41 @@
     .localita-arrow{display:none;}
     .localita-card{flex-basis:150px;}
   }
+  /* ============ NUOVE "TYPE CARD" (sostituiscono le 3 foto statiche di Scopri [Comune]) ============ */
+  .dest-type-wrap{}
+  .dest-type-head{text-align:center;margin:0 0 28px;}
+  .dest-type-head h2{margin:0 0 10px;}
+  .dest-type-squiggle{display:block;margin:0 auto 14px;color:var(--navy);opacity:.55;}
+  .dest-type-head p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:480px;margin:0 auto;}
+  .dest-type-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .dest-type-card{background:#fff;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--line);display:flex;flex-direction:column;}
+  .dest-type-photo{position:relative;aspect-ratio:4/2.7;}
+  .dest-type-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .dest-type-badge{
+    position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 14px -4px rgba(18,41,79,.22);border:2px solid #fff;
+  }
+  .dest-type-body{padding:32px 20px 18px;text-align:center;flex:1;display:flex;flex-direction:column;}
+  .dest-type-body h3{font-family:'Fraunces',serif;font-size:18px;line-height:1.25;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .dest-type-underline{width:30px;height:2px;margin:0 auto 10px;}
+  .dest-type-body p{font-size:13px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;flex:1;}
+  .dest-type-footer{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:9px;font-size:12.5px;font-weight:600;text-align:left;line-height:1.3;}
+  .dest-type-footer svg{flex:0 0 auto;}
+  .theme-green .dest-type-badge{background:#e7f4ec;color:#2f8f52;}
+  .theme-green .dest-type-body h3{color:#2f8f52;}
+  .theme-green .dest-type-underline{background:#2f8f52;}
+  .theme-green .dest-type-footer{background:#eef8f1;color:#2f6b45;}
+  .theme-purple .dest-type-badge{background:#eef0fb;color:#5468c9;}
+  .theme-purple .dest-type-body h3{color:#5468c9;}
+  .theme-purple .dest-type-underline{background:#5468c9;}
+  .theme-purple .dest-type-footer{background:#f1f3fb;color:#44559e;}
+  .theme-gold .dest-type-badge{background:#fbf1e2;color:var(--gold-dark,#a9761c);}
+  .theme-gold .dest-type-body h3{color:#a9761c;}
+  .theme-gold .dest-type-underline{background:#a9761c;}
+  .theme-gold .dest-type-footer{background:#fcf5e8;color:#8a5f14;}
+  @media (max-width:900px){.dest-type-cards{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+
   /* ============ SALE MARASINO: FASCIA "DA NON PERDERE" ============ */
   .dest-highlights{padding:0 32px 40px;max-width:1240px;margin:0 auto;}
   .dest-highlights-label{font-size:12.5px;font-weight:700;letter-spacing:.4px;color:var(--ink-soft);margin:0 0 12px;text-transform:uppercase;}
@@ -796,12 +834,25 @@
   .dest-highlight-chip:hover{background:var(--gold);color:var(--navy-2);}
   @media (max-width:640px){.dest-highlights{padding:0 18px 32px;}}
 
+  /* Tag statici "Perché visitare" - NON cliccabili, stile volutamente diverso dai chip-link */
+  .dest-why-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .dest-why-tag{
+    display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;
+    background:var(--sand);color:var(--ink-soft);font-size:13px;font-weight:600;
+    border:none;cursor:default;white-space:nowrap;
+  }
+  .dest-why-tag svg{flex:0 0 auto;color:var(--gold-dark,var(--gold));width:14px;height:14px;}
+  @media (max-width:640px){
+    .dest-why-row{gap:8px;}
+    .dest-why-tag{font-size:12.5px;padding:7px 12px;white-space:normal;}
+  }
+
   /* ============ PARATICO: FAQ ============ */
   .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
-  .dest-faq-item[open] .dest-faq-q svg{transform:rotate(45deg);}
+  .dest-faq-item[open] .dest-faq-q svg{transform:rotate(180deg);}
   .dest-faq-a{font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin:12px 0 0;}
   @media (max-width:640px){.dest-faq{padding:0 18px 48px;}}
 
@@ -1021,26 +1072,63 @@
     <div class="dest-intro-text">
       <span class="eyebrow-text">Scopri Paratico</span>
       <h2>Paratico, sulla sponda sud-ovest tra lago e Franciacorta</h2>
-      <p>Paratico si affaccia sulla sponda sud-ovest del Lago d'Iseo, nel punto esatto in cui il fiume Oglio esce dal lago: un ponte di confine la unisce a Sarnico, tanto da sembrare agli occhi del visitatore un'unica località. Dell'epoca medievale conserva i resti dell'antico Castello e la Torre Lantieri, fatta costruire nel Trecento dalla potente famiglia Lantieri: per secoli il territorio fu segnato dall'estrazione e dalla lavorazione della pietra arenaria grigia, detta "Pietra di Sarnico", cavata sul vicino Mons Romenini. Nell'Ottocento Paratico divenne un importante snodo commerciale grazie al collegamento ferrovia-chiatte con la linea Paratico-Palazzolo, oggi rivissuto nella ferrovia turistica del Treno Blu. Grazie alla sua ottima posizione rispetto alle vie di comunicazione, Paratico è oggi un punto di partenza ideale sia per esplorare il lago sia per addentrarsi nella Franciacorta, la vicina terra del vino.</p>
+      <p>Paratico si affaccia sulla sponda sud-ovest del Lago d'Iseo, unita a Sarnico da un ponte sul fiume Oglio, proprio nel punto in cui il fiume incontra il lago. Il nucleo originario del paese sorgeva sulla collina, dove ancora oggi si trovano i resti dell'antico Castello e la Torre Lantieri, fatta costruire nel Trecento dalla famiglia che ha dato il nome al paese: la torre è stata restaurata e musealizzata, e oggi ospita anche la Quadrisfera, un'installazione multimediale immersiva tra le poche in Italia. Per secoli il territorio fu segnato dalla lavorazione della pietra arenaria grigia, detta "Pietra di Sarnico", cavata sulle colline vicine, mentre nell'Ottocento Paratico divenne un importante snodo commerciale grazie al collegamento tra la ferrovia e le chiatte per il trasporto merci sul lago, oggi rivissuto nella ferrovia turistica del Treno Blu. Grazie alla sua posizione strategica rispetto alle vie di comunicazione, oggi Paratico è il punto di partenza ideale sia per esplorare il lago sia per addentrarsi nella Franciacorta, la vicina terra del vino: in pochi minuti si raggiungono le prime cantine e i borghi storici della zona.</p>
       <a href="scopri-paratico.html" class="btn btn-outline">Leggi di più su Paratico
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
       </a>
     </div>
-    <div class="dest-intro-gallery">
-      <div class="dest-intro-card">
-        <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=800&q=75&auto=format&fit=crop&fm=jpg" alt="Torre medievale in pietra, immagine di riferimento per la Torre Lantieri" loading="lazy">
-        <h3>La Torre Lantieri</h3>
-        <p>Simbolo del paese, costruita nel Trecento e restaurata nel 2009: oggi ospita anche la Quadrisfera, installazione multimediale immersiva.</p>
+    <div class="dest-type-wrap">
+      <div class="dest-type-head">
+        <h2>Paratico fa per te se&hellip;</h2>
+        <svg class="dest-type-squiggle" width="60" height="14" viewBox="0 0 60 14" fill="none"><path d="M2 7c4-8 8 8 12 0s8-8 12 0 8 8 12 0 8-8 12 0 8 8 10 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <p>Ogni viaggio ha il suo motivo. Scopri cosa rende speciale Paratico in base a ciò che ami davvero.</p>
       </div>
-      <div class="dest-intro-card">
-        <img src="https://images.unsplash.com/photo-1526401485004-46910ecc8e51?w=800&q=75&auto=format&fit=crop&fm=jpg" alt="Passerella di legno tra alberi immersi nell'acqua, immagine di riferimento per il Bosco dei Taxodi" loading="lazy">
-        <h3>Il Bosco dei Taxodi</h3>
-        <p>Un'oasi naturale unica in Italia, dove il fiume Oglio incontra il lago: cipressi calvi d'acqua nordamericani, esplorabili su passerelle di legno.</p>
-      </div>
-      <div class="dest-intro-card">
-        <img src="https://images.unsplash.com/photo-1745748763530-337be3f67db8?w=800&q=75&auto=format&fit=crop&fm=jpg" alt="Ponte sul fiume tra due paesi, immagine di riferimento per il confine tra Paratico e Sarnico" loading="lazy">
-        <h3>Il ponte per Sarnico</h3>
-        <p>Un legame strettissimo: attraversando il ponte sull'Oglio si passa da Paratico a Sarnico in pochi passi, tra le due sponde del lago.</p>
+      <div class="dest-type-cards">
+        <div class="dest-type-card theme-green">
+          <div class="dest-type-photo">
+            <img src="images/paratico-natura-taxodi.jpg" alt="Passerella di legno tra alberi immersi nell'acqua, il Bosco dei Taxodi" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4 20 2c1 3.5-1.5 8-3 9-2 1.5-2 6-6 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+          </div>
+          <div class="dest-type-body">
+            <h3>Ami la natura</h3>
+            <span class="dest-type-underline"></span>
+            <p>Passeggia nel Bosco dei Taxodi, percorri il lungolago e scopri gli angoli più verdi dove il fiume Oglio incontra il Lago d'Iseo.</p>
+            <div class="dest-type-footer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>Da non perdere<br>il Bosco dei Taxodi</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-type-card theme-purple">
+          <div class="dest-type-photo">
+            <img src="images/paratico-vacanza-attiva.jpg" alt="Ciclabile panoramica lungo il lago con vista sulle montagne" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2zM12 17.5V14l-3-3 4-3 2 3h2"/></svg></span>
+          </div>
+          <div class="dest-type-body">
+            <h3>Cerchi una vacanza attiva</h3>
+            <span class="dest-type-underline"></span>
+            <p>Pedala lungo la ciclabile, esplora la Franciacorta e vivi il lago tra sport acquatici, trekking e itinerari panoramici.</p>
+            <div class="dest-type-footer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2l2.9 6.6L21 9.3l-5 4.6L17.4 21 12 17.6 6.6 21 8 13.9l-5-4.6 6.1-.7z"/></svg>
+              <span>Da provare<br>la ciclabile e gli sport sul lago</span>
+            </div>
+          </div>
+        </div>
+        <div class="dest-type-card theme-gold">
+          <div class="dest-type-photo">
+            <img src="images/paratico-relax-vigneti.jpg" alt="Aperitivo al tramonto in riva al lago, con vista sul Lago d'Iseo" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M8 22h8M7 10h10M12 15v7M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5z"/></svg></span>
+          </div>
+          <div class="dest-type-body">
+            <h3>Vuoi rilassarti tra lago e vigneti</h3>
+            <span class="dest-type-underline"></span>
+            <p>Goditi il ritmo lento del paese, un aperitivo vista lago e le cantine della Franciacorta a pochi minuti di distanza.</p>
+            <div class="dest-type-footer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+              <span>Da vivere<br>un aperitivo vista lago in totale relax</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1049,13 +1137,13 @@
 <!-- ============ PARATICO: PERCHÉ VISITARE (box riassuntivo) ============ -->
 <section class="dest-highlights" aria-label="Perché visitare Paratico" style="padding-top:0;">
   <p class="dest-highlights-label">Perché visitare Paratico</p>
-  <div class="dest-highlights-row">
-    <span class="dest-highlight-chip" style="cursor:default;">Natura e Bosco dei Taxodi</span>
-    <span class="dest-highlight-chip" style="cursor:default;">Lago e sport acquatici</span>
-    <span class="dest-highlight-chip" style="cursor:default;">Porta della Franciacorta</span>
-    <span class="dest-highlight-chip" style="cursor:default;">Percorsi ciclabili</span>
-    <span class="dest-highlight-chip" style="cursor:default;">Storia medievale</span>
-    <span class="dest-highlight-chip" style="cursor:default;">Vicinanza a Sarnico</span>
+  <div class="dest-why-row">
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Natura e Bosco dei Taxodi</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Lago e sport acquatici</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Porta della Franciacorta</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Percorsi ciclabili</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Storia medievale</span>
+    <span class="dest-why-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Vicinanza a Sarnico</span>
   </div>
 </section>
 
@@ -1063,12 +1151,12 @@
 <section class="dest-highlights" aria-label="Da non perdere a Paratico">
   <p class="dest-highlights-label">Da non perdere a Paratico</p>
   <div class="dest-highlights-row">
-    <a class="dest-highlight-chip" href="#itinerari">Torre Lantieri</a>
-    <a class="dest-highlight-chip" href="#itinerari">Bosco dei Taxodi</a>
-    <a class="dest-highlight-chip" href="#itinerari">Viale dei Volti</a>
-    <a class="dest-highlight-chip" href="#itinerari">Parco delle Erbe Danzanti</a>
-    <a class="dest-highlight-chip" href="#itinerari">Villa Oselanda</a>
-    <a class="dest-highlight-chip" href="#itinerari">Ponte per Sarnico</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Torre Lantieri</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Bosco dei Taxodi</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Viale dei Volti</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Parco delle Erbe Danzanti</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Villa Oselanda</a>
+    <a class="dest-highlight-chip" href="#itinerari" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Ponte per Sarnico</a>
   </div>
 </section>
 
@@ -1175,6 +1263,22 @@
           <h3>Torre Lantieri</h3>
           <p>Costruita nel Trecento dalla famiglia Lantieri, restaurata nel 2009 e musealizzata: ospita anche la Quadrisfera, una delle poche installazioni multimediali immersive in Italia.</p>
           <div class="itin-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 30-45 min</div>
+        </div>
+      </article>
+      <article class="itin-card">
+        <img src="https://images.unsplash.com/photo-1526401485004-46910ecc8e51?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Passerella di legno tra alberi immersi nell'acqua, il Bosco dei Taxodi" loading="lazy">
+        <div class="itin-body">
+          <h3>Bosco dei Taxodi</h3>
+          <p>Oasi naturale unica in Italia dove il fiume Oglio incontra il lago: cipressi calvi d'acqua nordamericani da ammirare su una passerella di 300 metri.</p>
+          <div class="itin-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 30-45 min</div>
+        </div>
+      </article>
+      <article class="itin-card">
+        <img src="https://images.unsplash.com/photo-1690135689528-d6147a34d3a5?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Ponte sul fiume tra due paesi, immagine di riferimento per il confine tra Paratico e Sarnico" loading="lazy">
+        <div class="itin-body">
+          <h3>Ponte per Sarnico</h3>
+          <p>Il collegamento sul fiume Oglio che unisce Paratico a Sarnico: attraversarlo a piedi regala una delle viste più belle sulle due sponde del lago.</p>
+          <div class="itin-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> 10-15 min</div>
         </div>
       </article>
       <article class="itin-card">
@@ -1374,37 +1478,37 @@
   <h2 class="section-title">Domande frequenti su Paratico</h2>
   <details class="dest-faq-item" open>
     <summary class="dest-faq-q">Dove parcheggiare a Paratico?
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
     <p class="dest-faq-a">Il parcheggio più comodo è quello della vecchia stazione, proprio accanto al Bosco dei Taxodi, a pagamento. Altri posti auto si trovano lungo il lungolago e vicino al centro storico.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Quanto dista Sarnico da Paratico?
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
     <p class="dest-faq-a">Pochi passi: un ponte sul fiume Oglio collega direttamente Paratico a Sarnico, tanto che ai visitatori sembrano quasi un'unica località.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Si può fare il bagno a Paratico?
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
     <p class="dest-faq-a">Sì, al Parco Le Chiatte è presente una zona verde attrezzata per la balneazione in riva al lago, oltre ad aree dedicate agli sport acquatici.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Quanto dura la passeggiata nel Bosco dei Taxodi?
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
     <p class="dest-faq-a">La passerella in legno di 300 metri si percorre comodamente in circa 30-45 minuti, tempo per le foto incluso.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parte il Treno Blu?
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
     <p class="dest-faq-a">Dalla storica stazione di Paratico, capolinea della linea turistica Paratico-Palazzolo-Iseo, attiva nei weekend di primavera ed estate.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove si prende il battello a Paratico?
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M5 12h14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
     <p class="dest-faq-a">L'imbarco più vicino è quello di Sarnico, appena oltre il ponte, da cui partono le linee di navigazione per le altre località del Lago d'Iseo.</p>
   </details>
@@ -1808,6 +1912,18 @@
   // Una volta selezionata una categoria, il relativo elenco scorre in automatico;
   // si ferma se l'utente passa il mouse sopra le card e riprende quando lo toglie.
   // ============================================================
+  // ============================================================
+  // FAQ ACCORDION — quando si apre una domanda, chiude tutte le altre
+  // ============================================================
+  const faqItems = document.querySelectorAll('.dest-faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        faqItems.forEach(other => { if (other !== item) other.open = false; });
+      }
+    });
+  });
+
   const cosaFareTabs = document.querySelectorAll('.cosa-fare-tab');
   const cosaFarePanels = document.querySelectorAll('.cosa-fare-panel');
   let cosaFareAutoInterval = null;

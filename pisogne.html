@@ -556,7 +556,8 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
+  .dest-intro-bottom{margin-top:auto;display:flex;flex-direction:column;}
+  .dest-intro-bottom > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -571,7 +572,6 @@
 
   @media (max-width:900px){
     .dest-intro-inner{grid-template-columns:1fr;}
-    .dest-mini-map-card{margin-top:24px;}
     .dest-intro-gallery{grid-template-columns:repeat(3,1fr);}
   }
   @media (max-width:640px){
@@ -824,7 +824,7 @@
 
   /* ============ MARONE: "DOVE SI TROVA" mini-card sotto il testo intro ============ */
   .dest-mini-map-card{
-    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:auto;
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:24px;
     display:flex;flex-direction:column;gap:10px;
   }
   .dest-mini-map-head{display:flex;align-items:center;gap:10px;}
@@ -1092,18 +1092,20 @@
       <span class="eyebrow-text">Scopri Pisogne</span>
       <h2>Pisogne, tra il Lago d'Iseo e la Val Camonica</h2>
       <p>Pisogne sorge all'estremo nord della sponda orientale del Lago d'Iseo, nel punto in cui il lago incontra la Val Camonica: una posizione strategica che nel Medioevo ne fece un importante porto commerciale sotto la Repubblica di Venezia. A questa storia di confine appartiene anche una vicenda drammatica: nel 1518 otto donne accusate di stregoneria furono arse sul rogo nella piazza principale. Ancora oggi il porto resta un punto di approdo importante, con i battelli per Lovere, mentre il centro storico, fatto di vie strette e palazzi color pastello, invita a una sosta al tramonto. Il lungolago di Pisogne è il più lungo del Sebino, ideale per passeggiate con i bambini.</p>
-      <a href="scopri-pisogne.html" class="btn btn-outline">Leggi di più su Pisogne
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <div class="dest-mini-map-card">
-        <div class="dest-mini-map-head">
-          <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
-          <h4>Dove si trova</h4>
-        </div>
-        <p>Sulla sponda settentrionale del Lago d'Iseo, tra Lovere e Marone, ai piedi delle montagne della Val Camonica.<br>Un punto di partenza perfetto per esplorare lago, borghi e natura.</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Pisogne+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <div class="dest-intro-bottom">
+        <a href="scopri-pisogne.html" class="btn btn-outline">Leggi di più su Pisogne
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
         </a>
+        <div class="dest-mini-map-card">
+          <div class="dest-mini-map-head">
+            <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+            <h4>Dove si trova</h4>
+          </div>
+          <p>Sulla sponda settentrionale del Lago d'Iseo, tra Lovere e Marone, ai piedi delle montagne della Val Camonica.<br>Un punto di partenza perfetto per esplorare lago, borghi e natura.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Pisogne+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="dest-type-wrap">

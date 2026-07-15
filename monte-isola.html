@@ -558,7 +558,8 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
+  .dest-intro-bottom{display:contents;}
+  .dest-intro-bottom > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -573,6 +574,7 @@
 
   @media (max-width:900px){
     .dest-intro-inner{grid-template-columns:1fr;}
+    .dest-intro-bottom{display:flex;flex-direction:column;}
     .dest-mini-map-card{margin-top:24px;}
     .dest-intro-gallery{grid-template-columns:repeat(3,1fr);}
   }
@@ -1094,18 +1096,20 @@
       <span class="eyebrow-text">Scopri Monte Isola</span>
       <h2>Un'isola senza auto, sospesa tra lago e ulivi</h2>
       <p>Sull'isola lacustre più grande d'Italia non circolano automobili private: ci si sposta a piedi, in bicicletta o con il bus locale, tra undici borghi di pescatori che custodiscono intatta l'atmosfera di un tempo. Gli uliveti terrazzati scendono fino alla riva e ogni curva della strada regala una vista diversa sul Sebino. Il borgo di Peschiera Maraglio, con le reti stese ad asciugare, e Siviano, il centro amministrativo, sono i punti di partenza per la salita al Santuario della Madonna della Ceriola, da cui lo sguardo abbraccia l'intero lago. La pesca sopravvive oggi nelle celebri sardine essiccate, specialità dei ristoranti locali.</p>
-      <a href="scopri-monte-isola.html" class="btn btn-outline">Leggi di più su Monte Isola
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <div class="dest-mini-map-card">
-        <div class="dest-mini-map-head">
-          <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
-          <h4>Dove si trova</h4>
-        </div>
-        <p>Nel centro del Lago d'Iseo, raggiungibile in battello da Iseo, Sulzano e Sale Marasino.<br>Un'isola unica, tutta da esplorare a piedi o in bicicletta.</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Monte+Isola+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <div class="dest-intro-bottom">
+        <a href="scopri-monte-isola.html" class="btn btn-outline">Leggi di più su Monte Isola
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
         </a>
+        <div class="dest-mini-map-card">
+          <div class="dest-mini-map-head">
+            <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+            <h4>Dove si trova</h4>
+          </div>
+          <p>Nel centro del Lago d'Iseo, raggiungibile in battello da Iseo, Sulzano e Sale Marasino.<br>Un'isola unica, tutta da esplorare a piedi o in bicicletta.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Monte+Isola+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="dest-type-wrap">

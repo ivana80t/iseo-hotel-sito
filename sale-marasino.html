@@ -556,7 +556,8 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
+  .dest-intro-bottom{display:contents;}
+  .dest-intro-bottom > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -571,6 +572,7 @@
 
   @media (max-width:900px){
     .dest-intro-inner{grid-template-columns:1fr;}
+    .dest-intro-bottom{display:flex;flex-direction:column;}
     .dest-mini-map-card{margin-top:24px;}
     .dest-intro-gallery{grid-template-columns:repeat(3,1fr);}
   }
@@ -1092,18 +1094,20 @@
       <span class="eyebrow-text">Scopri Sale Marasino</span>
       <h2>Sale Marasino, un anfiteatro di ville tra lago e montagna</h2>
       <p>Sale Marasino sorge sulla sponda orientale del Lago d'Iseo, in un ampio anfiteatro naturale tra Sulzano e Marone, alle spalle del quale si erge Punta Almana, la vetta più alta del lago (1391 m). Tra Cinquecento e Ottocento fu residenza estiva delle famiglie nobili bresciane, che costruirono ville ancora visibili lungo il lungolago, prima fra tutte Villa Martinengo Villagana. Il centro storico conserva dimore rinascimentali come Palazzo Giugni, mentre la scalinata della Chiesa di San Zenone domina il porticciolo da cui partono i traghetti per Monte Isola. Proprio di fronte al paese si specchia la suggestiva Isola di Loreto.</p>
-      <a href="scopri-sale-marasino.html" class="btn btn-outline">Leggi di più su Sale Marasino
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
-      </a>
-      <div class="dest-mini-map-card">
-        <div class="dest-mini-map-head">
-          <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
-          <h4>Dove si trova</h4>
-        </div>
-        <p>Sulla sponda orientale del Lago d'Iseo, tra Marone e Sulzano, di fronte a Monte Isola.<br>Un punto panoramico privilegiato sul cuore del Sebino.</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Sale+Marasino+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <div class="dest-intro-bottom">
+        <a href="scopri-sale-marasino.html" class="btn btn-outline">Leggi di più su Sale Marasino
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
         </a>
+        <div class="dest-mini-map-card">
+          <div class="dest-mini-map-head">
+            <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+            <h4>Dove si trova</h4>
+          </div>
+          <p>Sulla sponda orientale del Lago d'Iseo, tra Marone e Sulzano, di fronte a Monte Isola.<br>Un punto panoramico privilegiato sul cuore del Sebino.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Sale+Marasino+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="dest-type-wrap">

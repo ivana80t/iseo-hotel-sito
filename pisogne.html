@@ -556,7 +556,7 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-bottom{margin-top:auto;display:flex;flex-direction:column;}
+  .dest-intro-bottom{display:contents;}
   .dest-intro-bottom > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
@@ -572,6 +572,8 @@
 
   @media (max-width:900px){
     .dest-intro-inner{grid-template-columns:1fr;}
+    .dest-intro-bottom{display:flex;flex-direction:column;}
+    .dest-mini-map-card{margin-top:24px;}
     .dest-intro-gallery{grid-template-columns:repeat(3,1fr);}
   }
   @media (max-width:640px){
@@ -824,7 +826,7 @@
 
   /* ============ MARONE: "DOVE SI TROVA" mini-card sotto il testo intro ============ */
   .dest-mini-map-card{
-    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:24px;
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:auto;
     display:flex;flex-direction:column;gap:10px;
   }
   .dest-mini-map-head{display:flex;align-items:center;gap:10px;}

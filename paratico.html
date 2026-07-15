@@ -556,7 +556,7 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-text > .btn-outline{margin-top:auto;align-self:flex-start;}
+  .dest-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -822,6 +822,17 @@
   .theme-gold .dest-type-footer{background:#fcf5e8;color:#8a5f14;}
   @media (max-width:900px){.dest-type-cards{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
 
+  /* ---------- "Dove si trova" mini-card sotto il testo intro ---------- */
+  .dest-mini-map-card{
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:auto;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .dest-mini-map-head{display:flex;align-items:center;gap:10px;}
+  .dest-mini-map-icon{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+  .dest-mini-map-head h4{font-size:12.5px;font-weight:700;letter-spacing:.3px;color:var(--navy);margin:0;text-transform:uppercase;}
+  .dest-mini-map-card p{font-size:13.5px;line-height:1.55;color:var(--ink-soft);margin:0;}
+  .dest-mini-map-card a{font-size:13px;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:4px;}
+
   /* ============ SALE MARASINO: FASCIA "DA NON PERDERE" ============ */
   .dest-highlights{padding:0 32px 40px;max-width:1240px;margin:0 auto;}
   .dest-highlights-label{font-size:12.5px;font-weight:700;letter-spacing:.4px;color:var(--ink-soft);margin:0 0 12px;text-transform:uppercase;}
@@ -845,6 +856,8 @@
   @media (max-width:640px){
     .dest-why-row{flex-direction:column;align-items:stretch;gap:8px;}
     .dest-why-tag{font-size:12.5px;padding:9px 12px;white-space:normal;width:100%;box-sizing:border-box;}
+    .dest-highlights-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .dest-highlight-chip{width:100%;box-sizing:border-box;justify-content:center;text-align:center;white-space:normal;}
   }
 
   /* ============ PARATICO: FAQ ============ */
@@ -1080,10 +1093,20 @@
     <div class="dest-intro-text">
       <span class="eyebrow-text">Scopri Paratico</span>
       <h2>Paratico, sulla sponda sud-ovest tra lago e Franciacorta</h2>
-      <p>Paratico si affaccia sulla sponda sud-ovest del Lago d'Iseo, unita a Sarnico da un ponte sul fiume Oglio, proprio nel punto in cui il fiume incontra il lago. Il nucleo originario del paese sorgeva sulla collina, dove ancora oggi si trovano i resti dell'antico Castello e la Torre Lantieri, fatta costruire nel Trecento dalla famiglia che ha dato il nome al paese: la torre è stata restaurata e musealizzata, e oggi ospita anche la Quadrisfera, un'installazione multimediale immersiva tra le poche in Italia. Per secoli il territorio fu segnato dalla lavorazione della pietra arenaria grigia, detta "Pietra di Sarnico", cavata sulle colline vicine, mentre nell'Ottocento Paratico divenne un importante snodo commerciale grazie al collegamento tra la ferrovia e le chiatte per il trasporto merci sul lago, oggi rivissuto nella ferrovia turistica del Treno Blu. Grazie alla sua posizione strategica rispetto alle vie di comunicazione, oggi Paratico è il punto di partenza ideale sia per esplorare il lago sia per addentrarsi nella Franciacorta, la vicina terra del vino: in pochi minuti si raggiungono le prime cantine e i borghi storici della zona.</p>
+      <p>Paratico si affaccia sulla sponda sud-ovest del Lago d'Iseo, unita a Sarnico da un ponte sul fiume Oglio, proprio nel punto in cui il fiume incontra il lago. Il nucleo originario sorgeva sulla collina, dove si trovano i resti dell'antico Castello e la Torre Lantieri, restaurata e oggi sede della Quadrisfera, un'installazione multimediale immersiva tra le poche in Italia. Per secoli il territorio fu segnato dalla lavorazione della pietra arenaria grigia, la "Pietra di Sarnico". Oggi Paratico è il punto di partenza ideale sia per il lago sia per la vicina Franciacorta, la terra del vino a pochi minuti di distanza.</p>
       <a href="scopri-paratico.html" class="btn btn-outline">Leggi di più su Paratico
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
       </a>
+      <div class="dest-mini-map-card">
+        <div class="dest-mini-map-head">
+          <span class="dest-mini-map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+          <h4>Dove si trova</h4>
+        </div>
+        <p>Sponda sud-ovest del Lago d'Iseo, unita a Sarnico da un ponte sul fiume Oglio, alle porte della Franciacorta.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Paratico+Lago+d%27Iseo" target="_blank" rel="noopener">Vedi sulla mappa
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
     </div>
     <div class="dest-type-wrap">
       <div class="dest-type-head">
@@ -1484,7 +1507,7 @@
 <!-- ============ ISEO: GUIDE (card ricche con foto + icone) ============ -->
 <section class="dest-faq" aria-label="Domande frequenti su Paratico">
   <h2 class="section-title">Domande frequenti su Paratico</h2>
-  <details class="dest-faq-item" open>
+  <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Paratico?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
@@ -1628,7 +1651,7 @@
         <div><span class="eyebrow-text">Dove dormire</span><h2>Hotel e strutture a Paratico</h2></div>
         <a href="hotel.html?localita=paratico">Vedi tutte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
-      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;">Da Paratico si scelgono hotel sul lungolago, B&amp;B nel centro storico, agriturismi immersi tra i vigneti della Franciacorta e campeggi per chi ama il pernottamento all'aria aperta.</p>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">Da Paratico si scelgono hotel sul lungolago, B&amp;B nel centro storico, agriturismi tra i vigneti della Franciacorta e campeggi per chi ama il pernottamento all'aria aperta.</p>
       <div class="dm-grid" id="dmHotelGrid">
         <p class="dm-empty" id="dmHotelStato">Caricamento strutture in corso...</p>
       </div>
@@ -1638,7 +1661,7 @@
         <div><span class="eyebrow-text">Dove mangiare</span><h2>Ristoranti a Paratico</h2></div>
         <a href="ristoranti.html?localita=paratico">Vedi tutti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
-      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;">La cucina tipica di Paratico alterna il pesce di lago ai sapori della Franciacorta: ristoranti sul lungolago per un pranzo con vista e agriturismi in collina per assaggiare i prodotti del territorio.</p>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">La cucina tipica di Paratico alterna il pesce di lago ai sapori della Franciacorta: ristoranti sul lungolago e agriturismi in collina per i prodotti del territorio.</p>
       <div class="dm-grid" id="dmRistoGrid">
         <p class="dm-empty" id="dmRistoStato">Caricamento ristoranti in corso...</p>
       </div>
@@ -1926,12 +1949,9 @@
   // ============================================================
   const revealEls = document.querySelectorAll('.reveal-l, .reveal-r');
   if ('IntersectionObserver' in window && revealEls.length) {
-    const revealObserver = new IntersectionObserver((entries, obs) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));

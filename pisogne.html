@@ -556,7 +556,7 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-text > .btn-outline{margin-top:auto;align-self:flex-start;}
+  .dest-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -823,7 +823,7 @@
 
   /* ============ MARONE: "DOVE SI TROVA" mini-card sotto il testo intro ============ */
   .dest-mini-map-card{
-    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:24px;
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:auto;
     display:flex;flex-direction:column;gap:10px;
   }
   .dest-mini-map-head{display:flex;align-items:center;gap:10px;}
@@ -853,6 +853,8 @@
     .dest-highlights{padding:0 18px 32px;}
     .dest-why-row{flex-direction:column;align-items:stretch;gap:8px;}
     .dest-why-tag{font-size:12.5px;padding:9px 12px;white-space:normal;width:100%;box-sizing:border-box;}
+    .dest-highlights-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .dest-highlight-chip{width:100%;box-sizing:border-box;justify-content:center;text-align:center;white-space:normal;}
   }
 
   /* ============ FAQ ============ */
@@ -1088,7 +1090,7 @@
     <div class="dest-intro-text">
       <span class="eyebrow-text">Scopri Pisogne</span>
       <h2>Pisogne, tra il Lago d'Iseo e la Val Camonica</h2>
-      <p>Pisogne sorge all'estremo nord della sponda orientale del Lago d'Iseo, nel punto esatto in cui il lago incontra la Val Camonica: una posizione strategica che nel Medioevo ne fece un importante porto commerciale, crocevia di traffici tra Brescia e le valli alpine sotto la Repubblica di Venezia. Proprio a questa storia di confine appartiene anche una delle vicende più drammatiche del paese: nel 1518 otto donne accusate di stregoneria furono imprigionate nella Torre del Vescovo e arse sul rogo nella piazza principale. Ancora oggi il porto di Pisogne resta un punto di approdo importante, con i battelli che collegano il paese a Lovere e alle altre località del lago, mentre il centro storico, fatto di vie strette e palazzi dai colori pastello, invita a una sosta soprattutto al tramonto. Il lungolago di Pisogne è il più lungo di tutto il Sebino, ideale per passeggiate in sicurezza con i bambini. Chi visita Pisogne ha anche la comodità di trovarsi alla porta d'accesso della Val Camonica, patrimonio UNESCO per le sue incisioni rupestri, facilmente raggiungibile proseguendo verso nord lungo la ciclabile dell'Oglio.</p>
+      <p>Pisogne sorge all'estremo nord della sponda orientale del Lago d'Iseo, nel punto in cui il lago incontra la Val Camonica: una posizione strategica che nel Medioevo ne fece un importante porto commerciale sotto la Repubblica di Venezia. A questa storia di confine appartiene anche una vicenda drammatica: nel 1518 otto donne accusate di stregoneria furono arse sul rogo nella piazza principale. Ancora oggi il porto resta un punto di approdo importante, con i battelli per Lovere, mentre il centro storico, fatto di vie strette e palazzi color pastello, invita a una sosta al tramonto. Il lungolago di Pisogne è il più lungo del Sebino, ideale per passeggiate con i bambini.</p>
       <a href="scopri-pisogne.html" class="btn btn-outline">Leggi di più su Pisogne
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
       </a>
@@ -1519,7 +1521,7 @@
 <!-- ============ ISEO: GUIDE (card ricche con foto + icone) ============ -->
 <section class="dest-faq" aria-label="Domande frequenti su Pisogne">
   <h2 class="section-title">Domande frequenti su Pisogne</h2>
-  <details class="dest-faq-item" open>
+  <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Pisogne?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
@@ -1663,6 +1665,7 @@
         <div><span class="eyebrow-text">Dove dormire</span><h2>Hotel e strutture a Pisogne</h2></div>
         <a href="hotel.html?localita=pisogne">Vedi tutte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">A Pisogne si trovano hotel e B&amp;B nel centro storico e agriturismi alle porte della Valle Camonica, comodi per chi vuole esplorare arte e natura.</p>
       <div class="dm-grid" id="dmHotelGrid">
         <p class="dm-empty" id="dmHotelStato">Caricamento strutture in corso...</p>
       </div>
@@ -1672,6 +1675,7 @@
         <div><span class="eyebrow-text">Dove mangiare</span><h2>Ristoranti a Pisogne</h2></div>
         <a href="ristoranti.html?localita=pisogne">Vedi tutti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">La ristorazione di Pisogne mescola i sapori del lago con quelli della Valle Camonica: trattorie di paese e locali sul lungolago per ogni occasione.</p>
       <div class="dm-grid" id="dmRistoGrid">
         <p class="dm-empty" id="dmRistoStato">Caricamento ristoranti in corso...</p>
       </div>
@@ -1962,12 +1966,9 @@
   // ============================================================
   const revealEls = document.querySelectorAll('.reveal-l, .reveal-r');
   if ('IntersectionObserver' in window && revealEls.length) {
-    const revealObserver = new IntersectionObserver((entries, obs) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));

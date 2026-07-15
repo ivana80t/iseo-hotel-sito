@@ -558,7 +558,7 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-text > .btn-outline{margin-top:auto;align-self:flex-start;}
+  .dest-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -825,7 +825,7 @@
 
   /* ============ MARONE: "DOVE SI TROVA" mini-card sotto il testo intro ============ */
   .dest-mini-map-card{
-    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:24px;
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:auto;
     display:flex;flex-direction:column;gap:10px;
   }
   .dest-mini-map-head{display:flex;align-items:center;gap:10px;}
@@ -855,6 +855,8 @@
     .dest-highlights{padding:0 18px 32px;}
     .dest-why-row{flex-direction:column;align-items:stretch;gap:8px;}
     .dest-why-tag{font-size:12.5px;padding:9px 12px;white-space:normal;width:100%;box-sizing:border-box;}
+    .dest-highlights-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .dest-highlight-chip{width:100%;box-sizing:border-box;justify-content:center;text-align:center;white-space:normal;}
   }
 
   /* ============ FAQ ============ */
@@ -1090,7 +1092,7 @@
     <div class="dest-intro-text">
       <span class="eyebrow-text">Scopri Monte Isola</span>
       <h2>Un'isola senza auto, sospesa tra lago e ulivi</h2>
-      <p>Sull'isola lacustre più grande d'Italia non circolano automobili private: ci si sposta a piedi, in bicicletta o con il bus locale, tra undici borghi di pescatori che custodiscono intatta l'atmosfera di un tempo. Gli uliveti terrazzati scendono fino alla riva e ogni curva della strada che gira intorno all'isola regala una vista diversa sul Sebino.</p>
+      <p>Sull'isola lacustre più grande d'Italia non circolano automobili private: ci si sposta a piedi, in bicicletta o con il bus locale, tra undici borghi di pescatori che custodiscono intatta l'atmosfera di un tempo. Gli uliveti terrazzati scendono fino alla riva e ogni curva della strada regala una vista diversa sul Sebino. Il borgo di Peschiera Maraglio, con le reti stese ad asciugare, e Siviano, il centro amministrativo, sono i punti di partenza per la salita al Santuario della Madonna della Ceriola, da cui lo sguardo abbraccia l'intero lago. La pesca sopravvive oggi nelle celebri sardine essiccate, specialità dei ristoranti locali.</p>
       <a href="scopri-monte-isola.html" class="btn btn-outline">Leggi di più su Monte Isola
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
       </a>
@@ -1480,7 +1482,7 @@
 <!-- ============ MONTE ISOLA: GUIDE (card ricche con foto + icone) ============ -->
 <section class="dest-faq" aria-label="Domande frequenti su Monte Isola">
   <h2 class="section-title">Domande frequenti su Monte Isola</h2>
-  <details class="dest-faq-item" open>
+  <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare per visitare Monte Isola?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
@@ -1619,6 +1621,7 @@
         <div><span class="eyebrow-text">Dove dormire</span><h2>Hotel e strutture a Monte Isola</h2></div>
         <a href="hotel.html?localita=monte-isola">Vedi tutte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">Su Monte Isola si dorme in piccoli hotel e B&amp;B a conduzione familiare, spesso vicino all'imbarcadero, per vivere l'isola senz'auto lontano dal traffico.</p>
       <div class="dm-grid" id="dmHotelGrid">
         <p class="dm-empty" id="dmHotelStato">Caricamento strutture in corso...</p>
       </div>
@@ -1628,6 +1631,7 @@
         <div><span class="eyebrow-text">Dove mangiare</span><h2>Ristoranti a Monte Isola</h2></div>
         <a href="ristoranti.html?localita=monte-isola">Vedi tutti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">I ristoranti dell'isola propongono soprattutto pesce di lago, dalle sardine essiccate ai piatti della tradizione, spesso serviti con vista sull'acqua.</p>
       <div class="dm-grid" id="dmRistoGrid">
         <p class="dm-empty" id="dmRistoStato">Caricamento ristoranti in corso...</p>
       </div>
@@ -1914,12 +1918,9 @@
   // ============================================================
   const revealEls = document.querySelectorAll('.reveal-l, .reveal-r');
   if ('IntersectionObserver' in window && revealEls.length) {
-    const revealObserver = new IntersectionObserver((entries, obs) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));

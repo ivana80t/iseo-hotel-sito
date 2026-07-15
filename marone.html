@@ -632,7 +632,7 @@
   .marone-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .marone-intro-inner > *{min-width:0;}
   .marone-intro-text{display:flex;flex-direction:column;}
-  .marone-intro-text > .btn-outline{margin-top:auto;align-self:flex-start;}
+  .marone-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
   .marone-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -892,7 +892,7 @@
 
   /* ============ MARONE: "DOVE SI TROVA" mini-card sotto il testo intro ============ */
   .dest-mini-map-card{
-    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:24px;
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:auto;
     display:flex;flex-direction:column;gap:10px;
   }
   .dest-mini-map-head{display:flex;align-items:center;gap:10px;}
@@ -922,6 +922,8 @@
     .dest-highlights{padding:0 18px 32px;}
     .dest-why-row{flex-direction:column;align-items:stretch;gap:8px;}
     .dest-why-tag{font-size:12.5px;padding:9px 12px;white-space:normal;width:100%;box-sizing:border-box;}
+    .dest-highlights-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .dest-highlight-chip{width:100%;box-sizing:border-box;justify-content:center;text-align:center;white-space:normal;}
   }
 
   /* ============ FAQ ============ */
@@ -1157,7 +1159,7 @@
     <div class="marone-intro-text">
       <span class="eyebrow-text">Scopri Marone</span>
       <h2>Un borgo ricco di storia, natura e tradizioni</h2>
-      <p>Marone è il luogo ideale per chi cerca tranquillità, paesaggi autentici e un contatto diretto con la natura. Passeggia tra i vicoli del centro storico, ammira il lago e lasciati sorprendere dalla qualità dei suoi prodotti tipici, come l'olio extravergine d'oliva DOP.</p>
+      <p>Marone si distende lungo la sponda orientale del Lago d'Iseo, ai piedi del Monte Guglielmo, tra uliveti terrazzati che producono un olio extravergine tra i più pregiati del Sebino. Il centro storico conserva vicoli silenziosi e case in pietra, mentre il lungolago è il luogo ideale per ammirare Monte Isola e il tramonto sull'acqua. Poco più a nord, la frazione di Vello custodisce uno dei borghi lacustri più suggestivi del lago, con le case affacciate direttamente sull'acqua. La comunità celebra ogni anno le proprie radici agricole con la Festa dell'olio novello, tra sapori genuini e tradizioni contadine.</p>
       <a href="scopri-marone.html" class="btn btn-outline">Leggi di più su Marone
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
       </a>
@@ -1599,7 +1601,7 @@
 <!-- ============ MARONE: GUIDE (card ricche con foto + icone) ============ -->
 <section class="dest-faq" aria-label="Domande frequenti su Marone">
   <h2 class="section-title">Domande frequenti su Marone</h2>
-  <details class="dest-faq-item" open>
+  <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Marone?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
@@ -1738,6 +1740,7 @@
         <div><span class="eyebrow-text">Dove dormire</span><h2>Hotel e strutture a Marone</h2></div>
         <a href="hotel.html?localita=marone">Vedi tutte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">A Marone si alternano piccoli hotel sul lungolago, B&amp;B nel borgo e agriturismi tra gli uliveti, perfetti per chi cerca tranquillità a due passi dall'acqua.</p>
       <div class="dm-grid" id="dmHotelGrid">
         <p class="dm-empty" id="dmHotelStato">Caricamento strutture in corso...</p>
       </div>
@@ -1747,6 +1750,7 @@
         <div><span class="eyebrow-text">Dove mangiare</span><h2>Ristoranti a Marone</h2></div>
         <a href="ristoranti.html?localita=marone">Vedi tutti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">La cucina di Marone valorizza l'olio extravergine locale: ristoranti di pesce sul lungolago e trattorie di paese dove assaggiare i piatti tipici del Sebino.</p>
       <div class="dm-grid" id="dmRistoGrid">
         <p class="dm-empty" id="dmRistoStato">Caricamento ristoranti in corso...</p>
       </div>
@@ -2065,12 +2069,9 @@
   // ============================================================
   const revealEls = document.querySelectorAll('.reveal-l, .reveal-r');
   if ('IntersectionObserver' in window && revealEls.length) {
-    const revealObserver = new IntersectionObserver((entries, obs) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));

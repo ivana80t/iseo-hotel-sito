@@ -556,7 +556,7 @@
   .dest-intro-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1.2fr;gap:48px;align-items:stretch;}
   .dest-intro-inner > *{min-width:0;}
   .dest-intro-text{display:flex;flex-direction:column;}
-  .dest-intro-text > .btn-outline{margin-top:auto;align-self:flex-start;}
+  .dest-intro-text > .btn-outline{margin-top:0;align-self:flex-start;}
   .dest-intro-text .eyebrow-text{
     display:block;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:17px;
     color:var(--gold);margin-bottom:10px;
@@ -823,7 +823,7 @@
 
   /* ============ MARONE: "DOVE SI TROVA" mini-card sotto il testo intro ============ */
   .dest-mini-map-card{
-    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:24px;
+    background:var(--sand);border-radius:var(--radius-md);padding:18px 20px;margin-top:auto;
     display:flex;flex-direction:column;gap:10px;
   }
   .dest-mini-map-head{display:flex;align-items:center;gap:10px;}
@@ -853,6 +853,8 @@
     .dest-highlights{padding:0 18px 32px;}
     .dest-why-row{flex-direction:column;align-items:stretch;gap:8px;}
     .dest-why-tag{font-size:12.5px;padding:9px 12px;white-space:normal;width:100%;box-sizing:border-box;}
+    .dest-highlights-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .dest-highlight-chip{width:100%;box-sizing:border-box;justify-content:center;text-align:center;white-space:normal;}
   }
 
   /* ============ FAQ ============ */
@@ -1088,7 +1090,7 @@
     <div class="dest-intro-text">
       <span class="eyebrow-text">Scopri Sulzano</span>
       <h2>Sulzano, il borgo da cui parte il viaggio verso Monte Isola</h2>
-      <p>Sulzano si trova sulla sponda orientale del Lago d'Iseo, proprio di fronte a Monte Isola: è il porto più frequentato per raggiungere l'isola lacustre più grande d'Europa, con traghetti che partono ogni 15-20 minuti tutto l'anno. Il nucleo originario di Sulzano sorgeva in collina, e si sviluppò verso il lago solo a metà Ottocento con la costruzione della strada costiera: oggi il lungolago di Sulzano, con le caratteristiche palafitte, è il cuore della vita del borgo, tra imbarcadero, locali per l'aperitivo al tramonto e la vista che si allarga fino a Peschiera Maraglio. Chi visita Sulzano sul Lago d'Iseo trova anche il punto di partenza dell'Antica Strada Valeriana, il sentiero che risale le colline del Sebino tra uliveti e chiesette panoramiche. Tra le cose da vedere a Sulzano, oltre ai traghetti per Monte Isola, ci sono il centro storico raccolto e i sentieri verso Santa Maria del Giogo. Il periodo migliore per visitare Sulzano è tra la primavera e l'estate, quando i traghetti sono più frequenti e le giornate lunghe si prestano a un aperitivo al tramonto sul porto.</p>
+      <p>Sulzano si trova sulla sponda orientale del Lago d'Iseo, proprio di fronte a Monte Isola: è il porto più frequentato per raggiungere l'isola lacustre più grande d'Europa, con traghetti che partono ogni 15-20 minuti tutto l'anno. Il nucleo originario sorgeva in collina, e si sviluppò verso il lago solo a metà Ottocento: oggi il lungolago, con le caratteristiche palafitte, è il cuore della vita del borgo, tra imbarcadero e locali per l'aperitivo al tramonto. Da Sulzano parte anche l'Antica Strada Valeriana, il sentiero che risale le colline del Sebino tra uliveti e chiesette panoramiche.</p>
       <a href="scopri-sulzano.html" class="btn btn-outline">Leggi di più su Sulzano
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
       </a>
@@ -1464,7 +1466,7 @@
 <!-- ============ ISEO: GUIDE (card ricche con foto + icone) ============ -->
 <section class="dest-faq" aria-label="Domande frequenti su Sulzano">
   <h2 class="section-title">Domande frequenti su Sulzano</h2>
-  <details class="dest-faq-item" open>
+  <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Sulzano?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
@@ -1608,6 +1610,7 @@
         <div><span class="eyebrow-text">Dove dormire</span><h2>Hotel e strutture a Sulzano</h2></div>
         <a href="hotel.html?localita=sulzano">Vedi tutte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">A Sulzano si trovano hotel e B&amp;B vicino all'imbarcadero per Monte Isola, comodi sia per chi visita l'isola sia per chi resta sulla terraferma.</p>
       <div class="dm-grid" id="dmHotelGrid">
         <p class="dm-empty" id="dmHotelStato">Caricamento strutture in corso...</p>
       </div>
@@ -1617,6 +1620,7 @@
         <div><span class="eyebrow-text">Dove mangiare</span><h2>Ristoranti a Sulzano</h2></div>
         <a href="ristoranti.html?localita=sulzano">Vedi tutti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a>
       </div>
+      <p style="font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 20px;text-align:justify;">I ristoranti di Sulzano propongono pesce di lago fresco in riva all'acqua, ideali per un pranzo prima o dopo la traversata verso Monte Isola.</p>
       <div class="dm-grid" id="dmRistoGrid">
         <p class="dm-empty" id="dmRistoStato">Caricamento ristoranti in corso...</p>
       </div>
@@ -1907,12 +1911,9 @@
   // ============================================================
   const revealEls = document.querySelectorAll('.reveal-l, .reveal-r');
   if ('IntersectionObserver' in window && revealEls.length) {
-    const revealObserver = new IntersectionObserver((entries, obs) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
+        entry.target.classList.toggle('in-view', entry.isIntersecting);
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));

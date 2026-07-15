@@ -2278,32 +2278,5 @@
      DA SOSTITUIRE con lo script Iubenda quando attivo l'abbonamento. -->
 <script src="cookie-consent.js"></script>
 
-<div id="debugPanel" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111;color:#0f0;font-family:monospace;font-size:11px;padding:8px;line-height:1.5;border-top:2px solid #0f0;">Carico diagnostica...</div>
-<script>
-  (function(){
-    const debug = document.getElementById('debugPanel');
-    const header = document.getElementById('site-header');
-    function update() {
-      if (!header) { debug.textContent = 'header non trovato'; return; }
-      const rect = header.getBoundingClientRect();
-      const vv = window.visualViewport;
-      const lines = [
-        'scrollY:' + Math.round(window.scrollY),
-        'header.top:' + Math.round(rect.top),
-        'innerH:' + window.innerHeight,
-        vv ? 'vv.h:' + Math.round(vv.height) : 'vv:no',
-        vv ? 'vv.offTop:' + Math.round(vv.offsetTop) : ''
-      ];
-      debug.textContent = lines.join(' | ');
-    }
-    window.addEventListener('scroll', update, {passive:true});
-    window.addEventListener('resize', update);
-    if (window.visualViewport) {
-      window.visualViewport.addEventListener('scroll', update);
-      window.visualViewport.addEventListener('resize', update);
-    }
-    update();
-  })();
-</script>
 </body>
 </html>

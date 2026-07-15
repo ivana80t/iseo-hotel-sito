@@ -417,13 +417,6 @@
     .footer-col-assistenza .footer-trust-list{align-items:center;}
   }
   @media (max-width:860px){
-    /* Header/menu fissi in cima SOLO su mobile: position:sticky può rompersi
-       silenziosamente se un antenato ha overflow non-visible, quindi qui usiamo
-       fixed (sempre ancorato al viewport) + padding-top sul body per compensare
-       lo spazio che l'header non occupa più nel flusso normale. */
-    header.site-header{position:fixed;left:0;right:0;top:0;}
-    body{padding-top:76px;}
-
     nav.main-nav{display:none;max-height:calc(100vh - 76px);overflow-y:auto;-webkit-overflow-scrolling:touch;padding-left:0 !important;padding-right:0 !important;}
     .header-actions .icon-link span{display:none;}
     .header-actions .btn{display:none;}

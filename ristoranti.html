@@ -445,6 +445,7 @@
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
     transition:box-shadow .25s ease;
+    transform:translateZ(0);
   }
   header.site-header.scrolled{box-shadow:0 6px 24px -14px rgba(18,41,79,0.35);}
   .header-inner{
@@ -826,6 +827,12 @@
     .footer-col-assistenza .footer-trust-list{align-items:center;}
   }
   @media (max-width:860px){
+    /* backdrop-filter e' costoso da ridisegnare e su Chrome Android peggiora lo
+       "scatto" dell'header sticky quando la barra degli indirizzi si nasconde/
+       mostra durante lo scroll: su mobile usiamo uno sfondo pieno invece del
+       vetro sfocato, restando identici a prima solo su desktop. */
+    header.site-header{background:#fbfaf7;backdrop-filter:none;}
+
     nav.main-nav{display:none;max-height:calc(100vh - 76px);overflow-y:auto;-webkit-overflow-scrolling:touch;padding-left:0 !important;padding-right:0 !important;}
     .header-actions .icon-link span{display:none;}
     .header-actions .btn{display:none;}

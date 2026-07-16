@@ -889,12 +889,13 @@
   /* ============ SPAZI PUBBLICITARI ADSENSE ============ */
   .ad-slot{max-width:1240px;margin:0 auto;padding:0 32px;}
   .ad-slot-inner{
-    max-width:100%;overflow:hidden;border-radius:var(--radius-sm);
+    max-width:100%;max-height:280px;overflow:hidden;border-radius:var(--radius-sm);
     background:var(--sand);display:flex;align-items:center;justify-content:center;
     min-height:100px;
   }
+  .ad-slot-inner ins.adsbygoogle{max-height:280px;}
   .ad-slot-label{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin:0 0 6px;}
-  @media (max-width:640px){.ad-slot{padding:0 18px;}}
+  @media (max-width:640px){.ad-slot{padding:0 18px;}.ad-slot-inner{max-height:250px;}.ad-slot-inner ins.adsbygoogle{max-height:250px;}}
 </style>
 </head>
 <body>
@@ -1176,6 +1177,20 @@
   </div>
 </section>
 
+<!-- ============ MONTE ISOLA: FEDE E TRADIZIONI (approfondimento discorsivo) ============ -->
+<section class="dest-intro wrap" id="monte-isola-fede" style="padding-top:0;">
+  <div class="dest-intro-inner" style="grid-template-columns:1fr;">
+    <div class="dest-intro-text" style="max-width:none;">
+      <span class="eyebrow-text">Fede e tradizioni</span>
+      <h2>Fede e tradizioni a Monte Isola</h2>
+      <p style="max-width:none;">A 600 metri di quota, il Santuario della Madonna della Ceriola domina l'isola dal suo punto più alto: sorge dove un tempo si trovava un tempio dedicato a Cerere e Minerva, da cui deriva il nome "Ceriola", ed è ancora oggi meta di una processione che ogni anno attraversa i boschi dell'isola. Ai piedi del santuario, i borghi di pescatori raccontano un'altra storia: a Peschiera Maraglio e Carzano le reti da pesca stese ad asciugare lungo le vie sono un'immagine tipica dell'isola, frutto di una tradizione artigiana così radicata da aver fornito le reti delle porte per le Olimpiadi di Londra 2012. Sensole, sulla sponda occidentale, e Siviano, sede amministrativa dell'isola con la Rocca Oldofredi-Martinengo, completano il mosaico dei borghi che si affacciano sul lago.</p>
+      <a href="#itinerari" class="btn btn-outline" style="align-self:flex-start;" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Approfondisci
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ MONTE ISOLA: PERCHÉ VISITARE ============ -->
 <section class="dest-highlights" aria-label="Perché visitare Monte Isola" style="padding-top:0;">
   <p class="dest-highlights-label">Perché visitare Monte Isola</p>
@@ -1210,7 +1225,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000014"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>
@@ -1486,7 +1501,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000015"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>
@@ -1726,7 +1741,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000016"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>

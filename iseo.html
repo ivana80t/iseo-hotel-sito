@@ -887,12 +887,13 @@
   /* ============ SPAZI PUBBLICITARI ADSENSE ============ */
   .ad-slot{max-width:1240px;margin:0 auto;padding:0 32px;}
   .ad-slot-inner{
-    max-width:100%;overflow:hidden;border-radius:var(--radius-sm);
+    max-width:100%;max-height:280px;overflow:hidden;border-radius:var(--radius-sm);
     background:var(--sand);display:flex;align-items:center;justify-content:center;
     min-height:100px;
   }
+  .ad-slot-inner ins.adsbygoogle{max-height:280px;}
   .ad-slot-label{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin:0 0 6px;}
-  @media (max-width:640px){.ad-slot{padding:0 18px;}}
+  @media (max-width:640px){.ad-slot{padding:0 18px;}.ad-slot-inner{max-height:250px;}.ad-slot-inner ins.adsbygoogle{max-height:250px;}}
 </style>
 </head>
 <body>
@@ -1174,6 +1175,20 @@
   </div>
 </section>
 
+<!-- ============ ISEO: ARTE E CULTURA (approfondimento discorsivo) ============ -->
+<section class="dest-intro wrap" id="iseo-arte" style="padding-top:0;">
+  <div class="dest-intro-inner" style="grid-template-columns:1fr;">
+    <div class="dest-intro-text" style="max-width:none;">
+      <span class="eyebrow-text">Arte e cultura</span>
+      <h2>Storia e architettura nel cuore del Sebino</h2>
+      <p style="max-width:none;">Iseo conserva un patrimonio architettonico che racconta otto secoli di storia sul lago. Il Castello Oldofredi, fortificazione del XII secolo appartenuta alla famiglia che dominò il borgo, oggi ospita la biblioteca comunale e mostre temporanee. Poco distante, la Pieve di Sant'Andrea è la chiesa più antica della città: la facciata romanica e il campanile custodiscono un San Michele Arcangelo attribuito a Francesco Hayez. A pochi passi da Piazza Garibaldi, la trecentesca Chiesa di Santa Maria del Mercato conserva affreschi antichi ed è una delle tappe meno affollate del centro storico, ideale per chi cerca un momento più raccolto lontano dal viavai del lungolago.</p>
+      <a href="#itinerari" class="btn btn-outline" style="align-self:flex-start;" onclick="var t=document.querySelector('.cosa-fare-tab[data-panel=&quot;cosa-vedere-panel&quot;]'); if(t) t.click();">Approfondisci
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ ISEO: PERCHÉ VISITARE ============ -->
 <section class="dest-highlights" aria-label="Perché visitare Iseo" style="padding-top:0;">
   <p class="dest-highlights-label">Perché visitare Iseo</p>
@@ -1208,7 +1223,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000017"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>
@@ -1484,7 +1499,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000018"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>
@@ -1741,7 +1756,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000019"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>

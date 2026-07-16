@@ -890,12 +890,13 @@
   /* ============ SPAZI PUBBLICITARI ADSENSE ============ */
   .ad-slot{max-width:1240px;margin:0 auto;padding:0 32px;}
   .ad-slot-inner{
-    max-width:100%;overflow:hidden;border-radius:var(--radius-sm);
+    max-width:100%;max-height:280px;overflow:hidden;border-radius:var(--radius-sm);
     background:var(--sand);display:flex;align-items:center;justify-content:center;
     min-height:100px;
   }
+  .ad-slot-inner ins.adsbygoogle{max-height:280px;}
   .ad-slot-label{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin:0 0 6px;}
-  @media (max-width:640px){.ad-slot{padding:0 18px;}}
+  @media (max-width:640px){.ad-slot{padding:0 18px;}.ad-slot-inner{max-height:250px;}.ad-slot-inner ins.adsbygoogle{max-height:250px;}}
 </style>
 </head>
 <body>
@@ -1129,46 +1130,46 @@
       <div class="dest-type-cards">
         <div class="dest-type-card theme-green reveal-l">
           <div class="dest-type-photo">
-            <img src="images/sarnico-borgo-storico.jpg" alt="Vicoli medievali del centro storico di Sarnico, la Contrada" loading="lazy">
+            <img src="images/sarnico-borgo-storico.jpg" alt="Lungolago del centro storico di Sarnico con vista sul Lago d'Iseo" loading="lazy">
             <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><circle cx="12" cy="13.5" r="3.5"/></svg></span>
           </div>
           <div class="dest-type-body">
-            <h3>Ami perderti nei borghi antichi</h3>
+            <h3>Ami passeggiare e goderti l'atmosfera</h3>
             <span class="dest-type-underline"></span>
-            <p>Passeggia tra i vicoli della Contrada, il centro storico a semicerchio con scalette, portali in pietra e cortili nascosti tutti da scoprire.</p>
+            <p>Passeggia nel centro storico, lungo il lungolago fiorito e tra le boutique e i locali caratteristici. Ogni angolo di Sarnico regala scorci eleganti e rilassanti.</p>
             <div class="dest-type-footer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg>
-              <span>Da scoprire<br>via Scaletta e vicolo Aie</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              <span>Da vivere lentamente<br>tra panorami e momenti di relax</span>
             </div>
           </div>
         </div>
         <div class="dest-type-card theme-purple reveal-r">
           <div class="dest-type-photo">
-            <img src="images/sarnico-arte-liberty.jpg" alt="Villa in stile Liberty affacciata sul Lago d'Iseo, opera di Giuseppe Sommaruga" loading="lazy">
-            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-9h6v9"/><path d="M5 21h14"/></svg></span>
+            <img src="images/sarnico-lago-battello.jpg" alt="Battello sul Lago d'Iseo tra le montagne, nei pressi di Sarnico" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M22 18H2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4Z"/><path d="M21 14 10 2 3 14z"/><path d="M10 2v16"/></svg></span>
           </div>
           <div class="dest-type-body">
-            <h3>Vuoi ammirare l'architettura Liberty</h3>
+            <h3>Vuoi scoprire il lago in ogni modo</h3>
             <span class="dest-type-underline"></span>
-            <p>Scopri le ville disegnate da Giuseppe Sommaruga per la famiglia Faccanoni, che fanno di Sarnico la Capitale Italiana del Liberty.</p>
+            <p>Parti alla scoperta di Monte Isola con i battelli, noleggia una barca, prova il SUP o lasciati conquistare da un giro in Treno Blu tra lago e borghi.</p>
             <div class="dest-type-footer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2l2.9 6.6L21 9.3l-5 4.6L17.4 21 12 17.6 6.6 21 8 13.9l-5-4.6 6.1-.7z"/></svg>
-              <span>Da non perdere<br>Villa Faccanoni e il Mausoleo Faccanoni</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M2 7c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/><path d="M2 13c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/><path d="M2 19c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/></svg>
+              <span>Da esplorare via acqua<br>in libertà e con esperienze memorabili</span>
             </div>
           </div>
         </div>
         <div class="dest-type-card theme-gold reveal-l">
           <div class="dest-type-photo">
-            <img src="images/sarnico-relax-spiagge.jpg" alt="Spiaggia attrezzata con vista sul Lago d'Iseo, immagine di riferimento" loading="lazy">
-            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M8 22h8M7 10h10M12 15v7M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5z"/></svg></span>
+            <img src="images/sarnico-gusto-tradizioni.jpg" alt="Aperitivo al tramonto sul Lago d'Iseo nei pressi di Sarnico" loading="lazy">
+            <span class="dest-type-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 3c2 3 3 5 3 7a3 3 0 1 1-6 0c0-2 1-4 3-7z"/><path d="M6 3c1.3 2 2 3.3 2 4.7A2 2 0 1 1 4 7.7C4 6.3 4.7 5 6 3zM18 3c1.3 2 2 3.3 2 4.7a2 2 0 1 1-4 0C16 6.3 16.7 5 18 3z"/></svg></span>
           </div>
           <div class="dest-type-body">
-            <h3>Cerchi relax tra lago e spiagge</h3>
+            <h3>Vuoi gusto, eventi e tradizione</h3>
             <span class="dest-type-underline"></span>
-            <p>Goditi una giornata a Lido Nettuno o negli altri lidi attrezzati, poi un aperitivo vista lago lungo il porticciolo turistico.</p>
+            <p>Vivi gli eventi del paese, gusta la cucina locale e scopri le cantine della Franciacorta a pochi minuti. Sarnico è energia, sapori e accoglienza tutto l'anno.</p>
             <div class="dest-type-footer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
-              <span>Da vivere<br>un tramonto dal lungolago</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>
+              <span>Da vivere tutto l'anno<br>tra sapori, eventi e tradizioni autentiche</span>
             </div>
           </div>
         </div>
@@ -1225,7 +1226,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000017"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>
@@ -1531,7 +1532,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000018"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>
@@ -1772,7 +1773,7 @@
          style="display:block;width:100%;"
          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
          data-ad-slot="0000000019"
-         data-ad-format="auto"
+         data-ad-format="horizontal"
          data-full-width-responsive="true"></ins>
   </div>
 </div>

@@ -811,7 +811,7 @@
   @media (max-width:640px){
     .comune-carousel-wrap .itin-card,
     .comune-card{flex:0 0 320px;}
-    .comune-carousel-wrap .itin-track{align-items:flex-start;}
+    .comune-carousel-wrap .itin-track{align-items:flex-start;overflow-y:hidden;transition:height .3s ease;}
     .cc-stats{grid-template-columns:repeat(2,1fr);}
     .cc-beach{flex-direction:column;}
     .cc-beach-feats{width:100%;flex-direction:row;flex-wrap:wrap;padding-top:8px;}
@@ -1211,6 +1211,7 @@
     <a class="dest-highlight-chip" href="marone.html">La Spiaggetta, "piccola Tahiti"</a>
     <a class="dest-highlight-chip" href="paratico.html">Spiaggia su piattaforma di Paratico</a>
     <a class="dest-highlight-chip" href="riva-di-solto.html">Baia del Bogn</a>
+    <a class="dest-highlight-chip" href="monte-isola.html">Spiaggia di Carzano</a>
   </div>
 </section>
 
@@ -1877,6 +1878,36 @@
     spiaggeComuniTrack.addEventListener('mouseenter', fermaAutoScrollSpiaggeComuni);
     spiaggeComuniTrack.addEventListener('mouseleave', avviaAutoScrollSpiaggeComuni);
     avviaAutoScrollSpiaggeComuni();
+  }
+
+  // Su mobile, la card puo' essere piu' corta della piu' alta del carosello: l'altezza del
+  // track viene adattata a quella effettivamente visibile, cosi' non resta spazio bianco
+  // prima del pulsante "Vedi tutti i 14 comuni".
+  function aggiornaAltezzaComuneCard(){
+    if (!spiaggeComuniTrack) return;
+    if (!window.matchMedia('(max-width:640px)').matches) { spiaggeComuniTrack.style.height = ''; return; }
+    const cards = spiaggeComuniTrack.querySelectorAll('.comune-card');
+    if (!cards.length) return;
+    const trackRect = spiaggeComuniTrack.getBoundingClientRect();
+    const trackCenter = trackRect.left + trackRect.width / 2;
+    let closest = cards[0], closestDist = Infinity;
+    cards.forEach(card => {
+      const r = card.getBoundingClientRect();
+      const dist = Math.abs((r.left + r.width / 2) - trackCenter);
+      if (dist < closestDist) { closestDist = dist; closest = card; }
+    });
+    spiaggeComuniTrack.style.height = closest.offsetHeight + 'px';
+  }
+  let comuneHeightTimer = null;
+  function pianificaAggiornaAltezzaComuneCard(){
+    if (comuneHeightTimer) clearTimeout(comuneHeightTimer);
+    comuneHeightTimer = setTimeout(aggiornaAltezzaComuneCard, 120);
+  }
+  if (spiaggeComuniTrack) {
+    window.addEventListener('load', aggiornaAltezzaComuneCard);
+    window.addEventListener('resize', pianificaAggiornaAltezzaComuneCard);
+    spiaggeComuniTrack.addEventListener('scroll', pianificaAggiornaAltezzaComuneCard);
+    aggiornaAltezzaComuneCard();
   }
 
   // ============================================================

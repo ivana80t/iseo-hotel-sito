@@ -2041,6 +2041,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
     </button>
   </div>
+  <div class="guide-hub-cta">
+    <a href="destinazioni.html" class="btn btn-outline">Vedi tutti i 14 comuni
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
+    </a>
+  </div>
 </section>
 
 <div class="ad-slot" style="margin:8px auto 40px;">
@@ -2369,7 +2374,7 @@
   function aggiornaAltezzaComuneCard(){
     if (!arteComuniTrack) return;
     if (!window.matchMedia('(max-width:640px)').matches) { arteComuniTrack.style.height = ''; return; }
-    const cards = arteComuniTrack.querySelectorAll('.comune-card');
+    const cards = arteComuniTrack.querySelectorAll('.art-card');
     if (!cards.length) return;
     const trackRect = arteComuniTrack.getBoundingClientRect();
     const trackCenter = trackRect.left + trackRect.width / 2;

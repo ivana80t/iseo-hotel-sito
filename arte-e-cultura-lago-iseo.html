@@ -840,15 +840,19 @@
   .chip-icon svg{width:13px;height:13px;stroke:var(--navy);}
   .chip-icon--num{font-family:'Fraunces',serif;font-weight:700;font-size:13px;color:var(--navy);}
   .guide-rich-chip span:last-child{font-size:8.5px;line-height:1.2;color:var(--ink-soft);font-weight:600;}
-  .guide-rich-link{font-size:11px;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:4px;}
-  .guide-rich-link svg{width:12px;height:12px;stroke:var(--navy);}
+  .guide-rich-fact{font-size:11px;font-weight:600;color:var(--ink-soft);display:inline-flex;align-items:center;gap:5px;}
+  .guide-rich-fact svg{width:13px;height:13px;stroke:var(--gold);flex-shrink:0;}
   @media (max-width:1000px){.guide-rich-grid{grid-template-columns:repeat(3,1fr);gap:20px;}
     .guide-rich-body h3{font-size:18px;} .guide-rich-body > p{font-size:12.5px;}
     .guide-rich-badge{width:52px;height:52px;margin:-26px auto 12px;} .guide-rich-badge svg{width:22px;height:22px;}
     .chip-icon{width:34px;height:34px;} .chip-icon svg{width:15px;height:15px;}
     .guide-rich-chip{width:auto;} .guide-rich-chip span:last-child{font-size:10.5px;}
+    .guide-rich-fact{font-size:13px;}
   }
-  @media (max-width:640px){.guide-rich-grid{grid-template-columns:1fr;}}
+  @media (max-width:640px){
+    .guide-rich-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:16px;padding:4px 20px 14px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;margin:0 -20px;}
+    .guide-rich-card{flex:0 0 78%;scroll-snap-align:center;}
+  }
 
   /* ============ MARONE: LOCALITA' VICINE (carosello) ============ */
   .dest-localita{padding:8px 0 64px;text-align:center;}
@@ -2045,6 +2049,119 @@
     <a href="destinazioni.html" class="btn btn-outline">Vedi tutti i 14 comuni
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
     </a>
+  </div>
+</section>
+
+<!-- ============ ARTE E CULTURA: LE 5 TAPPE ============ -->
+<section class="dest-guide-hub" id="tappe" aria-label="Le 5 tappe dell'arte e cultura sul Lago d'Iseo">
+  <div class="section-divider"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+  <h2 class="section-title">Le 5 tappe dell'arte e cultura sul Lago d'Iseo</h2>
+  <p class="guide-hub-lead">Un percorso ideale tra le cinque testimonianze artistiche più significative del lago, dal Medioevo al Liberty.</p>
+  <div class="guide-rich-grid">
+
+    <article class="guide-rich-card reveal-l">
+      <div class="guide-rich-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lovere%20Accademia%20Tadini.JPG?width=600" alt="Accademia Tadini a Lovere" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a3 3 0 0 1 0 6h-3"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Lovere e l'Accademia Tadini</h3>
+        <p>La Stele Tadini di Canova e opere di Hayez, Bellini e Paris Bordon, in un palazzo neoclassico voluto dal conte Luigi Tadini.</p>
+        <div class="guide-rich-chips" style="margin-top:10px;">
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">1829</span><span>Fondazione</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">★</span><span>Canova</span></div>
+        </div>
+        <span class="guide-rich-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Via Tadini, 40</span>
+      </div>
+    </article>
+
+    <article class="guide-rich-card reveal-r">
+      <div class="guide-rich-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Villa%20Faccanoni%20Art%20Nouveau%20Week.jpg?width=600" alt="Villa Faccanoni a Sarnico" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-9h6v9"/><path d="M5 21h14"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Sarnico e il Liberty di Sommaruga</h3>
+        <p>Le ville realizzate a inizio Novecento dall'architetto Giuseppe Sommaruga per la famiglia Faccanoni, tra le più alte espressioni del Liberty lombardo.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">1907</span><span>Ville Sommaruga</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">★</span><span>Liberty</span></div>
+        </div>
+        <span class="guide-rich-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Viale Vittorio Veneto</span>
+      </div>
+    </article>
+
+    <article class="guide-rich-card reveal-l">
+      <div class="guide-rich-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chiesa%20Santa%20Maria%20della%20Neve%20(Pisogne).jpg?width=600" alt="Chiesa di Santa Maria della Neve a Pisogne" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l4 6h-3l4 6h-3l3 5H6l3-5H6l4-6H7z"/><path d="M12 19v3"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Pisogne e gli affreschi del Romanino</h3>
+        <p>Nella Chiesa di Santa Maria della Neve, un intero ciclo pittorico dedicato alla Passione di Cristo, realizzato da Girolamo Romani tra il 1532 e il 1534.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">1534</span><span>Romanino</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">★</span><span>Affreschi</span></div>
+        </div>
+        <span class="guide-rich-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Via della Chiesa</span>
+      </div>
+    </article>
+
+    <article class="guide-rich-card reveal-r">
+      <div class="guide-rich-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Castello%20Oldofredi%20in%20Iseo%20(1).jpg?width=600" alt="Castello Oldofredi a Iseo" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l1-7h2l1 3h2V4h2v3h2l1-3h2l1 7"/><path d="M4 11v10h16V11"/><path d="M10 21v-6h4v6"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Iseo, storia e architettura nel Sebino</h3>
+        <p>Il Castello Oldofredi, fortezza del XII secolo, e la romanica Pieve di Sant'Andrea con un San Michele Arcangelo attribuito a Hayez.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">XII</span><span>Castello</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">★</span><span>Hayez</span></div>
+        </div>
+        <span class="guide-rich-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Via Castello</span>
+      </div>
+    </article>
+
+    <article class="guide-rich-card reveal-l">
+      <div class="guide-rich-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santuario%20della%20Madonna%20della%20Ceriola.jpg?width=600" alt="Santuario della Madonna della Ceriola a Monte Isola" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Monte Isola, il santuario più antico del lago</h3>
+        <p>Il Santuario della Madonna della Ceriola, a 600 metri di quota, fondato nel V secolo per volontà di San Vigilio, vescovo di Brescia.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">V sec.</span><span>Fondazione</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon chip-icon--num">★</span><span>600 m</span></div>
+        </div>
+        <span class="guide-rich-fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Località Ceriola</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ ARTE E CULTURA: ITINERARIO CONSIGLIATO ============ -->
+<section class="dest-intro wrap" id="itinerario-arte" style="padding-top:0;">
+  <div class="dest-intro-inner" style="grid-template-columns:1fr;">
+    <div class="dest-intro-text" style="max-width:none;">
+      <span class="eyebrow-text">Itinerario consigliato</span>
+      <h2>Un itinerario d'arte intorno al lago in tre giorni</h2>
+      <p style="max-width:none;">Il modo più comodo per collegare le cinque tappe principali è alternare spostamenti in auto e in battello, sfruttando i collegamenti della Navigazione Lago d'Iseo tra i porti dei diversi comuni. Ecco una proposta su tre giorni pensata per chi vuole visitarle con calma.</p>
+
+      <h3>Giorno 1 — Iseo e Monte Isola</h3>
+      <p style="max-width:none;">La mattina si dedica al centro storico di Iseo: il Castello Oldofredi, oggi sede della biblioteca comunale, e la romanica Pieve di Sant'Andrea con il suo San Michele Arcangelo attribuito a Hayez. Nel primo pomeriggio si prende il battello per Monte Isola: la salita al Santuario della Madonna della Ceriola, a 600 metri di quota, richiede circa un'ora e mezza a piedi ma regala una vista su tutto il Sebino.</p>
+
+      <h3>Giorno 2 — Sarnico</h3>
+      <p style="max-width:none;">La seconda giornata è dedicata al patrimonio Liberty di Sarnico: le ville realizzate da Giuseppe Sommaruga lungo il lungolago e in direzione Predore, e la Pinacoteca Gianni Bellini nel centro storico, con dipinti lombardi tra Cinquecento e Seicento. Il pomeriggio si presta a una pausa sul lungolago, tra le spiagge e i cantieri navali storici del paese.</p>
+
+      <h3>Giorno 3 — Lovere e Pisogne</h3>
+      <p style="max-width:none;">L'ultima tappa risale la sponda bergamasca fino a Lovere, dove l'Accademia Tadini richiede almeno un paio d'ore di visita; a pochi passi, la Basilica di Santa Maria in Valvendra completa la visita al borgo. Nel pomeriggio, un breve spostamento porta a Pisogne, dove la Chiesa di Santa Maria della Neve custodisce il ciclo di affreschi del Romanino.</p>
+
+      <h3>Consigli pratici</h3>
+      <p style="max-width:none;">Primavera e inizio autunno sono le stagioni ideali: le giornate sono miti e musei e chiese sono meno affollati rispetto all'alta stagione estiva. In estate conviene anticipare le visite alle prime ore del mattino, soprattutto a Sarnico e Lovere. Chi viaggia in auto troverà parcheggi a pagamento nei pressi dei centri storici; chi preferisce il battello può verificare gli orari della Navigazione Lago d'Iseo, che collega Iseo, Monte Isola, Sarnico e Lovere tutto l'anno.</p>
+    </div>
   </div>
 </section>
 

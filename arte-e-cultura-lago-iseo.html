@@ -821,9 +821,8 @@
   .guide-rich-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1240px;margin:0 auto;}
   .guide-rich-card{
     background:#fff;border-radius:16px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;
-    text-align:center;padding-bottom:18px;transition:transform .2s ease,box-shadow .2s ease;
+    text-align:center;padding-bottom:18px;cursor:default;
   }
-  .guide-rich-card:hover{transform:translateY(-5px);box-shadow:0 22px 40px -16px rgba(18,41,79,.28);}
   .guide-rich-photo{border-radius:16px 16px 0 0;overflow:hidden;aspect-ratio:4/3;}
   .guide-rich-photo img{width:100%;height:100%;object-fit:cover;}
   .guide-rich-badge{
@@ -850,8 +849,8 @@
     .guide-rich-fact{font-size:13px;}
   }
   @media (max-width:640px){
-    .guide-rich-grid{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:16px;padding:4px 20px 14px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;margin:0 -20px;}
-    .guide-rich-card{flex:0 0 78%;scroll-snap-align:center;}
+    .guide-rich-grid{display:flex;flex-direction:column;gap:18px;padding:4px 20px 14px;}
+    .guide-rich-card{flex:0 0 auto;width:100%;}
   }
 
   /* ============ MARONE: LOCALITA' VICINE (carosello) ============ */
@@ -979,7 +978,7 @@
   @media (max-width:640px){.ad-slot{padding:0 18px;}.ad-slot-inner{max-height:250px;}.ad-slot-inner ins.adsbygoogle{max-height:250px;}}
 
   /* ===== ARTE E CULTURA: card famiglia .art-* (approvata da Ivana il 19/07) ===== */
-  .art-card{flex:0 0 420px;background:var(--sand);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--line);display:flex;flex-direction:column;}
+  .art-card{flex:0 0 420px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--line);display:flex;flex-direction:column;}
   .art-hero{position:relative;overflow:hidden;line-height:0;}
   .art-hero img{width:100%;height:auto;display:block;}
   .art-icons{background:var(--navy);display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:16px 8px 14px;}
@@ -1016,10 +1015,11 @@
   .art-cta .btn{white-space:nowrap;font-size:10.5px;font-weight:800;letter-spacing:.03em;background:var(--gold);color:var(--navy-2);padding:9px 14px;border-radius:8px;display:inline-flex;align-items:center;gap:6px;text-decoration:none;}
   @media (max-width:640px){
     .art-card{flex:0 0 320px;}
-    .art-icons{grid-template-columns:repeat(3,1fr);}
+    .art-icons .art-icon-item:last-child{display:none;}
     .art-item{flex-direction:column;}
     .art-item-feats{width:100%;flex-direction:row;flex-wrap:wrap;padding-top:8px;}
     .art-why-grid{grid-template-columns:repeat(2,1fr);}
+    .art-why-item:last-child{display:none;}
   }
 </style>
 </head>
@@ -1190,7 +1190,7 @@
 <!-- ============ ARTE E CULTURA LAGO D'ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="images/arte-lovere-hero.jpg" alt="Accademia Tadini, Lovere - Lago d'Iseo" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sud%20del%20Lago%20d%27Iseo%20visto%20da%20Montisola%20%28Foto%20Luca%20Giarelli%29.jpg?width=1600" alt="Panorama del Lago d'Iseo visto da Monte Isola" loading="eager">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1272,16 +1272,19 @@
 <section class="dest-highlights" aria-label="Da non perdere">
   <p class="dest-highlights-label">Da non perdere</p>
   <div class="dest-highlights-row">
-    <a class="dest-highlight-chip" href="lovere.html">Accademia Tadini</a>
-    <a class="dest-highlight-chip" href="iseo.html">Castello Oldofredi</a>
     <a class="dest-highlight-chip" href="monte-isola.html">Santuario della Madonna della Ceriola</a>
-    <a class="dest-highlight-chip" href="sulzano.html">Villa Nulli-Carini</a>
-    <a class="dest-highlight-chip" href="pisogne.html">Affreschi del Romanino a Pisogne</a>
+    <a class="dest-highlight-chip" href="iseo.html">Castello Oldofredi</a>
+    <a class="dest-highlight-chip" href="sulzano.html">Chiesa di San Giorgio</a>
+    <a class="dest-highlight-chip" href="sale-marasino.html">Chiesa di San Zenone</a>
     <a class="dest-highlight-chip" href="marone.html">Santuario della Madonna della Rota</a>
-    <a class="dest-highlight-chip" href="sarnico.html">Ville Liberty di Sarnico</a>
+    <a class="dest-highlight-chip" href="pisogne.html">Affreschi del Romanino a Pisogne</a>
     <a class="dest-highlight-chip" href="paratico.html">Torre Lantieri</a>
+    <a class="dest-highlight-chip" href="sarnico.html">Ville Liberty di Sarnico</a>
+    <a class="dest-highlight-chip" href="predore.html">Santuario della Madonna della Neve</a>
     <a class="dest-highlight-chip" href="tavernola-bergamasca.html">Affreschi del Romanino a Tavernola</a>
+    <a class="dest-highlight-chip" href="riva-di-solto.html">Chiesa di San Nicola</a>
     <a class="dest-highlight-chip" href="castro.html">Rocca di Castro</a>
+    <a class="dest-highlight-chip" href="lovere.html">Accademia Tadini</a>
     <a class="dest-highlight-chip" href="costa-volpino.html">Chiesa di Santo Stefano Protomartire</a>
   </div>
 </section>
@@ -1356,7 +1359,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Monte Isola</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="monte-isola.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1408,7 +1411,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Iseo</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="iseo.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1460,7 +1463,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Sulzano</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="sulzano.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1512,7 +1515,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Sale Marasino</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="sale-marasino.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1564,7 +1567,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Marone</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="marone.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1616,7 +1619,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Pisogne</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="pisogne.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1668,7 +1671,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Paratico</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="paratico.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1720,7 +1723,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Sarnico</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="sarnico.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1772,7 +1775,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Predore</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="predore.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1824,7 +1827,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Tavernola Bergamasca</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="tavernola-bergamasca.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1876,7 +1879,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Riva di Solto</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="riva-di-solto.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1928,7 +1931,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Castro</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="castro.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1980,7 +1983,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Lovere</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="lovere.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -2032,7 +2035,7 @@
         </div>
       </div>
       <div class="art-cta">
-        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Scopri l'arte e la cultura di Costa Volpino</span>
+        <span class="art-cta-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>Arte, fede e patrimonio da vivere</span>
         <a class="btn" href="costa-volpino.html">SCOPRI DI PIÙ
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>

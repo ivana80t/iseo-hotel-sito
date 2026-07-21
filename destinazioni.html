@@ -434,6 +434,41 @@
   .vivere-faq-a{font-size:14px;line-height:1.7;color:var(--ink-soft);margin:10px 0 0;text-align:justify;}
   @media (max-width:640px){.vivere-faq{padding:24px 18px 48px;}}
 
+  /* ---------- Banner "Dove Dormire" / "Dove Mangiare" (affiancati dopo le FAQ) ---------- */
+  .dest-banner-row{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1240px;margin:0 auto;padding:0 32px 56px;}
+  .dest-banner-card{
+    position:relative;display:flex;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-card);
+    text-decoration:none;color:inherit;min-height:260px;transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .dest-banner-card:hover{transform:translateY(-5px);box-shadow:0 22px 40px -16px rgba(18,41,79,.32);}
+  .dest-banner-photo{flex:1 1 42%;position:relative;overflow:hidden;}
+  .dest-banner-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .dest-banner-text{flex:1 1 58%;padding:32px 30px;display:flex;flex-direction:column;justify-content:center;}
+  .dest-banner-card--dark .dest-banner-text{background:var(--navy);}
+  .dest-banner-card--light .dest-banner-text{background:var(--sand);}
+  .dest-banner-icon{
+    width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold);flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .dest-banner-icon svg{width:20px;height:20px;stroke:var(--gold);}
+  .dest-banner-text h3{font-family:'Fraunces',serif;font-weight:600;font-size:26px;margin:0 0 10px;}
+  .dest-banner-card--dark .dest-banner-text h3{color:#fff;}
+  .dest-banner-card--light .dest-banner-text h3{color:var(--navy);}
+  .dest-banner-text p{font-size:13.5px;line-height:1.55;margin:0 0 18px;max-width:320px;}
+  .dest-banner-card--dark .dest-banner-text p{color:#e9edf5;}
+  .dest-banner-card--light .dest-banner-text p{color:var(--ink-soft);}
+  .dest-banner-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:14px;width:fit-content;}
+  .dest-banner-card--dark .dest-banner-btn{background:var(--gold);color:var(--navy-2);}
+  .dest-banner-card--light .dest-banner-btn{background:var(--navy);color:#fff;}
+  @media (max-width:860px){
+    .dest-banner-row{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .dest-banner-card{flex-direction:column;min-height:auto;}
+    .dest-banner-photo{aspect-ratio:16/9;flex:none;}
+    .dest-banner-text{padding:24px 22px;}
+  }
+
   /* ---------- Banner "Iscrivi la tua struttura" ---------- */
   .dest-struttura-banner{
     max-width:1240px;margin:0 auto 56px;padding:26px 200px 26px 32px;
@@ -792,7 +827,7 @@
       <h1>Destinazioni sul Lago d'Iseo</h1>
       <p>14 borghi da scoprire tra Monte Isola, sponda est e sponda ovest: ognuno con il suo carattere, i suoi scorci e le sue tradizioni.</p>
       <div class="page-hero-cta">
-        <a href="ristoranti.html" class="btn btn-gold">Dove mangiare
+        <a href="ristoranti.html" class="btn btn-gold">Sapori del lago
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
         </a>
         <a href="hotel.html" class="btn-ghost">Dove dormire</a>
@@ -1169,6 +1204,36 @@
   </details>
 
 </section>
+
+<!-- ============ DESTINAZIONI: DOVE DORMIRE / DOVE MANGIARE ============ -->
+<div class="dest-banner-row">
+  <a class="dest-banner-card dest-banner-card--dark" href="hotel.html">
+    <div class="dest-banner-photo">
+      <img src="images/banner-dove-dormire.jpg" alt="Terrazza vista lago, hotel e dimore di charme sul Lago d'Iseo" loading="lazy">
+    </div>
+    <div class="dest-banner-text">
+      <span class="dest-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg></span>
+      <h3>Dove Dormire</h3>
+      <p>Hotel, B&amp;B, Agriturismi e Dimore di charme affacciati sul Lago d'Iseo.</p>
+      <span class="dest-banner-btn">Scopri gli hotel
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
+      </span>
+    </div>
+  </a>
+  <a class="dest-banner-card dest-banner-card--light" href="ristoranti.html">
+    <div class="dest-banner-text">
+      <span class="dest-banner-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
+      <h3>Dove Mangiare</h3>
+      <p>Ristoranti e trattorie tipiche per vivere il meglio della cucina del territorio.</p>
+      <span class="dest-banner-btn">Scopri i ristoranti
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
+      </span>
+    </div>
+    <div class="dest-banner-photo">
+      <img src="images/banner-dove-mangiare.jpg" alt="Piatto di pesce di lago con vista sul Lago d'Iseo" loading="lazy">
+    </div>
+  </a>
+</div>
 
 <!-- ============ SPAZIO PUBBLICITARIO ADSENSE #3 ============ -->
 <div class="ad-slot" style="margin:8px auto 40px;">

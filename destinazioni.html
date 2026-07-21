@@ -298,6 +298,40 @@
     .dest-grid{grid-template-columns:1fr;}
   }
 
+  /* ---------- Guide utili per il tuo viaggio (ispirato a dest-guide-hub di Iseo/Spiagge) ---------- */
+  .dest-guide-hub{padding:16px 32px 64px;text-align:center;}
+  .guide-hub-lead{font-size:14.5px;color:var(--ink-soft);margin:10px 0 34px;}
+  .guide-rich-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1240px;margin:0 auto;}
+  .guide-rich-card{
+    background:#fff;border-radius:16px;box-shadow:var(--shadow-card);display:flex;flex-direction:column;
+    text-align:center;padding-bottom:18px;transition:transform .2s ease,box-shadow .2s ease;text-decoration:none;color:inherit;
+  }
+  .guide-rich-card:hover{transform:translateY(-5px);box-shadow:0 22px 40px -16px rgba(18,41,79,.28);}
+  .guide-rich-photo{border-radius:16px 16px 0 0;overflow:hidden;aspect-ratio:4/3;}
+  .guide-rich-photo img{width:100%;height:100%;object-fit:cover;}
+  .guide-rich-badge{
+    width:42px;height:42px;border-radius:50%;background:#fff;box-shadow:0 6px 16px -6px rgba(18,41,79,.35);
+    display:flex;align-items:center;justify-content:center;margin:-21px auto 10px;position:relative;z-index:2;
+  }
+  .guide-rich-badge svg{width:18px;height:18px;stroke:var(--navy);}
+  .guide-rich-body{padding:0 12px;}
+  .guide-rich-body h3{font-family:'Fraunces',serif;font-size:14.5px;font-weight:600;color:var(--navy);margin:0 0 6px;}
+  .guide-rich-body > p{font-size:10.5px;color:var(--ink-soft);line-height:1.4;margin:0 0 12px;}
+  .guide-rich-chips{display:flex;justify-content:center;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+  .guide-rich-chip{display:flex;flex-direction:column;align-items:center;gap:4px;width:52px;}
+  .chip-icon{width:28px;height:28px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .chip-icon svg{width:13px;height:13px;stroke:var(--navy);}
+  .guide-rich-chip span:last-child{font-size:8.5px;line-height:1.2;color:var(--ink-soft);font-weight:600;}
+  .guide-rich-link{font-size:11px;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:4px;}
+  .guide-rich-link svg{width:12px;height:12px;stroke:var(--navy);}
+  @media (max-width:1000px){.guide-rich-grid{grid-template-columns:repeat(3,1fr);gap:20px;}
+    .guide-rich-body h3{font-size:18px;} .guide-rich-body > p{font-size:12.5px;}
+    .guide-rich-badge{width:52px;height:52px;margin:-26px auto 12px;} .guide-rich-badge svg{width:22px;height:22px;}
+    .chip-icon{width:34px;height:34px;} .chip-icon svg{width:15px;height:15px;}
+    .guide-rich-chip{width:auto;} .guide-rich-chip span:last-child{font-size:10.5px;}
+  }
+  @media (max-width:640px){.guide-rich-grid{grid-template-columns:1fr;}}
+
   /* ---------- Riquadro informativo sull'hero (ispirato al dest-info-card di Iseo) ---------- */
   .page-hero-with-stats .page-hero-content{
     position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap;
@@ -800,6 +834,90 @@
         <span class="dest-grid-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ============ DESTINAZIONI: GUIDE UTILI PER IL TUO VIAGGIO ============ -->
+<section class="dest-guide-hub" aria-label="Guide utili per il Lago d'Iseo">
+  <div class="section-divider"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+  <h2 class="section-title">Guide utili per il tuo viaggio</h2>
+  <p class="guide-hub-lead">Oltre ai singoli borghi, ecco le guide tematiche per organizzare al meglio la visita al lago.</p>
+  <div class="guide-rich-grid">
+    <a class="guide-rich-card" href="arte-e-cultura-lago-iseo.html">
+      <div class="guide-rich-photo">
+        <img src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Interno di chiesa storica, arte e cultura sul Lago d'Iseo" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V10l9-7 9 7v11"/><path d="M9 21v-9h6v9"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Arte e Cultura</h3>
+        <p>Chiese affrescate, ville storiche e musei nei borghi che custodiscono la storia del Sebino.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span>Lovere</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span>Pisogne</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+    <a class="guide-rich-card" href="spiagge-lago-iseo.html">
+      <div class="guide-rich-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Spiaggia%20-%20panoramio%20(20).jpg?width=900" alt="Spiaggia sul Lago d'Iseo" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Spiagge</h3>
+        <p>Spiagge libere e lidi attrezzati per fare il bagno lungo tutte le sponde del lago.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Libere</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Attrezzate</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+    <a class="guide-rich-card" href="itinerari-trekking-lago-iseo.html">
+      <div class="guide-rich-photo">
+        <img src="https://images.unsplash.com/photo-1600135931576-12b378c95f46?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Sentiero tra uliveti sopra il Lago d'Iseo" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-9 4 5 3-4 5 8z"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Itinerari e Trekking</h3>
+        <p>Sentieri panoramici, l'anello ciclabile e la Corna Trentapassi, a piedi o in bici.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>A piedi</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>In bici</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+    <a class="guide-rich-card" href="sport-ed-esperienze-lago-iseo.html">
+      <div class="guide-rich-photo">
+        <img src="https://images.unsplash.com/photo-1526401485004-46910ecc8e51?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Kayak sulle acque del Lago d'Iseo" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Sport ed Esperienze</h3>
+        <p>Vela, kayak, SUP e attività all'aria aperta per vivere il lago in modo attivo.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Acqua</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Terra</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
+    <a class="guide-rich-card" href="enogastronomia-franciacorta.html">
+      <div class="guide-rich-photo">
+        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Vigneti della Franciacorta in collina" loading="lazy">
+      </div>
+      <span class="guide-rich-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><circle cx="9" cy="9" r="2"/><circle cx="15" cy="9" r="2"/><circle cx="7.5" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="16.5" cy="14" r="2"/></svg></span>
+      <div class="guide-rich-body">
+        <h3>Enogastronomia e Franciacorta</h3>
+        <p>Vigneti, cantine e i sapori tipici del pesce di lago, tra tinca al forno e vini DOCG.</p>
+        <div class="guide-rich-chips">
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Vino</span></div>
+          <div class="guide-rich-chip"><span class="chip-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Sapori</span></div>
+        </div>
+        <span class="guide-rich-link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+      </div>
+    </a>
   </div>
 </section>
 

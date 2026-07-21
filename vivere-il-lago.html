@@ -320,23 +320,27 @@
   .vivere-territorio-text p{font-size:15px;line-height:1.7;color:var(--ink-soft);margin:0 0 14px;text-align:justify;}
   .vivere-territorio-text p:last-child{margin-bottom:0;}
   .vivere-territorio-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .vivere-t-card{display:flex;flex-direction:column;text-align:center;}
+  .vivere-t-card{
+    background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-card);
+    display:flex;flex-direction:column;text-align:center;text-decoration:none;color:inherit;cursor:pointer;
+    padding-bottom:18px;transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .vivere-t-card:hover{transform:translateY(-5px);box-shadow:0 22px 40px -16px rgba(18,41,79,.28);}
   @media (max-width:900px){
     .reveal-l, .reveal-r{opacity:0;transition:opacity .6s ease, transform .6s ease;will-change:transform,opacity;}
     .reveal-l{transform:translateX(-36px);}
     .reveal-r{transform:translateX(36px);}
     .reveal-l.in-view, .reveal-r.in-view{opacity:1;transform:translateX(0);}
   }
-  .vivere-t-card-img{border-radius:var(--radius-md);overflow:hidden;margin-bottom:14px;box-shadow:var(--shadow-card);}
+  .vivere-t-card-img{border-radius:16px 16px 0 0;overflow:hidden;margin-bottom:14px;}
   .vivere-t-card-img img{width:100%;aspect-ratio:4/3;object-fit:cover;}
-  .vivere-t-card h3{font-size:15px;font-weight:700;color:var(--navy);margin:0 0 6px;}
-  .vivere-t-card p{font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 10px;}
-  .vivere-t-card a{
+  .vivere-t-card h3{font-size:15px;font-weight:700;color:var(--navy);margin:0 0 6px;padding:0 14px;}
+  .vivere-t-card p{font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin:0 0 10px;padding:0 14px;}
+  .vivere-t-card-link{
     font-size:12.5px;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:5px;
     margin:auto auto 0;padding-top:4px;
   }
-  .vivere-t-card a svg{width:12px;height:12px;stroke:var(--gold);}
-  .vivere-t-card a:hover{color:var(--gold);}
+  .vivere-t-card-link svg{width:12px;height:12px;stroke:var(--navy);}
   @media (max-width:900px){
     .vivere-territorio-inner{grid-template-columns:1fr;gap:28px;}
     .vivere-territorio-cards{grid-template-columns:repeat(2,1fr);}
@@ -346,8 +350,9 @@
   }
 
   /* ---------- Il ritmo del lago ---------- */
-  .vivere-ritmo{background:var(--sand);display:grid;grid-template-columns:0.85fr 1.3fr;align-items:stretch;}
-  .vivere-ritmo-media{overflow:hidden;height:420px;}
+  .vivere-ritmo{background:var(--sand);}
+  .vivere-ritmo-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.3fr;align-items:stretch;}
+  .vivere-ritmo-media{overflow:hidden;height:420px;border-radius:16px;align-self:center;}
   .vivere-ritmo-media img{width:100%;height:100%;object-fit:cover;display:block;}
   .vivere-ritmo-content{padding:56px 40px;display:flex;flex-direction:column;justify-content:center;align-items:center;}
   .vivere-ritmo-content h2{font-family:'Fraunces',serif;font-weight:600;font-size:26px;color:var(--navy);margin:0 0 14px;align-self:flex-start;text-align:left;}
@@ -370,7 +375,7 @@
     .vivere-ritmo-item:nth-child(2n){border-left:1px solid var(--line);}
   }
   @media (max-width:900px){
-    .vivere-ritmo{grid-template-columns:1fr;}
+    .vivere-ritmo-inner{grid-template-columns:1fr;}
     .vivere-ritmo-media{height:260px;}
     .vivere-ritmo-content{padding:40px 28px;}
     .vivere-ritmo-grid{grid-template-columns:repeat(4,1fr);}
@@ -930,44 +935,45 @@
       <p>Questa è la magia del Sebino: paesaggi diversi, tutti da vivere.</p>
     </div>
     <div class="vivere-territorio-cards">
-      <div class="vivere-t-card reveal-l">
+      <a class="vivere-t-card reveal-l" href="destinazioni.html">
         <span class="vivere-t-card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Panorama%20Iseo%20-%20panoramio.jpg?width=700" alt="Il lago d'Iseo" loading="lazy"></span>
         <h3>Il lago</h3>
         <p>Acque calme e cristalline, spiagge, porti e panorami mozzafiato.</p>
-        <a href="destinazioni.html">Scopri di più
+        <span class="vivere-t-card-link">Scopri di più
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
-      </div>
-      <div class="vivere-t-card reveal-r">
+        </span>
+      </a>
+      <a class="vivere-t-card reveal-r" href="enogastronomia-franciacorta.html#franciacorta-carosello">
         <span class="vivere-t-card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Montisola%20-%20panoramio%20(3).jpg?width=700" alt="Uliveti del Lago d'Iseo" loading="lazy"></span>
         <h3>Gli uliveti</h3>
         <p>Terrazzamenti secolari che producono un olio extravergine d'eccellenza.</p>
-        <a href="enogastronomia-franciacorta.html#franciacorta-carosello">Scopri di più
+        <span class="vivere-t-card-link">Scopri di più
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
-      </div>
-      <div class="vivere-t-card reveal-l">
+        </span>
+      </a>
+      <a class="vivere-t-card reveal-l" href="enogastronomia-franciacorta.html#franciacorta-carosello">
         <span class="vivere-t-card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Una%20vite%20della%20Franciacorta.JPG?width=700" alt="Vigneti della Franciacorta" loading="lazy"></span>
         <h3>I vigneti</h3>
         <p>Le colline della Franciacorta, patrimonio UNESCO, tra cantine e sapori unici.</p>
-        <a href="enogastronomia-franciacorta.html#franciacorta-carosello">Scopri di più
+        <span class="vivere-t-card-link">Scopri di più
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
-      </div>
-      <div class="vivere-t-card reveal-r">
+        </span>
+      </a>
+      <a class="vivere-t-card reveal-r" href="itinerari-trekking-lago-iseo.html">
         <span class="vivere-t-card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corna%20Trentapassi%20(18997371296).jpg?width=700" alt="Montagne del Lago d'Iseo" loading="lazy"></span>
         <h3>La montagna</h3>
         <p>Sentieri, boschi e rifugi per gli amanti del trekking e della natura.</p>
-        <a href="itinerari-trekking-lago-iseo.html">Scopri di più
+        <span class="vivere-t-card-link">Scopri di più
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
-      </div>
+        </span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ============ VIVERE IL LAGO: IL RITMO DEL LAGO ============ -->
 <section class="vivere-ritmo">
+  <div class="vivere-ritmo-inner">
   <div class="vivere-ritmo-media">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tramonto%20Iseo%20-%20panoramio.jpg?width=1000" alt="Battello sul Lago d'Iseo al tramonto" loading="lazy">
   </div>
@@ -1012,6 +1018,7 @@
         </a>
       </div>
     </div>
+  </div>
   </div>
 </section>
 

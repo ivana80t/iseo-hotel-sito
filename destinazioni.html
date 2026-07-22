@@ -1354,6 +1354,7 @@ nav.main-nav a.active::after{
 footer{
   background:var(--navy-2);
   color:#cfd7e4;
+  margin-top:20px;
 }
 
 .footer-top{
@@ -1369,17 +1370,106 @@ footer{
   color:#fff;
 }
 
+.footer-logo .logo-sub{
+  color:#98a3b8;
+}
+
 .footer-desc{
   font-size:13px;
   line-height:1.6;
   color:#a9b2c4;
-  max-width:300px;
+  margin:14px 0 18px;
+  max-width:280px;
+}
+
+.footer-icon-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.footer-icon-row a,
+.footer-icon-row button{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  cursor:pointer;
+  transition:background .2s ease,border-color .2s ease;
+}
+
+.footer-icon-row a svg,
+.footer-icon-row button svg{
+  width:15px;
+  height:15px;
+  stroke:#fff;
+}
+
+.footer-icon-row a:hover,
+.footer-icon-row button:hover{
+  background:rgba(255,255,255,.1);
+}
+
+.footer-icon-row button[aria-expanded="true"]{
+  background:var(--gold);
+  border-color:var(--gold);
+}
+
+.footer-icon-row button[aria-expanded="true"] svg{
+  stroke:var(--navy-2);
+}
+
+.footer-search{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:max-height .22s ease,opacity .2s ease,margin .22s ease;
+  margin-top:0;
+}
+
+.footer-search.open{
+  max-height:60px;
+  opacity:1;
+  margin-top:14px;
+}
+
+.footer-search-form{
+  display:flex;
+  gap:0;
+  border-radius:8px;
+  overflow:hidden;
+  max-width:340px;
+}
+
+.footer-search-form input{
+  flex:1;
+  border:none;
+  padding:11px 14px;
+  font-size:13px;
+  font-family:inherit;
+  outline:none;
+}
+
+.footer-search-form button{
+  border:none;
+  background:var(--gold);
+  color:var(--navy-2);
+  font-weight:700;
+  padding:0 16px;
+  font-size:13px;
 }
 
 footer h4{
   font-size:14px;
   color:#fff;
   margin:0 0 16px;
+  font-weight:700;
 }
 
 footer ul li{
@@ -1389,6 +1479,10 @@ footer ul li{
 footer ul li a{
   font-size:13.5px;
   color:#c3cbdb;
+}
+
+footer ul li a:hover{
+  color:#fff;
 }
 
 .footer-bottom{
@@ -1402,6 +1496,94 @@ footer ul li a{
   margin:0 auto;
   font-size:12px;
   color:#8b96ab;
+}
+
+.footer-bottom .heart{
+  color:var(--coral);
+}
+
+.footer-contact-box{
+  display:inline-flex;
+  width:fit-content;
+  align-items:center;
+  gap:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;
+  padding:12px 14px;
+  margin-bottom:22px;
+  transition:background .2s ease,border-color .2s ease;
+}
+
+.footer-contact-box:hover{
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.25);
+}
+
+.footer-contact-box .icon-circle{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--gold);
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.footer-contact-box .icon-circle svg{
+  width:15px;
+  height:15px;
+  stroke:var(--navy-2);
+}
+
+.footer-contact-box strong{
+  display:block;
+  font-size:13px;
+  color:#fff;
+  font-weight:700;
+}
+
+.footer-contact-box span{
+  font-size:11.5px;
+  color:#a9b2c4;
+}
+
+.footer-trust-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-trust-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:12.5px;
+  color:#c3cbdb;
+}
+
+.footer-trust-item svg{
+  width:18px;
+  height:18px;
+  stroke:var(--gold);
+  flex-shrink:0;
+}
+
+@media(max-width:560px){
+  .footer-col-assistenza{
+    border-top:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.04);
+    border-radius:14px;
+    padding:22px 20px 24px;
+    margin-top:6px;
+  }
+}
+
+@media(min-width:561px){
+  .footer-desc{
+    text-align:justify;
+  }
 }
 
 /* RESPONSIVE */
@@ -3066,6 +3248,22 @@ document.querySelectorAll('.faq-item').forEach(function(item){
   });
 
 });
+
+const footerSearchToggle = document.getElementById('footerSearchToggle');
+const footerSearch = document.getElementById('footerSearch');
+
+if(footerSearchToggle && footerSearch){
+
+  footerSearchToggle.addEventListener('click', function(){
+    const isOpen = footerSearch.classList.toggle('open');
+    footerSearchToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if(isOpen){
+      const input = footerSearch.querySelector('input');
+      if(input) input.focus();
+    }
+  });
+
+}
 
 // Smooth scroll SOLO per i link di ancoraggio interni alla pagina (es. #destinazioni-grid,
 // #come-scegliere). Il comportamento è gestito qui via JS invece che con

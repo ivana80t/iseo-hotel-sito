@@ -69,6 +69,29 @@
     content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold);border-radius:2px;
   }
   nav.main-nav a:hover{color:var(--navy);}
+  .nav-item{position:relative;display:flex;align-items:center;}
+  .nav-dropdown-toggle{display:flex;align-items:center;gap:4px;}
+  .nav-caret{width:10px;height:10px;stroke:var(--ink);transition:transform .18s ease;flex-shrink:0;}
+  .nav-item:hover .nav-caret,.nav-item:focus-within .nav-caret,.nav-item.open .nav-caret{transform:rotate(180deg);stroke:var(--navy);}
+  .nav-dropdown{
+    position:absolute;top:100%;left:0;margin-top:14px;background:#fff;border:1px solid var(--line);
+    border-radius:var(--radius-md);box-shadow:0 16px 32px -14px rgba(18,41,79,0.22);
+    min-width:190px;padding:10px;opacity:0;visibility:hidden;transform:translateY(6px);
+    transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:60;
+  }
+  .nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown,.nav-item.open .nav-dropdown{
+    opacity:1;visibility:visible;transform:translateY(0);
+  }
+  .nav-dropdown a{display:flex;align-items:center;gap:8px;width:max-content;max-width:100%;padding:8px 12px;border-radius:8px;font-size:14px;font-weight:500;color:var(--ink);}
+  .nav-dropdown a::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .nav-dropdown a:hover{background:var(--sand);color:var(--navy);}
+  .nav-dropdown-group{display:block;}
+  .nav-dropdown-group + .nav-dropdown-group{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
+  .nav-dropdown-label{
+    display:block;padding:6px 12px 4px;font-size:10.5px;font-weight:700;color:var(--gold);
+    text-transform:uppercase;letter-spacing:.4px;text-align:left;
+  }
+  .nav-dropdown-items{display:block;}
   .header-actions{display:flex;align-items:center;gap:22px;}
   .icon-link{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;position:relative;}
   .icon-wrap{position:relative;display:inline-flex;flex-shrink:0;}
@@ -994,6 +1017,25 @@
     const isOpen = mainNav.style.display === 'flex';
     mainNav.style.display = isOpen ? 'none' : 'flex';
     mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+  });
+
+  // Dropdown nel menu: click/tap per aprire (utile su touch), hover gestito via CSS su desktop
+  document.querySelectorAll('.nav-item').forEach((navItem) => {
+    const navToggle = navItem.querySelector('.nav-dropdown-toggle');
+    if (!navToggle) return;
+    navToggle.addEventListener('click', (e) => {
+      if (window.matchMedia('(hover: none)').matches) {
+        e.preventDefault();
+        const isOpen = navItem.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!navItem.contains(e.target)) {
+        navItem.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
 
   // Favorite badge count

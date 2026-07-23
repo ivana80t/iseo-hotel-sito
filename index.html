@@ -84,7 +84,15 @@
     opacity:1;visibility:visible;transform:translateY(0);
   }
   .nav-dropdown a{display:block;padding:9px 12px;border-radius:8px;font-size:14px;font-weight:500;color:var(--ink);}
+  .nav-dropdown a::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0;}
   .nav-dropdown a:hover{background:var(--sand);color:var(--navy);}
+  .nav-dropdown-group{display:block;}
+  .nav-dropdown-group + .nav-dropdown-group{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;}
+  .nav-dropdown-label{
+    display:block;padding:6px 12px 4px;font-size:10.5px;font-weight:700;color:var(--gold);
+    text-transform:uppercase;letter-spacing:.4px;text-align:left;
+  }
+  .nav-dropdown-items{display:block;}
   .header-actions{display:flex;align-items:center;gap:22px;}
   .icon-link{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap;position:relative;}
   .icon-wrap{position:relative;display:inline-flex;flex-shrink:0;}
@@ -932,24 +940,24 @@
     mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
   });
 
-  // Dropdown "Hotel" nel menu: click/tap per aprire (utile su touch), hover gestito via CSS su desktop
-  const navHotelItem = document.getElementById('navHotelItem');
-  if (navHotelItem) {
-    const navToggle = navHotelItem.querySelector('.nav-dropdown-toggle');
+  // Dropdown nel menu: click/tap per aprire (utile su touch), hover gestito via CSS su desktop
+  document.querySelectorAll('.nav-item').forEach((navItem) => {
+    const navToggle = navItem.querySelector('.nav-dropdown-toggle');
+    if (!navToggle) return;
     navToggle.addEventListener('click', (e) => {
       if (window.matchMedia('(hover: none)').matches) {
         e.preventDefault();
-        const isOpen = navHotelItem.classList.toggle('open');
+        const isOpen = navItem.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       }
     });
     document.addEventListener('click', (e) => {
-      if (!navHotelItem.contains(e.target)) {
-        navHotelItem.classList.remove('open');
+      if (!navItem.contains(e.target)) {
+        navItem.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
     });
-  }
+  });
 
   // Favorite toggle on hotel cards
   // Se favorites.js è disponibile, usa il sistema condiviso (con conteggio e sync tramite localStorage);

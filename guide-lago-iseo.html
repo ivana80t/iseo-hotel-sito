@@ -441,6 +441,8 @@
     .icon-link svg{
       width:17px;
       height:17px;
+      stroke:var(--ink);
+      flex-shrink:0;
     }
 
     .btn-outline{
@@ -1041,7 +1043,20 @@
       border:0;
       font-weight:700;
       font-size:14px;
+      background:var(--navy);
+      color:#fff;
       transition:.2s ease;
+    }
+
+    .btn:hover{
+      background:var(--navy-soft);
+      transform:translateY(-1px);
+    }
+
+    .header-actions .btn{
+      padding:10px 16px;
+      font-size:12.5px;
+      gap:7px;
     }
 
     .btn-gold{

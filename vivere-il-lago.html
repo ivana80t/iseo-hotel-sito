@@ -564,7 +564,7 @@
 
   /* ---------- Banner "Iscrivi la tua struttura" ---------- */
   .dest-struttura-banner{
-    max-width:1240px;margin:0 auto 56px;padding:26px 200px 26px 32px;
+    max-width:1240px;margin:56px auto;padding:26px 200px 26px 32px;
     background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 100%);
     border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;gap:24px;
     flex-wrap:wrap;position:relative;overflow:hidden;color:#fff;
@@ -578,7 +578,8 @@
   .struttura-banner-left h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:0 0 5px;}
   .struttura-banner-left p{font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.82);margin:0;max-width:420px;}
   .struttura-banner-right{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-shrink:0;z-index:2;margin-right:8px;}
-  .struttura-banner-right .btn{background:#fff;color:var(--navy);padding:12px 22px;font-size:14px;font-weight:700;border-radius:10px;white-space:nowrap;}
+  .struttura-banner-right .btn{background:#fff;color:var(--navy);padding:12px 22px;font-size:14px;font-weight:700;border-radius:10px;white-space:nowrap;transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease;}
+  .struttura-banner-right .btn:hover{background:var(--gold);color:#fff;box-shadow:0 8px 20px -6px rgba(224,169,64,.55);transform:translateY(-2px);}
   .struttura-banner-right a.struttura-vantaggi{font-size:13px;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:5px;}
   .struttura-banner-right a.struttura-vantaggi svg{width:13px;height:13px;stroke:var(--gold);}
   .struttura-banner-skyline{position:absolute;right:18px;bottom:0;height:70%;width:150px;opacity:.5;pointer-events:none;}

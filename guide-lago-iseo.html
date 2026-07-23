@@ -17,6 +17,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="preload" as="image" fetchpriority="high" href="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1600">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Iseo Sapori e Soggiorni">
   <meta property="og:title" content="Guide Lago d'Iseo: 5 guide tra cultura, sport e sapori">
@@ -24,7 +27,7 @@
   <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1200">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="900">
-  <meta property="og:image:alt" content="Panorama del Lago d'Iseo con Monte Isola">
+  <meta property="og:image:alt" content="Guide del Lago d'Iseo con panorama di Monte Isola">
   <meta property="og:url" content="https://www.iseosaporiesoggiorni.it/guide-lago-iseo.html">
   <meta property="og:locale" content="it_IT">
 
@@ -32,7 +35,7 @@
   <meta name="twitter:title" content="Guide Lago d'Iseo: 5 guide tra cultura, sport e sapori">
   <meta name="twitter:description" content="Cinque guide tematiche dedicate ad arte, spiagge, itinerari, sport ed esperienze, enogastronomia e Franciacorta.">
   <meta name="twitter:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1200">
-  <meta name="twitter:image:alt" content="Panorama del Lago d'Iseo con Monte Isola">
+  <meta name="twitter:image:alt" content="Guide del Lago d'Iseo con panorama di Monte Isola">
 
   <script type="application/ld+json">
   {
@@ -59,7 +62,50 @@
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
+    "@type":"WebPage",
+    "@id":"https://www.iseosaporiesoggiorni.it/guide-lago-iseo.html#webpage",
+    "url":"https://www.iseosaporiesoggiorni.it/guide-lago-iseo.html",
+    "name":"Guide Lago d'Iseo: 5 guide tra cultura, sport e sapori",
+    "description":"Consulta le 5 guide del Lago d'Iseo dedicate ad arte e cultura, spiagge, itinerari e trekking, sport ed esperienze, enogastronomia e Franciacorta.",
+    "inLanguage":"it-IT",
+    "dateModified":"2026-07-23",
+    "isPartOf":{
+      "@type":"WebSite",
+      "@id":"https://www.iseosaporiesoggiorni.it/#website",
+      "name":"Iseo Sapori e Soggiorni",
+      "url":"https://www.iseosaporiesoggiorni.it/"
+    },
+    "primaryImageOfPage":{
+      "@type":"ImageObject",
+      "url":"https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1200",
+      "width":1200,
+      "height":900
+    },
+    "mainEntity":{
+      "@id":"https://www.iseosaporiesoggiorni.it/guide-lago-iseo.html#collectionpage"
+    },
+    "breadcrumb":{
+      "@id":"https://www.iseosaporiesoggiorni.it/guide-lago-iseo.html#breadcrumb"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "@id":"https://www.iseosaporiesoggiorni.it/#organization",
+    "name":"Iseo Sapori e Soggiorni",
+    "url":"https://www.iseosaporiesoggiorni.it/",
+    "description":"Portale turistico dedicato al Lago d'Iseo: destinazioni, hotel, ristoranti e guide tematiche per organizzare il soggiorno sul Sebino."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
     "@type":"CollectionPage",
+    "@id":"https://www.iseosaporiesoggiorni.it/guide-lago-iseo.html#collectionpage",
     "name":"Guide Lago d'Iseo",
     "headline":"Guide del Lago d'Iseo: 5 percorsi tematici tra cultura, sport e sapori",
     "description":"Landing editoriale che raccoglie cinque guide dedicate ad arte e cultura, spiagge, itinerari e trekking, sport ed esperienze, enogastronomia e Franciacorta.",
@@ -92,7 +138,7 @@
         "@type":"ListItem",
         "position":1,
         "name":"Arte e cultura",
-        "url":"https://www.iseosaporiesoggiorni.it/arte-e-cultura.html"
+        "url":"https://www.iseosaporiesoggiorni.it/arte-e-cultura-lago-iseo.html"
       },
       {
         "@type":"ListItem",
@@ -110,7 +156,7 @@
         "@type":"ListItem",
         "position":4,
         "name":"Sport ed esperienze",
-        "url":"https://www.iseosaporiesoggiorni.it/sport-ed-esperienze.html"
+        "url":"https://www.iseosaporiesoggiorni.it/sport-ed-esperienze-lago-iseo.html"
       },
       {
         "@type":"ListItem",
@@ -799,6 +845,169 @@
       max-width:1240px;
       margin:0 auto;
     }
+
+    .editorial-note{
+      background:var(--sand);
+      padding:28px 32px;
+      text-align:center;
+      border-top:1px solid var(--line);
+    }
+    .editorial-note p{
+      max-width:760px;
+      margin:0 auto;
+      font-size:13.5px;
+      line-height:1.7;
+      color:var(--ink-soft);
+    }
+
+    .explore-also{
+      padding:56px 32px 64px;
+      border-top:1px solid var(--line);
+      background:var(--sand);
+    }
+    .explore-also-head{
+      text-align:center;
+      max-width:640px;
+      margin:0 auto 40px;
+    }
+    .explore-also-head svg{
+      width:34px;
+      height:34px;
+      color:var(--gold);
+      margin-bottom:10px;
+    }
+    .explore-also-head h2{
+      font-family:'Fraunces',serif;
+      font-size:34px;
+      color:var(--navy);
+      margin:0 0 12px;
+    }
+    .explore-also-head p{
+      font-size:15px;
+      line-height:1.6;
+      color:var(--ink-soft);
+      margin:0;
+    }
+    .explore-also-boxes{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:22px;
+      align-items:stretch;
+      max-width:1240px;
+      margin:0 auto;
+    }
+    .explore-also-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:0 3px 14px rgba(18,41,79,.06);
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+    }
+    .explore-also-card-head{
+      text-align:center;
+      padding:26px 20px 18px;
+    }
+    .explore-also-icon{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 14px;
+    }
+    .explore-also-icon svg{
+      width:22px;
+      height:22px;
+    }
+    .explore-also-card-head h3{
+      font-family:'Fraunces',serif;
+      font-size:17px;
+      font-weight:700;
+      color:var(--navy);
+      margin:0;
+    }
+    .explore-also-list{
+      padding:0 20px;
+      flex:1;
+    }
+    .explore-also-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:11px 0;
+      border-top:1px solid var(--line);
+      text-decoration:none;
+    }
+    .explore-also-item:first-child{
+      border-top:1px solid var(--line);
+    }
+    .explore-also-item-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .explore-also-item-dot{
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .explore-also-item-dot svg{
+      width:12px;
+      height:12px;
+    }
+    .explore-also-item span.label{
+      font-size:13.5px;
+      color:var(--ink);
+      line-height:1.3;
+    }
+    .explore-also-item .chevron{
+      flex:0 0 auto;
+      color:var(--ink-soft);
+      opacity:.6;
+    }
+    .explore-also-item:hover span.label{
+      color:var(--navy);
+      text-decoration:underline;
+      text-decoration-color:var(--gold);
+    }
+    .explore-also-footer{
+      padding:16px 20px 22px;
+      text-align:center;
+      margin-top:auto;
+    }
+    .explore-also-footer a{
+      font-size:13.5px;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .explore-also-footer a:hover{
+      text-decoration:underline;
+    }
+
+    .explore-also-card--blue .explore-also-icon,
+    .explore-also-card--blue .explore-also-item-dot{ background:#e8f0fb; color:#2f6fb3; }
+    .explore-also-card--blue .explore-also-footer a{ color:#2f6fb3; }
+
+    .explore-also-card--gold .explore-also-icon,
+    .explore-also-card--gold .explore-also-item-dot{ background:#fbf1dd; color:#b9822c; }
+    .explore-also-card--gold .explore-also-footer a{ color:#b9822c; }
+
+    .explore-also-card--green .explore-also-icon,
+    .explore-also-card--green .explore-also-item-dot{ background:#e6f3ea; color:#3f8c5f; }
+    .explore-also-card--green .explore-also-footer a{ color:#3f8c5f; }
+
+    .explore-also-card--purple .explore-also-icon,
+    .explore-also-card--purple .explore-also-item-dot{ background:#f2eaf9; color:#8b5cc9; }
+    .explore-also-card--purple .explore-also-footer a{ color:#8b5cc9; }
 
     .section-divider{
       display:flex;
@@ -1514,6 +1723,10 @@
         grid-template-columns:1fr;
       }
 
+      .explore-also-boxes{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
       .benefit-grid{
         grid-template-columns:repeat(2,1fr);
         gap:30px 0;
@@ -1572,6 +1785,10 @@
 
       .guide-content{
         padding:24px 21px;
+      }
+
+      .explore-also-boxes{
+        grid-template-columns:1fr;
       }
 
       .banner{
@@ -1760,7 +1977,7 @@
     <div class="page-hero-media">
       <img
         src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1600"
-        alt="Panorama del Lago d'Iseo con Monte Isola"
+        alt="Guide del Lago d'Iseo con panorama di Monte Isola"
         width="1600"
         height="900"
         loading="eager"
@@ -1787,7 +2004,7 @@
 
         <div class="hero-actions">
           <a class="btn btn-gold" href="#cinque-guide">Esplora le 5 guide</a>
-          <a class="btn btn-ghost" href="destinazioni.html">Scopri le destinazioni</a>
+          <a class="btn btn-ghost" href="destinazioni.html">Guida alle destinazioni del Lago d'Iseo</a>
         </div>
       </div>
 
@@ -1847,26 +2064,34 @@
 
       <p>
         Le <strong>guide del Lago d'Iseo</strong> raccolgono i principali temi utili
-        per conoscere il Sebino prima della partenza e durante il soggiorno. Non sono
-        semplici elenchi di luoghi: ogni guida organizza il territorio intorno a un
-        interesse preciso e collega le informazioni alle località in cui è possibile
-        approfondirle.
+        per capire <strong>cosa vedere</strong> e <strong>cosa fare sul Lago d'Iseo</strong>
+        prima della partenza e durante il soggiorno, sia che tu voglia
+        <strong>visitare il Lago d'Iseo</strong> per un weekend sia che tu abbia più
+        giorni a disposizione. Non sono semplici elenchi di luoghi: ogni guida
+        organizza il territorio intorno a un interesse preciso e collega le
+        informazioni alle località in cui è possibile approfondirle.
       </p>
 
       <p>
         Puoi partire dall'<strong>arte e dalla cultura</strong>, cercare spiagge e
-        spazi vicini all'acqua, scegliere passeggiate e itinerari panoramici,
-        approfondire <strong>sport ed esperienze</strong> sul lago e all'aperto oppure
-        avvicinarti al territorio attraverso il pesce di lago, l'olio, i prodotti
-        tipici e la vicina Franciacorta. Le cinque guide si completano tra loro e permettono di passare dalla cultura
-        alle attività all'aperto fino ai sapori del territorio.
+        spazi vicini all'acqua, scegliere passeggiate e <strong>percorsi panoramici</strong>
+        — dal trekking di Monte Isola al sentiero della Valeriana — approfondire
+        <strong>sport ed esperienze</strong> sul lago e all'aperto oppure avvicinarti
+        al territorio attraverso il pesce di lago, l'olio, i prodotti tipici e il
+        binomio <strong>Franciacorta e Lago d'Iseo</strong>. Le cinque guide si
+        completano tra loro e permettono di passare dalla cultura alle attività
+        all'aperto fino ai sapori del territorio.
       </p>
 
       <p>
         Questa pagina funziona come una landing editoriale: presenta le cinque guide,
         aiuta a scegliere quella più adatta e crea un collegamento diretto con le
-        <a href="destinazioni.html"><strong>14 destinazioni del Lago d'Iseo</strong></a>,
-        le strutture ricettive e i ristoranti presenti nel portale.
+        <a href="destinazioni.html"><strong>14 destinazioni del Lago d'Iseo</strong></a>
+        e i suoi <strong>borghi</strong>, con <strong>dove dormire</strong> e
+        <strong>dove mangiare</strong>. È un buon punto di partenza sia per organizzare
+        una <strong>vacanza sul Lago d'Iseo</strong> di più giorni sia per un
+        <strong>Lago d'Iseo in un giorno</strong> o in due giorni, anche
+        <strong>con bambini</strong>.
       </p>
     </div>
   </section>
@@ -1999,11 +2224,11 @@
       </p>
 
       <div class="guides-grid">
-        <a class="guide-card" href="arte-e-cultura.html">
+        <a class="guide-card" href="arte-e-cultura-lago-iseo.html">
           <div class="guide-image">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Lovere%20-%20Accademia%20Tadini.jpg?width=900"
-              alt="Accademia Tadini a Lovere"
+              alt="Guida arte e cultura Lago d'Iseo: Accademia Tadini a Lovere"
               width="900"
               height="675"
               loading="lazy"
@@ -2022,7 +2247,7 @@
               <li>Chiese</li>
               <li>Castelli</li>
             </ul>
-            <span class="guide-link">Apri la guida Arte e cultura →</span>
+            <span class="guide-link">Guida ad arte e cultura del Lago d'Iseo →</span>
           </div>
         </a>
 
@@ -2030,7 +2255,7 @@
           <div class="guide-image">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27Iseo.JPG?width=900"
-              alt="Acque e paesaggio del Lago d'Iseo"
+              alt="Guida spiagge Lago d'Iseo: acque e paesaggio del lago"
               width="900"
               height="675"
               loading="lazy"
@@ -2049,7 +2274,7 @@
               <li>Lungolaghi</li>
               <li>Relax</li>
             </ul>
-            <span class="guide-link">Apri la guida Spiagge →</span>
+            <span class="guide-link">Guida alle spiagge del Lago d'Iseo →</span>
           </div>
         </a>
 
@@ -2057,7 +2282,7 @@
           <div class="guide-image">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Corna%20Trentapassi%20vista%20dal%20lago%20d%27Iseo.jpg?width=900"
-              alt="Corna Trentapassi sul Lago d'Iseo"
+              alt="Guida itinerari e trekking Lago d'Iseo: percorso panoramico della Corna Trentapassi"
               width="900"
               height="675"
               loading="lazy"
@@ -2076,15 +2301,15 @@
               <li>Passeggiate</li>
               <li>Panorami</li>
             </ul>
-            <span class="guide-link">Apri la guida Itinerari →</span>
+            <span class="guide-link">Guida agli itinerari e trekking del Lago d'Iseo →</span>
           </div>
         </a>
 
-        <a class="guide-card" href="sport-ed-esperienze.html">
+        <a class="guide-card" href="sport-ed-esperienze-lago-iseo.html">
           <div class="guide-image">
             <img
               src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&q=80&auto=format&fit=crop"
-              alt="Attività sportive e all'aperto sul Lago d'Iseo"
+              alt="Guida sport ed esperienze Lago d'Iseo: attività sportive e all'aperto"
               width="900"
               height="675"
               loading="lazy"
@@ -2104,7 +2329,7 @@
               <li>Bicicletta</li>
               <li>Outdoor</li>
             </ul>
-            <span class="guide-link">Apri la guida Sport ed esperienze →</span>
+            <span class="guide-link">Guida a sport ed esperienze sul Lago d'Iseo →</span>
           </div>
         </a>
 
@@ -2112,7 +2337,7 @@
           <div class="guide-image">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Vineyards%20in%20Franciacorta.jpg?width=900"
-              alt="Vigneti della Franciacorta"
+              alt="Guida enogastronomia Franciacorta e Lago d'Iseo: vigneti"
               width="900"
               height="675"
               loading="lazy"
@@ -2131,7 +2356,7 @@
               <li>Olio</li>
               <li>Vigneti</li>
             </ul>
-            <span class="guide-link">Apri la guida Enogastronomia e Franciacorta →</span>
+            <span class="guide-link">Guida all'enogastronomia e alla Franciacorta →</span>
           </div>
         </a>
 
@@ -2167,7 +2392,8 @@
       <h2 class="section-title" id="come-usare-title">Come utilizzare le guide</h2>
       <p class="section-lead">
         Un percorso semplice collega temi, destinazioni e servizi senza duplicare
-        le informazioni già presenti nelle altre pagine.
+        le informazioni già presenti nelle altre pagine. In caso di dubbi, trovi
+        anche le <a href="#faq-title">domande frequenti sulle guide</a> più in basso.
       </p>
 
       <div class="steps-grid">
@@ -2176,7 +2402,8 @@
           <h3>Scegli il tema</h3>
           <p>
             Parti dall'interesse principale: cultura, acqua, sentieri, sapori oppure
-            identità del territorio.
+            identità del territorio. Per un'idea più ampia di come cambia il lago
+            durante l'anno, guarda anche <a href="vivere-il-lago.html">Vivere il lago</a>.
           </p>
         </article>
 
@@ -2185,7 +2412,8 @@
           <h3>Trova la destinazione</h3>
           <p>
             Usa i collegamenti alle <a href="destinazioni.html">14 destinazioni</a>
-            per capire dove si trovano i luoghi e le attività descritti.
+            per capire dove si trovano i luoghi e le attività descritti e
+            <a href="destinazioni.html">come raggiungere il Lago d'Iseo</a>.
           </p>
         </article>
 
@@ -2307,7 +2535,7 @@
           <div class="season-img">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Isola%20di%20Loreto%2C%20Lago%20d%27Iseo-7535.jpg?width=900"
-              alt="Lago d'Iseo in primavera"
+              alt="Cosa vedere sul Lago d'Iseo in primavera: itinerari e borghi"
               width="900"
               height="563"
               loading="lazy"
@@ -2326,7 +2554,7 @@
           <div class="season-img">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27Iseo.JPG?width=900"
-              alt="Lago d'Iseo in estate"
+              alt="Vacanze sul Lago d'Iseo in estate: spiagge e navigazione"
               width="900"
               height="563"
               loading="lazy"
@@ -2345,7 +2573,7 @@
           <div class="season-img">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Vista%20dell%27isola%20di%20Loreto%20dalla%20chiesa%20di%20San%20Pietro%20Apostolo%20(Marone).jpg?width=900"
-              alt="Lago d'Iseo in autunno"
+              alt="Lago d'Iseo in autunno: sapori e Franciacorta"
               width="900"
               height="563"
               loading="lazy"
@@ -2364,7 +2592,7 @@
           <div class="season-img">
             <img
               src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20iseo.JPG?width=900"
-              alt="Lago d'Iseo in inverno"
+              alt="Cosa fare sul Lago d'Iseo in inverno: arte e borghi da scoprire"
               width="900"
               height="563"
               loading="lazy"
@@ -2534,7 +2762,7 @@
           <div class="banner-photo">
             <img
               src="images/banner-dove-dormire.jpg"
-              alt="Hotel e strutture ricettive sul Lago d'Iseo"
+              alt="Dove dormire sul Lago d'Iseo: hotel e strutture ricettive"
               width="900"
               height="700"
               loading="lazy"
@@ -2546,7 +2774,7 @@
               Dopo aver scelto guida e destinazione, consulta le strutture per
               organizzare il soggiorno sul Lago d'Iseo.
             </p>
-            <span class="banner-button">Scopri gli hotel →</span>
+            <span class="banner-button">Guida agli hotel del Lago d'Iseo →</span>
           </div>
         </a>
 
@@ -2554,7 +2782,7 @@
           <div class="banner-photo">
             <img
               src="images/banner-dove-mangiare.jpg"
-              alt="Cucina e ristoranti sul Lago d'Iseo"
+              alt="Dove mangiare sul Lago d'Iseo: cucina e ristoranti tipici"
               width="900"
               height="700"
               loading="lazy"
@@ -2566,9 +2794,198 @@
               Cerca ristoranti e trattorie per completare la visita con i sapori del
               lago e del territorio circostante.
             </p>
-            <span class="banner-button">Scopri i ristoranti →</span>
+            <span class="banner-button">Guida ai ristoranti del Lago d'Iseo →</span>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPLORA ANCHE -->
+  <section class="explore-also">
+    <div class="inner">
+      <div class="explore-also-head">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.264 1.264L7.76 16.24l1.804-5.411a2 2 0 0 1 1.264-1.264z"/></svg>
+        <h2>Esplora anche</h2>
+        <p>Scopri altre località, guide e informazioni utili per organizzare al meglio la tua esperienza sul Lago d'Iseo.</p>
+      </div>
+
+      <div class="explore-also-boxes">
+
+        <div class="explore-also-card explore-also-card--blue">
+          <div class="explore-also-card-head">
+            <div class="explore-also-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Località nei dintorni</h3>
+          </div>
+          <div class="explore-also-list">
+            <a class="explore-also-item" href="monte-isola.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="label">Monte Isola</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="iseo.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="label">Iseo</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="lovere.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="label">Lovere</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="sarnico.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="label">Sarnico</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="pisogne.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span class="label">Pisogne</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+          <div class="explore-also-footer"><a href="destinazioni.html">Vedi tutte le località →</a></div>
+        </div>
+
+        <div class="explore-also-card explore-also-card--gold">
+          <div class="explore-also-card-head">
+            <div class="explore-also-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg>
+            </div>
+            <h3>Guide tematiche</h3>
+          </div>
+          <div class="explore-also-list">
+            <a class="explore-also-item" href="arte-e-cultura-lago-iseo.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span>
+                <span class="label">Arte e cultura</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="spiagge-lago-iseo.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span>
+                <span class="label">Spiagge</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="itinerari-trekking-lago-iseo.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span>
+                <span class="label">Itinerari e trekking</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="sport-ed-esperienze-lago-iseo.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span>
+                <span class="label">Sport ed esperienze</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="enogastronomia-franciacorta.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span>
+                <span class="label">Enogastronomia e Franciacorta</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+          <div class="explore-also-footer"><a href="#guide-title">Scopri tutte le guide →</a></div>
+        </div>
+
+        <div class="explore-also-card explore-also-card--green">
+          <div class="explore-also-card-head">
+            <div class="explore-also-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <h3>Organizza il soggiorno</h3>
+          </div>
+          <div class="explore-also-list">
+            <a class="explore-also-item" href="hotel.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+                <span class="label">Dove dormire</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="ristoranti.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+                <span class="label">Dove mangiare</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="destinazioni.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+                <span class="label">Le 14 destinazioni</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="#faq-title">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+                <span class="label">Domande frequenti</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+          <div class="explore-also-footer"><a href="destinazioni.html">Tutte le informazioni →</a></div>
+        </div>
+
+        <div class="explore-also-card explore-also-card--purple">
+          <div class="explore-also-card-head">
+            <div class="explore-also-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg>
+            </div>
+            <h3>Idee e ispirazioni</h3>
+          </div>
+          <div class="explore-also-list">
+            <a class="explore-also-item" href="vivere-il-lago.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span>
+                <span class="label">Il lago stagione per stagione</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="spiagge-lago-iseo.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span>
+                <span class="label">Spiagge e relax sul lago</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="enogastronomia-franciacorta.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span>
+                <span class="label">Sapori e Franciacorta</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="explore-also-item" href="itinerari-trekking-lago-iseo.html">
+              <span class="explore-also-item-left">
+                <span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span>
+                <span class="label">Percorsi panoramici e trekking</span>
+              </span>
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+          </div>
+          <div class="explore-also-footer"><a href="vivere-il-lago.html">Lasciati ispirare →</a></div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -2590,6 +3007,15 @@
       </a>
     </div>
 
+  </section>
+
+  <!-- EEAT: NOTA EDITORIALE -->
+  <section class="editorial-note">
+    <p>
+      Contenuti redatti dal team editoriale di Iseo Sapori e Soggiorni, con
+      informazioni basate sulla conoscenza del territorio e organizzate per
+      offrire una guida evergreen del Lago d'Iseo.
+    </p>
   </section>
 
 </main>

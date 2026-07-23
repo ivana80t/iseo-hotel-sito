@@ -23,6 +23,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="preload" as="image" fetchpriority="high" href="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1600">
+
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Iseo Sapori e Soggiorni">
 <meta property="og:title" content="Destinazioni Lago d'Iseo: 14 comuni e borghi da scoprire">
@@ -30,7 +32,7 @@
 <meta property="og:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1200">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="900">
-<meta property="og:image:alt" content="Panorama del Lago d'Iseo con Monte Isola">
+<meta property="og:image:alt" content="Destinazioni e borghi del Lago d'Iseo con panorama di Monte Isola">
 <meta property="og:url" content="https://www.iseosaporiesoggiorni.it/destinazioni.html">
 <meta property="og:locale" content="it_IT">
 
@@ -70,12 +72,58 @@ window.iseoCaricaAdSense = function() {
 </script>
 
 <!-- ============================================================
+     SCHEMA: WEBPAGE
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "@id":"https://www.iseosaporiesoggiorni.it/destinazioni.html#webpage",
+  "url":"https://www.iseosaporiesoggiorni.it/destinazioni.html",
+  "name":"Destinazioni Lago d'Iseo: 14 comuni e borghi da scoprire",
+  "description":"Scopri le 14 destinazioni del Lago d'Iseo: borghi, Monte Isola, sponda bresciana e bergamasca, con consigli per scegliere dove andare.",
+  "inLanguage":"it-IT",
+  "dateModified":"2026-07-23",
+  "isPartOf":{
+    "@type":"WebSite",
+    "@id":"https://www.iseosaporiesoggiorni.it/#website",
+    "name":"Iseo Sapori e Soggiorni",
+    "url":"https://www.iseosaporiesoggiorni.it/"
+  },
+  "primaryImageOfPage":{
+    "@type":"ImageObject",
+    "url":"https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1200",
+    "width":1200,
+    "height":900
+  },
+  "breadcrumb":{
+    "@id":"https://www.iseosaporiesoggiorni.it/destinazioni.html#breadcrumb"
+  }
+}
+</script>
+
+<!-- ============================================================
+     SCHEMA: ORGANIZATION
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "@id":"https://www.iseosaporiesoggiorni.it/#organization",
+  "name":"Iseo Sapori e Soggiorni",
+  "url":"https://www.iseosaporiesoggiorni.it/",
+  "description":"Portale turistico dedicato al Lago d'Iseo: destinazioni, hotel, ristoranti e guide tematiche per organizzare il soggiorno sul Sebino."
+}
+</script>
+
+<!-- ============================================================
      SCHEMA: BREADCRUMB
      ============================================================ -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"BreadcrumbList",
+  "@id":"https://www.iseosaporiesoggiorni.it/destinazioni.html#breadcrumb",
   "itemListElement":[
     {
       "@type":"ListItem",
@@ -1801,6 +1849,169 @@ footer ul li a:hover{
   .ad-slot-inner ins.adsbygoogle{max-height:250px;}
 }
 
+.editorial-note{
+  background:var(--sand);
+  padding:28px 32px;
+  text-align:center;
+  border-top:1px solid var(--line);
+}
+.editorial-note p{
+  max-width:760px;
+  margin:0 auto;
+  font-size:13.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+}
+
+.explore-also{
+  padding:56px 32px 64px;
+  border-top:1px solid var(--line);
+  background:var(--sand);
+}
+.explore-also-head{
+  text-align:center;
+  max-width:640px;
+  margin:0 auto 40px;
+}
+.explore-also-head svg{
+  width:34px;
+  height:34px;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.explore-also-head h2{
+  font-family:'Fraunces',serif;
+  font-size:34px;
+  color:var(--navy);
+  margin:0 0 12px;
+}
+.explore-also-head p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--ink-soft);
+  margin:0;
+}
+.explore-also-boxes{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:22px;
+  align-items:stretch;
+  max-width:1240px;
+  margin:0 auto;
+}
+.explore-also-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  box-shadow:0 3px 14px rgba(18,41,79,.06);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.explore-also-card-head{
+  text-align:center;
+  padding:26px 20px 18px;
+}
+.explore-also-icon{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 14px;
+}
+.explore-also-icon svg{
+  width:22px;
+  height:22px;
+}
+.explore-also-card-head h3{
+  font-family:'Fraunces',serif;
+  font-size:17px;
+  font-weight:700;
+  color:var(--navy);
+  margin:0;
+}
+.explore-also-list{
+  padding:0 20px;
+  flex:1;
+}
+.explore-also-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:11px 0;
+  border-top:1px solid var(--line);
+  text-decoration:none;
+}
+.explore-also-item-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.explore-also-item-dot{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.explore-also-item-dot svg{
+  width:12px;
+  height:12px;
+}
+.explore-also-item span.label{
+  font-size:13.5px;
+  color:var(--ink);
+  line-height:1.3;
+}
+.explore-also-item .chevron{
+  flex:0 0 auto;
+  color:var(--ink-soft);
+  opacity:.6;
+}
+.explore-also-item:hover span.label{
+  color:var(--navy);
+  text-decoration:underline;
+  text-decoration-color:var(--gold);
+}
+.explore-also-footer{
+  padding:16px 20px 22px;
+  text-align:center;
+  margin-top:auto;
+}
+.explore-also-footer a{
+  font-size:13.5px;
+  font-weight:700;
+  text-decoration:none;
+}
+.explore-also-footer a:hover{
+  text-decoration:underline;
+}
+.explore-also-card--blue .explore-also-icon,
+.explore-also-card--blue .explore-also-item-dot{ background:#e8f0fb; color:#2f6fb3; }
+.explore-also-card--blue .explore-also-footer a{ color:#2f6fb3; }
+.explore-also-card--gold .explore-also-icon,
+.explore-also-card--gold .explore-also-item-dot{ background:#fbf1dd; color:#b9822c; }
+.explore-also-card--gold .explore-also-footer a{ color:#b9822c; }
+.explore-also-card--green .explore-also-icon,
+.explore-also-card--green .explore-also-item-dot{ background:#e6f3ea; color:#3f8c5f; }
+.explore-also-card--green .explore-also-footer a{ color:#3f8c5f; }
+.explore-also-card--purple .explore-also-icon,
+.explore-also-card--purple .explore-also-item-dot{ background:#f2eaf9; color:#8b5cc9; }
+.explore-also-card--purple .explore-also-footer a{ color:#8b5cc9; }
+
+@media(max-width:1000px){
+  .explore-also-boxes{ grid-template-columns:repeat(2, 1fr); }
+}
+@media(max-width:560px){
+  .explore-also-boxes{ grid-template-columns:1fr; }
+}
+
 </style>
 
 </head>
@@ -1976,7 +2187,7 @@ footer ul li a:hover{
   <div class="page-hero-media">
     <img
       src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo,Monte%20Isola,e%20l%27isola%20di%20Loreto,vista%20dalla%20sponda%20bergamasca%20-%20panoramio.jpg?width=1600"
-      alt="Panorama del Lago d'Iseo con Monte Isola"
+      alt="Destinazioni e borghi del Lago d'Iseo con panorama di Monte Isola"
       width="1600"
       height="900"
       loading="eager"
@@ -2086,15 +2297,20 @@ footer ul li a:hover{
       presenti nel portale e ti aiuta a orientarti tra la sponda bresciana,
       la sponda bergamasca e Monte Isola. Per ogni località puoi approfondire
       cosa vedere, cosa fare e le opportunità di soggiorno, senza ripetere qui
-      tutte le informazioni delle singole guide.
+      tutte le informazioni delle singole guide — trovi infatti le
+      <a href="https://ivana80t.github.io/iseo-hotel-sito/guide-lago-iseo.html">guide tematiche del Lago d'Iseo</a>
+      dedicate ad arte, spiagge, itinerari, sport ed enogastronomia, oltre alle
+      <a href="#faq-title">domande frequenti</a> più in basso in questa pagina.
     </p>
 
     <p>
-      Il territorio si presta a viaggi molto diversi: un weekend tra borghi e
-      cultura, una giornata dedicata a Monte Isola, una vacanza nella natura,
-      un itinerario in bicicletta o un soggiorno che abbina il lago alle colline
-      della Franciacorta. La scelta della località può quindi cambiare molto
-      l'esperienza del viaggio.
+      Il territorio si presta a viaggi molto diversi: un weekend sul Lago d'Iseo
+      tra borghi e cultura, una giornata dedicata a Monte Isola, una vacanza
+      nella natura, un itinerario in bicicletta o un soggiorno che abbina il
+      lago alle colline della Franciacorta. Chi vuole visitare il Lago d'Iseo
+      in un giorno o in due giorni, anche con bambini, troverà qui indicazioni
+      utili su dove dormire e dove mangiare in ciascun borgo. La scelta della
+      località può quindi cambiare molto l'esperienza del viaggio.
     </p>
 
   </div>
@@ -2188,7 +2404,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/monte-isola.html">
       <div class="dest-card-photo">
         <img src="https://images.unsplash.com/photo-1745748763689-f7baa5fd6b0f?w=900&q=75&auto=format&fit=crop&fm=jpg"
-             alt="Monte Isola nel Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Monte Isola, l'isola nel Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Isola</span>
@@ -2205,7 +2421,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/iseo.html">
       <div class="dest-card-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/25049%20Iseo%2C%20Province%20of%20Brescia%2C%20Italy%20-%20panoramio%20(1).jpg?width=900"
-             alt="Iseo sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Iseo sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bresciana</span>
@@ -2222,7 +2438,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/sulzano.html">
       <div class="dest-card-photo">
         <img src="https://images.unsplash.com/photo-1753219469941-5c3299d4ce49?w=900&q=75&auto=format&fit=crop&fm=jpg"
-             alt="Sulzano sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Sulzano sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bresciana</span>
@@ -2239,7 +2455,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/sale-marasino.html">
       <div class="dest-card-photo">
         <img src="https://images.unsplash.com/photo-1690135689030-1a293dc5f824?w=900&q=75&auto=format&fit=crop&fm=jpg"
-             alt="Sale Marasino sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Sale Marasino sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bresciana</span>
@@ -2256,7 +2472,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/marone.html">
       <div class="dest-card-photo">
         <img src="https://images.unsplash.com/photo-1745748763998-202655f03857?w=900&q=75&auto=format&fit=crop&fm=jpg"
-             alt="Marone sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Marone sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bresciana</span>
@@ -2273,7 +2489,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/pisogne.html">
       <div class="dest-card-photo">
         <img src="https://images.unsplash.com/photo-1701636366299-2a3007eb25f0?w=900&q=75&auto=format&fit=crop&fm=jpg"
-             alt="Pisogne sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Pisogne sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bresciana</span>
@@ -2290,7 +2506,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/paratico.html">
       <div class="dest-card-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27Iseo%20visto%20da%20Paratico%2001.jpg?width=900"
-             alt="Paratico sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Paratico sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2307,7 +2523,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/sarnico.html">
       <div class="dest-card-photo">
         <img src="https://images.unsplash.com/photo-1745748763662-fdb06cb2d636?w=900&q=75&auto=format&fit=crop&fm=jpg"
-             alt="Sarnico sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Sarnico sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2324,7 +2540,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/predore.html">
       <div class="dest-card-photo">
         <img src="https://images.unsplash.com/photo-1695634929711-1e37053f262a?w=900&q=75&auto=format&fit=crop&fm=jpg"
-             alt="Predore sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Predore sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2341,7 +2557,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/tavernola-bergamasca.html">
       <div class="dest-card-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tavernola%20Bergamasca%20banner%20torre%20medievale.jpg?width=900"
-             alt="Tavernola Bergamasca sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Tavernola Bergamasca sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2358,7 +2574,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/riva-di-solto.html">
       <div class="dest-card-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Riva%20di%20Solto%20Lago%20d%27Iseo%201.jpg?width=900"
-             alt="Riva di Solto sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Riva di Solto sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2375,7 +2591,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/castro.html">
       <div class="dest-card-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Castro%20vista%20Sebino%2001.JPG?width=900"
-             alt="Castro sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Castro sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2392,7 +2608,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/lovere.html">
       <div class="dest-card-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lovere%20Riva%20di%20Mattina%204.jpg?width=900"
-             alt="Lovere sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Lovere sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2409,7 +2625,7 @@ footer ul li a:hover{
     <a class="dest-card" href="https://ivana80t.github.io/iseo-hotel-sito/costa-volpino.html">
       <div class="dest-card-photo">
         <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Costa%20volpino%20-%20panoramio.jpg?width=900"
-             alt="Costa Volpino sul Lago d'Iseo" width="900" height="563" loading="lazy">
+             alt="Borgo di Costa Volpino sul Lago d'Iseo" width="900" height="563" loading="lazy">
       </div>
       <div class="dest-card-body">
         <span class="dest-card-area">Sponda bergamasca</span>
@@ -2431,7 +2647,7 @@ footer ul li a:hover{
           Consulta la nostra guida "Quale destinazione scegliere" per orientarti
           tra i borghi in base al tipo di viaggio che vuoi organizzare.
         </p>
-        <span class="dest-card-link">Scopri come scegliere →</span>
+        <span class="dest-card-link">Guida a come scegliere la destinazione →</span>
       </div>
     </a>
 
@@ -2727,7 +2943,7 @@ footer ul li a:hover{
     </svg>
   </div>
 
-  <h2 class="section-title">Come raggiungere il Lago d'Iseo</h2>
+  <h2 class="section-title" id="come-raggiungere">Come raggiungere il Lago d'Iseo</h2>
 
   <p class="section-lead">
     Il territorio è raggiungibile in auto, in treno e con i collegamenti
@@ -2848,17 +3064,17 @@ footer ul li a:hover{
       <span class="nearby-card-link">Scopri Franciacorta →</span>
     </a>
 
-    <a class="nearby-card" href="https://ivana80t.github.io/iseo-hotel-sito/guida-iseo.html">
+    <a class="nearby-card" href="https://ivana80t.github.io/iseo-hotel-sito/guide-lago-iseo.html">
       <h3>Brescia</h3>
       <p>
         La città di Brescia è facilmente collegata al Lago d'Iseo e permette
         di completare il viaggio con un percorso tra storia, arte e patrimonio
         culturale.
       </p>
-      <span class="nearby-card-link">Scopri la guida →</span>
+      <span class="nearby-card-link">Guida per organizzare il viaggio →</span>
     </a>
 
-    <a class="nearby-card" href="https://ivana80t.github.io/iseo-hotel-sito/guida-iseo.html">
+    <a class="nearby-card" href="https://ivana80t.github.io/iseo-hotel-sito/guide-lago-iseo.html">
       <h3>Valle Camonica</h3>
       <p>
         Verso nord il territorio del Sebino entra in relazione con la Valle
@@ -2872,55 +3088,6 @@ footer ul li a:hover{
 </section>
 
 
-<!-- DOVE DORMIRE / MANGIARE -->
-
-<section class="dest-banner-row">
-
-  <a class="dest-banner-card dest-banner-card--dark" href="https://ivana80t.github.io/iseo-hotel-sito/hotel.html">
-
-    <div class="dest-banner-photo">
-      <img src="images/banner-dove-dormire.jpg"
-           alt="Hotel e strutture ricettive sul Lago d'Iseo"
-           width="600"
-           height="650"
-           loading="lazy">
-    </div>
-
-    <div class="dest-banner-text">
-      <h3>Dove Dormire sul Lago d'Iseo</h3>
-      <p>
-        Scegli la località più adatta al tuo soggiorno e scopri hotel,
-        B&B, agriturismi e strutture ricettive presenti nel territorio.
-      </p>
-      <span class="dest-banner-btn">Scopri dove dormire →</span>
-    </div>
-
-  </a>
-
-  <a class="dest-banner-card dest-banner-card--light" href="https://ivana80t.github.io/iseo-hotel-sito/ristoranti.html">
-
-    <div class="dest-banner-text">
-      <h3>Dove Mangiare sul Lago d'Iseo</h3>
-      <p>
-        Scopri ristoranti e locali dove conoscere la cucina del territorio,
-        dal pesce di lago alle specialità della tradizione lombarda.
-      </p>
-      <span class="dest-banner-btn">Scopri dove mangiare →</span>
-    </div>
-
-    <div class="dest-banner-photo">
-      <img src="images/banner-dove-mangiare.jpg"
-           alt="Cucina e ristoranti sul Lago d'Iseo"
-           width="600"
-           height="650"
-           loading="lazy">
-    </div>
-
-  </a>
-
-</section>
-
-
 <!-- FAQ -->
 
 <section class="vivere-faq">
@@ -2931,7 +3098,7 @@ footer ul li a:hover{
     </svg>
   </div>
 
-  <h2 class="section-title">Domande frequenti sulle destinazioni del Lago d'Iseo</h2>
+  <h2 class="section-title" id="faq-title">Domande frequenti sulle destinazioni del Lago d'Iseo</h2>
 
   <p class="faq-sub">
     Le risposte alle domande più comuni per orientarsi tra le località del Sebino.
@@ -3096,6 +3263,189 @@ footer ul li a:hover{
 </div>
 
 
+<!-- DOVE DORMIRE / MANGIARE -->
+
+<section class="dest-banner-row">
+
+  <a class="dest-banner-card dest-banner-card--dark" href="https://ivana80t.github.io/iseo-hotel-sito/hotel.html">
+
+    <div class="dest-banner-photo">
+      <img src="images/banner-dove-dormire.jpg"
+           alt="Dove dormire sul Lago d'Iseo: hotel e strutture ricettive"
+           width="600"
+           height="650"
+           loading="lazy">
+    </div>
+
+    <div class="dest-banner-text">
+      <h3>Dove Dormire sul Lago d'Iseo</h3>
+      <p>
+        Scegli la località più adatta al tuo soggiorno e scopri hotel,
+        B&B, agriturismi e strutture ricettive presenti nel territorio.
+      </p>
+      <span class="dest-banner-btn">Scopri dove dormire →</span>
+    </div>
+
+  </a>
+
+  <a class="dest-banner-card dest-banner-card--light" href="https://ivana80t.github.io/iseo-hotel-sito/ristoranti.html">
+
+    <div class="dest-banner-text">
+      <h3>Dove Mangiare sul Lago d'Iseo</h3>
+      <p>
+        Scopri ristoranti e locali dove conoscere la cucina del territorio,
+        dal pesce di lago alle specialità della tradizione lombarda.
+      </p>
+      <span class="dest-banner-btn">Scopri dove mangiare →</span>
+    </div>
+
+    <div class="dest-banner-photo">
+      <img src="images/banner-dove-mangiare.jpg"
+           alt="Dove mangiare sul Lago d'Iseo: cucina e ristoranti tipici"
+           width="600"
+           height="650"
+           loading="lazy">
+    </div>
+
+  </a>
+
+</section>
+
+
+<!-- ESPLORA ANCHE -->
+<section class="explore-also">
+  <div class="explore-also-head">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.264 1.264L7.76 16.24l1.804-5.411a2 2 0 0 1 1.264-1.264z"/></svg>
+    <h2>Esplora anche</h2>
+    <p>Scopri altre località, guide e informazioni utili per organizzare al meglio la tua esperienza sul Lago d'Iseo.</p>
+  </div>
+
+  <div class="explore-also-boxes">
+
+    <div class="explore-also-card explore-also-card--blue">
+      <div class="explore-also-card-head">
+        <div class="explore-also-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Località nei dintorni</h3>
+      </div>
+      <div class="explore-also-list">
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/monte-isola.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="label">Monte Isola</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/iseo.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="label">Iseo</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/lovere.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="label">Lovere</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/sarnico.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="label">Sarnico</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/pisogne.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="label">Pisogne</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="explore-also-footer"><a href="#destinazioni-grid">Vedi tutte le 14 destinazioni →</a></div>
+    </div>
+
+    <div class="explore-also-card explore-also-card--gold">
+      <div class="explore-also-card-head">
+        <div class="explore-also-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg>
+        </div>
+        <h3>Guide tematiche</h3>
+      </div>
+      <div class="explore-also-list">
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/arte-e-cultura-lago-iseo.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span><span class="label">Arte e cultura</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/spiagge-lago-iseo.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span><span class="label">Spiagge</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/itinerari-trekking-lago-iseo.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span><span class="label">Itinerari e trekking</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/sport-ed-esperienze-lago-iseo.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span><span class="label">Sport ed esperienze</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/enogastronomia-franciacorta.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h7a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2V4Z"/><path d="M22 4h-7a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h8V4Z"/></svg></span><span class="label">Enogastronomia e Franciacorta</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="explore-also-footer"><a href="https://ivana80t.github.io/iseo-hotel-sito/guide-lago-iseo.html">Scopri tutte le guide →</a></div>
+    </div>
+
+    <div class="explore-also-card explore-also-card--green">
+      <div class="explore-also-card-head">
+        <div class="explore-also-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Organizza il soggiorno</h3>
+      </div>
+      <div class="explore-also-list">
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/hotel.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span class="label">Dove dormire</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/ristoranti.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span class="label">Dove mangiare</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/vivere-il-lago.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span class="label">Vivere il lago</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="#faq-title">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><span class="label">Domande frequenti</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="explore-also-footer"><a href="#destinazioni-grid">Tutte le informazioni →</a></div>
+    </div>
+
+    <div class="explore-also-card explore-also-card--purple">
+      <div class="explore-also-card-head">
+        <div class="explore-also-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg>
+        </div>
+        <h3>Idee e ispirazioni</h3>
+      </div>
+      <div class="explore-also-list">
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/vivere-il-lago.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span><span class="label">Il lago stagione per stagione</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/spiagge-lago-iseo.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span><span class="label">Spiagge e relax sul lago</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/enogastronomia-franciacorta.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span><span class="label">Sapori e Franciacorta</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a class="explore-also-item" href="https://ivana80t.github.io/iseo-hotel-sito/itinerari-trekking-lago-iseo.html">
+          <span class="explore-also-item-left"><span class="explore-also-item-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z"/></svg></span><span class="label">Percorsi panoramici e trekking</span></span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+      </div>
+      <div class="explore-also-footer"><a href="https://ivana80t.github.io/iseo-hotel-sito/vivere-il-lago.html">Lasciati ispirare →</a></div>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- STRUTTURE -->
 
 <section class="dest-struttura-banner">
@@ -3116,6 +3466,15 @@ footer ul li a:hover{
 
 </section>
 
+
+<!-- EEAT: NOTA EDITORIALE -->
+<section class="editorial-note">
+  <p>
+    Contenuti redatti dal team editoriale di Iseo Sapori e Soggiorni, con
+    informazioni basate sulla conoscenza del territorio e organizzate per
+    offrire una guida evergreen del Lago d'Iseo.
+  </p>
+</section>
 
 <!-- ============ FOOTER ============ -->
 <footer>

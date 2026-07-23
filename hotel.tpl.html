@@ -736,20 +736,34 @@
 
   /* ---------- Banner "Sei un albergatore" (stesso stile delle altre pagine) ---------- */
   .dest-struttura-banner{
-    max-width:1240px;margin:56px auto;padding:30px 35px;
-    background:linear-gradient(120deg,var(--navy),var(--navy-2));
-    border-radius:20px;display:flex;align-items:center;justify-content:space-between;
-    gap:25px;color:#fff;
+    max-width:1240px;margin:56px auto;padding:26px 200px 26px 32px;
+    background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 100%);
+    border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    flex-wrap:wrap;position:relative;overflow:hidden;color:#fff;
   }
-  .struttura-banner-left h3{font-size:21px;margin:0 0 6px;}
-  .struttura-banner-left p{margin:0;color:#dce3ee;font-size:13px;}
-  .struttura-banner-right{flex-shrink:0;}
-  .struttura-banner-right .btn{background:#fff;color:var(--navy);transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease;}
+  .struttura-banner-left{display:flex;align-items:center;gap:18px;flex:1 1 320px;min-width:0;}
+  .struttura-banner-icon{
+    width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.35);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .struttura-banner-icon svg{width:26px;height:26px;stroke:#fff;}
+  .struttura-banner-left h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:0 0 5px;}
+  .struttura-banner-left p{font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.82);margin:0;max-width:420px;}
+  .struttura-banner-right{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-shrink:0;z-index:2;margin-right:8px;}
+  .struttura-banner-right .btn{background:#fff;color:var(--navy);padding:12px 22px;font-size:14px;font-weight:700;border-radius:10px;white-space:nowrap;transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease;}
   .struttura-banner-right .btn:hover{background:var(--gold);color:#fff;box-shadow:0 8px 20px -6px rgba(224,169,64,.55);transform:translateY(-2px);}
-  @media(max-width:640px){
-    .dest-struttura-banner{flex-direction:column;align-items:flex-start;margin-left:18px;margin-right:18px;}
-    .struttura-banner-right{width:100%;}
-    .struttura-banner-right .btn{width:100%;text-align:center;}
+  .struttura-banner-right a.struttura-vantaggi{font-size:13px;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:5px;}
+  .struttura-banner-right a.struttura-vantaggi svg{width:13px;height:13px;stroke:var(--gold);}
+  .struttura-banner-skyline{position:absolute;right:18px;bottom:0;height:70%;width:150px;opacity:.5;pointer-events:none;}
+  .struttura-banner-skyline svg{height:100%;width:auto;stroke:#fff;fill:none;}
+  @media (max-width:900px){
+    .dest-struttura-banner{padding:26px 32px;}
+    .struttura-banner-skyline{display:none;}
+  }
+  @media (max-width:700px){
+    .dest-struttura-banner{padding:22px 20px;justify-content:center;text-align:left;margin-left:18px;margin-right:18px;}
+    .struttura-banner-right{width:100%;align-items:flex-start;margin-right:0;}
+    .struttura-banner-right .btn{width:100%;text-align:center;justify-content:center;}
   }
 
   /* ---------- FAQ (stesso stile del resto del sito) ---------- */
@@ -1618,20 +1632,33 @@
 </section>
 
 <!-- ============ BANNER "ISCRIVI LA TUA STRUTTURA" ============ -->
-<section class="dest-struttura-banner">
+<div class="dest-struttura-banner">
   <div class="struttura-banner-left">
-    <h3>Sei un albergatore o un ristoratore?</h3>
-    <p>
-      Presenta la tua struttura sul portale dedicato al Lago d'Iseo
-      e raggiungi i viaggiatori che stanno organizzando il loro soggiorno.
-    </p>
+    <span class="struttura-banner-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 19c0-3.3 2.7-5.7 6.2-5.7s6.2 2.4 6.2 5.7"/><circle cx="17" cy="9" r="2.4"/><path d="M14.8 19c0-2.6 1.9-4.5 4.3-4.5s4.1 1.5 4.6 3.7"/></svg>
+    </span>
+    <div>
+      <h3>Sei un albergatore o ristoratore?</h3>
+      <p>Entra anche tu nel portale e raggiungi migliaia di potenziali clienti ogni giorno.</p>
+    </div>
   </div>
   <div class="struttura-banner-right">
-    <a href="pubblica-struttura.html" class="btn">
-      Pubblica la tua struttura
+    <a class="btn" href="pubblica-struttura.html">Iscrivi la tua struttura</a>
+    <a class="struttura-vantaggi" href="pubblica-struttura.html">Scopri i vantaggi
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
   </div>
-</section>
+  <div class="struttura-banner-skyline" aria-hidden="true">
+    <svg viewBox="0 0 200 120" stroke-width="2.2" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="55" width="18" height="55"/><rect x="34" y="40" width="16" height="70"/>
+      <rect x="56" y="20" width="20" height="90"/><path d="M66 20v-10M60 10h12"/>
+      <rect x="82" y="45" width="16" height="65"/>
+      <path d="M105 110V70l25-14 25 14v40"/><path d="M105 84h50M118 84v26M142 84v26"/>
+      <path d="M160 60l16-8 16 8"/><rect x="162" y="60" width="28" height="50"/>
+      <path d="M0 110h200"/>
+    </svg>
+  </div>
+</div>
 
 <!--FOOTER-->
 

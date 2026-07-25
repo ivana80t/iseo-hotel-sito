@@ -5,6 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pubblica la tua struttura — Iseo Sapori e Soggiorni</title>
 <meta name="description" content="Pubblica il tuo hotel, B&B o ristorante su Iseo Sapori e Soggiorni: fatti trovare da migliaia di viaggiatori, zero commissioni sulle prenotazioni, solo una quota annuale.">
+<link href="https://www.iseosaporiesoggiorni.it/pubblica-struttura.html" rel="canonical">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Iseo Sapori e Soggiorni">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2312294f'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' fill='%23e0a940' text-anchor='middle'%3EI%3C/text%3E%3C/svg%3E">
+
+<!-- ============================================================
+     GOOGLE SEARCH CONSOLE — verifica proprietà del sito
+     Sostituisci CODICE_VERIFICA con quello reale fornito da Search Console
+     (Impostazioni proprietà > Verifica proprietà > tag HTML).
+     Identico su ogni pagina del portale — vive in partials/head-boilerplate.html.
+     ============================================================ -->
+<meta name="google-site-verification" content="CODICE_VERIFICA_SEARCH_CONSOLE">
+
+<!-- ============================================================
+     GOOGLE ANALYTICS 4 + GOOGLE ADSENSE — versione "gestita dal consenso cookie"
+     Questi script NON partono subito: vengono attivati da cookie-consent.js
+     SOLO dopo che l'utente ha accettato (obbligatorio per il GDPR).
+     Sostituisci G-XXXXXXXXXX e ca-pub-XXXXXXXXXXXXXXXX con i tuoi ID reali.
+     Ricorda di creare anche il file ads.txt alla radice del dominio:
+     google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+     ------------------------------------------------------------------
+     PREDISPOSIZIONE IUBENDA (quando attiverai l'abbonamento, ~30-40€/anno):
+     Le funzioni window.iseoCaricaGA4 / window.iseoCaricaAdSense qui sotto
+     NON vanno toccate: restano il "motore" che carica davvero GA4/AdSense.
+     Cambia solo CHI le richiama:
+       1. Vai su Iubenda > Cookie Solution > Configura, attiva "Google Consent
+          Mode" nelle impostazioni (Iubenda lo supporta nativamente ed è il
+          metodo oggi raccomandato da Google stesso).
+       2. Copia lo script che Iubenda ti fornisce (tipo <script>var _iub = ...
+          src="https://cs.iubenda.com/...".js) e mettilo QUI al posto del
+          tag <script src="cookie-consent.js"> in fondo alla pagina.
+       3. Nel pannello di configurazione Iubenda, nella sezione "callback",
+          richiama window.iseoCaricaGA4() quando il consenso "statistiche"
+          viene dato, e window.iseoCaricaAdSense() quando viene dato il
+          consenso "marketing/pubblicità" (i nomi esatti dei callback vanno
+          verificati nella documentazione Iubenda al momento dell'attivazione,
+          possono cambiare nel tempo).
+       4. Rimuovi il file cookie-consent.js e il suo richiamo a fine pagina:
+          Iubenda sostituisce banner, modale preferenze e link "Preferenze
+          cookie" con i propri, generati automaticamente.
+     ------------------------------------------------------------------
+     ============================================================ -->
+<script>
+  window.iseoCaricaGA4 = function() {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  };
+  window.iseoCaricaAdSense = function() {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+    s.crossOrigin = 'anonymous';
+    document.head.appendChild(s);
+    s.onload = function() {
+      document.querySelectorAll('.adsbygoogle').forEach(function() {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      });
+    };
+  };
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -96,20 +164,40 @@
   .burger svg{width:26px;height:26px;stroke:var(--navy);}
 
   /* ---------- Page hero ---------- */
-  .page-hero{position:relative;color:#fff;overflow:hidden;}
+  .page-hero{position:relative;color:#fff;overflow:hidden;height:560px;}
   .page-hero-media{position:absolute;inset:0;overflow:hidden;}
   .page-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 55%;filter:saturate(1.1) brightness(1.02);}
   .page-hero-media::after{
     content:"";position:absolute;inset:0;
     background:linear-gradient(180deg, rgba(18,20,16,.28) 0%, rgba(20,16,8,.08) 38%, rgba(13,31,61,.72) 100%);
   }
-  .page-hero-content{position:relative;padding:72px 32px 64px;max-width:1240px;margin:0 auto;}
+  .page-hero-content{position:relative;height:100%;padding:44px 32px 64px;max-width:1240px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;overflow:hidden;}
+  .breadcrumb{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.78);margin-bottom:28px;}
+  .breadcrumb a{color:rgba(255,255,255,.78);}
+  .breadcrumb a:hover{color:#fff;}
+  .breadcrumb svg{width:14px;height:14px;stroke:rgba(255,255,255,.6);}
+  .breadcrumb span[aria-current]{color:#fff;font-weight:600;}
   .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.6px;
-    text-transform:uppercase;color:var(--gold);margin-bottom:14px;
+    display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:.7px;
+    text-transform:uppercase;color:var(--navy-2);background:var(--gold);padding:7px 13px;border-radius:999px;margin-bottom:18px;
   }
-  .page-hero h1{font-size:42px;line-height:1.14;font-weight:600;margin:0 0 16px;max-width:640px;text-shadow:0 2px 20px rgba(0,0,0,.25);}
-  .page-hero p{font-size:16.5px;line-height:1.65;color:#eef1f6;margin:0;max-width:560px;}
+  .eyebrow svg{width:14px;height:14px;stroke:var(--navy-2);fill:none;flex-shrink:0;}
+  .page-hero h1{font-size:48px;line-height:1.12;font-weight:700;margin:0 0 18px;max-width:680px;text-shadow:0 2px 20px rgba(0,0,0,.25);}
+  .page-hero p{font-size:16.5px;line-height:1.65;color:#eef1f6;margin:0 0 28px;max-width:560px;}
+  .page-hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .page-hero .btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy-2);}
+  .page-hero .btn-gold svg{width:16px;height:16px;stroke:currentColor;fill:none;}
+  .page-hero .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;
+    border:1.5px solid rgba(255,255,255,.7);color:#fff;font-weight:600;font-size:14.5px;
+    background:transparent;transition:background .2s ease,border-color .2s ease,transform .15s ease;
+  }
+  .page-hero .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-1px);}
+  .page-hero .btn-ghost svg{width:16px;height:16px;stroke:currentColor;fill:none;}
+  @media (max-width:640px){
+    .page-hero{height:auto;min-height:520px;}
+    .page-hero-content{height:auto;padding:32px 20px 40px;}
+  }
 
   /* ---------- Sezione vantaggi (da area-proprietari) ---------- */
   .section-title{text-align:center;font-size:26px;font-weight:600;margin:0 0 8px;}
@@ -153,15 +241,21 @@
   /* ---------- Sezione principale: pubblica struttura ---------- */
   .section{padding:56px 32px;}
   .pub-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:28px;align-items:stretch;}
+  .pub-grid--single{grid-template-columns:1fr;max-width:860px;margin:0 auto;}
+
+  /* -- form: ora a cavallo dell'hero, centrato e allargato -- */
+  .pub-form-overlap{position:relative;z-index:5;padding:0 32px 56px;margin-top:-110px;}
+  .pub-form-overlap-wrap{max-width:1020px;margin:0 auto;}
 
   /* -- colonna sinistra: form -- */
-  .pub-form-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:36px 36px 34px;}
+  .pub-form-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:48px 56px 46px;}
   .pub-icon{width:48px;height:48px;stroke:var(--gold);margin-bottom:18px;}
   .pub-form-card h1{font-size:27px;font-weight:600;color:var(--navy);margin:0 0 10px;line-height:1.2;}
   .pub-sub{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 24px;max-width:420px;}
   .pub-divider{border:none;border-top:1px solid var(--line);margin:0 0 26px;}
 
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .form-row--2{grid-template-columns:1fr 1fr;}
   .form-group{margin-bottom:18px;display:flex;flex-direction:column;gap:6px;}
   .form-group label{font-size:13px;font-weight:600;color:var(--ink);}
   .form-group .req{color:var(--coral);}
@@ -213,6 +307,16 @@
   .pub-info-inner{padding:36px 36px 30px;flex:1;display:flex;flex-direction:column;}
   .pub-info-inner h2{font-size:25px;font-weight:600;color:var(--navy);margin:0 0 14px;line-height:1.28;}
   .pub-accent{width:44px;height:3px;background:var(--gold);border-radius:2px;margin:0 0 18px;}
+
+  /* -- vantaggi compatti, accanto a "Fatti trovare" -- */
+  .pub-vantaggi-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:36px 34px;}
+  .pub-vantaggi-card h2{font-size:25px;font-weight:600;color:var(--navy);margin:0 0 14px;line-height:1.28;}
+  .advantage-compact-list{display:flex;flex-direction:column;gap:22px;margin-bottom:24px;}
+  .advantage-compact-item{display:flex;gap:14px;align-items:flex-start;}
+  .advantage-compact-icon{flex:0 0 auto;width:42px;height:42px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;}
+  .advantage-compact-icon svg{width:20px;height:20px;stroke:var(--navy);}
+  .advantage-compact-item h4{margin:0 0 4px;font-size:14.5px;font-weight:600;color:var(--navy);}
+  .advantage-compact-item p{margin:0;font-size:13px;color:var(--ink-soft);line-height:1.55;}
   .pub-lead{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 26px;}
 
   .pricing-box{
@@ -285,6 +389,10 @@
   .pub-seo-cta h4{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 6px;font-family:'Fraunces',serif;}
   .pub-seo-cta p{font-size:12.5px;color:var(--ink-soft);line-height:1.6;margin:0;text-align:justify;}
 
+  .pub-tipologie{margin-top:20px;}
+  .pub-tipologie h4{font-size:14px;font-weight:700;color:var(--navy);margin:0 0 8px;font-family:'Fraunces',serif;}
+  .pub-tipologie p{font-size:12.5px;color:var(--ink-soft);line-height:1.6;margin:0 0 14px;text-align:justify;}
+
   .pub-zero-commissioni{
     border:1px solid var(--line);border-radius:var(--radius-md);padding:20px 22px;margin-bottom:20px;
     background:#fff;
@@ -301,16 +409,30 @@
   .pub-zero-points div{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--ink);}
   .pub-zero-points svg{width:17px;height:17px;stroke:var(--gold);flex-shrink:0;}
 
-  /* ---------- CTA ---------- */
-  .cta-band{
-    margin:0 32px 56px;padding:48px 44px;border-radius:var(--radius-lg);
-    background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;
-    display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  /* ---------- Riga finale: Inizia ora / Hai dubbi? / Non aspettare ---------- */
+  .bottom-row{max-width:1240px;margin:0 auto 56px;padding:0 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;}
+  .bottom-col{
+    border-radius:var(--radius-lg);padding:32px 28px;display:flex;flex-direction:column;
+    align-items:center;text-align:center;
   }
-  .cta-band h2{font-size:24px;font-weight:600;margin:0 0 8px;}
-  .cta-band p{font-size:14px;color:#cfd7e4;margin:0;max-width:440px;}
-  .cta-band .btn-gold{background:var(--gold);color:var(--navy-2);}
-  .cta-band .btn-gold:hover{background:#c99527;}
+  .bottom-col h3{font-size:19px;font-weight:600;margin:0 0 8px;font-family:'Fraunces',serif;}
+  .bottom-col p{font-size:13.5px;line-height:1.55;margin:0 0 20px;}
+
+  .bottom-col--light{background:var(--paper);border:1px solid var(--line);}
+  .bottom-col--light h3{color:var(--navy);}
+  .bottom-col--light p{color:var(--ink-soft);}
+
+  .bottom-col--dark{background:var(--navy-2);color:#fff;}
+  .bottom-col--dark p{color:#cfd7e4;}
+  .bottom-col--dark .btn{background:#fff;color:var(--navy);}
+  .bottom-col--dark .btn:hover{background:var(--sand);}
+
+  @media (max-width:960px){
+    .bottom-row{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .bottom-row{padding:0 18px;}
+  }
 
   /* ---------- Footer ---------- */
   footer{background:var(--navy-2);color:#cfd7e4;margin-top:20px;}
@@ -374,19 +496,20 @@
     nav.main-nav{display:none;}
     .header-actions .icon-link span{display:none;}
     .burger{display:block;}
-    .cta-band{flex-direction:column;align-items:flex-start;}
     .advantages-grid{grid-template-columns:1fr 1fr;}
+    .form-row{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:640px){
     .wrap,.header-inner,.section,.footer-top,.footer-bottom{padding-left:18px;padding-right:18px;}
+    .pub-form-overlap{margin-top:-50px;padding:0 18px 40px;}
     .pub-form-card{padding:26px 22px 28px;}
     .pub-info-inner{padding:26px 22px 6px;}
+    .pub-vantaggi-card{padding:26px 22px;}
     .pub-banner{padding:18px 22px;}
     .form-row{grid-template-columns:1fr;}
     .checkbox-grid{grid-template-columns:1fr;}
     .feature-grid{grid-template-columns:1fr;}
     .pricing-left{border-right:none;padding-right:0;}
-    .cta-band{margin-left:18px;margin-right:18px;padding:32px 26px;}
     .advantages-grid{grid-template-columns:1fr;}
     .vantaggi-come-funziona{padding:40px 18px 8px;}
   }
@@ -394,7 +517,207 @@
     html{scroll-behavior:auto;}
     *{transition:none !important;}
   }
+
+  /* ---------- FAQ ---------- */
+  .pub-faq{max-width:900px;margin:0 auto;padding:56px 32px 64px;}
+  .pub-faq-sub{text-align:center;font-size:14px;color:var(--ink-soft);margin:-4px 0 28px;}
+  .pub-faq-sub a{color:var(--navy);font-weight:600;}
+  .pub-faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
+  .pub-faq-q{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;
+    list-style:none;font-size:15px;font-weight:600;color:var(--navy);
+  }
+  .pub-faq-q::-webkit-details-marker{display:none;}
+  .pub-faq-q svg{flex:0 0 auto;width:18px;height:18px;stroke:var(--navy);transition:transform .2s ease;}
+  .pub-faq-item[open] .pub-faq-q svg{transform:rotate(180deg);}
+  .pub-faq-a{font-size:14px;line-height:1.7;color:var(--ink-soft);margin:10px 0 0;text-align:justify;}
+  @media (max-width:640px){
+    .pub-faq{padding:40px 18px 48px;}
+  }
+
+  /* ---------- Confronto Gratuito / Premium ---------- */
+  .pub-compare{max-width:900px;margin:0 auto;padding:56px 32px 8px;}
+  .pub-compare-sub{text-align:center;font-size:14px;color:var(--ink-soft);margin:-4px 0 30px;}
+  .pub-compare-table{
+    width:100%;border-collapse:separate;border-spacing:0;background:#fff;
+    border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);
+  }
+  .pub-compare-table th,.pub-compare-table td{padding:13px 16px;text-align:center;font-size:13.5px;border-bottom:1px solid var(--line);}
+  .pub-compare-table thead th{padding:18px 16px;font-size:13px;}
+  .pub-compare-table td:first-child,.pub-compare-table th:first-child{text-align:left;color:var(--navy);font-weight:600;}
+  .pub-compare-table thead th:first-child{background:var(--navy);color:#fff;}
+  .pub-compare-table thead th:nth-child(2){background:var(--sand);color:var(--navy);}
+  .pub-compare-table thead th:nth-child(3){background:var(--gold);color:var(--navy-2);}
+  .pub-compare-table thead .plan-name{display:block;font-size:14px;font-weight:700;}
+  .pub-compare-table thead .plan-price{display:block;font-size:11.5px;font-weight:500;margin-top:2px;opacity:.85;}
+  .pub-compare-table tbody td:nth-child(3){background:rgba(224,169,64,.08);}
+  .pub-compare-table tbody tr:last-child td{border-bottom:none;}
+  .pub-compare-table svg.yes{width:16px;height:16px;stroke:#2e8b57;}
+  .pub-compare-table .no{color:var(--line);font-weight:700;}
+  .pub-compare-cta{text-align:center;padding:26px 16px 8px;}
+  .pub-compare-cta .btn-outline{margin-right:10px;}
+  @media (max-width:640px){
+    .pub-compare{padding:40px 18px 8px;}
+    .pub-compare-table th,.pub-compare-table td{padding:10px 8px;font-size:12px;}
+  }
+
+  /* ---------- Esplora il Lago d'Iseo ---------- */
+  .explore-lake{padding:64px 32px;background:var(--sand);}
+  .explore-lake-title{text-align:center;color:var(--navy);font-size:28px;margin:0 0 32px;}
+  .explore-lake-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:1240px;margin:0 auto 32px;}
+  .explore-lake-card{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:14px;text-decoration:none;transition:box-shadow .18s ease,transform .18s ease;}
+  .explore-lake-card:hover{box-shadow:0 10px 20px -10px rgba(18,41,79,.25);transform:translateY(-2px);}
+  .explore-lake-photo{width:56px;height:56px;border-radius:10px;overflow:hidden;flex-shrink:0;}
+  .explore-lake-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .explore-lake-body h4{margin:0 0 3px;font-size:14px;color:var(--navy);font-weight:700;}
+  .explore-lake-body p{margin:0 0 5px;font-size:12px;line-height:1.35;color:var(--ink-soft);}
+  .explore-lake-body span{font-size:12.5px;font-weight:700;color:var(--gold);}
+  .explore-lake-comuni-wrap{max-width:1100px;margin:0 auto;}
+  .explore-lake-comuni-label{text-align:center;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:16px;}
+  .explore-lake-comuni{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;}
+  .explore-lake-comuni a{
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:13px;font-weight:600;color:var(--navy);background:#fff;
+    border:1px solid var(--line);border-radius:10px;padding:11px 8px;
+    text-decoration:none;line-height:1.25;
+    box-shadow:0 2px 6px -4px rgba(18,41,79,.15);
+    transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease,color .18s ease;
+  }
+  .explore-lake-comuni a:hover{
+    border-color:var(--gold);color:var(--gold);
+    box-shadow:0 6px 14px -6px rgba(18,41,79,.25);
+    transform:translateY(-2px);
+  }
+  @media(max-width:900px){
+    .explore-lake-comuni{grid-template-columns:repeat(4,1fr);}
+  }
+  @media(max-width:560px){
+    .explore-lake-comuni{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:1000px){
+    .explore-lake-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:560px){
+    .explore-lake{padding:44px 20px;}
+    .explore-lake-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Banner "Hai bisogno di assistenza?" (stesso stile "Sei un albergatore" delle altre pagine) ---------- */
+  .dest-struttura-banner{
+    max-width:1240px;margin:56px auto;padding:26px 200px 26px 32px;
+    background:linear-gradient(120deg,var(--navy) 0%,var(--navy-2) 100%);
+    border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    flex-wrap:wrap;position:relative;overflow:hidden;color:#fff;
+  }
+  .struttura-banner-left{display:flex;align-items:center;gap:18px;flex:1 1 320px;min-width:0;}
+  .struttura-banner-icon{
+    width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.35);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .struttura-banner-icon svg{width:26px;height:26px;stroke:#fff;}
+  .struttura-banner-left h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:0 0 5px;}
+  .struttura-banner-left p{font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.82);margin:0;max-width:420px;}
+  .struttura-banner-right{display:flex;flex-direction:column;align-items:flex-start;gap:8px;flex-shrink:0;z-index:2;margin-right:8px;}
+  .struttura-banner-right .btn{background:#fff;color:var(--navy);padding:12px 22px;font-size:14px;font-weight:700;border-radius:10px;white-space:nowrap;transition:background .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease;}
+  .struttura-banner-right .btn:hover{background:var(--gold);color:#fff;box-shadow:0 8px 20px -6px rgba(224,169,64,.55);transform:translateY(-2px);}
+  .struttura-banner-right a.struttura-vantaggi{font-size:13px;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:5px;}
+  .struttura-banner-right a.struttura-vantaggi svg{width:13px;height:13px;stroke:var(--gold);}
+  .struttura-banner-skyline{position:absolute;right:18px;bottom:0;height:70%;width:150px;opacity:.5;pointer-events:none;}
+  .struttura-banner-skyline svg{height:100%;width:auto;stroke:#fff;fill:none;}
+  @media (max-width:900px){
+    .dest-struttura-banner{padding:26px 32px;}
+    .struttura-banner-skyline{display:none;}
+  }
+  @media (max-width:700px){
+    .dest-struttura-banner{padding:22px 20px;justify-content:center;text-align:left;margin-left:18px;margin-right:18px;}
+    .struttura-banner-right{width:100%;align-items:flex-start;margin-right:0;}
+    .struttura-banner-right .btn{width:100%;text-align:center;justify-content:center;}
+  }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.iseosaporiesoggiorni.it/pubblica-struttura.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Come posso pubblicare gratuitamente il mio hotel, B&B o ristorante sul Lago d'Iseo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Compila il modulo in questa pagina con i dati della tua struttura (tipologia, nome, contatti, indirizzo, servizi e foto): il nostro team verifica le informazioni e, completato il pagamento della quota annuale, la scheda viene pubblicata sul portale." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto costa pubblicare una struttura su Iseo Sapori e Soggiorni?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La pubblicazione della scheda costa 59,00 € all'anno, con rinnovo automatico a fine anno; puoi disdire quando vuoi." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ci sono commissioni sulle prenotazioni ricevute tramite il portale?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, su Iseo Sapori e Soggiorni non è prevista alcuna commissione sulle prenotazioni: paghi solo la quota annuale fissa, indipendentemente da quanti ospiti o richieste ricevi." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quante foto posso caricare per presentare hotel, B&B o ristorante?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Puoi caricare fino a 12 immagini della tua struttura, in formato JPG o PNG." }
+    },
+    {
+      "@type": "Question",
+      "name": "Come vengono gestite le prenotazioni ricevute dalla mia scheda?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ogni scheda rimanda al sito ufficiale della struttura, dove gli ospiti trovano tutte le informazioni e possono prenotare direttamente: Iseo Sapori e Soggiorni non gestisce le prenotazioni al posto tuo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quali informazioni devo inserire per pubblicare la mia struttura sul Lago d'Iseo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tipologia di struttura, nome, riferimenti del titolare, email e telefono, città e indirizzo, prezzo indicativo a partire da, sito web (facoltativo), una breve descrizione, i servizi offerti, orari di check-in e check-out, disponibilità di parcheggio, carte accettate, lingue parlate e le foto della struttura." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso pubblicare anche un ristorante, non solo un hotel o un B&B?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì, tra le tipologie disponibili nel modulo, oltre a Ristorante, ci sono Boutique Hotel, Hotel con Spa, Hotel per famiglie, Hotel romantici, Hotel economici, Bed & Breakfast e Residence." }
+    },
+    {
+      "@type": "Question",
+      "name": "Devo indicare gli orari di check-in e check-out per pubblicare la mia struttura?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sono campi facoltativi ma consigliati: indicarli aiuta gli ospiti ad avere informazioni chiare prima di contattarti." }
+    },
+    {
+      "@type": "Question",
+      "name": "Come posso indicare se la mia struttura ha Wi-Fi gratuito, parcheggio o accetta animali?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nella sezione Servizi del modulo puoi selezionare tra le opzioni disponibili, tra cui Wi-Fi gratuito, colazione inclusa, cortile privato, aria condizionata, reception 24 ore, animali ammessi, noleggio biciclette e ambienti non fumatori, oltre a indicare separatamente la disponibilità di parcheggio." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quali carte di pagamento e lingue parlate posso indicare per la mia struttura?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tra i metodi di pagamento puoi indicare Visa, Mastercard, American Express, Maestro/Bancomat e contanti; tra le lingue parlate italiano, inglese, tedesco, francese e spagnolo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso pubblicare la mia struttura anche se non ho un sito web?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì, il campo Sito web nel modulo è facoltativo: puoi comunque pubblicare la scheda con gli altri dati richiesti, come telefono ed email di contatto." }
+    },
+    {
+      "@type": "Question",
+      "name": "La mia struttura deve trovarsi in un comune del Lago d'Iseo per essere pubblicata?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì, il portale è dedicato alle strutture ricettive e ai ristoranti del territorio del Lago d'Iseo: indica il comune in cui si trova la tua attività nel campo Città del modulo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa cambia rispetto alle piattaforme di prenotazione online come Booking o Airbnb?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A differenza delle principali piattaforme di prenotazione online, su Iseo Sapori e Soggiorni non si paga alcuna commissione sulle prenotazioni: solo la quota annuale fissa di 59 € all'anno, indipendentemente dal numero di prenotazioni ricevute." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso disdire l'iscrizione della mia struttura in qualsiasi momento?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì, la quota annuale si rinnova automaticamente a fine anno ma puoi disdire quando vuoi." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo passa tra l'invio del modulo e la pubblicazione della scheda?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dopo l'invio del modulo il nostro team verifica i dati inseriti; una volta completato il pagamento della quota annuale, la scheda viene pubblicata sul portale." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -407,18 +730,147 @@
 
     <nav class="main-nav" aria-label="Menu principale">
       <a href="index.html">Home</a>
-      <a href="hotel.html">Hotel</a>
-      <a href="itinerari.html">Itinerari</a>
-      <a href="ristoranti.html">Ristoranti</a>
-      <a href="guida-iseo.html">Guida Iseo</a>
+      <div class="nav-item" id="navHotelItem">
+        <a href="hotel.html" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Hotel
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Isola:</span>
+            <div class="nav-dropdown-items">
+            <a href="hotel-monte-isola.html">Monte Isola</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Sponda Est:</span>
+            <div class="nav-dropdown-items">
+            <a href="hotel-iseo.html">Iseo</a>
+            <a href="hotel-sulzano.html">Sulzano</a>
+            <a href="hotel-sale-marasino.html">Sale Marasino</a>
+            <a href="hotel-marone.html">Marone</a>
+            <a href="hotel-pisogne.html">Pisogne</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Sponda Ovest:</span>
+            <div class="nav-dropdown-items">
+            <a href="hotel-paratico.html">Paratico</a>
+            <a href="hotel-sarnico.html">Sarnico</a>
+            <a href="hotel-predore.html">Predore</a>
+            <a href="hotel-tavernola-bergamasca.html">Tavernola Bergamasca</a>
+            <a href="hotel-riva-di-solto.html">Riva di Solto</a>
+            <a href="hotel-castro.html">Castro</a>
+            <a href="hotel-lovere.html">Lovere</a>
+            <a href="hotel-costa-volpino.html">Costa Volpino</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item" id="navRistorantiItem">
+        <a href="ristoranti.html" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Ristoranti
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Isola:</span>
+            <div class="nav-dropdown-items">
+            <a href="ristoranti-monte-isola.html">Monte Isola</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Sponda Est:</span>
+            <div class="nav-dropdown-items">
+            <a href="ristoranti-iseo.html">Iseo</a>
+            <a href="ristoranti-sulzano.html">Sulzano</a>
+            <a href="ristoranti-sale-marasino.html">Sale Marasino</a>
+            <a href="ristoranti-marone.html">Marone</a>
+            <a href="ristoranti-pisogne.html">Pisogne</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Sponda Ovest:</span>
+            <div class="nav-dropdown-items">
+            <a href="ristoranti-paratico.html">Paratico</a>
+            <a href="ristoranti-sarnico.html">Sarnico</a>
+            <a href="ristoranti-predore.html">Predore</a>
+            <a href="ristoranti-tavernola-bergamasca.html">Tavernola Bergamasca</a>
+            <a href="ristoranti-riva-di-solto.html">Riva di Solto</a>
+            <a href="ristoranti-castro.html">Castro</a>
+            <a href="ristoranti-lovere.html">Lovere</a>
+            <a href="ristoranti-costa-volpino.html">Costa Volpino</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item" id="navDestinazioniItem">
+        <a href="destinazioni.html" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Destinazioni
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Isola:</span>
+            <div class="nav-dropdown-items">
+            <a href="monte-isola.html">Monte Isola</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Sponda Est:</span>
+            <div class="nav-dropdown-items">
+            <a href="iseo.html">Iseo</a>
+            <a href="sulzano.html">Sulzano</a>
+            <a href="sale-marasino.html">Sale Marasino</a>
+            <a href="marone.html">Marone</a>
+            <a href="pisogne.html">Pisogne</a>
+            </div>
+          </div>
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Sponda Ovest:</span>
+            <div class="nav-dropdown-items">
+            <a href="paratico.html">Paratico</a>
+            <a href="sarnico.html">Sarnico</a>
+            <a href="predore.html">Predore</a>
+            <a href="tavernola-bergamasca.html">Tavernola Bergamasca</a>
+            <a href="riva-di-solto.html">Riva di Solto</a>
+            <a href="castro.html">Castro</a>
+            <a href="lovere.html">Lovere</a>
+            <a href="costa-volpino.html">Costa Volpino</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="vivere-il-lago.html">Vivere il lago</a>
+      <div class="nav-item" id="navGuidaItem">
+        <a href="guide-lago-iseo.html" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Guide Iseo
+          <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown-group">
+            <span class="nav-dropdown-label">Guide tematiche:</span>
+            <div class="nav-dropdown-items">
+            <a href="arte-e-cultura-lago-iseo.html">Arte e Cultura</a>
+            <a href="spiagge-lago-iseo.html">Spiagge del Lago d'Iseo</a>
+            <a href="itinerari-trekking-lago-iseo.html">Itinerari e Trekking</a>
+            <a href="sport-ed-esperienze-lago-iseo.html">Sport ed Esperienze</a>
+            <a href="enogastronomia-franciacorta.html">Enogastronomia e Franciacorta</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="contatti.html">Contatti</a>
+      <a href="pubblica-struttura.html" class="btn nav-publish-mobile">Pubblica la tua struttura</a>
     </nav>
 
     <div class="header-actions">
       <a href="preferiti.html" class="icon-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+        <span class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.3 2 4.5 5.6 3.8c2-.4 4 .5 5 2.2 1-1.7 3-2.6 5-2.2C19.2 4.5 20.8 8.3 19 11.8 16.5 16.4 12 21 12 21z"/></svg>
+          <span class="fav-count-badge" id="favCountBadge" style="display:none;">0</span>
+        </span>
         <span>Preferiti</span>
-        <span class="fav-count-badge" id="favCountBadge" style="display:none;">0</span>
       </a>
       <a href="pubblica-struttura.html" class="btn">Pubblica la tua struttura</a>
     </div>
@@ -429,59 +881,209 @@
   </div>
 </header>
 
+
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero">
   <div class="page-hero-media">
-    <img id="heroImg" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?q=80&w=1740&auto=format&fit=crop" alt="Hotel e ristoranti sul lungolago di Iseo, immagine di esempio" loading="eager">
+    <img id="heroImg" src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1600&q=75&auto=format&fit=crop&fm=jpg" alt="Hotel e ristoranti sul lungolago di Iseo, immagine di esempio" width="1600" height="900" loading="eager" fetchpriority="high">
   </div>
   <div class="page-hero-content">
-    <span class="eyebrow">Pubblica la tua struttura</span>
-    <h1>Fai conoscere il tuo hotel o ristorante a Iseo</h1>
-    <p>Unisciti al portale di riferimento per il turismo sul Lago d'Iseo: una scheda dedicata, contatto diretto con gli ospiti e zero commissioni sulle prenotazioni.</p>
+    <nav class="breadcrumb" aria-label="Percorso di navigazione">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      <span aria-current="page">Pubblica la tua struttura</span>
+    </nav>
+    <span class="eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg>
+      Iscrivi la tua struttura sul Lago d'Iseo
+    </span>
+    <h1>Fai conoscere il tuo hotel o ristorante sul Lago d'Iseo</h1>
+    <p>Unisciti al portale di riferimento per il turismo sul Lago d'Iseo: una scheda dedicata con foto, descrizione e contatti, visibilità verso migliaia di viaggiatori e contatto diretto con gli ospiti, senza commissioni sulle prenotazioni.</p>
+    <div class="page-hero-cta">
+      <a class="btn btn-gold" href="#pubblica-struttura">
+        Pubblica la tua struttura
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn-ghost" href="#vantaggi">
+        Scopri i vantaggi
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ISCRIVI LA TUA STRUTTURA (form, a cavallo dell'hero) ============ -->
+<section class="pub-form-overlap" id="pubblica-struttura">
+  <div class="pub-form-overlap-wrap">
+      <div class="pub-form-card">
+        <svg class="pub-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 21V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15"/><path d="M14 21V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11"/><path d="M2 21h20"/><path d="M7 8h1M7 11h1M7 14h1M7 17h1M11 8h1M11 11h1M11 14h1M11 17h1M17 13h1M17 16h1"/></svg>
+        <h1>Pubblica la tua struttura</h1>
+        <p class="pub-sub">Compila il modulo e un nostro operatore ti contatterà al più presto per attivare la tua scheda sul portale.</p>
+        <hr class="pub-divider">
+
+        <form id="pubForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-tipologia">Tipologia di struttura <span class="req">*</span></label>
+              <select id="ps-tipologia" name="tipologia" required>
+                <option value="" disabled selected>Seleziona la tipologia</option>
+                <option value="boutique">Boutique Hotel</option>
+                <option value="spa">Hotel con Spa</option>
+                <option value="famiglie">Hotel per famiglie</option>
+                <option value="romantici">Hotel romantici</option>
+                <option value="economici">Hotel economici</option>
+                <option value="bed-breakfast">Bed &amp; Breakfast</option>
+                <option value="residence">Residence</option>
+                <option value="ristorante">Ristorante</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ps-nome-struttura">Nome della struttura <span class="req">*</span></label>
+              <input type="text" id="ps-nome-struttura" name="nome_struttura" placeholder="Es. Hotel Belvedere" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-nome">Nome e Cognome <span class="req">*</span></label>
+              <input type="text" id="ps-nome" name="nome" autocomplete="name" placeholder="Il tuo nome e cognome" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-email">Email <span class="req">*</span></label>
+              <input type="email" id="ps-email" name="email" autocomplete="email" placeholder="La tua email" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-telefono">Telefono <span class="req">*</span></label>
+              <input type="tel" id="ps-telefono" name="telefono" autocomplete="tel" placeholder="Es. +39 123 456 7890" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-citta">Città <span class="req">*</span></label>
+              <input type="text" id="ps-citta" name="citta" placeholder="Es. Iseo" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ps-indirizzo">Indirizzo <span class="req">*</span></label>
+              <input type="text" id="ps-indirizzo" name="indirizzo" placeholder="Via, numero civico, CAP" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-prezzo">Prezzo indicativo a partire da (per notte) <span class="req">*</span></label>
+              <input type="number" id="ps-prezzo" name="prezzo_da" min="1" step="1" placeholder="Es. 75" required>
+            </div>
+            <div class="form-group">
+              <label for="ps-sito-web">Sito web</label>
+              <input type="url" id="ps-sito-web" name="sito_web" autocomplete="url" placeholder="Es. www.tuastruttura.it">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ps-descrizione">Breve descrizione della struttura <span class="req">*</span></label>
+            <textarea id="ps-descrizione" name="descrizione" required placeholder="Descrivi in poche righe la tua struttura, i servizi principali e cosa vi rende speciali..."></textarea>
+          </div>
+
+          <fieldset class="form-fieldset">
+            <legend>Servizi e informazioni utili</legend>
+
+            <div class="form-row" style="margin-bottom:16px;align-items:start;">
+              <div class="form-group" style="margin-bottom:0;">
+                <label>Servizi</label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="wifi-gratuito">Wi-Fi gratuito</label>
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="colazione-inclusa">Colazione inclusa</label>
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="cortile-privato">Cortile privato</label>
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="aria-condizionata">Aria condizionata</label>
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="reception-24-ore">Reception 24 ore</label>
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="animali-ammessi">Animali ammessi</label>
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="noleggio-biciclette">Noleggio biciclette</label>
+                  <label class="checkbox-item"><input type="checkbox" name="servizi" value="ambienti-non-fumatori">Ambienti non fumatori</label>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label>Carte accettate</label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-item"><input type="checkbox" name="carte" value="visa">Visa</label>
+                  <label class="checkbox-item"><input type="checkbox" name="carte" value="mastercard">Mastercard</label>
+                  <label class="checkbox-item"><input type="checkbox" name="carte" value="amex">American Express</label>
+                  <label class="checkbox-item"><input type="checkbox" name="carte" value="maestro">Maestro/Bancomat</label>
+                  <label class="checkbox-item"><input type="checkbox" name="carte" value="contanti">Contanti</label>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label>Lingue parlate</label>
+                <div class="checkbox-grid">
+                  <label class="checkbox-item"><input type="checkbox" name="lingue" value="italiano">Italiano</label>
+                  <label class="checkbox-item"><input type="checkbox" name="lingue" value="inglese">Inglese</label>
+                  <label class="checkbox-item"><input type="checkbox" name="lingue" value="tedesco">Tedesco</label>
+                  <label class="checkbox-item"><input type="checkbox" name="lingue" value="francese">Francese</label>
+                  <label class="checkbox-item"><input type="checkbox" name="lingue" value="spagnolo">Spagnolo</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-bottom:0;">
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="ps-checkin">Orario check-in</label>
+                <input type="time" id="ps-checkin" name="orario_checkin">
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="ps-checkout">Orario check-out</label>
+                <input type="time" id="ps-checkout" name="orario_checkout">
+              </div>
+              <div class="form-group" style="margin-bottom:0;">
+                <label for="ps-parcheggio">Parcheggio</label>
+                <select id="ps-parcheggio" name="parcheggio">
+                  <option value="" selected>Seleziona un'opzione</option>
+                  <option value="privato-gratuito">Privato gratuito</option>
+                  <option value="privato-pagamento">Privato a pagamento</option>
+                  <option value="pubblico-vicinanze">Pubblico nelle vicinanze</option>
+                  <option value="non-disponibile">Non disponibile</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="ps-immagini">Immagini della struttura</label>
+            <div class="file-upload">
+              <input type="file" id="ps-immagini" name="immagini" accept="image/*" multiple>
+              <p class="file-upload-hint">Puoi selezionare fino a 12 immagini (JPG, PNG).</p>
+            </div>
+          </div>
+
+          <label class="form-privacy">
+            <input type="checkbox" required>
+            <span>Acconsento al trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR).<br><a href="privacy.html">Informativa privacy.</a></span>
+          </label>
+
+          <div class="form-submit-center">
+            <button type="submit" class="btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#fff;"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              Invia richiesta di pubblicazione
+            </button>
+            <span class="form-submit-note">Ti ricontatteremo entro 24/48 ore.</span>
+            <span class="form-status" id="formStatus">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:var(--navy);"><path d="M20 6L9 17l-5-5"/></svg>
+              Richiesta inviata, grazie! Verrai reindirizzato al pagamento...
+            </span>
+            <span class="form-status" id="formError" style="color:var(--coral);">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:var(--coral);"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+              <span id="formErrorText">Si è verificato un errore. Riprova.</span>
+            </span>
+          </div>
+        </form>
+      </div>
   </div>
 </section>
 
 <!-- ============ VANTAGGI + COME FUNZIONA ============ -->
-<section class="vantaggi-come-funziona">
+<section class="vantaggi-come-funziona" id="come-funziona">
   <div class="wrap">
 
-    <!-- ============ VANTAGGI ============ -->
-    <div class="section-title-wrap">
-      <h2 class="section-title">I vantaggi di far parte di Iseo Sapori e Soggiorni</h2>
-      <div class="title-underline"></div>
-    </div>
-    <div class="advantages-grid">
-      <div class="advantage">
-        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg></div>
-        <h3>Visibilità qualificata</h3>
-        <p>La tua struttura sarà visibile a migliaia di viaggiatori interessati a Iseo e al Lago d'Iseo.</p>
-      </div>
-      <div class="advantage">
-        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-        <h3>Presenza professionale</h3>
-        <p>Una scheda curata e completa che racconta al meglio la tua struttura e i tuoi servizi.</p>
-      </div>
-      <div class="advantage">
-        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg></div>
-        <h3>Posizionamento SEO</h3>
-        <p>Il nostro portale è ottimizzato per i motori di ricerca per portarti più visite mirate.</p>
-      </div>
-      <div class="advantage">
-        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.33-8.9C.86 8.1 2.45 3.9 6.5 3.05c2.1-.44 4.2.4 5.5 2.1 1.3-1.7 3.4-2.54 5.5-2.1 4.05.85 5.64 5.05 3.83 9.05C19 16.65 12 21 12 21z"/></svg></div>
-        <h3>Territorio in evidenza</h3>
-        <p>Sarai parte di un network che promuove Iseo, il suo territorio e le sue eccellenze.</p>
-      </div>
-      <div class="advantage">
-        <div class="advantage-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg></div>
-        <h3>Affidabilità e qualità</h3>
-        <p>Selezioniamo con attenzione le strutture per garantire un'offerta di qualità.</p>
-      </div>
-    </div>
-
     <!-- ============ COME FUNZIONA ============ -->
-    <div class="section-title-wrap" style="margin-top:64px;">
+    <div class="section-title-wrap">
       <h2 class="section-title">Come funziona</h2>
-      <div class="title-underline"></div>
     </div>
     <div class="steps-row">
       <div class="step">
@@ -524,178 +1126,79 @@
   </div>
 </section>
 
-<!-- ============ PUBBLICA LA TUA STRUTTURA ============ -->
-<section class="section" id="pubblica-struttura">
+<!-- ============ VANTAGGI + FATTI TROVARE (affiancati per compattezza) ============ -->
+<section class="section" id="vantaggi">
   <div class="wrap">
     <div class="pub-grid">
 
-      <!-- Colonna sinistra: form -->
-      <div class="pub-form-card">
-        <svg class="pub-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 21V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15"/><path d="M14 21V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11"/><path d="M2 21h20"/><path d="M7 8h1M7 11h1M7 14h1M7 17h1M11 8h1M11 11h1M11 14h1M11 17h1M17 13h1M17 16h1"/></svg>
-        <h1>Pubblica la tua struttura</h1>
-        <p class="pub-sub">Compila il modulo e un nostro operatore ti contatterà al più presto per attivare la tua scheda sul portale.</p>
-        <hr class="pub-divider">
-
-        <form id="pubForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="ps-tipologia">Tipologia di struttura <span class="req">*</span></label>
-              <select id="ps-tipologia" name="tipologia" required>
-                <option value="" disabled selected>Seleziona la tipologia</option>
-                <option value="boutique">Boutique Hotel</option>
-                <option value="spa">Hotel con Spa</option>
-                <option value="famiglie">Hotel per famiglie</option>
-                <option value="romantici">Hotel romantici</option>
-                <option value="economici">Hotel economici</option>
-                <option value="bed-breakfast">Bed &amp; Breakfast</option>
-                <option value="residence">Residence</option>
-                <option value="ristorante">Ristorante</option>
-                <option value="altro">Altro</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="ps-nome-struttura">Nome della struttura <span class="req">*</span></label>
-              <input type="text" id="ps-nome-struttura" name="nome_struttura" placeholder="Es. Hotel Belvedere" required>
-            </div>
+      <!-- Vantaggi (compatti) -->
+      <div class="pub-vantaggi-card">
+        <h2>I vantaggi di far parte di Iseo Sapori e Soggiorni</h2>
+        <div class="pub-accent"></div>
+        <div class="advantage-compact-list">
+          <div class="advantage-compact-item">
+            <div class="advantage-compact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4.5 5-6 8-6s6.5 1.5 8 6"/></svg></div>
+            <div><h4>Visibilità qualificata</h4><p>La tua struttura sarà visibile a migliaia di viaggiatori interessati a Iseo e al Lago d'Iseo.</p></div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="ps-nome">Nome e Cognome <span class="req">*</span></label>
-              <input type="text" id="ps-nome" name="nome" autocomplete="name" placeholder="Il tuo nome e cognome" required>
-            </div>
-            <div class="form-group">
-              <label for="ps-email">Email <span class="req">*</span></label>
-              <input type="email" id="ps-email" name="email" autocomplete="email" placeholder="La tua email" required>
-            </div>
+          <div class="advantage-compact-item">
+            <div class="advantage-compact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+            <div><h4>Presenza professionale</h4><p>Una scheda curata e completa che racconta al meglio la tua struttura e i tuoi servizi.</p></div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="ps-telefono">Telefono <span class="req">*</span></label>
-              <input type="tel" id="ps-telefono" name="telefono" autocomplete="tel" placeholder="Es. +39 123 456 7890" required>
-            </div>
-            <div class="form-group">
-              <label for="ps-citta">Città <span class="req">*</span></label>
-              <input type="text" id="ps-citta" name="citta" placeholder="Es. Iseo" required>
-            </div>
+          <div class="advantage-compact-item">
+            <div class="advantage-compact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg></div>
+            <div><h4>Posizionamento SEO</h4><p>Il nostro portale è ottimizzato per i motori di ricerca per portarti più visite mirate.</p></div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="ps-indirizzo">Indirizzo <span class="req">*</span></label>
-              <input type="text" id="ps-indirizzo" name="indirizzo" placeholder="Via, numero civico, CAP" required>
-            </div>
-            <div class="form-group">
-              <label for="ps-prezzo">Prezzo indicativo a partire da (per notte) <span class="req">*</span></label>
-              <input type="number" id="ps-prezzo" name="prezzo_da" min="1" step="1" placeholder="Es. 75" required>
-            </div>
+          <div class="advantage-compact-item">
+            <div class="advantage-compact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-9.33-8.9C.86 8.1 2.45 3.9 6.5 3.05c2.1-.44 4.2.4 5.5 2.1 1.3-1.7 3.4-2.54 5.5-2.1 4.05.85 5.64 5.05 3.83 9.05C19 16.65 12 21 12 21z"/></svg></div>
+            <div><h4>Territorio in evidenza</h4><p>Sarai parte di un network che promuove Iseo, il suo territorio e le sue eccellenze.</p></div>
           </div>
-
-          <div class="form-group">
-            <label for="ps-sito-web">Sito web</label>
-            <input type="url" id="ps-sito-web" name="sito_web" autocomplete="url" placeholder="Es. www.tuastruttura.it">
+          <div class="advantage-compact-item">
+            <div class="advantage-compact-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg></div>
+            <div><h4>Affidabilità e qualità</h4><p>Selezioniamo con attenzione le strutture per garantire un'offerta di qualità.</p></div>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="ps-descrizione">Breve descrizione della struttura <span class="req">*</span></label>
-            <textarea id="ps-descrizione" name="descrizione" required placeholder="Descrivi in poche righe la tua struttura, i servizi principali e cosa vi rende speciali..."></textarea>
+        <div class="pub-zero-commissioni">
+          <div class="pub-zero-head">
+            <div class="pub-zero-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            </div>
+            <h4>Zero commissioni sulle prenotazioni</h4>
           </div>
-
-          <fieldset class="form-fieldset">
-            <legend>Servizi</legend>
-            <div class="checkbox-grid">
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="wifi-gratuito">Wi-Fi gratuito</label>
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="colazione-inclusa">Colazione inclusa</label>
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="cortile-privato">Cortile privato</label>
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="aria-condizionata">Aria condizionata</label>
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="reception-24-ore">Reception 24 ore</label>
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="animali-ammessi">Animali ammessi</label>
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="noleggio-biciclette">Noleggio biciclette</label>
-              <label class="checkbox-item"><input type="checkbox" name="servizi" value="ambienti-non-fumatori">Ambienti non fumatori</label>
-            </div>
-          </fieldset>
-
-          <fieldset class="form-fieldset">
-            <legend>Informazioni utili</legend>
-
-            <div class="form-row" style="margin-bottom:16px;">
-              <div class="form-group" style="margin-bottom:0;">
-                <label for="ps-checkin">Orario check-in</label>
-                <input type="time" id="ps-checkin" name="orario_checkin">
-              </div>
-              <div class="form-group" style="margin-bottom:0;">
-                <label for="ps-checkout">Orario check-out</label>
-                <input type="time" id="ps-checkout" name="orario_checkout">
-              </div>
-            </div>
-
-            <div class="form-group" style="margin-bottom:16px;">
-              <label>Carte accettate</label>
-              <div class="checkbox-grid">
-                <label class="checkbox-item"><input type="checkbox" name="carte" value="visa">Visa</label>
-                <label class="checkbox-item"><input type="checkbox" name="carte" value="mastercard">Mastercard</label>
-                <label class="checkbox-item"><input type="checkbox" name="carte" value="amex">American Express</label>
-                <label class="checkbox-item"><input type="checkbox" name="carte" value="maestro">Maestro/Bancomat</label>
-                <label class="checkbox-item"><input type="checkbox" name="carte" value="contanti">Contanti</label>
-              </div>
-            </div>
-
-            <div class="form-group" style="margin-bottom:16px;">
-              <label for="ps-parcheggio">Parcheggio</label>
-              <select id="ps-parcheggio" name="parcheggio">
-                <option value="" selected>Seleziona un'opzione</option>
-                <option value="privato-gratuito">Privato gratuito</option>
-                <option value="privato-pagamento">Privato a pagamento</option>
-                <option value="pubblico-vicinanze">Pubblico nelle vicinanze</option>
-                <option value="non-disponibile">Non disponibile</option>
-              </select>
-            </div>
-
-            <div class="form-group" style="margin-bottom:0;">
-              <label>Lingue parlate</label>
-              <div class="checkbox-grid">
-                <label class="checkbox-item"><input type="checkbox" name="lingue" value="italiano">Italiano</label>
-                <label class="checkbox-item"><input type="checkbox" name="lingue" value="inglese">Inglese</label>
-                <label class="checkbox-item"><input type="checkbox" name="lingue" value="tedesco">Tedesco</label>
-                <label class="checkbox-item"><input type="checkbox" name="lingue" value="francese">Francese</label>
-                <label class="checkbox-item"><input type="checkbox" name="lingue" value="spagnolo">Spagnolo</label>
-              </div>
-            </div>
-          </fieldset>
-
-          <div class="form-group">
-            <label for="ps-immagini">Immagini della struttura</label>
-            <div class="file-upload">
-              <input type="file" id="ps-immagini" name="immagini" accept="image/*" multiple>
-              <p class="file-upload-hint">Puoi selezionare fino a 12 immagini (JPG, PNG).</p>
-            </div>
+          <p>A differenza delle principali piattaforme di prenotazione online, su Iseo Sapori e Soggiorni non paghi nessuna commissione sulle prenotazioni: ogni contatto e ogni ospite che arriva grazie alla tua scheda resta un guadagno pieno per la tua struttura, senza percentuali trattenute ad ogni soggiorno.</p>
+          <div class="pub-zero-points">
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>0% di commissione su ogni prenotazione</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Solo una quota annuale fissa, nessuna sorpresa</div>
+            <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Guadagni il 100% di ogni prenotazione ricevuta</div>
           </div>
+        </div>
 
-          <label class="form-privacy">
-            <input type="checkbox" required>
-            <span>Acconsento al trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR).<br><a href="privacy.html">Informativa privacy.</a></span>
-          </label>
-
-          <div class="form-submit-center">
-            <button type="submit" class="btn">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:#fff;"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-              Invia richiesta di pubblicazione
-            </button>
-            <span class="form-submit-note">Ti ricontatteremo entro 24/48 ore.</span>
-            <span class="form-status" id="formStatus">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:var(--navy);"><path d="M20 6L9 17l-5-5"/></svg>
-              Richiesta inviata, grazie! Verrai reindirizzato al pagamento...
-            </span>
-            <span class="form-status" id="formError" style="color:var(--coral);">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;stroke:var(--coral);"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-              <span id="formErrorText">Si è verificato un errore. Riprova.</span>
-            </span>
+        <div class="pub-seo-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
+          <div>
+            <h4>Non lasciare che i tuoi ospiti prenotino altrove</h4>
+            <p>Se hai un hotel, un B&amp;B o un ristorante a Iseo, ogni giorno che passa senza una scheda online è un'occasione persa: i viaggiatori cercano già oggi "dove dormire a Iseo" e "dove mangiare sul Lago d'Iseo". Iscriviti ora e porta la tua struttura davanti a chi sta scegliendo proprio in questo momento dove soggiornare.</p>
           </div>
-        </form>
+        </div>
+
+        <div class="pub-tipologie">
+          <h4>Tutte le tipologie di strutture sono le benvenute</h4>
+          <p>Pubblica su Iseo Sapori e Soggiorni qualsiasi struttura ricettiva o di ristorazione del Lago d'Iseo: dagli hotel ai piccoli B&amp;B a conduzione familiare, dai residence agli agriturismi immersi nel verde, fino a ristoranti e trattorie tipiche.</p>
+          <div class="pub-seo-tags">
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Hotel</span>
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>B&amp;B</span>
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>Residence</span>
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>Ristoranti</span>
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Agriturismi</span>
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>Trattorie</span>
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Boutique Hotel</span>
+            <span class="pub-seo-tag"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0 4.6-8.8 10.4-8.8 10.4S3.2 13.2 3.2 8.6a5 5 0 0 1 9-3 5 5 0 0 1 8.6 3z"/></svg>Hotel con Spa</span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Colonna destra: promo -->
+      <!-- Promo -->
       <div class="pub-info-card">
         <div class="pub-info-inner">
           <h2>Fatti trovare.<br>Fai crescere la tua struttura.</h2>
@@ -779,28 +1282,6 @@
               </div>
             </div>
 
-            <div class="pub-zero-commissioni">
-              <div class="pub-zero-head">
-                <div class="pub-zero-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
-                </div>
-                <h4>Zero commissioni sulle prenotazioni</h4>
-              </div>
-              <p>A differenza delle principali piattaforme di prenotazione online, su Iseo Sapori e Soggiorni non paghi nessuna commissione sulle prenotazioni: ogni contatto e ogni ospite che arriva grazie alla tua scheda resta un guadagno pieno per la tua struttura, senza percentuali trattenute ad ogni soggiorno.</p>
-              <div class="pub-zero-points">
-                <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>0% di commissione su ogni prenotazione</div>
-                <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Solo una quota annuale fissa, nessuna sorpresa</div>
-                <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Guadagni il 100% di ogni prenotazione ricevuta</div>
-              </div>
-            </div>
-
-            <div class="pub-seo-cta">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6-4.5-4.2 6.1-.7z"/></svg>
-              <div>
-                <h4>Non lasciare che i tuoi ospiti prenotino altrove</h4>
-                <p>Se hai un hotel, un B&amp;B o un ristorante a Iseo, ogni giorno che passa senza una scheda online è un'occasione persa: i viaggiatori cercano già oggi "dove dormire a Iseo" e "dove mangiare sul Lago d'Iseo". Iscriviti ora e porta la tua struttura davanti a chi sta scegliendo proprio in questo momento dove soggiornare.</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -817,15 +1298,303 @@
   </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<div class="cta-band">
-  <div>
-    <h2>Hai dubbi prima di iscriverti?</h2>
-    <p>Scrivici per capire come funziona il portale, quali informazioni servono e in quanto tempo la tua scheda sarà online.</p>
+<!-- ============ CONFRONTO GRATUITO / PREMIUM ============ -->
+<section class="pub-compare">
+  <div class="section-title-wrap">
+    <h2 class="section-title">Un confronto che fa la differenza</h2>
   </div>
-  <a href="contatti.html" class="btn btn-gold">Contattaci</a>
+  <p class="pub-compare-sub">Ogni struttura del Lago d'Iseo compare gratuitamente sul portale. Ecco cosa cambia se riscatti la tua scheda.</p>
+
+  <table class="pub-compare-table">
+    <thead>
+      <tr>
+        <th scope="col">Funzionalità</th>
+        <th scope="col"><span class="plan-name">Gratuito</span><span class="plan-price">Sempre incluso</span></th>
+        <th scope="col"><span class="plan-name">Riscattata</span><span class="plan-price">59,00 € / anno</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nome, tipologia e indirizzo</td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+      <tr>
+        <td>Telefono ed email di contatto</td>
+        <td><span class="no">—</span></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+      <tr>
+        <td>Descrizione della struttura</td>
+        <td><span class="no">—</span></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+      <tr>
+        <td>Foto della struttura (fino a 12)</td>
+        <td><span class="no">—</span></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+      <tr>
+        <td>Sito web</td>
+        <td><span class="no">—</span></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+      <tr>
+        <td>Orari di check-in e check-out</td>
+        <td><span class="no">—</span></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+      <tr>
+        <td>Servizi, carte accettate e lingue parlate</td>
+        <td><span class="no">—</span></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+      <tr>
+        <td>Aggiornamenti e modifiche in autonomia</td>
+        <td><span class="no">—</span></td>
+        <td><svg class="yes" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pub-compare-cta">
+    <a class="btn btn-outline" href="contatti.html">Ho una struttura già online, come la riscatto?</a>
+    <a class="btn btn-gold" href="#pubblica-struttura">Riscatta la tua scheda</a>
+  </div>
+</section>
+
+<!-- ============ DOMANDE FREQUENTI ============ -->
+<section class="pub-faq" id="faq">
+  <div class="section-title-wrap">
+    <h2 class="section-title">Domande frequenti</h2>
+  </div>
+  <p class="pub-faq-sub">Tutto quello che serve sapere per pubblicare hotel, B&amp;B o ristorante sul Lago d'Iseo. Altri dubbi? <a href="contatti.html">Contattaci</a>.</p>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Come posso pubblicare gratuitamente il mio hotel, B&amp;B o ristorante sul Lago d'Iseo?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Compila il modulo in questa pagina con i dati della tua struttura (tipologia, nome, contatti, indirizzo, servizi e foto): il nostro team verifica le informazioni e, completato il pagamento della quota annuale, la scheda viene pubblicata sul portale.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Quanto costa pubblicare una struttura su Iseo Sapori e Soggiorni?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">La pubblicazione della scheda costa 59,00 € all'anno, con rinnovo automatico a fine anno; puoi disdire quando vuoi.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Ci sono commissioni sulle prenotazioni ricevute tramite il portale?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">No, su Iseo Sapori e Soggiorni non è prevista alcuna commissione sulle prenotazioni: paghi solo la quota annuale fissa, indipendentemente da quanti ospiti o richieste ricevi.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Quante foto posso caricare per presentare hotel, B&amp;B o ristorante?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Puoi caricare fino a 12 immagini della tua struttura, in formato JPG o PNG.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Come vengono gestite le prenotazioni ricevute dalla mia scheda?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Ogni scheda rimanda al sito ufficiale della struttura, dove gli ospiti trovano tutte le informazioni e possono prenotare direttamente: Iseo Sapori e Soggiorni non gestisce le prenotazioni al posto tuo.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Quali informazioni devo inserire per pubblicare la mia struttura sul Lago d'Iseo?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Tipologia di struttura, nome, riferimenti del titolare, email e telefono, città e indirizzo, prezzo indicativo a partire da, sito web (facoltativo), una breve descrizione, i servizi offerti, orari di check-in e check-out, disponibilità di parcheggio, carte accettate, lingue parlate e le foto della struttura.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Posso pubblicare anche un ristorante, non solo un hotel o un B&amp;B?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Sì, tra le tipologie disponibili nel modulo, oltre a Ristorante, ci sono Boutique Hotel, Hotel con Spa, Hotel per famiglie, Hotel romantici, Hotel economici, Bed &amp; Breakfast e Residence.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Devo indicare gli orari di check-in e check-out per pubblicare la mia struttura?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Sono campi facoltativi ma consigliati: indicarli aiuta gli ospiti ad avere informazioni chiare prima di contattarti.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Come posso indicare se la mia struttura ha Wi-Fi gratuito, parcheggio o accetta animali?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Nella sezione Servizi del modulo puoi selezionare tra le opzioni disponibili, tra cui Wi-Fi gratuito, colazione inclusa, cortile privato, aria condizionata, reception 24 ore, animali ammessi, noleggio biciclette e ambienti non fumatori, oltre a indicare separatamente la disponibilità di parcheggio.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Quali carte di pagamento e lingue parlate posso indicare per la mia struttura?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Tra i metodi di pagamento puoi indicare Visa, Mastercard, American Express, Maestro/Bancomat e contanti; tra le lingue parlate italiano, inglese, tedesco, francese e spagnolo.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Posso pubblicare la mia struttura anche se non ho un sito web?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Sì, il campo Sito web nel modulo è facoltativo: puoi comunque pubblicare la scheda con gli altri dati richiesti, come telefono ed email di contatto.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">La mia struttura deve trovarsi in un comune del Lago d'Iseo per essere pubblicata?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Sì, il portale è dedicato alle strutture ricettive e ai ristoranti del territorio del Lago d'Iseo: indica il comune in cui si trova la tua attività nel campo Città del modulo.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Cosa cambia rispetto alle piattaforme di prenotazione online come Booking o Airbnb?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">A differenza delle principali piattaforme di prenotazione online, su Iseo Sapori e Soggiorni non si paga alcuna commissione sulle prenotazioni: solo la quota annuale fissa di 59 € all'anno, indipendentemente dal numero di prenotazioni ricevute.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Posso disdire l'iscrizione della mia struttura in qualsiasi momento?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Sì, la quota annuale si rinnova automaticamente a fine anno ma puoi disdire quando vuoi.</p>
+  </details>
+
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Quanto tempo passa tra l'invio del modulo e la pubblicazione della scheda?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Dopo l'invio del modulo il nostro team verifica i dati inseriti; una volta completato il pagamento della quota annuale, la scheda viene pubblicata sul portale.</p>
+  </details>
+</section>
+
+<!-- ============ INIZIA ORA / HAI DUBBI? / NON ASPETTARE ============ -->
+<div class="bottom-row">
+
+  <div class="bottom-col bottom-col--light">
+    <h3>Inizia ora</h3>
+    <p>Compila il form e richiedi la pubblicazione della tua struttura.</p>
+    <a class="btn btn-gold" href="#pubblica-struttura">Richiedi l'iscrizione</a>
+  </div>
+
+  <div class="bottom-col bottom-col--dark">
+    <h3>Hai dubbi?</h3>
+    <p>Scrivici o chiamaci, saremo felici di aiutarti.</p>
+    <a class="btn" href="contatti.html">Contattaci ora</a>
+  </div>
+
+  <div class="bottom-col bottom-col--light">
+    <h3>Non aspettare</h3>
+    <p>Più visibilità oggi, più prenotazioni domani.</p>
+    <a class="btn btn-gold" href="#pubblica-struttura">Pubblica la tua struttura</a>
+  </div>
+
 </div>
 
+<!-- ============ ESPLORA IL LAGO D'ISEO ============ -->
+<section class="explore-lake">
+  <h2 class="explore-lake-title">Esplora il Lago d'Iseo</h2>
+  <div class="explore-lake-grid">
+    <a class="explore-lake-card" href="destinazioni.html">
+      <div class="explore-lake-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/25049%20Iseo%2C%20Province%20of%20Brescia%2C%20Italy%20-%20panoramio%20(1).jpg?width=200" alt="Destinazioni del Lago d'Iseo" width="200" height="200" loading="lazy"></div>
+      <div class="explore-lake-body">
+        <h4>Destinazioni</h4>
+        <p>Scopri tutti i 14 comuni del lago</p>
+        <span>Esplora le destinazioni →</span>
+      </div>
+    </a>
+    <a class="explore-lake-card" href="guide-lago-iseo.html">
+      <div class="explore-lake-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Corna%20Trentapassi.jpg?width=200" alt="Guide tematiche del Lago d'Iseo" width="200" height="200" loading="lazy"></div>
+      <div class="explore-lake-body">
+        <h4>Guide</h4>
+        <p>Itinerari, spiagge, arte e cultura</p>
+        <span>Scopri le guide →</span>
+      </div>
+    </a>
+    <a class="explore-lake-card" href="vivere-il-lago.html">
+      <div class="explore-lake-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monte%20Isola.jpg?width=200" alt="Vivere il Lago d'Iseo" width="200" height="200" loading="lazy"></div>
+      <div class="explore-lake-body">
+        <h4>Vivere il lago</h4>
+        <p>Esperienze, panorami e tradizioni</p>
+        <span>Scopri vivere il lago →</span>
+      </div>
+    </a>
+    <a class="explore-lake-card" href="hotel.html">
+      <div class="explore-lake-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Una%20vite%20della%20Franciacorta.JPG?width=200" alt="Dove dormire sul Lago d'Iseo" width="200" height="200" loading="lazy"></div>
+      <div class="explore-lake-body">
+        <h4>Dove dormire</h4>
+        <p>Hotel e strutture del territorio</p>
+        <span>Scopri dove dormire →</span>
+      </div>
+    </a>
+    <a class="explore-lake-card" href="ristoranti.html">
+      <div class="explore-lake-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lovere%20Riva%20di%20Mattina%204.jpg?width=200" alt="Dove mangiare sul Lago d'Iseo" width="200" height="200" loading="lazy"></div>
+      <div class="explore-lake-body">
+        <h4>Dove mangiare</h4>
+        <p>Ristoranti e sapori del territorio</p>
+        <span>Scopri dove mangiare →</span>
+      </div>
+    </a>
+  </div>
+  <div class="explore-lake-comuni-wrap">
+    <p class="explore-lake-comuni-label">Oppure scegli un comune</p>
+    <div class="explore-lake-comuni">
+      <a href="monte-isola.html">Monte Isola</a>
+      <a href="iseo.html">Iseo</a>
+      <a href="sulzano.html">Sulzano</a>
+      <a href="sale-marasino.html">Sale Marasino</a>
+      <a href="marone.html">Marone</a>
+      <a href="pisogne.html">Pisogne</a>
+      <a href="paratico.html">Paratico</a>
+      <a href="sarnico.html">Sarnico</a>
+      <a href="predore.html">Predore</a>
+      <a href="tavernola-bergamasca.html">Tavernola B.sca</a>
+      <a href="riva-di-solto.html">Riva di Solto</a>
+      <a href="castro.html">Castro</a>
+      <a href="lovere.html">Lovere</a>
+      <a href="costa-volpino.html">Costa Volpino</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANNER "HAI BISOGNO DI ASSISTENZA?" ============ -->
+<div class="dest-struttura-banner">
+  <div class="struttura-banner-left">
+    <span class="struttura-banner-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    </span>
+    <div>
+      <h3>Hai già una struttura online o hai dubbi prima di iscriverti?</h3>
+      <p>Il nostro team è a disposizione per aiutarti a pubblicare o aggiornare la tua scheda sul Lago d'Iseo.</p>
+    </div>
+  </div>
+  <div class="struttura-banner-right">
+    <a class="btn" href="contatti.html">Contattaci</a>
+    <a class="struttura-vantaggi" href="#faq">Vai alle FAQ
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+  <div class="struttura-banner-skyline" aria-hidden="true">
+    <svg viewBox="0 0 200 120" stroke-width="2.2" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="55" width="18" height="55"/><rect x="34" y="40" width="16" height="70"/>
+      <rect x="56" y="20" width="20" height="90"/><path d="M66 20v-10M60 10h12"/>
+      <rect x="82" y="45" width="16" height="65"/>
+      <path d="M105 110V70l25-14 25 14v40"/><path d="M105 84h50M118 84v26M142 84v26"/>
+      <path d="M160 60l16-8 16 8"/><rect x="162" y="60" width="28" height="50"/>
+      <path d="M0 110h200"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="footer-top">
@@ -833,31 +1602,36 @@
       <a href="index.html" class="logo" aria-label="Iseo Sapori e Soggiorni - torna alla home">
         <span class="logo-word"><span style="font-weight:800;font-size:1.5em;color:var(--gold);letter-spacing:.5px;">ISEO</span> <span style="font-weight:400;">SAPORI E SOGGIORNI</span></span>
       </a>
-      <p class="footer-desc">Il portale ufficiale per scoprire hotel, ristoranti e itinerari sul Lago d'Iseo, tra Montisola e la Franciacorta.</p>
-      <div class="social-row">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V9a1 1 0 0 1 1-1z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-        <a href="#" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
-        <a href="#" aria-label="TripAdvisor"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="8" cy="13" r="3.2"/><circle cx="16" cy="13" r="3.2"/><path d="M12 8c-2.5 0-5.5.5-8 2M12 8c2.5 0 5.5.5 8 2M9 3h6"/></svg></a>
-        <a href="#" aria-label="Cerca"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></a>
+      <p class="footer-desc">Il portale ufficiale per scoprire hotel, ristoranti e itinerari sul Lago d'Iseo, pensato per farti vivere il lago come un vero local.</p>
+      <div class="footer-icon-row">
+        <a href="contatti.html" aria-label="Scrivici"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <button type="button" id="footerSearchToggle" aria-label="Cerca nel sito" aria-expanded="false" aria-controls="footerSearch">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        </button>
+      </div>
+      <div class="footer-search" id="footerSearch">
+        <form class="footer-search-form" id="footerSearchForm">
+          <input type="search" placeholder="Cerca nel sito..." required aria-label="Cerca all'interno del sito">
+          <button type="submit">Cerca</button>
+        </form>
       </div>
     </div>
 
-    <div>
-      <h4>Iscriviti alla newsletter</h4>
-      <p class="footer-desc" style="margin-top:0;">Ricevi consigli e novità su hotel e ristoranti di Iseo.</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <input type="email" placeholder="La tua email" required aria-label="Indirizzo email">
-        <button type="submit">Iscriviti</button>
-      </form>
-      <label class="privacy-check">
-        <input type="checkbox" required style="margin:0;">
-        Accetto la <a href="privacy.html" style="text-decoration:underline;">Privacy Policy</a>
-      </label>
+    <div class="footer-col footer-col-esplora">
+      <h4>Esplora</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hotel.html">Hotel</a></li>
+        <li><a href="ristoranti.html">Ristoranti</a></li>
+        <li><a href="destinazioni.html">Destinazioni</a></li>
+        <li><a href="esperienze.html">Esperienze</a></li>
+        <li><a href="sapori-del-lago.html">Sapori del lago</a></li>
+        <li><a href="guida-iseo.html">Guida Iseo</a></li>
+      </ul>
     </div>
 
-    <div>
-      <h4>Link utili</h4>
+    <div class="footer-col footer-col-informazioni">
+      <h4>Informazioni</h4>
       <ul>
         <li><a href="chi-siamo.html">Chi siamo</a></li>
         <li><a href="faq.html">FAQ</a></li>
@@ -866,14 +1640,14 @@
       </ul>
     </div>
 
-    <div>
+    <div class="footer-col footer-col-assistenza">
       <h4>Assistenza e fiducia</h4>
       <a href="contatti.html" class="footer-contact-box">
         <div class="icon-circle">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
         </div>
         <div>
-          <strong>Assistenza clienti</strong>
+          <strong>Assistenza gestori</strong>
           <span>Rispondiamo entro 24/48 ore</span>
         </div>
       </a>
@@ -892,7 +1666,7 @@
 
   <div class="footer-bottom">
     <span>© 2026 Iseo Sapori e Soggiorni - Tutti i diritti riservati</span>
-    <span>Sito realizzato con <span class="heart">♥</span> per Iseo</span>
+    <span>Sito realizzato con <span class="heart">♥</span> per il Lago di Iseo</span>
   </div>
 </footer>
 
@@ -1176,6 +1950,12 @@
     }
   });
 </script>
+
+<!-- Cookie banner GDPR: attiva GA4/AdSense solo dopo consenso, aggiunge link "Preferenze cookie".
+     DA SOSTITUIRE con lo script Iubenda quando attivo l'abbonamento (vedi istruzioni
+     dettagliate nel <head>, sezione "PREDISPOSIZIONE IUBENDA" in partials/head-boilerplate.html). -->
+<script src="cookie-consent.js"></script>
+
 
 </body>
 </html>

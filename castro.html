@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Castro: il borgo medievale con vista sul Lago d'Iseo</title>
 <meta name="description" content="Guida a Castro sul Lago d'Iseo: il centro storico, la chiesetta romanica di San Lorenzo sulla Rocca, la strada litoranea panoramica, hotel e ristoranti.">
 <meta name="keywords" content="Castro, Castro Lago d'Iseo, cosa vedere a Castro, Chiesa di San Lorenzo Castro, Rocca di Castro, Chiesa di San Giacomo, hotel Castro, ristoranti Castro, Lago d'Iseo, Sebino, sponda bergamasca">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Cos'è la Chiesa Nuova di San Giacomo?",
       "acceptedAnswer": { "@type": "Answer", "text": "E' la parrocchiale moderna inaugurata nel 1969 su progetto dell'architetto Vito Sonzogni, con una caratteristica struttura in cemento armato a forma di vela e un campanile slanciato, che sostituisce l'antica chiesa medievale ora sconsacrata." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Castro?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Nei locali del borgo si trovano i piatti tipici del Sebino bergamasco: polenta con formaggio e funghi di stagione, casoncelli, pesce di lago come tinca e sardine essiccate, e lo spiedo bresciano nelle occasioni di festa." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando si tiene la Sagra del Casoncello a Castro?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A metà giugno, organizzata dalla Pro Loco: un'occasione per assaggiare i Canunsei, la versione locale dei casoncelli, piatto tipico della cucina bergamasca." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ci sono altri eventi estivi a Castro oltre alla festa di San Lorenzo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì, a metà agosto la Pro Loco organizza alcuni giorni di sagra in zona Castro Beach, con musica e stand gastronomici, oltre al tradizionale Ferragosto in piazza." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Castro da Bergamo e Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 40 km da Bergamo e circa 55 km da Brescia, entrambe raggiungibili in auto in 45-50 minuti circa." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Storia", "Natura", "Trekking", "Famiglie", "Enogastronomia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -871,7 +902,7 @@
   }
 
   /* ============ PARATICO: FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1065,7 +1096,7 @@
 <!-- ============ CASTRO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Castro%20panorama%2001.JPG?width=1800" alt="Castro, il lungolago e il borgo medievale sul Lago d'Iseo" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Castro%20panorama%2001.JPG?width=1800" alt="Castro, il lungolago e il borgo medievale sul Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1100,7 +1131,7 @@
         <span class="dest-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8M4 17a2 2 0 1 0 4 0M16 17a2 2 0 1 0 4 0"/></svg></span>
         <div>
           <h4>Come arrivare</h4>
-          <p>Auto su SS469 da Palazzolo sull'Oglio via Paratico, Sarnico, Predore, Tavernola Bergamasca e Riva di Solto; treno fino a Palazzolo sull'Oglio, poi autobus; battello dagli altri approdi del lago.</p>
+          <p>Auto su SS469 da Palazzolo sull'Oglio via <a href="paratico.html">Paratico</a>, <a href="sarnico.html">Sarnico</a>, <a href="predore.html">Predore</a>, <a href="tavernola-bergamasca.html">Tavernola Bergamasca</a> e <a href="riva-di-solto.html">Riva di Solto</a>; treno fino a Palazzolo sull'Oglio, poi autobus; battello dagli altri approdi del lago.</p>
         </div>
       </div>
       <div class="dest-info-row">
@@ -1423,7 +1454,7 @@
         <img src="https://images.unsplash.com/photo-1745748763530-337be3f67db8?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Battello panoramico sul Lago d'Iseo" loading="lazy">
         <div class="itin-body">
           <h3>Gita in barca verso Monte Isola</h3>
-          <p>Un giro in barca sulle acque del lago permette di raggiungere Monte Isola, la più grande isola lacustre d'Europa, per una gita in giornata.</p>
+          <p>Un giro in barca sulle acque del lago permette di raggiungere <a href="monte-isola.html">Monte Isola</a>, la più grande isola lacustre d'Italia, per una gita in giornata.</p>
         </div>
       </article>
       <article class="itin-card">
@@ -1512,8 +1543,10 @@
 </div>
 
 <!-- ============ CASTRO: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> I Canunsei, i casoncelli tipici di Castro, danno il nome alla Sagra del Casoncello che il paese celebra ogni anno a metà giugno.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Castro">
   <h2 class="section-title">Domande frequenti su Castro</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Castro?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1524,7 +1557,7 @@
     <summary class="dest-faq-q">Cos'è la Rocca di Castro?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">È l'area collinare dove sorgeva l'antico vero centro storico del borgo, oggi zona residenziale tranquilla e panoramica: vi si trova la chiesetta romanica di San Lorenzo e i resti della fortificazione distrutta nelle lotte tra guelfi e ghibellini.</p>
+    <p class="dest-faq-a">È l'area collinare dove sorgeva l'antico vero centro storico del borgo, oggi zona residenziale tranquilla e panoramica: vi si trova la chiesetta romanica di San Lorenzo, tra le testimonianze di <a href="arte-e-cultura-lago-iseo.html">arte e cultura</a> del lago, e i resti della fortificazione distrutta nelle lotte tra guelfi e ghibellini.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Quando si celebra la festa patronale di Castro?
@@ -1542,7 +1575,7 @@
     <summary class="dest-faq-q">Cosa vedere lungo la strada per Sarnico?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">La strada litoranea, realizzata a strapiombo sul lago, è meta di fotografi e appassionati per le sfumature e i colori che le acque del Sebino assumono in questo tratto.</p>
+    <p class="dest-faq-a">La strada litoranea, realizzata a strapiombo sul lago, è meta di fotografi e appassionati per le sfumature e i colori che le acque del Sebino assumono in questo tratto verso <a href="sarnico.html">Sarnico</a>.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Cos'è la Chiesa Nuova di San Giacomo?
@@ -1550,6 +1583,31 @@
     </summary>
     <p class="dest-faq-a">È la parrocchiale moderna inaugurata nel 1969 su progetto dell'architetto Vito Sonzogni, con una caratteristica struttura in cemento armato a forma di vela e un campanile slanciato, che sostituisce l'antica chiesa medievale ora sconsacrata.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Castro?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Nei locali del borgo si trovano i piatti tipici del Sebino bergamasco: polenta con formaggio e funghi di stagione, casoncelli, pesce di lago come tinca e sardine essiccate di <a href="monte-isola.html">Monte Isola</a>, e lo spiedo bresciano nelle occasioni di festa.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quando si tiene la Sagra del Casoncello a Castro?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">A metà giugno, organizzata dalla Pro Loco: un'occasione per assaggiare i Canunsei, la versione locale dei casoncelli, piatto tipico della cucina bergamasca.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Ci sono altri eventi estivi a Castro oltre alla festa di San Lorenzo?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì, a metà agosto la Pro Loco organizza alcuni giorni di sagra in zona Castro Beach, con musica e stand gastronomici, oltre al tradizionale Ferragosto in piazza.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Castro da Bergamo e Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 40 km da Bergamo e circa 55 km da Brescia, entrambe raggiungibili in auto in 45-50 minuti circa.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Castro">
@@ -1682,7 +1740,7 @@
     <div class="info-pratica-item">
       <span class="info-pratica-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V7a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3"/></svg></span>
       <h4>Come arrivare</h4>
-      <p>In auto lungo la SS469 da Palazzolo sull'Oglio, via Paratico, Sarnico, Predore, Tavernola Bergamasca e Riva di Solto; in treno fino a Palazzolo sull'Oglio, poi autobus; via lago dagli altri approdi del Sebino.</p>
+      <p>In auto lungo la SS469 da Palazzolo sull'Oglio, via <a href="paratico.html">Paratico</a>, <a href="sarnico.html">Sarnico</a>, <a href="predore.html">Predore</a>, <a href="tavernola-bergamasca.html">Tavernola Bergamasca</a> e <a href="riva-di-solto.html">Riva di Solto</a>; in treno fino a Palazzolo sull'Oglio, poi autobus; via lago dagli altri approdi del Sebino.</p>
     </div>
     <div class="info-pratica-item">
       <span class="info-pratica-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a3 3 0 0 1 0 6h-3"/></svg></span>

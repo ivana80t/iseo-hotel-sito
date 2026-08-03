@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Pisogne: cosa vedere, spiagge, itinerari, guida Iseo</title>
 <meta name="description" content="Guida a Pisogne sul Lago d'Iseo: gli affreschi del Romanino, la Torre del Vescovo, il lungolago, spiagge e itinerari tra il lago e la Val Camonica.">
 <meta name="keywords" content="Pisogne, Pisogne Lago d'Iseo, cosa vedere a Pisogne, spiagge Pisogne, Romanino Pisogne, Santa Maria della Neve, Torre del Vescovo, hotel Pisogne, ristoranti Pisogne, lungolago Pisogne, Val Camonica, Antica Strada Valeriana, Lago d'Iseo, Sebino">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Dove si prende il battello a Pisogne?",
       "acceptedAnswer": { "@type": "Answer", "text": "Dal porto di Pisogne, a 3 minuti a piedi dal centro, con corse regolari verso Lovere e le altre località del lago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è la Torre del Vescovo di Pisogne?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una torre medievale eretta intorno al 1250 in piazza Mercato, circondata da eleganti case ottocentesche: una delle testimonianze più antiche del centro storico di Pisogne." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Pisogne?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pesce di lago, polenta e piatti della tradizione camuna, essendo Pisogne porta d'accesso alla Val Camonica: una cucina che unisce i sapori del Sebino a quelli della montagna." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Pisogne da Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 33 km, percorribili in auto in 35-40 minuti oppure in treno con la linea Trenord Brescia-Iseo-Edolo in circa 50 minuti." }
+    },
+    {
+      "@type": "Question",
+      "name": "È adatta a Pisogne una vacanza in famiglia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: il lungolago pianeggiante, il centro storico senza grande traffico e la vicinanza alla Val Camonica lo rendono un buon punto di partenza per famiglie interessate anche a escursioni nell'entroterra." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Arte", "Storia", "Natura", "Trekking", "Famiglie"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -868,7 +899,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1062,7 +1093,7 @@
 <!-- ============ ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Maria%20della%20Neve%20Pisogne%201.JPG?width=1800" alt="Chiesa di Santa Maria della Neve a Pisogne, gli affreschi del Romanino" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Maria%20della%20Neve%20Pisogne%201.JPG?width=1800" alt="Chiesa di Santa Maria della Neve a Pisogne, gli affreschi del Romanino" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1551,8 +1582,10 @@
 </div>
 
 <!-- ============ ISEO: GUIDE (card ricche con foto + icone) ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> La Chiesa di Santa Maria della Neve, edificata tra il 1485 e il 1508, sorge lungo l'antica Via Valeriana, per secoli unica strada di collegamento tra Brescia e la Val Camonica.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Pisogne">
   <h2 class="section-title">Domande frequenti su Pisogne</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Pisogne?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1589,6 +1622,31 @@
     </summary>
     <p class="dest-faq-a">Dal porto di Pisogne, a 3 minuti a piedi dal centro, con corse regolari verso Lovere e le altre località del lago.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è la Torre del Vescovo di Pisogne?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Una torre medievale eretta intorno al 1250 in piazza Mercato, circondata da eleganti case ottocentesche: una delle testimonianze più antiche del centro storico di Pisogne.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Pisogne?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pesce di lago, polenta e piatti della tradizione camuna, essendo Pisogne porta d'accesso alla Val Camonica: una cucina che unisce i sapori del Sebino a quelli della montagna.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Pisogne da Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 33 km, percorribili in auto in 35-40 minuti oppure in treno con la linea Trenord Brescia-Iseo-Edolo in circa 50 minuti.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">È adatta a Pisogne una vacanza in famiglia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: il lungolago pianeggiante, il centro storico senza grande traffico e la vicinanza alla Val Camonica lo rendono un buon punto di partenza per famiglie interessate anche a escursioni nell'entroterra.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Pisogne">

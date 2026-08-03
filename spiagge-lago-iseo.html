@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Spiagge del Lago d'Iseo: le più belle spiagge e lidi</title>
 <meta name="description" content="Spiagge del Lago d'Iseo: lidi attrezzati e spiagge libere in tutti i 14 comuni, da Iseo a Monte Isola, da Sarnico a Lovere, con indirizzi e caratteristiche di ogni spiaggia.">
 <meta name="keywords" content="Spiagge Lago d'Iseo, dove fare il bagno Lago d'Iseo, lidi Lago d'Iseo, spiagge libere Sebino, spiagge attrezzate Lago d'Iseo, spiagge Lago d'Iseo con cani, spiagge Lago d'Iseo bambini, Lido Sassabanek Iseo, Lido Cadè Sarnico, Lido Perla Sebina Sale Marasino, Baia delle Rose Costa Volpino, Baia del Bogn Riva di Solto, spiagge Monte Isola, spiagge Predore, spiagge Marone">
@@ -113,6 +114,21 @@
       "@type": "Question",
       "name": "Le spiagge del Lago d'Iseo hanno il bagnino?",
       "acceptedAnswer": { "@type": "Answer", "text": "Nella maggior parte dei casi no: la sorveglianza organizzata riguarda solo alcuni dei lidi più grandi e attrezzati, mentre le spiagge libere non hanno assistenza bagnanti. È quindi sempre bene tenere sotto controllo i bambini e valutare con prudenza il fondale prima di fare il bagno." }
+    },
+    {
+      "@type": "Question",
+      "name": "Perché una spiaggia del Lago d'Iseo si chiama \"Piccola Tahiti\"?",
+      "acceptedAnswer": { "@type": "Answer", "text": "È il soprannome della spiaggia libera di Marone, fatta di sassi bianchi che rendono l'acqua di un azzurro intenso; il fondale scende rapidamente, quindi è meno adatta ai bambini piccoli." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è la spiaggia galleggiante di Paratico?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un lido originale costruito su una piattaforma galleggiante al centro del lago, ricavata dal vecchio pontile dei battelli e ricoperta di sabbia vera, raggiungibile tramite una passerella." }
+    },
+    {
+      "@type": "Question",
+      "name": "Il Lago d'Iseo è considerato pulito per la balneazione?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: è generalmente considerato uno dei laghi più puliti della Lombardia, con acque monitorate regolarmente durante la stagione estiva, soprattutto nelle zone meno urbanizzate." }
     }
   ]
 }
@@ -133,6 +149,16 @@
 <meta name="twitter:title" content="Spiagge del Lago d'Iseo: le più belle spiagge e lidi">
 <meta name="twitter:description" content="Spiagge del Lago d'Iseo: lidi attrezzati e spiagge libere in tutti i 14 comuni del lago.">
 <meta name="twitter:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Spiaggia%20-%20panoramio%20(20).jpg?width=1400">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -946,7 +972,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1140,7 +1166,7 @@
 <!-- ============ SPIAGGE LAGO D'ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Spiaggia%20-%20panoramio%20(20).jpg?width=1800" alt="Spiaggia sul Lago d'Iseo a Monte Isola" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Spiaggia%20-%20panoramio%20(20).jpg?width=1800" alt="Spiaggia sul Lago d'Iseo a Monte Isola" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1588,8 +1614,10 @@
 </div>
 
 <!-- ============ SPIAGGE LAGO D'ISEO: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> La spiaggia di Paratico non è naturale: è una piattaforma galleggiante ricavata dal vecchio pontile dei battelli, ricoperta di sabbia vera per ricreare l'effetto di un lido balneare.</p>
 <section class="dest-faq" aria-label="Domande frequenti sulle spiagge del Lago d'Iseo">
   <h2 class="section-title">Domande frequenti</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Quali sono le spiagge attrezzate del Lago d'Iseo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1632,6 +1660,25 @@
     </summary>
     <p class="dest-faq-a">Nella maggior parte dei casi no: la sorveglianza organizzata riguarda solo alcuni dei lidi più grandi e attrezzati, mentre le spiagge libere non hanno assistenza bagnanti. È quindi sempre bene tenere sotto controllo i bambini e valutare con prudenza il fondale prima di fare il bagno.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Perché una spiaggia del Lago d'Iseo si chiama "Piccola Tahiti"?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">È il soprannome della spiaggia libera di <a href="marone.html">Marone</a>, fatta di sassi bianchi che rendono l'acqua di un azzurro intenso; il fondale scende rapidamente, quindi è meno adatta ai bambini piccoli.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è la spiaggia galleggiante di Paratico?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Un lido originale costruito su una piattaforma galleggiante al centro del lago, ricavata dal vecchio pontile dei battelli e ricoperta di sabbia vera, raggiungibile tramite una passerella nei pressi di <a href="paratico.html">Paratico</a>.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Il Lago d'Iseo è considerato pulito per la balneazione?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: è generalmente considerato uno dei laghi più puliti della Lombardia, con acque monitorate regolarmente durante la stagione estiva, soprattutto nelle zone meno urbanizzate.</p>
+  </details>
+  </div>
 </section>
 
 <!-- ============ SPAZIO PUBBLICITARIO ADSENSE #3 ============ -->

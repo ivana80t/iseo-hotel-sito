@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Paratico: Bosco dei Taxodi, Torre Lantieri, Franciacorta</title>
 <meta name="description" content="Guida a Paratico sul Lago d'Iseo: il Bosco dei Taxodi, la Torre Lantieri, il Viale dei Volti e la porta della Franciacorta, gemella di Sarnico oltre il ponte.">
 <meta name="keywords" content="Paratico, Paratico Lago d'Iseo, cosa vedere a Paratico, Bosco dei Taxodi, Torre Lantieri, Paratico Sarnico, hotel Paratico, ristoranti Paratico, Franciacorta, Paratico con bambini, Lago d'Iseo, Sebino">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Dove si prende il battello a Paratico?",
       "acceptedAnswer": { "@type": "Answer", "text": "L'imbarco più vicino è quello di Sarnico, appena oltre il ponte, da cui partono le linee di navigazione per le altre località del Lago d'Iseo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è la Torre Lantieri?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una torre difensiva del XIV secolo costruita dalla famiglia Lantieri, oggi restaurata e sede della Quadrisfera, un'installazione multimediale che racconta la storia di Paratico; apertura la prima domenica del mese da giugno ad agosto." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Paratico?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pesce di lago, piatti della tradizione bresciana e i vini della Franciacorta, di cui Paratico fa parte, si trovano nei ristoranti e nelle trattorie del lungolago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Paratico da Bergamo e Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 22 km da Bergamo (25 minuti in auto) e circa 35 km da Brescia (30 minuti in auto)." }
+    },
+    {
+      "@type": "Question",
+      "name": "È adatta a Paratico una vacanza in famiglia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: il Bosco dei Taxodi, con le sue passerelle in legno e gli aironi, e il lungolago tranquillo lo rendono un buon punto d'appoggio per famiglie con bambini." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Natura", "Storia", "Cicloturismo", "Famiglie", "Enogastronomia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -871,7 +902,7 @@
   }
 
   /* ============ PARATICO: FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1065,7 +1096,7 @@
 <!-- ============ ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://images.unsplash.com/photo-1745748763662-fdb06cb2d636?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Paratico, il lungolago sul Lago d'Iseo di fronte a Sarnico" loading="eager">
+    <img src="https://images.unsplash.com/photo-1745748763662-fdb06cb2d636?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Paratico, il lungolago sul Lago d'Iseo di fronte a Sarnico" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1534,8 +1565,10 @@
 </div>
 
 <!-- ============ ISEO: GUIDE (card ricche con foto + icone) ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> All'interno della Torre Lantieri è installata la Quadrisfera, un sistema di specchi e proiezioni di cui esistono solo altri tre esempi in Italia.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Paratico">
   <h2 class="section-title">Domande frequenti su Paratico</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Paratico?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1572,6 +1605,31 @@
     </summary>
     <p class="dest-faq-a">L'imbarco più vicino è quello di Sarnico, appena oltre il ponte, da cui partono le linee di navigazione per le altre località del Lago d'Iseo.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è la Torre Lantieri?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Una torre difensiva del XIV secolo costruita dalla famiglia Lantieri, oggi restaurata e sede della Quadrisfera, un'installazione multimediale che racconta la storia di Paratico, tra le testimonianze di <a href="arte-e-cultura-lago-iseo.html">arte e cultura</a> del lago; apertura la prima domenica del mese da giugno ad agosto.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Paratico?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pesce di lago, piatti della tradizione bresciana e i vini della <a href="enogastronomia-franciacorta.html">Franciacorta</a>, di cui Paratico fa parte, si trovano nei ristoranti e nelle trattorie del lungolago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Paratico da Bergamo e Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 22 km da Bergamo (25 minuti in auto) e circa 35 km da Brescia (30 minuti in auto).</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">È adatta a Paratico una vacanza in famiglia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: il <a href="sport-ed-esperienze-lago-iseo.html">Bosco dei Taxodi</a>, con le sue passerelle in legno e gli aironi, e il lungolago tranquillo lo rendono un buon punto d'appoggio per famiglie con bambini.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Paratico">

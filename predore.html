@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Predore: terme romane e borgo lacustre sul Lago d'Iseo</title>
 <meta name="description" content="Guida a Predore, borgo sulla sponda bergamasca del Lago d'Iseo: le Terme Romane, la Torre Foresti, il Parco del Corno tra uliveti e colline, hotel e ristoranti.">
 <meta name="keywords" content="Predore, Predore Lago d'Iseo, cosa vedere a Predore, Terme Romane Predore, Torre Foresti, Parco del Corno di Predore, hotel Predore, ristoranti Predore, Lago d'Iseo, Sebino, sponda bergamasca">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Quanto dura il giro del Corno di Predore?",
       "acceptedAnswer": { "@type": "Answer", "text": "L'anello completo tra Predore e Tavernola Bergamasca richiede circa 3 ore e mezza di cammino, con vista sulla Franciacorta, sul basso Sebino e sulle Prealpi." }
+    },
+    {
+      "@type": "Question",
+      "name": "Predore è famosa per la produzione di olio d'oliva?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: storicamente Predore ha concentrato oltre la metà degli uliveti della sponda bergamasca del lago ed è ancora oggi un territorio di produzione dell'olio extravergine DOP Laghi Lombardi Sebino." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Predore?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pesce di lago, olio extravergine locale e piatti della tradizione bergamasca si trovano nei ristoranti e nelle trattorie del paese." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Predore da Bergamo e Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 25 km da Bergamo e circa 40 km da Brescia (35-40 minuti in auto)." }
+    },
+    {
+      "@type": "Question",
+      "name": "È adatta a Predore una vacanza in famiglia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: il lungolago, il sentiero basso del Corno (80 minuti, adatto anche a passeggiate meno impegnative) e le Terme Romane offrono opzioni sia per il relax sia per una gita facile con bambini." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Storia", "Natura", "Trekking", "Famiglie", "Enogastronomia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -871,7 +902,7 @@
   }
 
   /* ============ PARATICO: FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1065,7 +1096,7 @@
 <!-- ============ PREDORE: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo%2Csponda%20bergamasca%20%28Predore%29%20-%20panoramio.jpg?width=1800" alt="Predore, il lungolago e il borgo sul Lago d'Iseo" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20d%27iseo%2Csponda%20bergamasca%20%28Predore%29%20-%20panoramio.jpg?width=1800" alt="Predore, il lungolago e il borgo sul Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1519,8 +1550,10 @@
 </div>
 
 <!-- ============ PREDORE: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Nel sito archeologico delle Terme Romane di Predore, appartenuto a un console di Roma del III secolo, sono state trovate tracce di legna d'ulivo usata per riscaldare gli ambienti: una delle prime prove della coltivazione dell'olivo sul lago.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Predore">
   <h2 class="section-title">Domande frequenti su Predore</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Predore?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1557,6 +1590,31 @@
     </summary>
     <p class="dest-faq-a">L'anello completo tra Predore e Tavernola Bergamasca richiede circa 3 ore e mezza di cammino, con vista sulla Franciacorta, sul basso Sebino e sulle Prealpi.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Predore è famosa per la produzione di olio d'oliva?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: storicamente Predore ha concentrato oltre la metà degli uliveti della sponda bergamasca del lago ed è ancora oggi un territorio di produzione dell'<a href="enogastronomia-franciacorta.html">olio extravergine DOP Laghi Lombardi Sebino</a>.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Predore?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pesce di lago, olio extravergine locale e piatti della tradizione bergamasca si trovano nei ristoranti e nelle trattorie del paese.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Predore da Bergamo e Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 25 km da Bergamo e circa 40 km da Brescia (35-40 minuti in auto).</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">È adatta a Predore una vacanza in famiglia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: il lungolago, il sentiero basso del Corno (80 minuti, adatto anche a passeggiate meno impegnative) e le Terme Romane offrono opzioni sia per il relax sia per una gita facile con bambini.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Predore">

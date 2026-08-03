@@ -523,7 +523,7 @@
   }
 
   /* ---------- Curiosità sul Lago d'Iseo (FAQ, stile Spiagge) ---------- */
-  .vivere-faq{max-width:900px;margin:0 auto;padding:32px 32px 64px;}
+  .vivere-faq{max-width:1100px;margin:0 auto;padding:32px 32px 64px;}.vivere-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.vivere-faq-grid{grid-template-columns:1fr;}}
   .vivere-faq-sub{text-align:center;font-size:14px;color:var(--ink-soft);margin:-24px 0 28px;}
   @media (max-width:640px){.vivere-faq{padding:24px 18px 48px;}}
 
@@ -1391,11 +1391,12 @@
   <h2 class="section-title">Domande frequenti</h2>
   <p class="vivere-faq-sub">Tutto quello che devi sapere sulla lista dei preferiti. Se non trovi quello che cerchi, <a href="contatti.html">contattaci</a>!</p>
 
+  <div class="vivere-faq-grid">
   <details class="vivere-faq-item" name="preferiti-faq">
     <summary class="vivere-faq-q">Come faccio a salvare una struttura o una destinazione tra i preferiti?
       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="vivere-faq-a">Clicca sull'icona a forma di cuore presente sulle schede di hotel, ristoranti, destinazioni e itinerari del sito: la struttura verrà aggiunta automaticamente ai tuoi preferiti e potrai ritrovarla in questa pagina.</p>
+    <p class="vivere-faq-a">Clicca sull'icona a forma di cuore presente sulle schede di <a href="hotel.html">hotel</a>, <a href="ristoranti.html">ristoranti</a>, <a href="destinazioni.html">destinazioni</a> e <a href="itinerari-trekking-lago-iseo.html">itinerari</a> del sito: la struttura verrà aggiunta automaticamente ai tuoi preferiti e potrai ritrovarla in questa pagina.</p>
   </details>
 
   <details class="vivere-faq-item" name="preferiti-faq">
@@ -1430,7 +1431,7 @@
     <summary class="vivere-faq-q">C'è un limite al numero di preferiti che posso salvare?
       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="vivere-faq-a">No, puoi salvare tutti gli hotel, i ristoranti, le destinazioni e gli itinerari del Lago d'Iseo che ti interessano, senza alcun limite.</p>
+    <p class="vivere-faq-a">No, puoi salvare tutti gli <a href="hotel.html">hotel</a>, i <a href="ristoranti.html">ristoranti</a>, le <a href="destinazioni.html">destinazioni</a> e gli <a href="itinerari-trekking-lago-iseo.html">itinerari</a> del Lago d'Iseo che ti interessano, senza alcun limite.</p>
   </details>
 
   <details class="vivere-faq-item" name="preferiti-faq">
@@ -1444,7 +1445,7 @@
     <summary class="vivere-faq-q">Posso salvare tra i preferiti anche itinerari e guide, oltre a hotel e ristoranti?
       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="vivere-faq-a">Sì, puoi salvare qualsiasi contenuto del sito dotato dell'icona a cuore: destinazioni, hotel, ristoranti, itinerari e guide tematiche sul Lago d'Iseo.</p>
+    <p class="vivere-faq-a">Sì, puoi salvare qualsiasi contenuto del sito dotato dell'icona a cuore: <a href="destinazioni.html">destinazioni</a>, <a href="hotel.html">hotel</a>, <a href="ristoranti.html">ristoranti</a>, <a href="itinerari-trekking-lago-iseo.html">itinerari</a> e <a href="guide-lago-iseo.html">guide tematiche</a> sul Lago d'Iseo.</p>
   </details>
 
   <details class="vivere-faq-item" name="preferiti-faq">
@@ -1460,6 +1461,7 @@
     </summary>
     <p class="vivere-faq-a">Sì, salvare e consultare i preferiti su Iseo Sapori e Soggiorni è sempre gratuito, senza alcun costo o limite d'uso.</p>
   </details>
+  </div>
 </section>
 
 <!-- SPAZIO PUBBLICITARIO ADSENSE #2 -->

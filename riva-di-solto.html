@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Riva di Solto: il borgo medievale e l'Orrido del Bögn</title>
 <meta name="description" content="Guida a Riva di Solto sul Lago d'Iseo: il borgo medievale con la Torre del Porto, l'Orrido del Bögn di Zorzino, il lungolago, hotel e ristoranti.">
 <meta name="keywords" content="Riva di Solto, Riva di Solto Lago d'Iseo, cosa vedere a Riva di Solto, Orrido del Bogn, Bogn di Zorzino, Torre del Porto, Castello di Zorzino, hotel Riva di Solto, ristoranti Riva di Solto, Lago d'Iseo, Sebino, sponda bergamasca">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Cosa vedere nelle frazioni di Riva di Solto?",
       "acceptedAnswer": { "@type": "Answer", "text": "A Zorzino si trovano i resti di un castello e l'Orrido del Bögn; a Gargarino la chiesetta romanica di San Cassiano, con affreschi trecenteschi parzialmente conservati." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è la Pieve di San Nicola a Riva di Solto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una chiesa dalle origini poco documentate, tra le testimonianze religiose più antiche del borgo, situata nel centro storico affacciato sul lago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando si tiene la Sagra del Pesce a Riva di Solto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A inizio luglio, nel Giardino della Doana: tre giorni di stand gastronomici a base di pesce di lago, un appuntamento che si ripete da oltre vent'anni." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Riva di Solto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pesce di lago, protagonista anche della Sagra del Pesce estiva, e i piatti della tradizione bergamasca nei ristoranti del borgo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Riva di Solto da Bergamo e Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 30 km da Bergamo e circa 30 km da Brescia (45-50 minuti in auto da entrambe)." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Storia", "Natura", "Trekking", "Famiglie", "Enogastronomia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -871,7 +902,7 @@
   }
 
   /* ============ PARATICO: FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1065,7 +1096,7 @@
 <!-- ============ RIVA DI SOLTO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Riva%20di%20Solto%20banner.jpg?width=1800" alt="Riva di Solto, il lungolago e il borgo medievale sul Lago d'Iseo" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Riva%20di%20Solto%20banner.jpg?width=1800" alt="Riva di Solto, il lungolago e il borgo medievale sul Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1423,7 +1454,7 @@
         <img src="https://images.unsplash.com/photo-1745748763530-337be3f67db8?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Battello panoramico sul Lago d'Iseo" loading="lazy">
         <div class="itin-body">
           <h3>Gita in barca verso Monte Isola</h3>
-          <p>Un giro in barca sulle acque del lago permette di raggiungere Monte Isola, la più grande isola lacustre d'Europa, per una gita in giornata.</p>
+          <p>Un giro in barca sulle acque del lago permette di raggiungere <a href="monte-isola.html">Monte Isola</a>, la più grande isola lacustre d'Italia, per una gita in giornata.</p>
         </div>
       </article>
       <article class="itin-card">
@@ -1512,8 +1543,10 @@
 </div>
 
 <!-- ============ RIVA DI SOLTO: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Nella frazione di Gargarino, la chiesetta romanica di San Cassiano conserva ancora affreschi trecenteschi, tra le testimonianze pittoriche più antiche dell'intero Sebino.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Riva di Solto">
   <h2 class="section-title">Domande frequenti su Riva di Solto</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Riva di Solto?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1550,6 +1583,31 @@
     </summary>
     <p class="dest-faq-a">A Zorzino si trovano i resti di un castello e l'Orrido del Bögn; a Gargarino la chiesetta romanica di San Cassiano, con affreschi trecenteschi parzialmente conservati.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è la Pieve di San Nicola a Riva di Solto?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Una chiesa dalle origini poco documentate, tra le testimonianze di <a href="arte-e-cultura-lago-iseo.html">arte e cultura</a> più antiche del borgo, situata nel centro storico affacciato sul lago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quando si tiene la Sagra del Pesce a Riva di Solto?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">A inizio luglio, nel Giardino della Doana: tre giorni di stand gastronomici a base di pesce di lago, un appuntamento che si ripete da oltre vent'anni.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Riva di Solto?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pesce di lago, protagonista anche della Sagra del Pesce estiva, e i piatti della tradizione bergamasca nei ristoranti del borgo.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Riva di Solto da Bergamo e Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 30 km da Bergamo e circa 30 km da Brescia (45-50 minuti in auto da entrambe).</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Riva di Solto">

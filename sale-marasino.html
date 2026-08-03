@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Sale Marasino: ville, spiagge, cosa vedere sul Lago</title>
 <meta name="description" content="Guida a Sale Marasino sul Lago d'Iseo: ville rinascimentali, Isola di Loreto, Punta Almana, spiagge, itinerari, hotel e ristoranti consigliati.">
 <meta name="keywords" content="Sale Marasino, Sale Marasino Lago d'Iseo, cosa vedere a Sale Marasino, spiagge Sale Marasino, Villa Martinengo, Isola di Loreto, Punta Almana, hotel Sale Marasino, ristoranti Sale Marasino, lungolago Sale Marasino, Antica Strada Valeriana, Lago d'Iseo, Sebino">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Dove si prende il traghetto per Monte Isola a Sale Marasino?",
       "acceptedAnswer": { "@type": "Answer", "text": "Dal porticciolo di Sale Marasino, con corse ogni 20 minuti verso Carzano tutto l'anno." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è Villa Martinengo a Sale Marasino?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una villa rinascimentale cinquecentesca circondata da un parco secolare, tra le residenze più signorili del lago; nel parco si conservano anche i resti di una villa romana del I secolo d.C., di cui rimane visibile l'esedra. La villa è privata e visibile solo dall'esterno." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Sale Marasino?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pesce di lago e olio extravergine locale, prodotto negli uliveti della Riviera degli Ulivi, sono i protagonisti della cucina dei ristoranti del paese." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Sale Marasino da Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 30 km, percorribili in auto in circa 30 minuti lungo la sponda orientale del lago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando si festeggia San Giovanni Battista nella frazione di Conche?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A giugno, con la sagra patronale della frazione, dedicata alla settecentesca chiesa di San Giovanni Battista." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Storia", "Natura", "Trekking", "Famiglie", "Fotografia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -868,7 +899,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1062,7 +1093,7 @@
 <!-- ============ ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BS-Sale-Marasino-panorama-03.jpg?width=1800" alt="Sale Marasino, borgo di ville rinascimentali sul Lago d'Iseo" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/BS-Sale-Marasino-panorama-03.jpg?width=1800" alt="Sale Marasino, borgo di ville rinascimentali sul Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1524,7 +1555,7 @@
         <img src="https://images.unsplash.com/photo-1745748763689-f7baa5fd6b0f?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Monte Isola vista dal lago, immagine di riferimento per il legame storico" loading="lazy">
         <div class="itin-body">
           <h3>Il legame con Monte Isola</h3>
-          <p>Da secoli Sale Marasino è uno dei porti di riferimento per l'isola lacustre più grande d'Europa, con collegamenti frequenti che hanno sempre unito le due comunità.</p>
+          <p>Da secoli Sale Marasino è uno dei porti di riferimento per <a href="monte-isola.html">Monte Isola</a>, la più grande isola lacustre d'Italia, con collegamenti frequenti che hanno sempre unito le due comunità.</p>
         </div>
       </article>
     </div>
@@ -1559,8 +1590,10 @@
 </div>
 
 <!-- ============ ISEO: GUIDE (card ricche con foto + icone) ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Nel parco di Villa Martinengo si conservano i resti di una villa romana del I secolo d.C., segno che i nobili bresciani sceglievano queste rive già in epoca antica.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Sale Marasino">
   <h2 class="section-title">Domande frequenti su Sale Marasino</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Sale Marasino?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1597,6 +1630,31 @@
     </summary>
     <p class="dest-faq-a">Dal porticciolo di Sale Marasino, con corse ogni 20 minuti verso Carzano tutto l'anno.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è Villa Martinengo a Sale Marasino?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Una villa rinascimentale cinquecentesca circondata da un parco secolare, tra le residenze più signorili del lago, tra le testimonianze di <a href="arte-e-cultura-lago-iseo.html">arte e cultura</a> del Sebino; nel parco si conservano anche i resti di una villa romana del I secolo d.C., di cui rimane visibile l'esedra. La villa è privata e visibile solo dall'esterno.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Sale Marasino?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pesce di lago e olio extravergine locale, prodotto negli uliveti della Riviera degli Ulivi, sono i protagonisti della cucina dei ristoranti del paese.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Sale Marasino da Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 30 km, percorribili in auto in circa 30 minuti lungo la sponda orientale del lago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quando si festeggia San Giovanni Battista nella frazione di Conche?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">A giugno, con la sagra patronale della frazione, dedicata alla settecentesca chiesa di San Giovanni Battista.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Sale Marasino">

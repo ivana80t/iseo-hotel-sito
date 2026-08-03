@@ -336,7 +336,7 @@
   /* -- colonna sinistra: form -- */
   .pub-form-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:48px 56px 46px;}
   .pub-icon{width:48px;height:48px;stroke:var(--gold);margin-bottom:18px;}
-  .pub-form-card h1{font-size:27px;font-weight:600;color:var(--navy);margin:0 0 10px;line-height:1.2;}
+  .pub-form-card h2{font-size:27px;font-weight:600;color:var(--navy);margin:0 0 10px;line-height:1.2;}
   .pub-sub{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 24px;max-width:420px;}
   .pub-divider{border:none;border-top:1px solid var(--line);margin:0 0 26px;}
 
@@ -602,12 +602,99 @@
     .step-arrow{transform:rotate(90deg);margin:4px 0;}
   }
   @media (max-width:860px){
-    nav.main-nav{display:none;}
+    /* backdrop-filter e' costoso da ridisegnare e su Chrome Android peggiora lo
+       "scatto" dell'header sticky quando la barra degli indirizzi si nasconde/
+       mostra durante lo scroll: su mobile usiamo uno sfondo pieno invece del
+       vetro sfocato, restando identici a prima solo su desktop. */
+    header.site-header{background:#fbfaf7;backdrop-filter:none;}
+
+    nav.main-nav{display:none;max-height:calc(100vh - 76px);overflow-y:auto;-webkit-overflow-scrolling:touch;padding-left:0 !important;padding-right:0 !important;}
     .header-actions .icon-link span{display:none;}
+    .header-actions .btn{display:none;}
     .burger{display:block;}
+
+    /* ===== Menu mobile classico ad accordion (elenco a sinistra, riga ocra in fondo) ===== */
+    nav.main-nav{align-items:stretch;}
+
+    nav.main-nav > a,
+    .nav-item{
+      width:100%;
+      border-bottom:1px solid rgba(18,41,79,0.1);
+    }
+    /* .nav-item eredita display:flex in riga dal desktop — su mobile va in colonna
+       altrimenti il sottomenu si affianca al pulsante invece di andare sotto. */
+    .nav-item{
+      display:flex;flex-direction:column;align-items:stretch;
+    }
+    nav.main-nav > a:last-of-type,
+    .nav-item:last-of-type{border-bottom:none;}
+
+    nav.main-nav a{
+      text-align:left;
+      padding:14px 32px !important;
+      width:100%;
+    }
+
+    /* Indicatore "pagina attiva" pensato per il menu desktop orizzontale: su mobile
+       va disattivato (voci a tutta larghezza = riga piena fissa, fuorviante). */
+    nav.main-nav a.active::after{content:none;}
+    nav.main-nav a.active{color:var(--ink);font-weight:500;background:none;}
+
+    /* Al suo posto: indicatore ocra che segue la voce aperta/toccata dall'utente. */
+    nav.main-nav a:active,
+    .nav-dropdown-toggle:active{
+      background:rgba(197,152,39,0.08);
+    }
+    .nav-item.open > .nav-dropdown-toggle{
+      color:var(--gold);font-weight:700;
+      border-left:3px solid var(--gold);
+      padding-left:29px !important;
+      background:rgba(197,152,39,0.06);
+    }
+    .nav-item.open > .nav-dropdown-toggle .nav-caret{stroke:var(--gold);}
+
+    .nav-dropdown-toggle{
+      display:flex;align-items:center;justify-content:space-between;
+      width:100%;padding:14px 32px !important;gap:10px;
+      border-left:3px solid transparent;
+      transition:background .15s ease,border-color .15s ease,color .15s ease;
+    }
+
+    .nav-dropdown{
+      position:static !important;opacity:1;visibility:hidden;transform:none;
+      box-shadow:none;border:none;border-radius:0;
+      background:var(--sand);
+      min-width:0;width:100%;
+      padding:0;margin:0;
+      max-height:0;overflow:hidden;
+      transition:max-height .2s ease;
+    }
+    .nav-item.open .nav-dropdown{
+      visibility:visible;max-height:1200px;
+      border-top:1px solid rgba(18,41,79,0.08);
+      border-bottom:1px solid rgba(18,41,79,0.1);
+    }
+    .nav-item.open .nav-dropdown-label{display:none;}
+    .nav-item.open .nav-dropdown-group{border-top:none !important;margin-top:0 !important;padding-top:0 !important;}
+    .nav-dropdown-group + .nav-dropdown-group{margin-top:0;}
+    .nav-item.open .nav-dropdown a{
+      display:block;width:100%;
+      padding:12px 32px 12px 48px !important;
+      font-size:14px;border-bottom:1px solid rgba(18,41,79,0.06);
+    }
+    .nav-item.open .nav-dropdown-group:last-child .nav-dropdown-items a:last-child{border-bottom:none;}
+    .nav-item.open .nav-dropdown a::before{content:none;}
+
+    nav.main-nav a.nav-publish-mobile{
+      display:flex;align-items:center;justify-content:center;
+      margin:10px 20px 16px;width:calc(100% - 40px);padding:12px 22px !important;
+      border-bottom:none;border-radius:999px;
+      color:#fff;font-size:14.5px;font-weight:600;white-space:normal;text-align:center;
+    }
+    nav.main-nav a.nav-publish-mobile:hover{color:#fff;}
+
     .advantages-grid{grid-template-columns:1fr 1fr;}
     .form-row{grid-template-columns:1fr 1fr;}
-    header.site-header{background:#fbfaf7;backdrop-filter:none;}
   }
   @media (max-width:640px){
     .wrap,.header-inner,.section,.footer-top,.footer-bottom{padding-left:18px;padding-right:18px;}
@@ -629,7 +716,7 @@
   }
 
   /* ---------- FAQ ---------- */
-  .pub-faq{max-width:900px;margin:0 auto;padding:56px 32px 64px;}
+  .pub-faq{max-width:1100px;margin:0 auto;padding:56px 32px 64px;}.pub-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.pub-faq-grid{grid-template-columns:1fr;}}
   .pub-faq-sub{text-align:center;font-size:14px;color:var(--ink-soft);margin:-4px 0 28px;}
   .pub-faq-sub a{color:var(--navy);font-weight:600;}
   .pub-faq-item{border-bottom:1px solid var(--line);padding:16px 0;}
@@ -824,6 +911,11 @@
       "@type": "Question",
       "name": "Quanto tempo passa tra l'invio del modulo e la pubblicazione della scheda?",
       "acceptedAnswer": { "@type": "Answer", "text": "Dopo l'invio del modulo il nostro team verifica i dati inseriti; una volta completato il pagamento della quota annuale, la scheda viene pubblicata sul portale." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso modificare i dati della mia struttura dopo la pubblicazione?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: puoi contattarci in qualsiasi momento tramite il modulo di contatto per aggiornare foto, descrizione, servizi o qualsiasi altro dato della tua scheda già pubblicata." }
     }
   ]
 }
@@ -1027,7 +1119,7 @@
   <div class="pub-form-overlap-wrap">
       <div class="pub-form-card">
         <svg class="pub-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 21V6a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15"/><path d="M14 21V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11"/><path d="M2 21h20"/><path d="M7 8h1M7 11h1M7 14h1M7 17h1M11 8h1M11 11h1M11 14h1M11 17h1M17 13h1M17 16h1"/></svg>
-        <h1>Pubblica la tua struttura</h1>
+        <h2>Pubblica la tua struttura</h2>
         <p class="pub-sub">Compila il modulo e un nostro operatore ti contatterà al più presto per attivare la tua scheda sul portale.</p>
         <hr class="pub-divider">
 
@@ -1164,7 +1256,7 @@
 
           <label class="form-privacy">
             <input type="checkbox" required>
-            <span>Acconsento al trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR).<br><a href="privacy.html">Informativa privacy.</a></span>
+            <span>Acconsento al trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR).<br><a href="privacy-policy.html">Informativa privacy.</a></span>
           </label>
 
           <div class="form-submit-center">
@@ -1480,6 +1572,7 @@
   </div>
   <p class="pub-faq-sub">Tutto quello che serve sapere per pubblicare hotel, B&amp;B o ristorante sul Lago d'Iseo. Altri dubbi? <a href="contatti.html">Contattaci</a>.</p>
 
+  <div class="pub-faq-grid">
   <details class="pub-faq-item" name="pub-faq">
     <summary class="pub-faq-q">Come posso pubblicare gratuitamente il mio hotel, B&amp;B o ristorante sul Lago d'Iseo?
       <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
@@ -1584,6 +1677,13 @@
     </summary>
     <p class="pub-faq-a">Dopo l'invio del modulo il nostro team verifica i dati inseriti; una volta completato il pagamento della quota annuale, la scheda viene pubblicata sul portale.</p>
   </details>
+  <details class="pub-faq-item" name="pub-faq">
+    <summary class="pub-faq-q">Posso modificare i dati della mia struttura dopo la pubblicazione?
+      <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="pub-faq-a">Sì: puoi <a href="contatti.html">contattarci</a> in qualsiasi momento tramite il modulo di contatto per aggiornare foto, descrizione, servizi o qualsiasi altro dato della tua scheda già pubblicata.</p>
+  </details>
+  </div>
 </section>
 
 <!-- ============ INIZIA ORA / HAI DUBBI? / NON ASPETTARE ============ -->
@@ -1806,13 +1906,32 @@
     header.classList.toggle('scrolled', window.scrollY > 8);
   });
 
-  // Mobile burger menu
+  // Mobile burger toggle
   const burgerBtn = document.getElementById('burgerBtn');
   const mainNav = document.querySelector('.main-nav');
   burgerBtn.addEventListener('click', () => {
     const isOpen = mainNav.style.display === 'flex';
     mainNav.style.display = isOpen ? 'none' : 'flex';
-    mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:20px 32px;gap:16px;border-bottom:1px solid var(--line);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+    mainNav.style.cssText += isOpen ? '' : 'position:absolute;top:100%;left:0;right:0;background:#fbfaf7;flex-direction:column;padding:6px 0 0;gap:0;border-bottom:3px solid var(--gold);box-shadow:0 10px 20px -10px rgba(0,0,0,.15);';
+  });
+
+  // Dropdown "Hotel" / "Ristoranti" nel menu: click/tap per aprire (utile su touch), hover gestito via CSS su desktop
+  document.querySelectorAll('.nav-item').forEach((navItem) => {
+    const navToggle = navItem.querySelector('.nav-dropdown-toggle');
+    if (!navToggle) return;
+    navToggle.addEventListener('click', (e) => {
+      if (window.matchMedia('(hover: none)').matches) {
+        e.preventDefault();
+        const isOpen = navItem.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+    });
+    document.addEventListener('click', (e) => {
+      if (!navItem.contains(e.target)) {
+        navItem.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
 
   // Badge conteggio preferiti (nessun cuore preferiti in questa pagina, ma teniamo il badge aggiornato)
@@ -1934,7 +2053,7 @@
 
       // Avviso in cima al form: il gestore sa che sta completando una
       // scheda già trovata, non creandone una da zero.
-      const titolo = document.querySelector('.pub-form-card h1');
+      const titolo = document.querySelector('.pub-form-card h2');
       const sottotitolo = document.querySelector('.pub-sub');
       if (titolo) titolo.textContent = 'Completa l\'attivazione della tua struttura';
       if (sottotitolo) sottotitolo.textContent = 'Abbiamo già trovato la tua struttura e precompilato alcuni dati: controllali, completa il resto e procedi con il pagamento per attivare la scheda.';

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Sport ed Esperienze sul Lago d'Iseo: attività per tutti i livelli</title>
 <meta name="description" content="Sport ed esperienze sul Lago d'Iseo: vela, windsurf, kayak, SUP, noleggio bici e mountain bike in ogni comune del lago, con zona, periodo consigliato e livello per ogni attività.">
 <meta name="keywords" content="Sport Lago d'Iseo, esperienze Lago d'Iseo, vela Lago d'Iseo, windsurf Lago d'Iseo, kitesurf Lago d'Iseo, kayak Lago d'Iseo, SUP Lago d'Iseo, canottaggio Lago d'Iseo, noleggio bici Lago d'Iseo, mountain bike Lago d'Iseo, sport acquatici Sebino, cosa fare sul Lago d'Iseo, attività Lago d'Iseo bambini, noleggio kayak Monte Isola, scuola vela Sulzano, scuola vela Sarnico, arrampicata Lago d'Iseo, falesia Castro arrampicata, canyoning Tavernola Bergamasca, sci nautico Lago d'Iseo, parapendio Sale Marasino, sport all'aria aperta Lago d'Iseo, dove fare vela Lago d'Iseo, noleggio SUP Lago d'Iseo, attività sportive weekend Lago d'Iseo">
@@ -113,6 +114,21 @@
       "@type": "Question",
       "name": "Serve un'attrezzatura particolare per queste attività?",
       "acceptedAnswer": { "@type": "Answer", "text": "Nella maggior parte dei casi i centri e le scuole locali forniscono l'attrezzatura necessaria a noleggio, quindi non è indispensabile possederla: basta prenotare in anticipo, soprattutto nei mesi estivi." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è il Palio dei Naècc?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una tradizionale gara di canottaggio su naècc, le antiche barche da pesca del Sebino, che vede sfidarsi da decenni le squadre dei paesi del lago, con una storica rivalità tra Clusane e Monte Isola; le regate si tengono tra giugno e settembre." }
+    },
+    {
+      "@type": "Question",
+      "name": "Serve la licenza per pescare sul Lago d'Iseo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: è necessaria una licenza di pesca dilettantistica, valida anche per gli stranieri, con il versamento di una tassa regionale annuale; il regolamento specifico varia per zone e tecniche di pesca consentite." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ci sono limiti di velocità per le barche sul Lago d'Iseo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: le unità sotto i 7 metri con sola luce di segnalazione non possono superare i 7 nodi, mentre le altre imbarcazioni hanno un limite di 10 nodi, salvo zone specifiche con regole diverse." }
     }
   ]
 }
@@ -133,6 +149,16 @@
 <meta name="twitter:title" content="Sport ed Esperienze sul Lago d'Iseo: attività per tutti i livelli">
 <meta name="twitter:description" content="Sport ed esperienze sul Lago d'Iseo: vela, windsurf, kayak, SUP, bici e mountain bike in ogni comune del lago.">
 <meta name="twitter:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Vele%20sul%20sebino(dalla%20ciclabile%20Toline.Vello)%20-%20panoramio.jpg?width=1400">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -953,7 +979,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1147,7 +1173,7 @@
 <!-- ============ SPORT ED ESPERIENZE LAGO D'ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vele%20sul%20sebino(dalla%20ciclabile%20Toline.Vello)%20-%20panoramio.jpg?width=1800" alt="Vele sul Lago d'Iseo lungo la ciclabile Toline-Vello" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vele%20sul%20sebino(dalla%20ciclabile%20Toline.Vello)%20-%20panoramio.jpg?width=1800" alt="Vele sul Lago d'Iseo lungo la ciclabile Toline-Vello" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -2035,8 +2061,10 @@
 </div>
 
 <!-- ============ SPORT ED ESPERIENZE LAGO D'ISEO: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Dal 1979 il Palio dei Naècc mette in palio il trofeo "Naèt d'or", una barca ricoperta d'oro assegnata definitivamente a chi vince il campionato per tre anni consecutivi.</p>
 <section class="dest-faq" aria-label="Domande frequenti sugli sport e le esperienze sul Lago d'Iseo">
   <h2 class="section-title">Domande frequenti</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Quali sport si possono praticare sul Lago d'Iseo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -2079,6 +2107,25 @@
     </summary>
     <p class="dest-faq-a">Nella maggior parte dei casi i centri e le scuole locali forniscono l'attrezzatura necessaria a noleggio, quindi non è indispensabile possederla: basta prenotare in anticipo, soprattutto nei mesi estivi.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è il Palio dei Naècc?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Una tradizionale gara di canottaggio su naècc, le antiche barche da pesca del Sebino, che vede sfidarsi da decenni le squadre dei paesi del lago, con una storica rivalità tra Clusane e <a href="monte-isola.html">Monte Isola</a>; le regate si tengono tra giugno e settembre.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Serve la licenza per pescare sul Lago d'Iseo?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: è necessaria una licenza di pesca dilettantistica, valida anche per gli stranieri, con il versamento di una tassa regionale annuale; il regolamento specifico varia per zone e tecniche di pesca consentite.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Ci sono limiti di velocità per le barche sul Lago d'Iseo?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: le unità sotto i 7 metri con sola luce di segnalazione non possono superare i 7 nodi, mentre le altre imbarcazioni hanno un limite di 10 nodi, salvo zone specifiche con regole diverse.</p>
+  </details>
+  </div>
 </section>
 
 <!-- ============ SPAZIO PUBBLICITARIO ADSENSE #3 ============ -->

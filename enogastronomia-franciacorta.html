@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Enogastronomia e Franciacorta: sapori e vini del Lago d'Iseo</title>
 <meta name="description" content="Enogastronomia e Franciacorta sul Lago d'Iseo: cantine DOCG, sapori di lago, formaggi, salumi, miele, grappe e birre artigianali, mercati a km 0 e agriturismi del territorio.">
 <meta name="keywords" content="Enogastronomia Lago d'Iseo, Franciacorta vino, cantine Franciacorta, Barone Pizzini, Ca' del Bosco, Bellavista Erbusco, Guido Berlucchi, sapori Lago d'Iseo, sardine essiccate Monte Isola, tinca al forno Clusane, olio extravergine Sale Marasino, formaggi e salumi Monte Isola, agriturismi Lago d'Iseo, prodotti tipici Franciacorta, Metodo Classico, formaggi di montagna Val Camonica, Formaggella Val Camonica DOP, Silter DOP, salumi Monte Isola, salame nostrano bergamasco, miele del Sebino, miele di castagno, grappa di Franciacorta, distillati artigianali Lago d'Iseo, birrifici artigianali Sebino, birra artigianale Lago d'Iseo, mercati contadini Lago d'Iseo, prodotti a km zero Franciacorta">
@@ -123,6 +124,11 @@
       "@type": "Question",
       "name": "Si possono acquistare grappe, birre artigianali e prodotti a km 0 nella zona?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sì: distillerie e birrifici artigianali del Sebino vendono grappe e birre direttamente in loco, mentre i mercati contadini e le aziende agricole della zona offrono frutta, verdura e altri prodotti freschi a chilometro zero." }
+    },
+    {
+      "@type": "Question",
+      "name": "Il miele è un prodotto tipico del territorio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: il miele del Sebino, tra cui il miele di castagno prodotto sui versanti collinari del lago, è una delle eccellenze locali, in vendita nei mercati contadini e direttamente presso gli apicoltori del territorio." }
     }
   ]
 }
@@ -143,6 +149,16 @@
 <meta name="twitter:title" content="Enogastronomia e Franciacorta: sapori e vini del Lago d'Iseo">
 <meta name="twitter:description" content="Cantine DOCG, sapori di lago, formaggi, salumi, miele, grappe e birre artigianali, mercati a km 0 tra Lago d'Iseo e Franciacorta.">
 <meta name="twitter:image" content="https://www.iseosaporiesoggiorni.it/images/eno-hero-vino.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -957,7 +973,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1196,7 +1212,7 @@
 <!-- ============ ENOGASTRONOMIA E FRANCIACORTA: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="images/eno-hero-vino.jpg" alt="Vigneti della Franciacorta, Lago d'Iseo" loading="eager">
+    <img src="images/eno-hero-vino.jpg" alt="Vigneti della Franciacorta, Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1853,8 +1869,10 @@
   </div>
 </div>
 
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> La sardina essiccata di Monte Isola è un Presidio Slow Food, riconoscimento che tutela l'antica tecnica di essiccazione al sole tipica dell'isola.</p>
 <section class="dest-faq" aria-label="Domande frequenti sull'enogastronomia e la Franciacorta">
   <h2 class="section-title">Domande frequenti</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Cos'è la Franciacorta e dove si trova rispetto al Lago d'Iseo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1909,6 +1927,13 @@
     </summary>
     <p class="dest-faq-a">Sì: distillerie e birrifici artigianali del Sebino vendono grappe e birre direttamente in loco, mentre i mercati contadini e le aziende agricole della zona offrono frutta, verdura e altri prodotti freschi a chilometro zero.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Il miele è un prodotto tipico del territorio?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: il miele del Sebino, tra cui il miele di castagno prodotto sui versanti collinari del lago, è una delle eccellenze locali, in vendita nei mercati contadini e direttamente presso gli apicoltori del territorio.</p>
+  </details>
+  </div>
 </section>
 
 <!-- ============ SPAZIO PUBBLICITARIO ADSENSE #3 ============ -->

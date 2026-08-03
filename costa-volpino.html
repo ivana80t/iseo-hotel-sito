@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Costa Volpino: la porta tra il Lago d'Iseo e la Valle Camonica</title>
 <meta name="description" content="Guida a Costa Volpino sul Lago d'Iseo: i sette nuclei storici, la chiesa di Santo Stefano a Volpino, i resti del castello, hotel e ristoranti.">
 <meta name="keywords" content="Costa Volpino, Costa Volpino Lago d'Iseo, cosa vedere a Costa Volpino, Chiesa di Santo Stefano Volpino, Castello di Volpino, Ceratello, Qualino, volpinite, hotel Costa Volpino, ristoranti Costa Volpino, Lago d'Iseo, Sebino, Alto Sebino, Valle Camonica">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Come si raggiunge Costa Volpino in treno?",
       "acceptedAnswer": { "@type": "Answer", "text": "La ferrovia non arriva direttamente in paese: le stazioni più vicine sono quelle di Pisogne, sulla sponda opposta del lago, e di Brescia, da cui si prosegue in autobus." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quali sagre si tengono a Costa Volpino?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La Sagra del Pesce di Lago, all'inizio di giugno nella frazione di Piano, con stand gastronomici a base di pesce di lago; in autunno la Festa del Ringraziamento, organizzata dalla Pro Loco." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Costa Volpino?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pesce di lago, polenta con formaggi e funghi, salumi e formaggi di montagna della vicina Val Camonica: la cucina locale unisce i sapori del Sebino a quelli della tradizione camuna." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Costa Volpino da Bergamo e Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 44 km da Bergamo (45-50 minuti in auto) e circa 46 km da Brescia (40-45 minuti in auto)." }
+    },
+    {
+      "@type": "Question",
+      "name": "È adatta a Costa Volpino una vacanza in famiglia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: le spiagge libere come la Baia delle Rose, la pista ciclopedonale lungo l'Oglio e il lungolago tranquillo la rendono una base comoda per famiglie con bambini." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Storia", "Natura", "Trekking", "Famiglie", "Enogastronomia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -876,7 +907,7 @@
   }
 
   /* ============ PARATICO: FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1070,7 +1101,7 @@
 <!-- ============ COSTA VOLPINO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Costa%20volpino%20-%20panoramio.jpg?width=1800" alt="Costa Volpino, il lungolago e le montagne dell'Alto Sebino" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Costa%20volpino%20-%20panoramio.jpg?width=1800" alt="Costa Volpino, il lungolago e le montagne dell'Alto Sebino" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1105,7 +1136,7 @@
         <span class="dest-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8M4 17a2 2 0 1 0 4 0M16 17a2 2 0 1 0 4 0"/></svg></span>
         <div>
           <h4>Come arrivare</h4>
-          <p>Auto sulla SS510 Sebina orientale o SS469 da Lovere; treno fino a Pisogne o Brescia, poi autobus; battello dagli altri approdi del lago.</p>
+          <p>Auto sulla SS510 Sebina orientale o SS469 da <a href="lovere.html">Lovere</a>; treno fino a <a href="pisogne.html">Pisogne</a> o Brescia, poi autobus; battello dagli altri approdi del lago.</p>
         </div>
       </div>
       <div class="dest-info-row">
@@ -1172,7 +1203,7 @@
           <div class="dest-type-body">
             <h3>Vuoi vivere il lago in libertà</h3>
             <span class="dest-type-underline"></span>
-            <p>Rilassati sul lungolago, parti per un'escursione in battello, raggiungi Lovere a piedi oppure esplora il Lago d'Iseo in kayak, SUP o bicicletta.</p>
+            <p>Rilassati sul lungolago, parti per un'escursione in battello, raggiungi <a href="lovere.html">Lovere</a> a piedi oppure esplora il Lago d'Iseo in <a href="sport-ed-esperienze-lago-iseo.html">kayak, SUP o bicicletta</a>.</p>
             <div class="dest-type-footer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M2 8c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/><path d="M2 14c1.5-1.5 3-1.5 4.5 0s3 1.5 4.5 0 3-1.5 4.5 0 3 1.5 4.5 0"/></svg>
               <span>Lungolago, sport acquatici, ciclovie<br>e panorami tra lago e montagna.</span>
@@ -1429,7 +1460,7 @@
         <img src="https://images.unsplash.com/photo-1745748763530-337be3f67db8?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Battello panoramico sul Lago d'Iseo" loading="lazy">
         <div class="itin-body">
           <h3>Gita in battello sulla Navigazione Lago d'Iseo</h3>
-          <p>Dal porticciolo di Costa Volpino è possibile imbarcarsi per raggiungere le altre località del Sebino, tra cui Monte Isola, la più grande isola lacustre d'Europa.</p>
+          <p>Dal porticciolo di Costa Volpino è possibile imbarcarsi per raggiungere le altre località del Sebino, tra cui <a href="monte-isola.html">Monte Isola</a>, la più grande isola lacustre d'Italia.</p>
         </div>
       </article>
       <article class="itin-card">
@@ -1519,8 +1550,10 @@
 </div>
 
 <!-- ============ COSTA VOLPINO: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Il castello di Volpino, distrutto già nel 1198-1199, sopravvisse in rovina fino agli anni '20 del Novecento, quando fu demolito per estrarre la pregiata pietra locale, la volpinite.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Costa Volpino">
   <h2 class="section-title">Domande frequenti su Costa Volpino</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Costa Volpino?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1555,8 +1588,33 @@
     <summary class="dest-faq-q">Come si raggiunge Costa Volpino in treno?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">La ferrovia non arriva direttamente in paese: le stazioni più vicine sono quelle di Pisogne, sulla sponda opposta del lago, e di Brescia, da cui si prosegue in autobus.</p>
+    <p class="dest-faq-a">La ferrovia non arriva direttamente in paese: le stazioni più vicine sono quelle di <a href="pisogne.html">Pisogne</a>, sulla sponda opposta del lago, e di Brescia, da cui si prosegue in autobus.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quali sagre si tengono a Costa Volpino?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">La Sagra del Pesce di Lago, all'inizio di giugno nella frazione di Piano, con stand gastronomici a base di pesce di lago; in autunno la Festa del Ringraziamento, organizzata dalla Pro Loco.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Costa Volpino?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pesce di lago, polenta con formaggi e funghi, salumi e formaggi di montagna della vicina Val Camonica: la cucina locale unisce i sapori del Sebino a quelli della tradizione camuna.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Costa Volpino da Bergamo e Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 44 km da Bergamo (45-50 minuti in auto) e circa 46 km da Brescia (40-45 minuti in auto).</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">È adatta a Costa Volpino una vacanza in famiglia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: le spiagge libere come la Baia delle Rose, la <a href="itinerari-trekking-lago-iseo.html">pista ciclopedonale</a> lungo l'Oglio e il lungolago tranquillo la rendono una base comoda per famiglie con bambini.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Costa Volpino">
@@ -1688,7 +1746,7 @@
     <div class="info-pratica-item">
       <span class="info-pratica-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 18h18M5 10V7a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3"/></svg></span>
       <h4>Come arrivare</h4>
-      <p>In auto sulla SS510 Sebina orientale o SS469 da Lovere; in treno fino a Pisogne (sponda opposta) o Brescia, poi autobus; via lago dagli altri approdi del Sebino.</p>
+      <p>In auto sulla SS510 Sebina orientale o SS469 da <a href="lovere.html">Lovere</a>; in treno fino a <a href="pisogne.html">Pisogne</a> (sponda opposta) o Brescia, poi autobus; via lago dagli altri approdi del Sebino.</p>
     </div>
     <div class="info-pratica-item">
       <span class="info-pratica-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a3 3 0 0 1 0 6h-3"/></svg></span>

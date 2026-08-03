@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Monte Isola sul Lago d'Iseo: cosa vedere, hotel e ristoranti</title>
 <meta name="description" content="Guida a Monte Isola sul Lago d'Iseo: borghi, il Santuario della Ceriola, spiagge, itinerari a piedi e in bici, hotel e ristoranti consigliati.">
 <meta name="keywords" content="Monte Isola, Monte Isola Lago d'Iseo, cosa vedere a Monte Isola, Peschiera Maraglio, Santuario della Ceriola, Carzano, Siviano, Sensole, hotel Monte Isola, ristoranti Monte Isola, Lago d'Iseo, Sebino">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Dove si prende il battello per Monte Isola?",
       "acceptedAnswer": { "@type": "Answer", "text": "Dai porti di Sulzano, Sale Marasino e Iseo, con corse frequenti tutto l'anno verso Peschiera Maraglio e Carzano." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quali sono i prodotti tipici di Monte Isola?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Il salame di Monte Isola, le sardine essiccate, Presidio Slow Food, e l'olio extravergine d'oliva prodotto negli uliveti terrazzati dell'isola." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando si tiene la Festa del Salame di Monte Isola?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ogni anno in primavera, con degustazioni e iniziative dedicate al salame locale, tra i prodotti simbolo della gastronomia dell'isola." }
+    },
+    {
+      "@type": "Question",
+      "name": "Si possono portare biciclette a Monte Isola?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì, ma da marzo a settembre nei giorni prefestivi e festivi (tutti i giorni ad agosto) è vietato lo sbarco e il transito di biciclette e monopattini provenienti da fuori comune; sull'isola è comunque possibile noleggiarne in loco." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa sono gli \"archeec\" di Monte Isola?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sono le tipiche strutture in legno usate per l'essiccazione tradizionale delle sardine, poste in luoghi ombreggiati e protette da reti: un metodo antico che dura circa un mese e rende unica la sardina essiccata dell'isola." }
     }
   ]
 }
@@ -148,6 +169,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Natura", "Trekking", "Enogastronomia", "Famiglie", "Fotografia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -870,7 +901,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1064,7 +1095,7 @@
 <!-- ============ MONTE ISOLA: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://images.unsplash.com/photo-1745748763689-f7baa5fd6b0f?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Monte Isola, la più grande isola lacustre d'Italia sul Lago d'Iseo" loading="eager">
+    <img src="https://images.unsplash.com/photo-1745748763689-f7baa5fd6b0f?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Monte Isola, la più grande isola lacustre d'Italia sul Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1523,19 +1554,21 @@
 </div>
 
 <!-- ============ MONTE ISOLA: GUIDE (card ricche con foto + icone) ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> A Monte Isola non è mai stato permesso l'uso di automobili private: gli unici mezzi a motore autorizzati sono l'ambulanza, l'auto del medico, quella dei vigili urbani e quella del parroco.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Monte Isola">
   <h2 class="section-title">Domande frequenti su Monte Isola</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare per visitare Monte Isola?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Sull'isola non si può parcheggiare: si lascia l'auto nei parcheggi di Sulzano, Sale Marasino o Iseo, i porti principali da cui partono i traghetti.</p>
+    <p class="dest-faq-a">Sull'isola non si può parcheggiare: si lascia l'auto nei parcheggi di <a href="sulzano.html">Sulzano</a>, <a href="sale-marasino.html">Sale Marasino</a> o <a href="iseo.html">Iseo</a>, i porti principali da cui partono i traghetti.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Quanto dista Monte Isola da Sulzano?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Solo 5-15 minuti di traghetto: Sulzano è il porto più frequentato per raggiungere l'isola, con corse ogni 15-20 minuti.</p>
+    <p class="dest-faq-a">Solo 5-15 minuti di traghetto: <a href="sulzano.html">Sulzano</a> è il porto più frequentato per raggiungere l'isola, con corse ogni 15-20 minuti.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Si può fare il bagno a Monte Isola?
@@ -1559,8 +1592,33 @@
     <summary class="dest-faq-q">Dove si prende il battello per Monte Isola?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Dai porti di Sulzano, Sale Marasino e Iseo, con corse frequenti tutto l'anno verso Peschiera Maraglio e Carzano.</p>
+    <p class="dest-faq-a">Dai porti di <a href="sulzano.html">Sulzano</a>, <a href="sale-marasino.html">Sale Marasino</a> e <a href="iseo.html">Iseo</a>, con corse frequenti tutto l'anno verso Peschiera Maraglio e Carzano.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quali sono i prodotti tipici di Monte Isola?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Il salame di Monte Isola, le sardine essiccate, Presidio Slow Food, e l'olio extravergine d'oliva prodotto negli uliveti terrazzati dell'isola.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quando si tiene la Festa del Salame di Monte Isola?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Ogni anno in primavera, con degustazioni e iniziative dedicate al salame locale, tra i prodotti simbolo della gastronomia dell'isola.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Si possono portare biciclette a Monte Isola?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì, ma da marzo a settembre nei giorni prefestivi e festivi (tutti i giorni ad agosto) è vietato lo sbarco e il transito di biciclette e monopattini provenienti da fuori comune; sull'isola è comunque possibile noleggiarne in loco.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa sono gli "archeec" di Monte Isola?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sono le tipiche strutture in legno usate per l'essiccazione tradizionale delle sardine, poste in luoghi ombreggiati e protette da reti: un metodo antico che dura circa un mese e rende unica la sardina essiccata dell'isola.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Monte Isola">

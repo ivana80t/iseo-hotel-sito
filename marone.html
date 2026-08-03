@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Marone sul Lago d'Iseo: cosa vedere, hotel e ristoranti</title>
 <meta name="description" content="Guida a Marone sul Lago d'Iseo: cosa vedere, itinerari come la Croce di Marone e il Monte Guglielmo, spiagge, hotel e ristoranti consigliati.">
 <meta name="keywords" content="Marone, Marone Lago d'Iseo, cosa vedere a Marone, itinerari Marone, hotel Marone, ristoranti Marone, Croce di Marone, Monte Guglielmo, Vello Toline, Lago d'Iseo, Sebino">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Dove si prende il battello a Marone?",
       "acceptedAnswer": { "@type": "Answer", "text": "Dal porticciolo sul lungolago di Marone, con corse verso le altre località della sponda orientale del lago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando si tiene la Sagra del Casoncello e del Capù a Marone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A fine giugno, nella frazione di Pregasso, in occasione della festa patronale dei Santi Pietro e Paolo: quattro serate con stand gastronomico e musica dal vivo." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Marone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Casoncelli e capù, pesce di lago, e l'olio extravergine del Sebino: la cucina locale unisce le tradizioni bresciane a quelle del lago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Marone da Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 35 km, percorribili in auto in 30-35 minuti lungo la sponda orientale del lago." }
+    },
+    {
+      "@type": "Question",
+      "name": "È adatta a Marone una vacanza in famiglia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: tra La Spiaggetta e il Lido Mad Hops, la frazione di Vello e la ciclopedonale Vello-Toline, Marone offre diverse opzioni tranquille per famiglie con bambini." }
     }
   ]
 }
@@ -153,6 +174,16 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.iseosaporiesoggiorni.it/index.html" },
@@ -183,7 +214,7 @@
       "item": {
         "@type": "TouristAttraction",
         "name": "Pista ciclopedonale Vello - Toline",
-        "description": "Percorso ciclopedonale scavato nella roccia a picco sul Lago d'Iseo, tra i più spettacolari d'Europa.",
+        "description": "Percorso ciclopedonale scavato nella roccia a picco sul Lago d'Iseo, tra i più suggestivi del Sebino.",
         "url": "https://www.iseosaporiesoggiorni.it/marone.html#itinerari"
       }
     },
@@ -937,7 +968,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1131,7 +1162,7 @@
 <!-- ============ MARONE: HERO ============ -->
 <section class="marone-hero">
   <div class="marone-hero-media">
-    <img src="https://images.unsplash.com/photo-1745748763998-202655f03857?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Marone, borgo sul Lago d'Iseo tra lago e montagna" loading="eager">
+    <img src="https://images.unsplash.com/photo-1745748763998-202655f03857?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Marone, borgo sul Lago d'Iseo tra lago e montagna" loading="eager" fetchpriority="high">
   </div>
   <div class="marone-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1628,8 +1659,10 @@
 </div>
 
 <!-- ============ MARONE: GUIDE (card ricche con foto + icone) ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Il tratto ciclopedonale scavato nella roccia tra Vello e Toline permette di pedalare letteralmente a pelo d'acqua, in una galleria ricavata direttamente dalla montagna.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Marone">
   <h2 class="section-title">Domande frequenti su Marone</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Marone?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1652,20 +1685,45 @@
     <summary class="dest-faq-q">Quanto dura la salita al Monte Guglielmo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Dai vari sentieri di accesso servono in genere 3-4 ore di cammino fino alla vetta (1.949 m): un trekking impegnativo ma tra i più panoramici di tutto il Lago d'Iseo.</p>
+    <p class="dest-faq-a">Dai vari <a href="itinerari-trekking-lago-iseo.html">sentieri di accesso</a> servono in genere 3-4 ore di cammino fino alla vetta (1.949 m): un trekking impegnativo ma tra i più panoramici di tutto il Lago d'Iseo.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parte l'Antica Strada Valeriana?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Il tratto che attraversa Marone si percorre nella parte alta del paese, tra uliveti e boschi, collegando idealmente Sale Marasino a Pisogne lungo l'antico cammino medievale.</p>
+    <p class="dest-faq-a">Il tratto che attraversa Marone si percorre nella parte alta del paese, tra uliveti e boschi, collegando idealmente <a href="sale-marasino.html">Sale Marasino</a> a <a href="pisogne.html">Pisogne</a> lungo l'antico <a href="itinerari-trekking-lago-iseo.html">cammino medievale</a>.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove si prende il battello a Marone?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Dal porticciolo sul lungolago di Marone, con corse verso le altre località della sponda orientale del lago.</p>
+    <p class="dest-faq-a">Dal porticciolo sul lungolago di Marone, con corse verso le altre località della sponda orientale del lago, tra cui <a href="sulzano.html">Sulzano</a>, <a href="sale-marasino.html">Sale Marasino</a> e <a href="pisogne.html">Pisogne</a>.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quando si tiene la Sagra del Casoncello e del Capù a Marone?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">A fine giugno, nella frazione di Pregasso, in occasione della festa patronale dei Santi Pietro e Paolo: quattro serate con stand gastronomico e musica dal vivo.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Marone?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Casoncelli e capù, pesce di lago, e l'olio extravergine del Sebino: la cucina locale unisce le tradizioni bresciane a quelle del lago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Marone da Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 35 km, percorribili in auto in 30-35 minuti lungo la sponda orientale del lago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">È adatta a Marone una vacanza in famiglia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: tra La Spiaggetta e il Lido Mad Hops, la frazione di <a href="itinerari-trekking-lago-iseo.html">Vello</a> e la ciclopedonale Vello-Toline, Marone offre diverse opzioni tranquille per famiglie con bambini.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Marone">
@@ -1840,7 +1898,7 @@
         <div class="localita-card-body"><h4>Sulzano</h4><span>Scopri di più</span></div>
       </a>
       <a class="localita-card" href="monte-isola.html">
-        <img src="https://images.unsplash.com/photo-1745748763689-f7baa5fd6b0f?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Monte Isola, la più grande isola lacustre d'Europa" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1745748763689-f7baa5fd6b0f?w=900&q=75&auto=format&fit=crop&fm=jpg" alt="Monte Isola, la più grande isola lacustre d'Italia" loading="lazy">
         <div class="localita-card-body"><h4>Monte Isola</h4><span>Scopri di più</span></div>
       </a>
       <a class="localita-card" href="pisogne.html">

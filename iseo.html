@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Iseo: cosa vedere, hotel e ristoranti sul Lago d'Iseo</title>
 <meta name="description" content="Guida a Iseo, il capoluogo turistico del Lago d'Iseo: centro storico medievale, Torbiere del Sebino, spiagge, itinerari, hotel e ristoranti consigliati.">
 <meta name="keywords" content="Iseo, Iseo Lago d'Iseo, cosa vedere a Iseo, Piazza Garibaldi Iseo, Castello Oldofredi, Pieve di Sant'Andrea, Torbiere del Sebino, hotel Iseo, ristoranti Iseo, Lago d'Iseo, Sebino, Franciacorta">
@@ -87,7 +88,7 @@
     {
       "@type": "Question",
       "name": "Quanto dista Monte Isola da Iseo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pochi minuti di battello dal porto Gabriele Rosa: Iseo è uno dei punti di imbarco più comodi per raggiungere l'isola lacustre più grande d'Europa." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pochi minuti di battello dal porto Gabriele Rosa: Iseo è uno dei punti di imbarco più comodi per raggiungere Monte Isola, la più grande isola lacustre d'Italia." }
     },
     {
       "@type": "Question",
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Dove si prende il battello a Iseo?",
       "acceptedAnswer": { "@type": "Answer", "text": "Dal porto Gabriele Rosa, con corse verso Monte Isola, Sarnico e Lovere durante tutto l'anno." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Iseo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La tinca al forno, specialità della frazione di Clusane, il pesce di lago in generale e le sardine essiccate di Monte Isola sono i piatti simbolo della cucina del Sebino." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando si tiene la Sagra della Tinca a Clusane?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A luglio, quando la frazione di Clusane d'Iseo dedica dieci giorni di festa al suo piatto tipico, la tinca al forno con polenta, tra stand gastronomici e serate di musica sul lungolago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è il Lago d'Iseo Jazz?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una storica rassegna musicale che ogni anno porta concerti jazz nelle piazze e sui lungolago del territorio, tra le manifestazioni culturali più seguite del Sebino." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Iseo da Brescia e Bergamo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 22 km da Brescia (25 minuti in auto) e circa 40 km da Bergamo (45-50 minuti in auto)." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Storia", "Natura", "Enogastronomia", "Famiglie", "Trekking", "Cicloturismo"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -868,7 +899,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1062,7 +1093,7 @@
 <!-- ============ ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/25049%20Iseo%2C%20Province%20of%20Brescia%2C%20Italy%20-%20panoramio%20(1).jpg?width=1800" alt="Iseo, il capoluogo turistico del Lago d'Iseo" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/25049%20Iseo%2C%20Province%20of%20Brescia%2C%20Italy%20-%20panoramio%20(1).jpg?width=1800" alt="Iseo, il capoluogo turistico del Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1097,7 +1128,7 @@
         <span class="dest-info-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8M4 17a2 2 0 1 0 4 0M16 17a2 2 0 1 0 4 0"/></svg></span>
         <div>
           <h4>Come arrivare</h4>
-          <p>Auto (A4, uscite Rovato o Palazzolo sull'Oglio), treno Trenord Brescia-Iseo-Edolo, battello da Monte Isola, Sarnico e Lovere.</p>
+          <p>Auto (A4, uscite Rovato o Palazzolo sull'Oglio), treno Trenord Brescia-Iseo-Edolo, battello da <a href="monte-isola.html">Monte Isola</a>, <a href="sarnico.html">Sarnico</a> e <a href="lovere.html">Lovere</a>.</p>
         </div>
       </div>
       <div class="dest-info-row">
@@ -1117,7 +1148,7 @@
     <div class="dest-intro-text">
       <span class="eyebrow-text">Scopri Iseo</span>
       <h2>Un borgo medievale tra lago e Franciacorta</h2>
-      <p>Borgo di pescatori fin dal Medioevo, Iseo si è sviluppata intorno al Castello della famiglia Oldofredi e alla Pieve romanica di Sant'Andrea: il centro storico conserva ancora oggi vicoli e case-torri attorno al porto e a Piazza Garibaldi, dove nel 1883 fu eretto il primo monumento in Italia dedicato a Garibaldi. Capoluogo turistico del lago, ogni venerdì Iseo ospita il mercato più grande del Sebino, e il lungolago Marconi, con l'imbarco dei battelli per Monte Isola, resta il cuore della vita cittadina in ogni stagione.</p>
+      <p>Borgo di pescatori fin dal Medioevo, Iseo si è sviluppata intorno al Castello della famiglia Oldofredi e alla Pieve romanica di Sant'Andrea, tra le testimonianze di <a href="arte-e-cultura-lago-iseo.html">arte e cultura</a> del lago: il centro storico conserva ancora oggi vicoli e case-torri attorno al porto e a Piazza Garibaldi, dove nel 1883 fu eretto il primo monumento in Italia dedicato a Garibaldi. Capoluogo turistico del lago, ogni venerdì Iseo ospita il mercato più grande del Sebino, e il lungolago Marconi, con l'imbarco dei battelli per <a href="monte-isola.html">Monte Isola</a>, resta il cuore della vita cittadina in ogni stagione.</p>
       <div class="dest-intro-bottom">
         <a href="scopri-iseo.html" class="btn btn-outline">Leggi di più su Iseo
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 18l6-6-6-6"/></svg>
@@ -1521,8 +1552,10 @@
 </div>
 
 <!-- ============ ISEO: GUIDE (card ricche con foto + icone) ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Il monumento a Garibaldi di Piazza Garibaldi a Iseo, eretto nel 1883, fu il primo dedicato all'eroe in tutta Italia.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Iseo">
   <h2 class="section-title">Domande frequenti su Iseo</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Iseo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1533,7 +1566,7 @@
     <summary class="dest-faq-q">Quanto dista Monte Isola da Iseo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Pochi minuti di battello dal porto Gabriele Rosa: Iseo è uno dei punti di imbarco più comodi per raggiungere l'isola lacustre più grande d'Europa.</p>
+    <p class="dest-faq-a">Pochi minuti di battello dal porto Gabriele Rosa: Iseo è uno dei punti di imbarco più comodi per raggiungere <a href="monte-isola.html">Monte Isola</a>, la più grande isola lacustre d'Italia.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Si può fare il bagno a Iseo?
@@ -1557,8 +1590,33 @@
     <summary class="dest-faq-q">Dove si prende il battello a Iseo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Dal porto Gabriele Rosa, con corse verso Monte Isola, Sarnico e Lovere durante tutto l'anno.</p>
+    <p class="dest-faq-a">Dal porto Gabriele Rosa, con corse verso <a href="monte-isola.html">Monte Isola</a>, <a href="sarnico.html">Sarnico</a> e <a href="lovere.html">Lovere</a> durante tutto l'anno.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Iseo?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">La tinca al forno, specialità della frazione di Clusane, il pesce di lago in generale e le sardine essiccate di <a href="monte-isola.html">Monte Isola</a> sono i piatti simbolo della cucina del Sebino.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quando si tiene la Sagra della Tinca a Clusane?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">A luglio, quando la frazione di Clusane d'Iseo dedica dieci giorni di festa al suo piatto tipico, la tinca al forno con polenta, tra stand gastronomici e serate di musica sul lungolago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è il Lago d'Iseo Jazz?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Una storica rassegna musicale che ogni anno porta concerti jazz nelle piazze e sui lungolago del territorio, tra le manifestazioni culturali più seguite del Sebino.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Iseo da Brescia e Bergamo?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 22 km da Brescia (25 minuti in auto) e circa 40 km da Bergamo (45-50 minuti in auto).</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Iseo">
@@ -1696,7 +1754,7 @@
     <div class="info-pratica-item">
       <span class="info-pratica-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-9h6v9"/><path d="M5 21h14"/></svg></span>
       <h4>Battelli</h4>
-      <p>Dal porto Gabriele Rosa partono le corse verso Monte Isola, Sarnico e Lovere, più frequenti in primavera ed estate.</p>
+      <p>Dal porto Gabriele Rosa partono le corse verso <a href="monte-isola.html">Monte Isola</a>, <a href="sarnico.html">Sarnico</a> e <a href="lovere.html">Lovere</a>, più frequenti in primavera ed estate.</p>
     </div>
     <div class="info-pratica-item">
       <span class="info-pratica-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-6-3V4l6 3m0 13l6-3m-6 3V7m6 10l6 3V7l-6-3m0 13V4m0 3L9 4"/></svg></span>

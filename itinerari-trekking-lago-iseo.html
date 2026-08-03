@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Itinerari e Trekking sul Lago d'Iseo: sentieri ed escursioni</title>
 <meta name="description" content="Itinerari e trekking sul Lago d'Iseo: sentieri per tutti i livelli in ogni comune del lago, da Monte Isola alle sponde bresciana e bergamasca, con durata, difficoltà e distanza di ogni percorso.">
 <meta name="keywords" content="Itinerari Lago d'Iseo, trekking Lago d'Iseo, sentieri Lago d'Iseo, escursioni Sebino, trekking Monte Isola, Santuario della Madonna della Ceriola, sentieri CAI Lago d'Iseo, camminate Lago d'Iseo, passeggiate Lago d'Iseo, trekking famiglia Lago d'Iseo, cosa vedere Lago d'Iseo a piedi, itinerari facili Lago d'Iseo, trekking sponda bresciana Lago d'Iseo, trekking sponda bergamasca Lago d'Iseo, Torbiere del Sebino percorsi, Giro di Monte Isola a piedi, sentieri panoramici Lago d'Iseo, escursioni weekend Lago d'Iseo">
@@ -113,6 +114,21 @@
       "@type": "Question",
       "name": "Quanto dislivello hanno gli itinerari del Lago d'Iseo?",
       "acceptedAnswer": { "@type": "Answer", "text": "Varia molto da percorso a percorso: le passeggiate lungolago e gli anelli pianeggianti come quello di Monte Isola hanno pochi metri di dislivello, mentre i sentieri che salgono verso santuari, belvedere e cime possono superare i 400-600 metri di dislivello." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è l'Antica Strada Valeriana?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un antico cammino medievale che risale le colline della sponda bresciana del lago, collegando idealmente Sulzano, Sale Marasino, Marone e Pisogne tra uliveti, boschi e chiesette panoramiche." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è la Corna Trentapassi?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una vetta di 1.248 metri nel comune di Zone, che domina la sponda orientale del lago con un panorama spettacolare fino alle Prealpi Bergamasche; il nome deriva dai numerosi passaggi rocciosi lungo la salita, un tempo contati dai pastori." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dura la salita al Monte Guglielmo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dai vari sentieri di accesso, tra cui quello che parte da Marone, servono in genere 3-4 ore di cammino fino alla vetta (1.949 m): un trekking impegnativo ma tra i più panoramici di tutto il Lago d'Iseo." }
     }
   ]
 }
@@ -133,6 +149,16 @@
 <meta name="twitter:title" content="Itinerari e Trekking sul Lago d'Iseo: sentieri ed escursioni">
 <meta name="twitter:description" content="Itinerari e trekking sul Lago d'Iseo: sentieri per tutti i livelli in ogni comune del lago.">
 <meta name="twitter:image" content="https://commons.wikimedia.org/wiki/Special:FilePath/Santuario%20della%20Madonna%20della%20Ceriola.jpg?width=1400">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -940,7 +966,7 @@
   }
 
   /* ============ FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1134,7 +1160,7 @@
 <!-- ============ ITINERARI E TREKKING LAGO D'ISEO: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santuario%20della%20Madonna%20della%20Ceriola.jpg?width=1800" alt="Sentiero verso il Santuario della Madonna della Ceriola, Monte Isola" loading="eager">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Santuario%20della%20Madonna%20della%20Ceriola.jpg?width=1800" alt="Sentiero verso il Santuario della Madonna della Ceriola, Monte Isola" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1190,7 +1216,7 @@
       <span class="eyebrow-text">Camminare sul Sebino</span>
       <h2>Un lago da scoprire un passo alla volta</h2>
       <p style="max-width:none;">Il Lago d'Iseo è una delle mete più apprezzate della Lombardia per chi ama il trekking e le passeggiate nella natura. Sentieri panoramici, percorsi nel bosco, camminate lungolago e antiche mulattiere collegano borghi e frazioni su entrambe le sponde, tra uliveti, boschi di castagni e colline moreniche. Dagli itinerari più semplici, adatti alle famiglie, fino ai trekking più impegnativi verso le cime che dominano il lago, ogni escursione regala panorami diversi e un patrimonio naturale e storico da scoprire un passo alla volta.</p>
-      <p style="max-width:none;">Monte Isola, la più grande isola lacustre abitata d'Europa, è la meta più amata dagli escursionisti: priva di traffico automobilistico, si esplora a piedi lungo sentieri che salgono fino al Santuario della Madonna della Ceriola, con vista a 360° sul lago e sulle Prealpi. Sulla sponda bresciana, da Iseo a Pisogne, gli itinerari alternano passeggiate lungolago a salite verso colline e punti panoramici; sulla sponda bergamasca, da Paratico a Costa Volpino, i sentieri attraversano borghi storici, boschi e belvedere naturali.</p>
+      <p style="max-width:none;">Monte Isola, la più grande isola lacustre d'Italia, è la meta più amata dagli escursionisti: priva di traffico automobilistico, si esplora a piedi lungo sentieri che salgono fino al Santuario della Madonna della Ceriola, con vista a 360° sul lago e sulle Prealpi. Sulla sponda bresciana, da Iseo a Pisogne, gli itinerari alternano passeggiate lungolago a salite verso colline e punti panoramici; sulla sponda bergamasca, da Paratico a Costa Volpino, i sentieri attraversano borghi storici, boschi e belvedere naturali.</p>
       <p style="max-width:none;">Le escursioni sul Lago d'Iseo sono adatte a tutti i livelli: percorsi pianeggianti e anelli per le famiglie, trekking più impegnativi per chi cerca dislivello e panorami mozzafiato. La maggior parte dei sentieri è segnalata con la numerazione CAI; prima di partire conviene sempre verificare durata e dislivello e portare scarpe adeguate. In questa guida trovi i migliori itinerari del lago suddivisi per comune, con difficoltà, durata e distanza di ogni percorso.</p>
       <div class="dest-intro-bottom">
         <a href="#itinerari-comuni" class="btn btn-outline">Scopri tutti gli itinerari
@@ -1663,8 +1689,10 @@
 </div>
 
 <!-- ============ ITINERARI E TREKKING LAGO D'ISEO: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Il nome della Corna Trentapassi, la cima che domina Zone, deriva dai passaggi rocciosi lungo la salita, un tempo contati a voce alta dai pastori locali.</p>
 <section class="dest-faq" aria-label="Domande frequenti sugli itinerari e il trekking sul Lago d'Iseo">
   <h2 class="section-title">Domande frequenti</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Quali sono gli itinerari più facili sul Lago d'Iseo?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1707,6 +1735,25 @@
     </summary>
     <p class="dest-faq-a">Varia molto da percorso a percorso: le passeggiate lungolago e gli anelli pianeggianti come quello di Monte Isola hanno pochi metri di dislivello, mentre i sentieri che salgono verso santuari, belvedere e cime possono superare i 400-600 metri di dislivello.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è l'Antica Strada Valeriana?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Un antico cammino medievale che risale le colline della sponda bresciana del lago, collegando idealmente <a href="sulzano.html">Sulzano</a>, <a href="sale-marasino.html">Sale Marasino</a>, <a href="marone.html">Marone</a> e <a href="pisogne.html">Pisogne</a> tra uliveti, boschi e chiesette panoramiche.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è la Corna Trentapassi?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Una vetta di 1.248 metri nel comune di Zone, che domina la sponda orientale del lago con un panorama spettacolare fino alle Prealpi Bergamasche; il nome deriva dai numerosi passaggi rocciosi lungo la salita, un tempo contati dai pastori.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dura la salita al Monte Guglielmo?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Dai vari sentieri di accesso, tra cui quello che parte da <a href="marone.html">Marone</a>, servono in genere 3-4 ore di cammino fino alla vetta (1.949 m): un trekking impegnativo ma tra i più panoramici di tutto il Lago d'Iseo.</p>
+  </details>
+  </div>
 </section>
 
 <!-- ============ SPAZIO PUBBLICITARIO ADSENSE #3 ============ -->

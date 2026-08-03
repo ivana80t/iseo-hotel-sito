@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 <title>Lovere: Accademia Tadini e borgo più bello sul Lago d'Iseo</title>
 <meta name="description" content="Guida a Lovere, tra i Borghi più belli d'Italia sul Lago d'Iseo: l'Accademia Tadini, la Basilica di Santa Maria in Valvendra, il lungolago, hotel e ristoranti.">
 <meta name="keywords" content="Lovere, Lovere Lago d'Iseo, cosa vedere a Lovere, Accademia Tadini, Basilica Santa Maria in Valvendra, Torre Civica Lovere, hotel Lovere, ristoranti Lovere, Borghi più belli d'Italia, Lago d'Iseo, Sebino, Alto Sebino">
@@ -108,6 +109,26 @@
       "@type": "Question",
       "name": "Quanto dura la salita al Monte Colombina da Bossico?",
       "acceptedAnswer": { "@type": "Answer", "text": "Dal parcheggio di Bossico, l'ultimo tratto verso la vetta richiede circa 45 minuti; l'intero anello da Lovere, con la salita al Colombina, richiede quasi una giornata di cammino." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cos'è la Basilica di Santa Maria in Valvendra?",
+      "acceptedAnswer": { "@type": "Answer", "text": "E' la chiesa più grande della diocesi di Brescia, costruita a partire dal 1473 dalle famiglie loveresi arricchite dal commercio del panno; per la sua costruzione fu deviato il corso del torrente Valvendra, da cui prende il nome." }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mangiare a Lovere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pesce di lago, casoncelli, polenta con formaggi locali e i piatti della tradizione dell'Alto Sebino, da gustare nei ristoranti e nelle trattorie del lungolago." }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto dista Lovere da Bergamo e Brescia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Circa 40 km da Bergamo (45-50 minuti in auto) e circa 50 km da Brescia (circa 50 minuti in auto)." }
+    },
+    {
+      "@type": "Question",
+      "name": "È adatta a Lovere una vacanza in famiglia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sì: il lungolago pedonale, la spiaggia del centro e le passeggiate senza traffico la rendono comoda per le famiglie, con la possibilità di combinare una visita all'Accademia Tadini con momenti di relax sul lago." }
     }
   ]
 }
@@ -146,6 +167,16 @@
     "name": "Lago d'Iseo"
   },
   "touristType": ["Arte e cultura", "Storia", "Trekking", "Famiglie", "Enogastronomia"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Iseo Sapori e Soggiorni",
+  "url": "https://www.iseosaporiesoggiorni.it/",
+  "logo": "https://www.iseosaporiesoggiorni.it/images/logo.png",
+  "description": "Portale turistico dedicato al Lago d'Iseo: guide alle localita, hotel, ristoranti e itinerari per organizzare il soggiorno sul Sebino."
 }
 </script>
 <script type="application/ld+json">
@@ -871,7 +902,7 @@
   }
 
   /* ============ PARATICO: FAQ ============ */
-  .dest-faq{max-width:900px;margin:0 auto;padding:0 32px 64px;}
+  .dest-faq{max-width:1100px;margin:0 auto;padding:0 32px 64px;}.dest-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;}@media(max-width:800px){.dest-faq-grid{grid-template-columns:1fr;}}
   .dest-faq-item{border-bottom:1px solid var(--line);padding:18px 0;}
   .dest-faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--navy);}
   .dest-faq-q svg{flex:0 0 auto;transition:transform .2s ease;}
@@ -1065,7 +1096,7 @@
 <!-- ============ LOVERE: HERO ============ -->
 <section class="dest-hero">
   <div class="dest-hero-media">
-    <img src="https://images.unsplash.com/photo-1745748763662-fdb06cb2d636?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Lovere, il lungolago e il centro storico sul Lago d'Iseo" loading="eager">
+    <img src="https://images.unsplash.com/photo-1745748763662-fdb06cb2d636?w=1800&q=75&auto=format&fit=crop&fm=jpg" alt="Lovere, il lungolago e il centro storico sul Lago d'Iseo" loading="eager" fetchpriority="high">
   </div>
   <div class="dest-hero-top">
     <nav class="breadcrumb" aria-label="Percorso di navigazione">
@@ -1540,8 +1571,10 @@
 </div>
 
 <!-- ============ LOVERE: FAQ ============ -->
+<p style="max-width:760px;margin:8px auto 32px;padding:16px 20px;border-left:3px solid var(--navy);font-size:14px;line-height:1.6;color:var(--ink-soft);"><strong>Lo sapevi?</strong> Per costruire la Basilica di Santa Maria in Valvendra fu necessario deviare il corso del torrente Valvendra, da cui la chiesa prende il nome.</p>
 <section class="dest-faq" aria-label="Domande frequenti su Lovere">
   <h2 class="section-title">Domande frequenti su Lovere</h2>
+  <div class="dest-faq-grid">
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Dove parcheggiare a Lovere?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
@@ -1552,7 +1585,7 @@
     <summary class="dest-faq-q">Quanto costa visitare l'Accademia Tadini?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Il biglietto intero costa 14 euro; l'accademia è aperta da martedì a sabato dalle 15 alle 19 e la domenica e i festivi anche dalle 10 alle 12, chiusa il lunedì. La prima domenica del mese l'ingresso costa solo 2 euro.</p>
+    <p class="dest-faq-a">Il biglietto intero costa 14 euro (ridotto 10 euro); la prima domenica del mese l'ingresso costa solo 2 euro. La galleria osserva una chiusura invernale (tipicamente da inizio novembre a fine marzo): è consigliabile verificare gli orari aggiornati sul sito ufficiale dell'<a href="arte-e-cultura-lago-iseo.html">Accademia Tadini</a> prima della visita.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Si può fare il bagno a Lovere?
@@ -1564,7 +1597,7 @@
     <summary class="dest-faq-q">Come si raggiunge Lovere in treno?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">La ferrovia non arriva direttamente in paese: la stazione più vicina è quella di Pisogne, sulla sponda bresciana, a circa 6 km da Lovere.</p>
+    <p class="dest-faq-a">La ferrovia non arriva direttamente in paese: la stazione più vicina è quella di <a href="pisogne.html">Pisogne</a>, sulla sponda bresciana, a circa 6 km da Lovere.</p>
   </details>
   <details class="dest-faq-item">
     <summary class="dest-faq-q">Cos'è il Borgo della Luce?
@@ -1576,8 +1609,33 @@
     <summary class="dest-faq-q">Quanto dura la salita al Monte Colombina da Bossico?
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
     </summary>
-    <p class="dest-faq-a">Dal parcheggio di Bossico, l'ultimo tratto verso la vetta richiede circa 45 minuti; l'intero anello da Lovere, con la salita al Colombina, richiede quasi una giornata di cammino.</p>
+    <p class="dest-faq-a">Dal parcheggio di Bossico, l'ultimo tratto verso la vetta richiede circa 45 minuti; l'intero anello da Lovere, con la salita al Colombina, richiede quasi una giornata di cammino tra i <a href="itinerari-trekking-lago-iseo.html">sentieri</a> dell'Alto Sebino.</p>
   </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cos'è la Basilica di Santa Maria in Valvendra?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">È la chiesa più grande della diocesi di Brescia, costruita a partire dal 1473 dalle famiglie loveresi arricchite dal commercio del panno; per la sua costruzione fu deviato il corso del torrente Valvendra, da cui prende il nome, tra le testimonianze di <a href="arte-e-cultura-lago-iseo.html">arte e cultura</a> del lago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Cosa mangiare a Lovere?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Pesce di lago, casoncelli, polenta con formaggi locali e i piatti della tradizione dell'Alto Sebino, da gustare nei ristoranti e nelle trattorie del lungolago.</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">Quanto dista Lovere da Bergamo e Brescia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Circa 40 km da Bergamo (45-50 minuti in auto) e circa 50 km da Brescia (circa 50 minuti in auto).</p>
+  </details>
+  <details class="dest-faq-item">
+    <summary class="dest-faq-q">È adatta a Lovere una vacanza in famiglia?
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <p class="dest-faq-a">Sì: il lungolago pedonale, la spiaggia del centro e le passeggiate senza traffico la rendono comoda per le famiglie, con la possibilità di combinare una visita all'Accademia Tadini con momenti di relax sul lago.</p>
+  </details>
+  </div>
 </section>
 
 <section class="dest-guide-hub" aria-label="Guide utili su Lovere">
